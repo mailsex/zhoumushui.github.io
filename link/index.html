@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>极简导航</title>
+    <style>
+        a {
+            text-decoration: none; /* 去掉下划线 */
+            padding-right: 2px;
+        }
+
+        a:hover {
+            text-decoration: underline; /* dotted */
+            text-shadow: 1px 1px 1px #000000;
+        }
+
+        .link-type {
+            color: #FFFFFF; /* #00BCD4,01579B */
+            text-shadow: 1px 1px 1px #000000;
+            font-weight: 700; /* lighter<400=normal<700=bold<bolder */
+        }
+
+        .line-divide {
+            border: solid;
+            border-width: thin;
+            color: #00BCD4; /* #1abc9c */
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-size: large;
+            background-image: url(../img/bg/o.png) /* GIF:a, PNG:n,o */
+        }
+    </style>
+
+    <link type="image/x-icon" href="../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../img/favicon.ico" rel="shortcut icon"/>
+
+    <script type="text/javascript">
+        <!-- AZ:复制内容到剪切版 -->
+        function copyContent(content) {
+            var oInput = document.createElement('input');
+            oInput.value = content;
+            document.body.appendChild(oInput);
+            oInput.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            oInput.className = 'oInput';
+            oInput.style.display = 'none';
+            // alert('复制成功');
+        }
+    </script>
+
+</head>
+
+<body>
+<div style="margin-left: 10px; margin-right: auto;">
+    <a target="_blank" rel="nofollow noopener" style="color:#3F51B5"
+       title="" href="../">[主页]</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color:#03A9F4"
+       title="" href="pass.html">[密码]</a>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color:#009688"
+       title="" href="../file/">[文件]</a>
+    <a target="_blank" rel="nofollow noopener" style="color:#4CAF50"
+       title="" href="../game">[游戏]</a>
+    <a target="_blank" rel="nofollow noopener" style="color:#8BC34A"
+       title="" href="../todo.html">[待办]</a>
+    <a target="_blank" rel="nofollow noopener" style="color:#FF9800"
+       title="" href="../module/colorpicker/">[颜色]</a>
+    <a target="_blank" rel="nofollow noopener" style="color:#FF5722"
+       title="" href="../module/screentest/">[屏幕]</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color:#FF5722"
+       title="" hrpolar-area.htmlhtml">[随笔]</a>
+       -->
+    <a target="_blank" rel="nofollow noopener" style="color:#f44336"
+       title="" href="../module/calendar">[日历]</a>
+    <a target="_blank" rel="nofollow noopener" style="color:#999999"
+       title="" href="../module/whoami">[信息]</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color:#999999"
+       title="" href="diary.html">[日记]</a>
+       -->
+
+
+    <hr class="line-divide"/>
+    <!--
+    <span class="link-type">[搜索]</span>
+    <br>
+    -->
+    <span class="link-type">[资讯]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #4285f4"
+       title="" href="http://www.google.com">谷歌</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0b8383"
+       title="" href="http://www.bing.com">必应</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2932e1"
+       title="" href="https://www.baidu.com">百度</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #f65e53"
+       title="" href="https://www.sogou.com">搜狗</a>
+
+    <a target="_blank" rel="nofollow noopener" style="color: #f54343"
+       title="" href="http://www.ifeng.com">凤凰</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00a1d8"
+       title="" href="http://www.163.com">网易</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #db1011"
+       title="" href="http://www.qq.com">腾讯</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #860001"
+       title="" href="http://www.huanqiu.com">环球网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #129aee"
+       title="" href="http://www.yidianzixun.com">一点资讯</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #cd0915"
+       title="" href="http://www.cankaoxiaoxi.com">参考消息</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0099CC"
+       title="" href="http://typhoon.zjwater.gov.cn">台风路经</a>
+    <!--
+    <br>
+    <span class="link-type">[财经]</span>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #0055aa"
+       title="zhoumushui" href="https://xueqiu.com">雪球</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #f44444"
+       title="" href="http://finance.ifeng.com">凤凰财经</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="http://finance.sina.com.cn">新浪财经</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #cd111d"
+       title="" href="http://www.zhicheng.com">至诚财经</a>
+
+    <br>
+    <span class="link-type">[科技]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #d22222"
+       title="" href="http://www.ithome.com">IT之家</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #151515"
+       title="" href="http://www.ifanr.com">爱范儿</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #38b45c"
+       title="" href="https://www.oschina.net">开源中国</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #050505"
+       title="" href="https://www.jiqizhixin.com/">机器之心</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1054b7"
+       title="" href="http://www.zol.com.cn">中关村在线</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="http://www.zealer.com">ZEALER</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #24a5d2"
+       title="" href="http://www.kjmx.com">科技美学</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff0000"
+       title="" href="http://www.it168.com">IT168</a>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #3064a3"
+       title="" href="http://www.cnbeta.com">cnBeta</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #13a8f2"
+       title="" href="http://www.geekpark.net">极客公园</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3f4247"
+       title="" href="http://www.dgtle.com">数字尾巴</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00548d"
+       title="" href="http://pocketnow.com">pocketnow</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1d3760"
+       title="" href="https://www.dxomark.com/Mobiles">DxOMark</a>
+
+    <br>
+    <span class="link-type">[社区]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #006cff"
+       title="" href="https://juejin.im/">掘金</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1992f5"
+       title="" href="https://www.zhihu.com">知乎</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2ea1cf"
+       title="" href="http://www.guokr.com">果壳</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #4285f4"
+       title="" href="http://36kr.com/">36氪</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e6162d"
+       title="zhoumushui#gmail.com-A1" href="http://weibo.com">微博</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2832e0"
+       title="" href="http://tieba.baidu.com">贴吧</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #a61f24"
+       title="" href="https://www.chiphell.com">Chiphell</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #222222"
+       title="zhoumushui-a1" href="https://www.v2ex.com">V2EX</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #d7000f"
+       title="" href="http://www.tiexue.net">铁血</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3c57a4"
+       title="" href="https://www.facebook.com">facebook</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1ab2e8"
+       title="" href="https://twitter.com/">Twitter</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0e0f0d"
+       title="" href="https://www.instagram.com">instagram</a>
+
+    <br>
+    <span class="link-type">[体育]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #952425"
+       title="" href="https://bbs.hupu.com/barcelona">虎扑足球</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #081f2c"
+       title="" href="http://www.goal.com/en">GOAL</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #C90000"
+       title="" href="http://www.ssports.com">新英体育</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #006600"
+       title="" href="http://www.lszhibo.com">绿色直播</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3396d1"
+       title="" href="http://www.52waha.com">哇哈体育</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #006baa"
+       title="" href="http://www.txzqw.cc">天下足球网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0066cc"
+       title="" href="http://yqkqw.com/down/zuqiu">一起看球网</a>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #fecc15"
+       title="" href="https://www.fifa.com">FIFA</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #d6142f"
+       title="" href="https://www.fcbarcelona.com">FCB</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1b4080"
+       title="" href="http://www.fcbarcelonastoreasia.com/">FCBStore</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1a3151"
+       title="" href="https://www.transfermarkt.com/">转会</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff2826"
+       title="" href="https://www.formula1.com">F1</a>
+
+    <hr class="line-divide"/>
+    <span class="link-type">[开发]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #f48024"
+       title="" href="https://stackoverflow.com">StackOverflow</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #009a61"
+       title="" href="https://segmentfault.com">segmentfault</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3a3a3c"
+       title="" href="https://www.aliyun.com">阿里云</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0091fa"
+       title="" href="http://lbs.amap.com">高德开放平台</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #0993dc"
+       title="" href="http://www.xfyun.cn">讯飞开放平台</a>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="zhoumushui-a1" href="https://console.developers.google.com">GoogleAPI</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #009af0"
+       title="" href="http://www.devstore.cn">DevStore</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #212121"
+       title="" href="http://www.androidpolice.com">AndroidPolice</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #6ec396"
+       title="" href="https://guides.codepath.com/android">CodePath</a>
+
+    <br>
+    <span class="link-type">[代码]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #c71d24"
+       title="" href="http://git.oschina.net/zhoumushui">码云</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #172b4d"
+       title="" href="https://www.sourcetreeapp.com">SourceTree</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #353535"
+       title="" href="https://coding.net">Coding</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0049b0"
+       title="" href="https://bitbucket.org/zhoumushui">Bitbucket</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #24292e"
+       title="" href="https://github.com/zhoumushui">GitHub</a>
+    <!--
+    <br>
+    <span class="link-type">[算法]</span>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #fea121"
+       title="" href="https://leetcode.com/">LeetCode</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0050af"
+       title="浙江大学ACM" href="http://acm.zju.edu.cn/onlinejudge/">ZJU</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #6589d1"
+       title="北京大学ACM" href="http://poj.org/">PKU</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #29508b"
+       title="浙江工商大学ACM" href="http://acm.zjgsu.edu.cn">ZJGSU</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1a5cc8"
+       title="杭州电子科技大学ACM" href="http://acm.hdu.edu.cn">HDU</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #6587b9"
+       title="Saratov State University" href="http://acm.sgu.ru/">SGU</a>
+
+    <!--
+    <br>
+    <span class="link-type">[腾讯]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #2f8cff"
+       title="游戏开发者平台" href="http://gad.qq.com">GAD</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e50114"
+       title="设计团队" href="http://cdc.tencent.com">CDC</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #17b8e6"
+       title="" href="http://daxue.qq.com">腾讯大学</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ffc000"
+       title="腾讯质量开放平台-专注游戏，提升品质" href="http://wetest.qq.com/">WeTest</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="社交用户体验设计" href="https://isux.tencent.com/">ISUX</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #999999"
+       title=" Web前端" href="http://www.alloyteam.com/">AlloyTeam</a>
+    -->
+
+    <hr class="line-divide"/>
+    <span class="link-type">[设计]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #ffd100"
+       title="" href="http://www.zcool.com.cn">站酷</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2b7dad"
+       title="" href="http://hao.uisdc.com">设计师导航</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0064ff"
+       title="" href="https://www.behance.net">Behance</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ea4c89"
+       title="" href="https://dribbble.com">Dribbble</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #006add"
+       title="" href="https://www.flickr.com">flickr</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #05cc46"
+       title="" href="http://www.deviantart.com">DeviantArt</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #d61718"
+       title="" href="http://huaban.com">花瓣网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff2c9c"
+       title="" href="https://drawcrowd.com">Drawcrowd</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00599e"
+       title="" href="http://www.nipic.com">昵图网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0082df"
+       title="" href="http://588ku.com">千库网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #673ab7"
+       title="" href="https://www.materialui.co">MaterialUI</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="https://niice.co">Niice</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e62129"
+       title="" href="http://www.cndesign.com">中国设计网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #199798"
+       title="" href="http://gjdhjc.com">国际动画教程网</a>
+
+    <br>
+    <span class="link-type">[素材]</span>
+    <!--
+    <span class="link-type">[图标]</span>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #eb185d"
+       title="" href="http://www.iconpng.com">爱看图标</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #d53c27"
+       title="" href="http://www.iconfont.cn">阿里图标</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #333333"
+       title="Best free stock photos in one place" href="https://www.pexels.com/">Pexels无版权图</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="https://www.transparenttextures.com">百变纹理</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ea5650"
+       title="" href="http://www.shij001.com">视崛</a>
+    <!--
+    <br>
+    <span class="link-type">[字体]</span>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #d53c27"
+       title="" href="https://www.fonts.com">fonts</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #4d4d4d"
+       title="" href="http://aifont.com">爱字体</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00a2ff"
+       title="" href="http://www.fonts2u.com">fonts2u</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="http://www.fontfabric.com">FontFabric</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #8599ac"
+       title="" href="http://www.fontspace.com">FontSpace</a>
+
+    <br>
+    <span class="link-type">[学习]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #f01414"
+       title="" href="http://www.imooc.com">慕课网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00a4ff"
+       title="" href="https://ke.qq.com">腾讯课堂</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e60a19"
+       title="" href="http://www.51voa.com">51VOA</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #286a46"
+       title="" href="https://open.163.com">网易公开课</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #a70000"
+       title="" href="http://open.sina.com.cn">新浪公开课</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #C20501"
+       title="" href="http://www.cpta.com.cn">中国人事考试网</a>
+
+    <!--
+    <br>
+    <span class="link-type">[博客]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #E91E63"
+       title="" href="http://blog.csdn.net/lmj623565791">张鸿洋</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #9C27B0"
+       title="" href="http://blog.csdn.net/sinyu890807">郭霖</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #673AB7"
+       title="" href="http://blog.csdn.net/lfdfhl">赖帆</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3F51B5"
+       title="" href="http://blog.csdn.net/wwj_748">巫文杰</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2196F3"
+       title="" href="http://blog.csdn.net/eclipsexys">徐宜生</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #03A9F4"
+       title="" href="http://blog.csdn.net/xiaanming">夏安明</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00BCD4"
+       title="" href="http://blog.csdn.net/Luoshengyang">罗升阳</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #009688"
+       title="" href="http://blog.csdn.net/zxt0601">张旭童</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #4CAF50"
+       title="" href="http://blog.csdn.net/sbsujjbcy">李樟取</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #8BC34A"
+       title="" href="http://blog.csdn.net/jdsjlzx">李治现</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #CDDC39"
+       title="" href="http://blog.csdn.net/jason0539">刘贞会</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #FFC107"
+       title="" href="http://blog.csdn.net/wingichoy">王靖天</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #FF9800"
+       title="" href="http://blog.csdn.net/cauchyweierstrass">袁乾浩</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #FF5722"
+       title="" href="http://blog.csdn.net/xmxkf">许开放</a>
+    -->
+
+    <br>
+    <span class="link-type">[邮箱]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #d44638"
+       title="" href="https://mail.google.com">Gmail</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2a9ddf"
+       title="" href="https://mail.qq.com">QQMail</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #5e5e54"
+       title="az@alumni.npust.edu.tw-a1" href="http://alumni.npust.edu.tw">NPUST.EDU</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0067b8"
+       title="" href="https://outlook.live.com">Outlook</a>
+
+    <br>
+    <span class="link-type">[工具]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #2dbe60"
+       title="" href="https://app.yinxiang.com/Home.action">印象笔记</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #06023c"
+       title="" href="http://www.webps.cn/ps.html">在线PS</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="http://codepad.org">codepad</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3a3a3c"
+       title="" href="https://whois.aliyun.com">Whois查询</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="http://www.sf-express.com">顺丰</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #fbbd05"
+       title="" href="https://www.autodraw.com">AutoDraw</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0092bf"
+       title="" href="http://html5test.com">HTML5Test</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #404040"
+       title="" href="https://www.testufo.com/">TestUFO</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #139dd7"
+       title="" href="http://browserbench.org/JetStream">JetStream</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #cccc98"
+       title="" href="http://www.network-science.de/ascii">ASCII-Generator</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #bd2d30"
+       title="" href="https://123.w3cschool.cn/webtools">w3cSchool工具</a>
+
+    <br>
+    <span class="link-type">[工作]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #f44336"
+       title="" href="http://blog.csdn.net/zhoumushui">周木水</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="http://168.168.0.253">GitWeb</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ec1f26"
+       title="" href="http://www.t-chip.com.cn">T-chip</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ec1f26"
+       title="" href="http://oa.t-chip.com.cn">OA</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3498dd"
+       title="" href="http://adbshell.com">ADB</a>
+    <!--
+    <br>
+    <span class="link-type">[创造]</span>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #1f364d"
+       title="" href="https://www.indiehackers.com">indie hackers</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #383838"
+       title="" href="http://sideidea.com/">sideidea</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e50011"
+       title="" href="http://www.3158.cn/">3518</a>
+
+    <hr class="line-divide"/>
+    <span class="link-type">[影音]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #1b52f7"
+       title="" href="https://www.bttiantang.la">BT天堂</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3860bb"
+       title="" href="https://rarbg.is/torrents.ph">RARBG</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #f13d26"
+       title="" href="http://www.daofire.com">盗火</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2267b5"
+       title="" href="http://www.1080.net">1080</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0069b3"
+       title="" href="http://www.dytt8.net">电影天堂</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00e58c"
+       title="" href="http://www.vr2.tv">VR兔</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #71b1f1"
+       title="" href="http://www.ttmeiju.com">天天美剧</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1b6d9d"
+       title="" href="http://www.zimuku.net">字幕库</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #395694"
+       title="" href="http://subhd.com">SubHD</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #268d05"
+       title="" href="https://movie.douban.com">豆瓣电影</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #00b2ed"
+       title="" href="http://www.yyets.com">人人影视</a>
+    -->
+    <a target="_blank" rel="nofollow noopener" style="color: #e7c24f"
+       title="" href="http://www.imdb.com">IMdb</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3a9425"
+       title="" href="https://www.rottentomatoes.com/">烂番茄</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #da5380"
+       title="" href="http://www.bilibili.com">Bilibili</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #1a79ba"
+       title="" href="http://www.kanbus.net">看巴士</a>
+    -->
+    <!-- <br><span class="link-type">[音乐]</span> -->
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #ea0606"
+       title="" href="http://music.163.com/#/playlist?id=522856438">网易云音乐</a>
+    -->
+
+    <br>
+    <span class="link-type">[资源]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #00A9F6"
+       title="" href="http://www.pansoso.com">盘搜搜</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #a4c639"
+       title="" href="http://www.javaapk.com">JavaApk</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2095df"
+       title="" href="http://www.17sucai.com">17素材</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2095df"
+       title="" href="http://www.xwcms.net">素材网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2eb294"
+       title="" href="https://xituqu.com">稀土区</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #77943a"
+       title="" href="http://www.html5tricks.com">HTML5Tricks</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0d6cbf"
+       title="" href="http://www.yyyweb.com">前端里</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00a21b"
+       title="" href="http://www.alixixi.com">阿里西西</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #3b3e40"
+       title="" href="https://www.torrentkitty.tv">TorrentKitty</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href=" https://github.com/yangyangwithgnu/hardseed">hardseed</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1579a2"
+       title="" href="http://btkitty.bid">BTKitty</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0dc2ff"
+       title="" href="http://mirrors.neusoft.edu.cn">东软镜像</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #815cb7"
+       title="" href="https://mirrors.tuna.tsinghua.edu.cn">清华镜像</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #81b441"
+       title="" href="https://envato.com">envato</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #345581"
+       title="" href="http://xidong.net">西东网</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #e81013"
+       title="" href="http://www.verycd.com">VeryCD</a>
+    -->
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #628e03"
+       title="" href="http://www.bdsola.com">百度云搜啦</a>
+    -->
+
+    <br>
+    <span class="link-type">[娱乐]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #444444"
+       title="zhoumushui-a1" href="http://jandan.net/">煎蛋</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #51b600"
+       title="" href="http://www.haha.mx">哈哈</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0b9bcf"
+       title="" href="http://www.3dmgame.com">3DMGame</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ed3a00"
+       title="" href="http://www.gamersky.com">游民星空</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #fa6c06"
+       title="" href="http://www.ali213.net">游侠网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e60012"
+       title="" href="https://www.zuhaowan.com">租号玩</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #f56c2d"
+       title="" href="https://www.origin.com">Origin</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #267abd"
+       title="" href="http://www.tgbus.com">电玩巴士</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0a88f3"
+       title="" href="http://bang.qq.com/actcenter/index/cf">CF活动</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #333333"
+       title="" href="http://statsroyale.com/profile/80LL2CG9U">皇室战争</a>
+    -->
+
+    <hr class="line-divide"/>
+    <span class="link-type">[购物]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #c60c1b"
+       title="" href="https://www.jd.com">京东</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff4400"
+       title="" href="https://www.taobao.com">淘宝</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff6000"
+       title="" href="https://www.1688.com">阿里巴巴</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="https://www.amazon.cn">Amazon</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #f04848"
+       title="" href="http://www.smzdm.com">什么值得买</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #b4a078"
+       title="" href="http://you.163.com">网易严选</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e91b51"
+       title="" href="http://www.kaola.com">网易考拉海购</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #a94946"
+       title="" href="http://www.12306.cn">12306</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #d4141b"
+       title="" href="http://www.toolmall.com">土猫</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #c60c1b" title=""
+       href="https://paipai.jd.com/auction-list/">京东拍拍</a>
+
+    <br>
+    <span class="link-type">[政务]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #0394da"
+       title="" href="http://www.zhengzhou.gov.cn">市政府</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0394da"
+       title="" href="http://fgw.zhengzhou.gov.cn">发改委</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1766ca"
+       title="郑州市轨道交通有限公司" href="https://www.zzmetro.cn">郑州轨道</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #de1a0e"
+       title="郑州市城乡规划局" href="http://cxghj.zhengzhou.gov.cn">规划局</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #16b48d"
+       title="郑州市城乡建设委员会" href="http://www.zzjw.gov.cn">市建委</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #47af34"
+       title="郑州市住房保障和房地产管理局" href="http://www.zzfdc.gov.cn">房管局</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1285f2"
+       title="郑州市教育局" href="http://www.zzjy.gov.cn">教育局</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #155abb"
+       title="郑州市统计局" href="http://tjj.zhengzhou.gov.cn/">统计局</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #155abb"
+       title="郑州市网络行政全媒体平台" href="http://xtq.zynews.cn/">心通桥</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #1766ca"
+       title="郑州社保" href="http://www.zzsi.com">郑州社保</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff6600"
+       title="本地宝" href="http://zz.bendibao.com/">本地宝</a> |
+    <a target="_blank" rel="nofollow noopener" style="color: #194497"
+       title="" href="http://www.szsi.gov.cn">深圳社保局</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #28467a"
+       title="广东网上办事大厅" href="http://wsbs.sz.gov.cn/shenzhen/home">粤网办</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #cc0001"
+       title="国家信息中心" href="http://www.sic.gov.cn/">国信</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff0000"
+       title="天天曝光" href="http://www.tiantianbaoguang.com/index.php">天天曝光</a>
+
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #0873b8"
+       title="" href="http://www.lhfdc.gov.cn">漯河房管局</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #104089"
+       title="" href="http://www.luoheghj.gov.cn">漯河规划局</a>
+    -->
+
+    <br>
+    <span class="link-type">[房产]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #004389"
+       title="" href="https://www.cib.com.cn" onclick="copyContent('622908463033801618')">兴业银行</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #f08200"
+       title="" href="http://www.ditiezu.com">地铁族</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #b60004"
+       title="" href="http://www.jia.com">齐家网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0eaf63"
+       title="" href="http://www.to8to.com">土巴兔装修</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #e8342f"
+       title="" href="http://www.sketchupbar.com">SketchUpBar</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #000000"
+       title="" href="https://www.chaosgroup.com/cn">VRay</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #f98f14"
+       title="" href="http://zz.fang.com/">房天下</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ee4236"
+       title="" href="http://www.mizhai.com">米宅</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #39a631"
+       title="" href="http://www.anjuke.com">安居客</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ffc600"
+       title="" href="http://www.qfang.com">Q房网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0581c1"
+       title="" href="http://www.tiqianhuandai.cc/">提前还贷</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #2c3e50"
+       title="" href="http://www.google.cn/maps">谷歌地图</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #f2304a"
+       title="" href="http://zhengzhou.leju.com">乐居·郑州</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0085bf"
+       title="" href="http://zz.house.qq.com">腾讯房产·郑州</a>
+    -->
+
+    <br>
+    <span class="link-type">[汽车]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #4284d9"
+       title="" href="http://www.bitauto.com/">易车网</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #023894"
+       title="" href="http://www.autohome.com.cn">汽车之家</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #fd5400"
+       title="" href="https://www.renrenche.com">人人车</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #22ac38"
+       title="" href="https://www.guazi.com">瓜子</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0d419d"
+       title="" href="http://gd.122.gov.cn/">广东122</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #43873C"
+       title="" href="http://xqctk.sztb.gov.cn">增量指标</a>
+    <!--
+    <a target="_blank" rel="nofollow noopener" style="color: #37b5f8"
+       title="" href="http://www.jiakaobaodian.com">驾考宝典</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #d82128"
+       title="" href="http://www.caronline.cn">深港驾校</a>
+    -->
+
+    <br>
+    <span class="link-type">[职场]</span>
+    <a target="_blank" rel="nofollow noopener" style="color: #00b38a"
+       title="" href="https://www.lagou.com">拉勾</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0cccb5"
+       title="" href="https://www.zhipin.com">BOSS直聘</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #ff9500"
+       title="" href="https://www.liepin.com">猎聘</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #004ea2"
+       title="" href="http://www.zhaopin.com">智联</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0057a6"
+       title="" href="http://www.51job.com">前程无忧</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #0077b5"
+       title="" href="https://www.linkedin.com">领英</a>
+    <a target="_blank" rel="nofollow noopener" style="color: #00c091"
+       title="" href="http://www.500d.me">五百丁</a>
+
+    <hr class="line-divide"/>
+</div>
+
+</body>
+</html>
