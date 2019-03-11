@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>愿望清单</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../css/app-1.min.css" rel="stylesheet">
+
+    <link href="../css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../css/essay.material.floating.button.css" rel="stylesheet">
+
+    <style>
+        .digit {
+            text-align: right;
+            font-family: "digit";
+            color: #00a1d8;
+            font-size: 32px
+        }
+
+        .dateRange {
+            font-family: "digit";
+            color: #00a1d8;
+            font-size: 24px
+        }
+    </style>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">梦</a>
+            <a href="" data-toggle="tab">想</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+        <script>
+            var essayTitle = '我的梦想清单';
+            var essaySummary = '如果没有梦想，和咸鱼有什么区别？';
+            var essayUrl = 'http://www.zhoumushui.com/dream/';
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+
+        <div class="card__header" style="display: none">
+            DONE <span id="doneTotal" style="color: #00a1d8"></span>&nbsp;
+            2009 <span id="done2009" style="color: #00a1d8"></span>&nbsp;
+            2010 <span id="done2010" style="color: #00a1d8"></span>&nbsp;
+            2011 <span id="done2011" style="color: #00a1d8"></span>&nbsp;
+            2012 <span id="done2012" style="color: #00a1d8"></span>&nbsp;
+            2013 <span id="done2013" style="color: #00a1d8"></span>&nbsp;
+            2014 <span id="done2014" style="color: #00a1d8"></span>&nbsp;
+            2015 <span id="done2015" style="color: #00a1d8"></span>&nbsp;
+            2016 <span id="done2016" style="color: #00a1d8"></span>&nbsp;
+            2017 <span id="done2017" style="color: #00a1d8"></span>&nbsp;
+            2018 <span id="done2018" style="color: #00a1d8"></span>
+        </div>
+
+        <div class="card">
+
+
+            <div align="center">
+                <h2 id="time_elapse">TIME</h2>
+            </div>
+            <div class="card__body">
+
+                <div id="dream-year-line" class="flot-chart"></div>
+                <div class="flot-chart-legend flot-chart-legend--line"></div>
+            </div>
+
+            <div class="card__body">
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-dream-list" class="table table-striped"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <th data-column-id="state" data-formatter="state" data-type="numeric" data-order="asc">状态
+                            </th><!-- (√,×) -->
+                            <!--<th data-column-id="id"  data-identifier="true">编号</th>--><!-- data-type="numeric"-->
+                            <th data-column-id="content" data-formatter="content">内容</th>
+                            <th data-column-id="date" data-formatter="date">日期</th>
+                            <!-- data-order="desc,asc" -->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--
+                        2018-05-01: Some content is move to private document, not update here any longer !!
+
+                        Learn to Play a Tune on the Piano.
+                        Watch F1 on the Scene.
+                        Watch FCB on the Scene.
+                        Feel Desert.
+                        Abdominal Muscle.
+                        55555 Spring-expanders.
+                        55555 Rope-skippings.
+                        55555 Sit-ups.
+                        55555 Push-ups.
+                        Register a Company.
+                        Earn ￥100,000 One Month.
+                        Earn ￥50,000 One Month.
+                        Switzerland, Audrey Hepburn.
+                        Record a Music Demo.
+                        Level 1 Certified Fire Engineer.
+                        Get a Job with 2 Days Off.
+                        Write a Short Novel.
+                        Read 50,000,000 Words Totally.
+                        Portable Device with Folding Screen.
+                        -->
+
+                        <tr>
+                            <td>0</td>
+                            <td>Self-learning 2nd Foreign Language.</td><!-- Japanese -->
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>1,000 Movies.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>House Decoration.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>Write an Application by Golang.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>100 Books.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>Cambridge BEC Words: Higher.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>Cambridge BEC Words: Vantage.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>Cambridge BEC Words: Preliminary.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>Take Photo for Daughter Everyday Until 100 Days.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>0</td>
+                            <td>Plant a Tree When Baby was Born.</td>
+                            <td>2019</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>0</td>
+                            <td>Weight 60Kg.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>Input 1,000,000 Words by Sougou Pinyin IME Totally.</td>
+                            <td>2019</td>
+                        </tr>
+
+                        <!-- Achieved -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>RAID.</td><!-- DELL H700, RAID5, 3T*3 -->
+                            <td>2019-03-03</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Dual Channel DDR.</td><!-- 32GB -->
+                            <td>2018-12-27</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Airplane.</td>
+                            <td>2018-08-13</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Get Married.</td>
+                            <td>2018-08-08</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>IMDB TOP250.</td>
+                            <td>2018-07-19</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Driving License.</td>
+                            <td>2018-06-14</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Macao.</td>
+                            <td>2018-04-30</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Use Shared Bicycle 1,000 Times.</td>
+                            <td>2018-04-08</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Buy a House.</td>
+                            <td>2018-02-26</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Clothes with FCB Badge.</td>
+                            <td>2018-01-08</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Douban Movie TOP250.</td>
+                            <td>2017-12-22</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Hongkong.</td>
+                            <td>2017-12-03</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Mechanical Keyboard.</td><!-- Red Switch-->
+                            <td>2017-11-11</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Use Sharing Bikes 500 Times.</td>
+                            <td>2017-10-10</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <!-- 广州番禺长隆野生动物世界 -->
+                            <td>Group Photo with Koala.</td>
+                            <td>2017-10-05</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Gear Watch.</td>
+                            <td>2017-10-05</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Don't Say a Word Whole Day.</td>
+                            <td>2017-10-01</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>50000 Steps a Day.</td>
+                            <td>2017-09-09</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>500 Movies.</td>
+                            <td>2017-06-26</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Plant a Tree in Ant Forest.</td>
+                            <td>2017-06-20</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Personal Website.</td>
+                            <td>2017-05-18</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Be a Marshal in Cross Fire Game.</td>
+                            <td>2017-03-18</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Portable Device with Curve Screen.</td>
+                            <td>2016-11-14</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Desktop PC, Assemble Myself.</td>
+                            <td>2016-10-01</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Earn ¥20,000 one month.</td>
+                            <td>2015-12-31</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Learned to Swim.</td>
+                            <td>2015-10-01</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Earn ¥10,000 one month.</td>
+                            <td>2015-08-31</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Register a Domain.</td>
+                            <td>2015-08-10</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Aquarium.</td>
+                            <td>2015-06-21</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>CSDN Expert.</td>
+                            <td>2015-06-13</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Auto Exhibition.</td>
+                            <td>2015-05-01</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Input 10,000 Words in One Day.</td><!-- 10176 -->
+                            <td>2015-03-23</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>ML Outdoor.</td>
+                            <td>2015-03-21</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Buy Cellphones for Parents.</td>
+                            <td>2015-02-03</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Starbucks.</td>
+                            <td>2014-12-13</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Portable Device with S-pen.</td>
+                            <td>2014-10-15</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Feel Sea.</td>
+                            <td>2014-08-24</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Get Salary.</td>
+                            <td>2014-08-15</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Create an App, Fun and Useful.</td>
+                            <td>2014-07-18</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Buffet.</td>
+                            <td>2014-07-09</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Subway.</td>
+                            <td>2014-07-01</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Pirate Ship.</td>
+                            <td>2014-06-15</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Touch the Limit in 2048 Puzzle.</td>
+                            <td>2014-05-28</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Shower with GirlFriend.</td>
+                            <td>2014-05-15</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Pectoral Muscle.</td>
+                            <td>2014-04-25</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Durian.</td>
+                            <td>2014-02-28</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Fenghuang Ancient City.</td>
+                            <td>2014-01-17</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Beefsteak.</td>
+                            <td>2013-12-01</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>ML.</td>
+                            <td>2013-11-29</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Sushi.</td>
+                            <td>2013-11-22</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Kiss.</td>
+                            <td>2013-11-18</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Hug.</td>
+                            <td>2013-11-04</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Hand in Hand.</td>
+                            <td>2013-11-03</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Express Love Successful.</td>
+                            <td>2013-11-01</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Android Pad.</td>
+                            <td>2013-10-22</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Get a Full-time Job Offer.</td>
+                            <td>2013-10-10</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Climb a Mountain 2Km+ above Sea Level.</td>
+                            <td>2013-10-04</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>3D Movie.</td>
+                            <td>2013-06-02</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Ranking 1st in Major.</td>
+                            <td>2012-12-30</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Pass CET-6.</td>
+                            <td>2012-12-14</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Yangshuo,Guilin.</td>
+                            <td>2012-08-21</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Get a Scholarship in University.</td>
+                            <td>2012-11-12</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Pass CET-4.</td>
+                            <td>2011-12-17</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Loudspeaker Box.</td>
+                            <td>2011-09-21</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Portable Disk.</td>
+                            <td>2011-04-16</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>MP3 Player.</td>
+                            <td>2011-03-05</td>
+                        </tr>
+                        -->
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Digital Camera.</td>
+                            <td>2010-12-31</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Laptop Computer.</td>
+                            <td>2010-11-21</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Train.</td>
+                            <td>2010-09-10</td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>1</td>
+                            <td>Buy a Cellphone MySelf.</td>
+                            <td>2010-08-22</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Buy a Lottery.</td>
+                            <td>2009-09-23</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Write a Poetry.</td>
+                            <td>2009-04-27</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Shopping Online.</td>
+                            <td>2009-04-02</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Translate Article.</td>
+                            <td>2009-01-14</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Diary.</td>
+                            <td>2002-11-19</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Seize the Moment.</td>
+                            <td>1991-09-23</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../js/canvas-nest.min.js"></script>
+
+<!-- Flot Charts -->
+<script src="../js/flot-charts/curved-line.js"></script>
+<script src="../js/sparkline-charts.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="../vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<!-- Sparkline Charts -->
+<script src="../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<script type="text/javascript">
+    var numDone = 0, numTotal = 0;
+    var num2002 = 0, num2009 = 0, num2010 = 0, num2011 = 0, num2012 = 0;
+    var num2013 = 0, num2014 = 0, num2015 = 0, num2016 = 0, num2017 = 0;
+    var num2018 = 0, num2019 = 0;
+    var calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        var trs = table.getElementsByTagName('tr');
+        var start = 1, // 开始计算的行号，忽略第一行的表头
+            end = trs.length; // 结束计算的行号，忽略最后合计的一行
+        numTotal = trs.length - 1;
+
+        for (var i = start; i < end; i++) {
+            var tdState = trs[i].getElementsByTagName('td')[0];
+            var tdDate = trs[i].getElementsByTagName('td')[2];
+
+            if (tdState.innerHTML.indexOf('1') == 0) { // Achieved Dreams
+                numDone++; // Done
+
+                if (tdDate.innerHTML.indexOf('2002') == 0) { // Year
+                    num2002++;
+                } else if (tdDate.innerHTML.indexOf('2009') == 0) {
+                    num2009++;
+                } else if (tdDate.innerHTML.indexOf('2010') == 0) {
+                    num2010++;
+                } else if (tdDate.innerHTML.indexOf('2011') == 0) {
+                    num2011++;
+                } else if (tdDate.innerHTML.indexOf('2012') == 0) {
+                    num2012++;
+                } else if (tdDate.innerHTML.indexOf('2013') == 0) {
+                    num2013++;
+                } else if (tdDate.innerHTML.indexOf('2014') == 0) {
+                    num2014++;
+                } else if (tdDate.innerHTML.indexOf('2015') == 0) {
+                    num2015++;
+                } else if (tdDate.innerHTML.indexOf('2016') == 0) {
+                    num2016++;
+                } else if (tdDate.innerHTML.indexOf('2017') == 0) {
+                    num2017++;
+                } else if (tdDate.innerHTML.indexOf('2018') == 0) {
+                    num2018++;
+                } else if (tdDate.innerHTML.indexOf('2019') == 0) {
+                    num2019++;
+                }
+            }
+        }
+        // document.getElementById("doneTotal").innerHTML = numDone + '/' + numTotal;
+        // document.getElementById("done2009").innerHTML = num2009;
+        // document.getElementById("done2010").innerHTML = num2010;
+        // document.getElementById("done2011").innerHTML = num2011;
+        // document.getElementById("done2012").innerHTML = num2012;
+        // document.getElementById("done2013").innerHTML = num2013;
+        // document.getElementById("done2014").innerHTML = num2014;
+        // document.getElementById("done2015").innerHTML = num2015;
+        // document.getElementById("done2016").innerHTML = num2016;
+        // document.getElementById("done2017").innerHTML = num2017;
+    };
+    calculateStep(document.getElementById('table-dream-list'));
+
+
+    'use strict';
+    $(document).ready(function () {
+        var dataDone = [
+            // [2002, num2002],
+            [2009, num2009],
+            [2010, num2010],
+            [2011, num2011],
+            [2012, num2012],
+            [2013, num2013],
+            [2014, num2014],
+            [2015, num2015],
+            [2016, num2016],
+            [2017, num2017],
+            [2018, num2018],
+            [2019, num2019]
+        ];
+
+        var barData = [ // Create an Array push the data + Draw the bars
+            {
+                label: numDone + '/' + numTotal,
+                data: dataDone,
+                color: '#2196F3'
+            }
+        ]
+        // 每年达成的数目
+        if ($('#dream-year-line')[0]) {
+            $.plot($("#dream-year-line"), barData, {
+                series: {
+                    shadowSize: 0
+                },
+                grid: {
+                    borderWidth: 2, // 1
+                    borderColor: '#31424b',
+                    show: true,
+                    hoverable: true
+                },
+                yaxis: {
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                legend: {
+                    // container: '.flot-chart-legend--line', // AZ:location
+                    show: true,
+                    noColumns: 5
+                }
+            });
+        }
+    });
+
+    // AZ:Count Date.
+    function timeElapse(dateBirth, dateDeath) {
+        var current = Date();
+        // Birth-->Now
+        var secondPast = (Date.parse(current) - Date.parse(dateBirth)) / 1000;
+        var dayPast = Math.floor(secondPast / (3600 * 24));
+        var yearPast = (dayPast / 365).toFixed(2);
+        secondPast = secondPast % (3600 * 24);
+        var hourPast = Math.floor(secondPast / 3600);
+        if (hourPast < 10) {
+            hourPast = "0" + hourPast;
+        }
+        secondPast = secondPast % 3600;
+        var minutePast = Math.floor(secondPast / 60);
+        if (minutePast < 10) {
+            minutePast = "0" + minutePast;
+        }
+        secondPast = secondPast % 60;
+        if (secondPast < 10) {
+            secondPast = "0" + secondPast;
+        }
+        var resultPast = "<div><span class=\"dateRange\">1991.09.23~" + getNowFormatDate()
+            + "</span>-<span class=\"digit\">" + dayPast + "</span> 天 <span class=\"digit\">"
+            + hourPast + "</span> 时 <span class=\"digit\">" + minutePast
+            + "</span> 分 <span class=\"digit\">" + secondPast +
+            "</span> 秒-<span class='green'>" + yearPast + "</span></div>";
+
+        // Now-->Death
+        var secondLeft = (Date.parse(dateDeath) - Date.parse(current)) / 1000;
+        var dayLeft = Math.floor(secondLeft / (3600 * 24));
+        var yearLeft = (dayLeft / 365).toFixed(2);
+        secondLeft = secondLeft % (3600 * 24);
+        var hourLeft = Math.floor(secondLeft / 3600);
+        if (hourLeft < 10) {
+            hourLeft = "0" + hourLeft;
+        }
+        secondLeft = secondLeft % 3600;
+        var minuteLeft = Math.floor(secondLeft / 60);
+        if (minuteLeft < 10) {
+            minuteLeft = "0" + minuteLeft;
+        }
+        secondLeft = secondLeft % 60;
+        if (secondLeft < 10) {
+            secondLeft = "0" + secondLeft;
+        }
+        var resultLeft = "<div><span class=\"dateRange\">" + getNowFormatDate() + "~2055.12.12"
+            + "</span>-<span class=\"digit\">" + dayLeft + "</span> 天 <span class=\"digit\">"
+            + hourLeft + "</span> 时 <span class=\"digit\">" + minuteLeft
+            + "</span> 分 <span class=\"digit\">" + secondLeft +
+            "</span> 秒-<span class='red'>" + yearLeft + "</span></div>";
+
+        $("#time_elapse").html(resultPast + resultLeft); // AZ:Add date range
+    }
+
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = ".";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+
+    var dateBirth = new Date();
+    dateBirth.setFullYear(1991, 9 - 1, 23); // 1991-09-23
+    dateBirth.setHours(0);
+    dateBirth.setMinutes(0);
+    dateBirth.setSeconds(0);
+    dateBirth.setMilliseconds(0);
+    var dateDeath = new Date();
+    dateDeath.setFullYear(2055, 12 - 1, 12); // 2055-12-12
+    dateDeath.setHours(0);
+    dateDeath.setMinutes(0);
+    dateDeath.setSeconds(0);
+    dateDeath.setMilliseconds(0);
+
+    timeElapse(dateBirth, dateDeath);
+    setInterval(function () {
+        timeElapse(dateBirth, dateDeath);
+    }, 500);
+</script>
+
+
+<!-- Toolbox -->
+<script src="../js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../js/zms.page.pattern.js"></script>
+</body>
+</html>
