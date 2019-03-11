@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../css/essay.material.floating.button.css" rel="stylesheet">
+
+
+    <link href="../../css/essay.cr.build.css" rel="stylesheet">
+    <link href="../../css/zms.text.particle.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title particletext bubbles">Clash Royale Cards</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-coffee"></i>&nbsp;<span class="essay-type">fun</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2018-01-18 15:15</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = document.title;
+                    var essaySummary = 'Clash Royale';
+                    var essayUrl = window.location.href;
+                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="card__body">
+
+
+                <div class="cards__group">
+                    <div class="ui__headerSmall card__common"><span class="particletext lines">普通 · Common</span></div>
+                    <div class="profileCards__cards">
+
+                        <div class="profileCards__card" data-cost="1" data-rarity="Common">
+                            <img src="img/skeletons.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骷髅兵 Skeletons
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="1" data-rarity="Common">
+                            <img src="img/snow_spirits.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                冰雪精灵 Ice Spirit
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Common">
+                            <img src="img/fire_spirits.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                烈焰精灵 Fire Spirits
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Common">
+                            <img src="img/bats.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                蝙蝠 Bats
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Common">
+                            <img src="img/goblins.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                哥布林 Goblins
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Common">
+                            <img src="img/goblin_archer.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                投矛哥布林 Spear Goblins
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Common">
+                            <img src="img/zap.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                闪电 Zap
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/order_volley.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                箭雨 Arrows
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/goblin_gang.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                哥布林帮派 Goblin Gang
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/skeleton_balloon.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                Skeleton Barrel
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/bomber.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                Bomber
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/chaos_cannon.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                加农炮 Cannon
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Common">
+                            <img src="img/building_tesla.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                特斯拉电磁塔 Tesla
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Common">
+                            <img src="img/building_mortar.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                Mortar
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/knight.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骑士 Knight
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/archers.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                弓箭手 Archers
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Common">
+                            <img src="img/minion.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                亡灵 Minions
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Common">
+                            <img src="img/minion_horde.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                亡灵大军 Minion Horde
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Common">
+                            <img src="img/barbarians.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                野蛮人 Barbarians
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Common">
+                            <img src="img/royal_giant.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                皇家巨人 Royal Giant
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Common">
+                            <img src="img/angry_barbarian.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                野蛮人精锐 Elite Barbarians
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="cards__group">
+                    <div class="ui__headerSmall card__rare"><span class="particletext fire">稀有 · Rare</span></div>
+                    <div class="profileCards__cards">
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Rare">
+                            <img src="img/ice_golem.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                戈仑冰人 Ice Golem
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Rare">
+                            <img src="img/mega_minion.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                铁甲亡灵 Mega Minion
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Rare">
+                            <img src="img/blowdart_goblin.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                吹箭哥布林 Dart Goblin
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Rare">
+                            <img src="img/tombstone.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骷髅墓碑 Tombstone
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Rare">
+                            <img src="img/heal.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                治疗法术 Heal
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/firespirit_hut.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                烈焰熔炉 Furnace
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/mini_pekka.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                迷你皮卡 Mini P.E.K.K.A
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/battle_ram.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                野蛮人攻城槌 Battle Ram
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/hog_rider.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                野猪骑士 Hog Rider
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/valkyrie.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                女武士 Valkyrie
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/musketeer.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                火枪手 Musketeer
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/zappies.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                电击车小队 Zappies
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/fire_fireball.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                火球 Fireball
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Rare">
+                            <img src="img/flying_machine.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                飞行器 Flying Machine
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Rare">
+                            <img src="img/fire_furnace.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                哥布林小屋 Goblin Hut
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Rare">
+                            <img src="img/wizard.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                法师 Wizard
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Rare">
+                            <img src="img/giant.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                巨人 Giant
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Rare">
+                            <img src="img/building_inferno.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                地狱塔 Inferno Tower
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Rare">
+                            <img src="img/bomb_tower.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                炸弹塔 Bomb Tower
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Rare">
+                            <img src="img/rocket.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                火箭 Rocket
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Rare">
+                            <img src="img/building_elixir_collector.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                圣水采集器 Elixir Collector
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="7" data-rarity="Rare">
+                            <img src="img/barbarian_hut.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                野蛮人小屋 Barbarian Hut
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="9" data-rarity="Rare">
+                            <img src="img/three_musketeers.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                三个火枪手 Three Musketeers
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cards__group">
+                    <div class="ui__headerSmall card__epic"><span class="particletext hearts">史诗 · Epic</span></div>
+                    <div class="profileCards__cards">
+
+                        <div class="profileCards__card" data-cost="1" data-rarity="Epic">
+                            <img src="img/mirror.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                镜像法术 Mirror
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Epic">
+                            <img src="img/rage.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                狂暴法术 Rage
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Epic">
+                            <img src="img/goblin_barrel.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                哥布林飞桶 Goblin Barrel
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Epic">
+                            <img src="img/barb_barrel.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                野蛮人滚桶 Barbarian Barrel
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Epic">
+                            <img src="img/skeleton_horde.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骷髅大军 Skeleton Army
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Epic">
+                            <img src="img/skeleton_warriors.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骷髅守卫 Guards
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Epic">
+                            <img src="img/tornado.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                旋风 Tornado
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Epic">
+                            <img src="img/copy.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                克隆法术 Clone
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Epic">
+                            <img src="img/poison.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                毒药法术 Poison
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Epic">
+                            <img src="img/freeze.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                冰冻法术 Freeze
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Epic">
+                            <img src="img/baby_dragon.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                飞龙宝宝 Baby Dragon
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Epic">
+                            <img src="img/dark_prince.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                黑暗王子 Dark Prince
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Epic">
+                            <img src="img/hunter.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                猎人 Hunter
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Epic">
+                            <img src="img/cannon_cart.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                加农炮战车 Cannon Cart
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Epic">
+                            <img src="img/chr_balloon.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骷髅气球 Balloon
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Epic">
+                            <img src="img/bowler.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                巨石投手 Bowler
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Epic">
+                            <img src="img/chr_witch.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                女巫 Witch
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Epic">
+                            <img src="img/prince.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                王子 Prince
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Epic">
+                            <img src="img/executioner.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                飞斧屠夫 Executioner
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Epic">
+                            <img src="img/lightning.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                雷电法术 Lightning
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Epic">
+                            <img src="img/building_xbow.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                X连弩 X-Bow
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Epic">
+                            <img src="img/giant_skeleton.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骷髅巨人 Giant Skeleton
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="7" data-rarity="Epic">
+                            <img src="img/pekka.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                皮卡 P.E.K.K.A
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="8" data-rarity="Epic">
+                            <img src="img/chr_golem.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                戈仑石人 Golem
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cards__group">
+                    <div class="ui__headerSmall card__legendary"><span
+                            class="particletext confetti">传奇 · Legendary</span></div>
+                    <div class="profileCards__cards">
+
+                        <div class="profileCards__card" data-cost="2" data-rarity="Legendary">
+                            <img src="img/the_log.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                滚木 The Log
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Legendary">
+                            <img src="img/bandit.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                幻影刺客 Bandit
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Legendary">
+                            <img src="img/ice_wizard.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                寒冰法师 Ice Wizard
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Legendary">
+                            <img src="img/princess.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                公主 Princess
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Legendary">
+                            <img src="img/miner.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                掘地矿工 Miner
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="3" data-rarity="Legendary">
+                            <img src="img/ghost.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                皇家幽灵 Royal Ghost
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Legendary">
+                            <img src="img/rage_barbarian.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                狂暴樵夫 Lumberjack
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Legendary">
+                            <img src="img/inferno_dragon.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                地狱飞龙 Inferno Dragon
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Legendary">
+                            <img src="img/electro_wizard.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                闪电法师 Electro Wizard
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Legendary">
+                            <img src="img/magic_archer.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                神箭游侠 Magic Archer
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="4" data-rarity="Legendary">
+                            <img src="img/dark_witch.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                暗夜女巫 Night Witch
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="5" data-rarity="Legendary">
+                            <img src="img/graveyard.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                骷髅墓园 Graveyard
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="6" data-rarity="Legendary">
+                            <img src="img/zapMachine.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                电磁炮 Sparky
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="7" data-rarity="Legendary">
+                            <img src="img/lava_hound.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                熔岩猎犬 Lava Hound
+                            </div>
+                        </div>
+
+                        <div class="profileCards__card" data-cost="7" data-rarity="Legendary">
+                            <img src="img/mega_knight.png">
+                            <div class="ui__tooltip ui__tooltipTop ui__tooltipMiddle cards__tooltip">
+                                超级骑士 Mega Knight
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../../css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../js/canvas-nest.min.js"></script>
+
+<script src="../../js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    var panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<script>
+    //okpt("CSS Particle Effects");
+    function initparticles() {
+        bubbles();
+        hearts();
+        lines();
+        confetti();
+        fire();
+        sunbeams();
+    }
+
+    /*The measurements are ... whack (so to say), for more general text usage I would generate different sized particles for the size of text; consider this pen a POC*/
+
+    function bubbles() {
+        $.each($(".particletext.bubbles"), function () {
+            var bubblecount = ($(this).width() / 50) * 10;
+            for (var i = 0; i <= bubblecount; i++) {
+                var size = ($.rnd(40, 80) / 10);
+                $(this).append('<span class="particle" style="top:' + $.rnd(20, 80) + '%; left:' + $.rnd(0, 95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0, 30) / 10) + 's;"></span>');
+            }
+        });
+    }
+
+    function hearts() {
+        $.each($(".particletext.hearts"), function () {
+            var heartcount = ($(this).width() / 50) * 5;
+            for (var i = 0; i <= heartcount; i++) {
+                var size = ($.rnd(60, 120) / 10);
+                $(this).append('<span class="particle" style="top:' + $.rnd(20, 80) + '%; left:' + $.rnd(0, 95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0, 30) / 10) + 's;"></span>');
+            }
+        });
+    }
+
+    function lines() {
+        $.each($(".particletext.lines"), function () {
+            var linecount = ($(this).width() / 50) * 10;
+            for (var i = 0; i <= linecount; i++) {
+                $(this).append('<span class="particle" style="top:' + $.rnd(-30, 30) + '%; left:' + $.rnd(-10, 110) + '%;width:' + $.rnd(1, 3) + 'px; height:' + $.rnd(20, 80) + '%;animation-delay: -' + ($.rnd(0, 30) / 10) + 's;"></span>');
+            }
+        });
+    }
+
+    function confetti() {
+        $.each($(".particletext.confetti"), function () {
+            var confetticount = ($(this).width() / 50) * 10;
+            for (var i = 0; i <= confetticount; i++) {
+                $(this).append('<span class="particle c' + $.rnd(1, 2) + '" style="top:' + $.rnd(10, 50) + '%; left:' + $.rnd(0, 100) + '%;width:' + $.rnd(6, 8) + 'px; height:' + $.rnd(3, 4) + 'px;animation-delay: ' + ($.rnd(0, 30) / 10) + 's;"></span>');
+            }
+        });
+    }
+
+    function fire() {
+        $.each($(".particletext.fire"), function () {
+            var firecount = ($(this).width() / 50) * 20;
+            for (var i = 0; i <= firecount; i++) {
+                var size = $.rnd(8, 12);
+                $(this).append('<span class="particle" style="top:' + $.rnd(40, 70) + '%; left:' + $.rnd(-10, 100) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0, 20) / 10) + 's;"></span>');
+            }
+        });
+    }
+
+    function sunbeams() {
+        $.each($(".particletext.sunbeams"), function () {
+            var linecount = ($(this).width() / 50) * 10;
+            for (var i = 0; i <= linecount; i++) {
+                $(this).append('<span class="particle" style="top:' + $.rnd(-50, 00) + '%; left:' + $.rnd(0, 100) + '%;width:' + $.rnd(1, 3) + 'px; height:' + $.rnd(80, 160) + '%;animation-delay: -' + ($.rnd(0, 30) / 10) + 's;"></span>');
+            }
+        });
+    }
+
+    jQuery.rnd = function (m, n) {
+        m = parseInt(m);
+        n = parseInt(n);
+        return Math.floor(Math.random() * (n - m + 1)) + m;
+    }
+
+    initparticles();
+
+</script>
+
+
+<!-- Toolbox -->
+<script src="../../js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../js/zms.page.pattern.js"></script>
+</body>
+</html>

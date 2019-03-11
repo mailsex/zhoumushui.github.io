@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../css/app-1.min.css" rel="stylesheet">
+
+    <link href="../css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        .text-in {
+            color: #009688;
+        }
+
+        .text-out {
+            color: #E91E63;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../essay.html"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title"><span class="text-in">IN</span> ≠ <span class="text-out">OUT</span></span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-linkedin"></i>&nbsp;<span class="essay-type">in.out</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2014-07-31 12:34</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = 'IN ≠ OUT';
+                    var essaySummary = 'IN ≠ OUT';
+                    var essayUrl = 'http://www.zhoumushui.com/essay/13.html';
+                    // var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="row">
+                <div class="card__header">
+                    <h2>合计
+                        <span id="inSalaryTotal" class="text-in"></span>.<span id="outHouseTotal"
+                                                                               class="text-out"></span>
+                    </h2>
+
+                    <br>
+                    2014
+                    <span id="inSalary2014" class="text-in"></span>.<span id="outHouse2014" class="text-out"></span>
+                    &nbsp;&nbsp;2015
+                    <span id="inSalary2015" class="text-in"></span>.<span id="outHouse2015" class="text-out"></span>
+                    &nbsp;&nbsp;2016
+                    <span id="inSalary2016" class="text-in"></span>.<span id="outHouse2016" class="text-out"></span>
+                    &nbsp;&nbsp;2017
+                    <span id="inSalary2017" class="text-in"></span>.<span id="outHouse2017" class="text-out"></span>
+                    &nbsp;&nbsp;2018
+                    <span id="inSalary2018" class="text-in"></span>.<span id="outHouse2018" class="text-out"></span>
+                    &nbsp;&nbsp;2019
+                    <span id="inSalary2019" class="text-in"></span>.<span id="outHouse2019" class="text-out"></span>
+                    &nbsp;&nbsp;2020
+                    <span id="inSalary2020" class="text-in"></span>.<span id="outHouse2020" class="text-out"></span>
+                </div>
+
+                <div class="card__body">
+                    <div id="in-year-line" class="flot-chart"></div>
+                    <div class="flot-chart-legend flot-chart-legend--line"></div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="card__header">
+                    <h2>共 <span id="list-row-count" class="text-in"></span>月，&nbsp;
+                        月均 <span id="inSalaryAverage" class="text-in"></span>
+                        <span id="outHouseAverage" class="text-out"></span>
+                    </h2>
+
+                </div>
+                <div class="card__body">
+                    <div id="in-salary-month-trend" class="flot-chart"></div>
+                    <div id="out-house-month-trend" class="flot-chart"></div>
+                </div>
+            </div>
+
+            <div class="card__body"><!-- HIDE  style="display: none" -->
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-in-list" class="table table-striped"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <th data-column-id="date" data-formatter="date" data-order="desc">@</th>
+                            <th data-column-id="in_salary" data-formatter="in_salary" data-type="numeric">+</th>
+                            <th data-column-id="out_house" data-formatter="out_house" data-type="numeric">-</th>
+                            <!--<th data-column-id="id"  data-identifier="true">编号</th>-->
+
+                            <!-- data-order="desc,asc" -->
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <tr>
+                            <td>2018-04</td>
+                            <td></td><!-- 请假0.5天) -->
+                            <td></td><!-- 房租:1100 卫生:20 网费:60 水电: -->
+                        </tr>
+
+                        <tr>
+                            <td>2018-03</td>
+                            <td></td><!-- 请假2+0.5+0.5天) -->
+                            <td></td><!-- 房租:1100 卫生:20 网费:60 水电: -->
+                        </tr>
+
+                        <tr>
+                            <td>2018-02</td>
+                            <td>9389</td><!-- 请假10天，其中2天调休，相当请假8天 -->
+                            <td>1280</td><!-- 房租:1100 卫生:20 网费:60 水电:100 -->
+                        </tr>
+
+                        <tr>
+                            <td>2018-01</td>
+                            <td>25611</td><!-- 年终13000 -->
+                            <td>1490</td><!-- 房租:1100 卫生:20 网费:60 水电:210 -->
+                        </tr>
+
+                        <tr>
+                            <td>2017-12</td>
+                            <td>12611</td>
+                            <td>1480</td><!-- 房租：1400 水费：  电费：  网费：80 -->
+                        </tr>
+
+                        <tr>
+                            <td>2017-11</td>
+                            <td>12400</td>
+                            <td>1480</td><!-- 房租：1400 水费：  电费：  网费：80 -->
+                        </tr>
+
+                        <tr>
+                            <td>2017-10</td>
+                            <td>12400</td>
+                            <td>1567</td><!-- 房租：1300 水费：28  电费：159  网费：80 -->
+                        </tr>
+
+                        <tr>
+                            <td>2017-09</td>
+                            <td>12450</td>
+                            <td>1550</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+
+                        <tr>
+                            <td>2017-08</td>
+                            <td>12600</td>
+                            <td>1566</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+
+                        <tr>
+                            <td>2017-07</td>
+                            <td>12650</td>
+                            <td>1554</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+
+                        <tr>
+                            <td>2017-06</td>
+                            <td>12620</td>
+                            <td>1570</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2017-05</td>
+                            <td>12620</td>
+                            <td>1559</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2017-04</td>
+                            <td>12620</td>
+                            <td>1564</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2017-03</td>
+                            <td>12620</td>
+                            <td>1584</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2017-02</td>
+                            <td>12620</td>
+                            <td>1535</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2017-01</td>
+                            <td>12620</td>
+                            <td>1561</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2016-12</td>
+                            <td>25570</td>
+                            <td>1565</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2016-11</td>
+                            <td>11627</td>
+                            <!-- 深圳市宝安区西乡街道盐田新一村五巷20号201 [一室一厅] [4403060010280400215000005] -->
+                            <td>1645</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                        </tr>
+                        <tr>
+                            <td>2016-10</td>
+                            <td>11627</td>
+                            <td>1430</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-09</td>
+                            <td>11627</td>
+                            <td>1608</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-08</td>
+                            <td>11632</td>
+                            <td>1555</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-07</td>
+                            <td>11634</td>
+                            <td>1581</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-06</td>
+                            <td>11634</td>
+                            <td>1686</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-05</td>
+                            <td>9616</td>
+                            <!-- 深圳市宝安区西乡街道华侨新村西堤二巷20号 309 [单房] [4403060010211200160000024] -->
+                            <td>1453</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-04</td>
+                            <td>9634</td>
+                            <td>1236</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-03</td>
+                            <td>9634</td>
+                            <td>1191</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-02</td>
+                            <td>9634</td>
+                            <td>1090</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2016-01</td>
+                            <td>9634</td>
+                            <td>1292</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2015-12</td>
+                            <td>21634</td>
+                            <td>1202</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2015-11</td>
+                            <td>9625</td>
+                            <td>1201</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2015-10</td>
+                            <td>9623</td>
+                            <td>1143</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2015-09</td>
+                            <td>9429</td>
+                            <td>1139</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2015-08</td>
+                            <td>11721</td>
+                            <!-- 深圳市宝安区西乡街道华侨新村西堤二巷2号 1007 [单房][ 4403060010211200142000171] -->
+                            <td>617</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                        </tr>
+                        <tr>
+                            <td>2015-07</td>
+                            <td>5228</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2015-06</td>
+                            <td>5228</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2015-05</td>
+                            <td>5228</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2015-04</td>
+                            <td>5228</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2015-03</td>
+                            <td>5228</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2015-02</td>
+                            <td>4041</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2015-01</td>
+                            <td>4228</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2014-12</td>
+                            <td>3761</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2014-11</td>
+                            <td>3761</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2014-10</td>
+                            <td>3761</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2014-09</td>
+                            <td>3188</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2014-08</td>
+                            <td>3261</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2014-07</td>
+                            <td>2989</td>
+                            <td>0</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <link rel="stylesheet" href="../css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../js/canvas-nest.min.js"></script>
+
+<script src="../js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    var panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Flot Charts -->
+<script src="../js/flot-charts/curved-line.js"></script>
+<script src="../js/sparkline-charts.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="../vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<!-- Sparkline Charts -->
+<script src="../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<script type="text/javascript">
+    var dataArrayInSalary = [];
+    var dataArrayOutHouse = [];
+    var inSalary2014 = 0, outHouse2014 = 0;
+    var inSalary2015 = 0, outHouse2015 = 0;
+    var inSalary2016 = 0, outHouse2016 = 0;
+    var inSalary2017 = 0, outHouse2017 = 0;
+    var inSalary2018 = 0, outHouse2018 = 0;
+    var inSalary2019 = 0, outHouse2019 = 0;
+    var inSalary2020 = 0, outHouse2020 = 0;
+
+    var calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        var trs = table.getElementsByTagName('tr');
+        var start = 1, // 开始计算的行号，忽略第一行的表头
+            end = trs.length; // 结束计算的行号，忽略最后合计的一行
+        var inSalaryTotal = 0;
+        var outHouseTotal = 0;
+
+        for (var i = start; i < end; i++) {
+            var tdDate = trs[i].getElementsByTagName('td')[0];
+
+            // IN.Salary
+            var tdNumberInSalary = trs[i].getElementsByTagName('td')[1];
+            var numInSalary = parseFloat(tdNumberInSalary.innerHTML);
+            dataArrayInSalary.push([end - i - 1, numInSalary]); // for Dynamic Array
+            if (numInSalary) {
+                inSalaryTotal += numInSalary; // Total
+                if (tdDate.innerHTML.indexOf('2014') == 0) { // Year
+                    inSalary2014 += numInSalary;
+                } else if (tdDate.innerHTML.indexOf('2015') == 0) { // Year
+                    inSalary2015 += numInSalary;
+                } else if (tdDate.innerHTML.indexOf('2016') == 0) {
+                    inSalary2016 += numInSalary;
+                } else if (tdDate.innerHTML.indexOf('2017') == 0) {
+                    inSalary2017 += numInSalary;
+                } else if (tdDate.innerHTML.indexOf('2018') == 0) {
+                    inSalary2018 += numInSalary;
+                } else if (tdDate.innerHTML.indexOf('2019') == 0) {
+                    inSalary2019 += numInSalary;
+                } else if (tdDate.innerHTML.indexOf('2020') == 0) {
+                    inSalary2020 += numInSalary;
+                }
+            }
+
+            // OUT.House
+            var tdNumberOutHouse = trs[i].getElementsByTagName('td')[2];
+            var numOutHouse = parseFloat(tdNumberOutHouse.innerHTML);
+            dataArrayOutHouse.push([end - i - 1, numOutHouse]); // for Dynamic Array
+            if (numOutHouse) {
+                outHouseTotal += numOutHouse; // Total
+                if (tdDate.innerHTML.indexOf('2014') == 0) { // Year
+                    outHouse2014 += numOutHouse;
+                } else if (tdDate.innerHTML.indexOf('2015') == 0) { // Year
+                    outHouse2015 += numOutHouse;
+                } else if (tdDate.innerHTML.indexOf('2016') == 0) {
+                    outHouse2016 += numOutHouse;
+                } else if (tdDate.innerHTML.indexOf('2017') == 0) {
+                    outHouse2017 += numOutHouse;
+                } else if (tdDate.innerHTML.indexOf('2018') == 0) {
+                    outHouse2018 += numOutHouse;
+                } else if (tdDate.innerHTML.indexOf('2019') == 0) {
+                    outHouse2019 += numOutHouse;
+                } else if (tdDate.innerHTML.indexOf('2020') == 0) {
+                    outHouse2020 += numOutHouse;
+                }
+            }
+
+        }
+        document.getElementById("list-row-count").innerHTML = trs.length - 1;
+        // IN.Salary
+        document.getElementById("inSalaryTotal").innerHTML = inSalaryTotal; // Total
+        document.getElementById("inSalaryAverage").innerHTML = Math.round(( inSalaryTotal / (trs.length - 1)) * 100) / 100;
+        document.getElementById("inSalary2014").innerHTML = inSalary2014;
+        document.getElementById("inSalary2015").innerHTML = inSalary2015;
+        document.getElementById("inSalary2016").innerHTML = inSalary2016;
+        document.getElementById("inSalary2017").innerHTML = inSalary2017;
+        document.getElementById("inSalary2018").innerHTML = inSalary2018;
+        document.getElementById("inSalary2019").innerHTML = inSalary2019;
+        document.getElementById("inSalary2020").innerHTML = inSalary2020;
+        // OUT.House
+        document.getElementById("outHouseTotal").innerHTML = outHouseTotal; // Total
+        document.getElementById("outHouseAverage").innerHTML = Math.round(( outHouseTotal / (trs.length - 1)) * 100) / 100;
+        document.getElementById("outHouse2014").innerHTML = outHouse2014;
+        document.getElementById("outHouse2015").innerHTML = outHouse2015;
+        document.getElementById("outHouse2016").innerHTML = outHouse2016;
+        document.getElementById("outHouse2017").innerHTML = outHouse2017;
+        document.getElementById("outHouse2018").innerHTML = outHouse2018;
+        document.getElementById("outHouse2019").innerHTML = outHouse2019;
+        document.getElementById("outHouse2020").innerHTML = outHouse2020;
+
+    };
+    calculateStep(document.getElementById('table-in-list'));
+
+    'use strict';
+    $(document).ready(function () {
+        var dataYearInSalary = [
+            [2014, inSalary2014],
+            [2015, inSalary2015],
+            [2016, inSalary2016],
+            [2017, inSalary2017],
+            [2018, inSalary2018],
+            [2019, inSalary2019],
+            [2020, inSalary2020]
+        ];
+
+        var dataYearOutHouse = [
+            [2014, outHouse2014],
+            [2015, outHouse2015],
+            [2016, outHouse2016],
+            [2017, outHouse2017],
+            [2018, outHouse2018],
+            [2019, outHouse2019],
+            [2020, outHouse2020]
+        ];
+        var barData = [ // Create an Array push the data + Draw the bars
+            {
+                //label: 'IN.Salary',
+                data: dataYearInSalary,
+                color: '#009688'
+            },
+            {
+                //label: 'OUT.House',
+                data: dataYearOutHouse,
+                color: '#E91E63'
+            }
+        ]
+        // Let's create the chart
+        if ($('#in-year-line')[0]) {
+            $.plot($("#in-year-line"), barData, {
+                series: {
+                    shadowSize: 0
+                },
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#31424b',
+                    show: true,
+                    hoverable: true
+                },
+                yaxis: {
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                legend: {
+                    container: '.flot-chart-legend--line',
+                    noColumns: 5
+                }
+            });
+        }
+        // Tooltips for Flot Charts
+        if ($('.in-month-line')[0]) {
+            $('.in-month-line').bind('plothover', function (event, pos, item) {
+                if (item) {
+                    var x = item.datapoint[0].toFixed(2),
+                        y = item.datapoint[1].toFixed(2);
+                    $('.flot-tooltip').html(item.series.label + ' of ' + x + ' = ' + y).css({
+                        top: item.pageY + 5,
+                        left: item.pageX + 5
+                    }).show();
+                }
+                else {
+                    $(".flot-tooltip").hide();
+                }
+            });
+
+            $("<div class='flot-tooltip'></div>").appendTo("body");
+        }
+
+        // Dynamic Line
+        'use strict';
+        /* Make some random data*/
+        var data = [];
+        var totalPoints = 300;
+        var updateInterval = 30;
+
+        function getRandomData() {
+            if (data.length > 0)
+                data = data.slice(1);
+            while (data.length < totalPoints) {
+                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                    y = prev + Math.random() * 10 - 5;
+                if (y < 0) {
+                    y = 0;
+                } else if (y > 90) {
+                    y = 90;
+                }
+                data.push(y);
+            }
+            var res = [];
+            for (var i = 0; i < data.length; ++i) {
+                res.push([i, data[i]])
+            }
+            return res;
+        }
+
+        /* Update chart */
+        function update() {
+            plotMonthInSalary.setData([dataArrayInSalary]); // plot.setData([getRandomData()]);
+            // Since the axes don't change, we don't need to call plot.setupGrid()
+            plotMonthInSalary.draw();
+            // setTimeout(update, updateInterval); AZ: Do not update
+
+
+            plotMonthOutHouse.setData([dataArrayOutHouse]); // plot.setData([getRandomData()]);
+            // Since the axes don't change, we don't need to call plot.setupGrid()
+            plotMonthOutHouse.draw();
+        }
+
+        /* Create Chart */
+        if ($('#in-salary-month-trend')[0]) {
+            var plotMonthInSalary = $.plot("#in-salary-month-trend", [dataArrayInSalary], {
+                series: {
+                    label: " IN.S",
+                    lines: {
+                        show: true,
+                        lineWidth: 0.2,
+                        fill: 0.8
+                    },
+                    color: '#009688', // '#009688', //'#2196F3',//'#edeff0',
+                    shadowSize: 0
+                },
+                yaxis: {
+                    min: 0,
+                    max: 30000, // AZ:axis-Y
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    position: 'left',
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 10,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0,
+                    min: 0,
+                    max: dataArrayInSalary.length - 1 // AZ:axis-X
+                },
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#31424b',
+                    labelMargin: 10,
+                    aboveData: false, // AZ:adjust z-index
+                    mouseActiveRadius: 6
+                },
+                legend: {
+                    show: true // AZ:Show Label?
+                }
+            });
+
+            var plotMonthOutHouse = $.plot("#out-house-month-trend", [dataArrayOutHouse], {
+                series: {
+                    label: " OUT.H",
+                    lines: {
+                        show: true,
+                        lineWidth: 0.2,
+                        fill: 0.8
+                    },
+                    color: '#E91E63', // '#009688', //'#2196F3',//'#edeff0',
+                    shadowSize: 0
+                },
+                yaxis: {
+                    min: 0,
+                    max: 2000, // AZ:axis-Y
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    position: 'left',
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 10,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0,
+                    min: 0,
+                    max: dataArrayInSalary.length - 1 // AZ:axis-X
+                },
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#31424b',
+                    labelMargin: 10,
+                    aboveData: false, // AZ:adjust z-index
+                    mouseActiveRadius: 6
+                },
+                legend: {
+                    show: true // AZ:Show Label?
+                }
+            });
+
+
+            update();
+        }
+
+    });
+</script>
+
+<!-- Toolbox -->
+<script src="../js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../js/zms.page.pattern.js"></script>
+</body>
+</html>
