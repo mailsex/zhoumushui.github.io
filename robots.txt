@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /link.html
+Disallow: /pass.html
+Disallow: /diary.html
