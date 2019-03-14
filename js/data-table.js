@@ -168,6 +168,8 @@ $(document).ready(function () {
                         return "<i class=\"essay-list-type zmdi zmdi-cloud\"></i>";
                     case 'css':
                         return "<i class=\"essay-list-type zmdi zmdi-language-css3 brown\"></i>";
+                    case 'eat':
+                        return "<i class=\"essay-list-type zmdi zmdi-local-pizza yellow\"></i>";
                     case 'eye':
                         return "<i class=\"essay-list-type zmdi zmdi-eye brown\"></i>";
                     case 'fit':
