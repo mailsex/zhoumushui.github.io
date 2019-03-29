@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        .country-flag{
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <script>
+            var essayTitle = document.title;
+            var essaySummary = '随便写点什么';
+            var essayUrl = window.location.href;
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <!--
+        <div class="content__header">
+            <h2 class="font-yahei"><i class="zmdi zmdi-flag"></i> 随笔</h2>
+            <div class="actions">
+                <a href=""><i class="zmdi zmdi-check-all"></i></a>
+                <a href=""><i class="zmdi zmdi-trending-up"></i></a>
+                <div class="dropdown">
+                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="">Change Date Range</a></li>
+                        <li><a href="">Change Graph Type</a></li>
+                        <li><a href="">Other Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+        <div class="card">
+
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">
+                    <i class="zmdi zmdi-car green"></i>
+                    <i class="zmdi zmdi-car yellow"></i>
+                    <i class="zmdi zmdi-car orange"></i>
+                    <i class="zmdi zmdi-car red"></i>
+                    C-IASA 中国保险汽车安全指数
+                </span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-03-30 03:00</span>
+                </span>
+            </div>
+
+
+            <div class="card__body">
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-carsafe-list" class="table table-striped table--vmiddle"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <!-- data-type="numeric"-->
+                            <th data-column-id="make" data-formatter="make">厂商</th>
+                            <th data-column-id="model" data-formatter="model">款式</th>
+                            <th data-column-id="front_offset" data-formatter="front_offset">正面25%偏置</th>
+                            <th data-column-id="side" data-formatter="side">侧面碰撞</th>
+                            <th data-column-id="top" data-formatter="top">车顶强度</th>
+                            <th data-column-id="seat" data-formatter="seat">座椅头枕</th>
+                            <th>|</th>
+                            <th data-column-id="assist" data-formatter="assist">辅助安全</th>
+                            <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>一汽丰田</td><!-- MAKE -->
+                            <td>奕泽IZOA 2018款 奕驰版</td><!-- MODEL -->
+                            <td>G</td><!-- Front 25% Offset -->
+                            <td>G</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>广汽丰田</td><!-- MAKE -->
+                            <td>凯美瑞 2018款 2.0E 精英版</td><!-- MODEL -->
+                            <td>G</td><!-- Front 25% Offset -->
+                            <td>G</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>浙江豪情</td><!-- MAKE -->
+                            <td>领克01 2017款</td><!-- MODEL -->
+                            <td>G</td><!-- Front 25% Offset -->
+                            <td>G</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>长城</td><!-- MAKE -->
+                            <td>魏派VV5 2017款 超豪型</td><!-- MODEL -->
+                            <td>G</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>北京现代</td><!-- MAKE -->
+                            <td>领动 2018款 双离合炫动活力型</td><!-- MODEL -->
+                            <td>G</td><!-- Front 25% Offset -->
+                            <td>P</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>东风雷诺</td><!-- MAKE -->
+                            <td>科雷傲 2018款 2.0L 两驱舒适版</td><!-- MODEL -->
+                            <td>A</td><!-- Front 25% Offset -->
+                            <td>G</td><!-- Side -->
+                            <td>M</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>P</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>众泰</td><!-- MAKE -->
+                            <td>T600 2019款 运动版 1.5T MT尊享型</td><!-- MODEL -->
+                            <td>A</td><!-- Front 25% Offset -->
+                            <td>G</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>A</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>广汽本田</td><!-- MAKE -->
+                            <td>雅阁 2018款 230 TURBO 舒适版</td><!-- MODEL -->
+                            <td>A</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>北京奔驰</td><!-- MAKE -->
+                            <td>C200 2018款 运动版</td><!-- MODEL -->
+                            <td>A</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>广汽传祺</td><!-- MAKE -->
+                            <td>GS7 2017款 280T 豪华版</td><!-- MODEL -->
+                            <td>A</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>M</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>东风本田</td><!-- MAKE -->
+                            <td>思域 2016款 舒适版自动 180TURBO</td><!-- MODEL -->
+                            <td>A</td><!-- Front 25% Offset -->
+                            <td>P</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>上海大众斯柯达</td><!-- MAKE -->
+                            <td>柯迪亚克 2018款 TSI330 5座标准版</td><!-- MODEL -->
+                            <td>A</td><!-- Front 25% Offset -->
+                            <td>P</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>华晨宝马</td><!-- MAKE -->
+                            <td>318i</td><!-- MODEL -->
+                            <td>M</td><!-- Front 25% Offset -->
+                            <td>G</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>东风日产</td><!-- MAKE -->
+                            <td>西玛 2016款 2.5XL 豪华版</td><!-- MODEL -->
+                            <td>M</td><!-- Front 25% Offset -->
+                            <td>G</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>A</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>上汽通用别克</td><!-- MAKE -->
+                            <td>昂科威 2018款 20T 前驱领先型</td><!-- MODEL -->
+                            <td>M</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>一汽大众</td><!-- MAKE -->
+                            <td>迈腾 2018款 280TSI DSG舒适型</td><!-- MODEL -->
+                            <td>M</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>A</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>奇瑞</td><!-- MAKE -->
+                            <td>艾瑞泽5 2018款 致敬青春版CVT</td><!-- MODEL -->
+                            <td>M</td><!-- Front 25% Offset -->
+                            <td>P</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>江淮</td><!-- MAKE -->
+                            <td>瑞风S3 2018款 智驱版 1.6L CVT豪华型</td><!-- MODEL -->
+                            <td>M</td><!-- Front 25% Offset -->
+                            <td>P</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>上汽大众</td><!-- MAKE -->
+                            <td>途观L 2018款 330TSI 风尚版</td><!-- MODEL -->
+                            <td>P</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>G</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>东风悦达起亚</td><!-- MAKE -->
+                            <td>智跑 2018款 智享豪华A/T</td><!-- MODEL -->
+                            <td>P</td><!-- Front 25% Offset -->
+                            <td>A</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>上汽通用别克</td><!-- MAKE -->
+                            <td>GL8 2017款 28T 舒适型</td><!-- MODEL -->
+                            <td>P</td><!-- Front 25% Offset -->
+                            <td>M</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>G</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>比亚迪</td><!-- MAKE -->
+                            <td>宋MAX 2018款 1.5TI 自动智联豪华型 6座</td><!-- MODEL -->
+                            <td>P</td><!-- Front 25% Offset -->
+                            <td>P</td><!-- Side -->
+                            <td>A</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>G</td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>上汽通用五菱</td><!-- MAKE -->
+                            <td>宝骏510 2017款 1.5L 手动 舒适型</td><!-- MODEL -->
+                            <td>P</td><!-- Front 25% Offset -->
+                            <td>P</td><!-- Side -->
+                            <td>M</td><!-- Top -->
+                            <td>G</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../../css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../js/canvas-nest.min.js"></script>
+
+<!-- Toolbox -->
+<script src="../../js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../js/zms.page.pattern.js"></script>
+</body>
+</html>

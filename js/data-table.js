@@ -370,6 +370,109 @@ $(document).ready(function () {
         }
     });
 
+    // AZ: for lists of C-IASI page.
+    $("#table-carsafe-list").bootgrid({
+        //Override default icon classes
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "make": function (column, row) {
+                switch (row.make) {
+                    case'长城':
+                    case'吉利':
+                    case'浙江豪情':  // 领克
+                    case'比亚迪':
+                    case'奇瑞':
+                    case'广汽传祺':
+                    case'众泰':
+                    case'江淮':
+                        return "<img class=\"country-flag\" src=\"img/China.png\"> " + row.make;
+                    case'广汽丰田':
+                    case'一汽丰田':
+                    case'广汽本田':
+                    case'东风本田':
+                    case'东风日产':
+                        return "<img class=\"country-flag\" src=\"img/Japan.png\"> " + row.make;
+                    case'上汽大众':
+                    case'上海大众斯柯达':
+                    case'一汽大众':
+                    case'北京奔驰':
+                    case'华晨宝马':
+                        return "<img class=\"country-flag\" src=\"img/Germany.png\"> " + row.make;
+                    case'北京现代':
+                    case'东风悦达起亚':
+                        return "<img class=\"country-flag\" src=\"img/SouthKorea.png\"> " + row.make;
+                    case'上汽通用':
+                    case'上汽通用别克':
+                    case'上汽通用凯迪拉克':
+                    case'上汽通用五菱':
+                        return "<img class=\"country-flag\" src=\"img/America.png\"> " + row.make;
+                    case'东风雷诺':
+                        return "<img class=\"country-flag\" src=\"img/France.png\"> " + row.make;
+                    default:
+                        return row.make;
+                }
+            },
+            "front_offset": function (column, row) {
+                return getCarSafeDescriptionByWord(row.front_offset);
+            },
+            "side": function (column, row) {
+                return getCarSafeDescriptionByWord(row.side);
+            },
+            "top": function (column, row) {
+                return getCarSafeDescriptionByWord(row.top);
+            },
+            "seat": function (column, row) {
+                return getCarSafeDescriptionByWord(row.seat);
+            },
+            "assist": function (column, row) {
+                return getCarSafeDescriptionByWord(row.assist);
+            },
+            "road_user": function (column, row) {
+                return getCarSafeDescriptionByWord(row.road_user);
+            }
+        }
+    });
+
+    function getCarSafeDescriptionByWord(word) {
+        switch (word) {
+            case 'G': // Good
+                return "<span class=\"green\">G 优秀</span>";
+            case 'A': // Adequate
+                return "<span class=\"yellow\">A 良好</span>";
+            case 'M': // Marginal
+                return "<span class=\"orange\">M 一般</span>";
+            case 'P': // Poor
+                return "<span class=\"red\">P 较差</span>";
+            default:
+                return "<span class=\"red\">" + word + "</span>";
+        }
+    }
+
     // AZ: for lists of make page.
     $("#table-make-list").bootgrid({
         ajax: false,
