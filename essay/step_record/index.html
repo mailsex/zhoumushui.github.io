@@ -194,6 +194,82 @@
                         <tbody>
 
                         <tr>
+                            <td>1592</td>
+                            <td>2019-03-29</td>
+                        </tr>
+                        <tr>
+                            <td>1896</td>
+                            <td>2019-03-28</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>2019-03-27</td>
+                        </tr>
+                        <tr>
+                            <td>2080</td>
+                            <td>2019-03-26</td>
+                        </tr>
+                        <tr>
+                            <td>2438</td>
+                            <td>2019-03-25</td>
+                        </tr>
+                        <tr>
+                            <td>2538</td>
+                            <td>2019-03-24</td>
+                        </tr>
+                        <tr>
+                            <td>5521</td>
+                            <td>2019-03-23</td>
+                        </tr>
+                        <tr>
+                            <td>1976</td>
+                            <td>2019-03-22</td>
+                        </tr>
+                        <tr>
+                            <td>2794</td>
+                            <td>2019-03-21</td>
+                        </tr>
+                        <tr>
+                            <td>2388</td>
+                            <td>2019-03-20</td>
+                        </tr>
+                        <tr>
+                            <td>2004</td>
+                            <td>2019-03-19</td>
+                        </tr>
+                        <tr>
+                            <td>1912</td>
+                            <td>2019-03-18</td>
+                        </tr>
+                        <tr>
+                            <td>1864</td>
+                            <td>2019-03-17</td>
+                        </tr>
+                        <tr>
+                            <td>2421</td>
+                            <td>2019-03-16</td>
+                        </tr>
+                        <tr>
+                            <td>2535</td>
+                            <td>2019-03-15</td>
+                        </tr>
+                        <tr>
+                            <td>2790</td>
+                            <td>2019-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>2001</td>
+                            <td>2019-03-13</td>
+                        </tr>
+                        <tr>
+                            <td>3824</td>
+                            <td>2019-03-12</td>
+                        </tr>
+                        <tr>
+                            <td>2826</td>
+                            <td>2019-03-11</td>
+                        </tr>
+                        <tr>
                             <td>254</td>
                             <td>2019-03-10</td>
                         </tr>
@@ -6146,7 +6222,7 @@
         }
         var unit10K = "万";
         document.getElementById("stepTotal").innerHTML = (total / 10000).toFixed(0) + unit10K; // Total
-        document.getElementById("stepAverage").innerHTML = ( total / (trs.length - 1)).toFixed(0);
+        document.getElementById("stepAverage").innerHTML = (total / (trs.length - 1)).toFixed(0);
         document.getElementById("list-row-count").innerHTML = trs.length - 1;
         // document.getElementById("aTotal").innerHTML = numSmall;
         // document.getElementById("bTotal").innerHTML = numMiddle;
@@ -6171,8 +6247,8 @@
             [7, 4621], [8, 3971], [9, 6402], [10, 6363], [11, 3317], [12, 6273]];
         var data2018 = [[1, 5611], [2, 11110], [3, 7168], [4, 8051], [5, 8252], [6, 9728],
             [7, 7075], [8, 8357], [9, 6023], [10, 5301], [11, 4235], [12, 3522]];
-        var data2019 = [[1, 5443], [2, 2685], [3, ], [4, ], [5, ], [6, ],
-            [7, ], [8, ], [9, ], [10, ], [11, ], [12, ]];
+        var data2019 = [[1, 5443], [2, 2685], [3,], [4,], [5,], [6,],
+            [7,], [8,], [9,], [10,], [11,], [12,]];
 
         var barData = [ // Create an Array push the data + Draw the bars
             {
@@ -6249,8 +6325,7 @@
                         top: item.pageY + 5,
                         left: item.pageX + 5
                     }).show();
-                }
-                else {
+                } else {
                     $(".flot-tooltip").hide();
                 }
             });
