@@ -11,8 +11,16 @@
     color: #f44336;
 }
 
+.red-bg {
+    background-color: #f44336;
+}
+
 .green {
     color: #4CAF50;
+}
+
+.green-bg {
+    background-color: #4CAF50;
 }
 
 .lime {
@@ -23,8 +31,16 @@
     color: #FFEB3B;
 }
 
+.yellow-bg {
+    background-color: #FFEB3B;
+}
+
 .orange {
     color: #FF9800;
+}
+
+.orange-bg {
+    background-color: #FF9800;
 }
 
 .brown {
@@ -43,6 +59,10 @@
     color: #9E9E9E;
 }
 
+.grey-bg {
+    background-color: #9E9E9E;
+}
+
 .blue-grey {
     color: #607D8B;
 }
@@ -55,18 +75,17 @@
     color: #FFFFFF;
 }
 
-
 /* Fit Rate */
-.fit-rate-good{
-    color:#4CAF50;
+.fit-rate-good {
+    color: #4CAF50;
 }
 
-.fit-rate-poor{
+.fit-rate-poor {
     color: #FFEB3B;
 }
 
-.fit-rate-none{
-    color:#f44336;
+.fit-rate-none {
+    color: #f44336;
 }
 
 .movie-title {

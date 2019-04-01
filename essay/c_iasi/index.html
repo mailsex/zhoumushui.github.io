@@ -40,9 +40,38 @@
     <!-- Material Floating Button -->
     <link href="../../css/essay.material.floating.button.css" rel="stylesheet">
     <style>
-        .country-flag{
-            width: 16px;
-            height: 16px;
+        .country-flag {
+            width: 15px;
+            height: 15px;
+            margin-left: 10px;
+        }
+
+        .car-logo {
+            width: 30px;
+            height: 20px;
+            margin-right: 20px;
+        }
+
+        .ciasi-logo {
+            height: 25px;
+            padding: 2px;
+            margin-right: 5px;
+            background-color: #2196F3;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .grade {
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+            color: #000000;
+            padding: 5px 8px;
+            font-weight: bold;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -o-border-radius: 2px;
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -116,11 +145,13 @@
                     <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
                 </span>&nbsp;&nbsp;&nbsp;
                 <span class="essay-title">
+                    <img src="img/C-IASI.png" class="ciasi-logo">中国保险汽车安全指数
+                    <!--
                     <i class="zmdi zmdi-car green"></i>
                     <i class="zmdi zmdi-car yellow"></i>
                     <i class="zmdi zmdi-car orange"></i>
                     <i class="zmdi zmdi-car red"></i>
-                    C-IASA 中国保险汽车安全指数
+                    -->
                 </span>
                 <span align="right" style="float: right;">
                     <i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;
@@ -139,7 +170,7 @@
                             <!-- data-type="numeric"-->
                             <th data-column-id="make" data-formatter="make">厂商</th>
                             <th data-column-id="model" data-formatter="model">款式</th>
-                            <th data-column-id="front_offset" data-formatter="front_offset">正面25%偏置</th>
+                            <th data-column-id="front_offset" data-formatter="front_offset">正面偏置</th><!--25%-->
                             <th data-column-id="side" data-formatter="side">侧面碰撞</th>
                             <th data-column-id="top" data-formatter="top">车顶强度</th>
                             <th data-column-id="seat" data-formatter="seat">座椅头枕</th>
@@ -174,8 +205,8 @@
                             <td>G</td><!-- ROAD_USER -->
                         </tr>
                         <tr>
-                            <td>浙江豪情</td><!-- MAKE -->
-                            <td>领克01 2017款</td><!-- MODEL -->
+                            <td>浙江豪情领克</td><!-- MAKE -->
+                            <td>01 2017款</td><!-- MODEL -->
                             <td>G</td><!-- Front 25% Offset -->
                             <td>G</td><!-- Side -->
                             <td>G</td><!-- Top -->
@@ -185,8 +216,8 @@
                             <td>G</td><!-- ROAD_USER -->
                         </tr>
                         <tr>
-                            <td>长城</td><!-- MAKE -->
-                            <td>魏派VV5 2017款 超豪型</td><!-- MODEL -->
+                            <td>长城魏派</td><!-- MAKE -->
+                            <td>VV5 2017款 超豪型</td><!-- MODEL -->
                             <td>G</td><!-- Front 25% Offset -->
                             <td>A</td><!-- Side -->
                             <td>A</td><!-- Top -->
@@ -394,8 +425,8 @@
                             <td>G</td><!-- ROAD_USER -->
                         </tr>
                         <tr>
-                            <td>上汽通用五菱</td><!-- MAKE -->
-                            <td>宝骏510 2017款 1.5L 手动 舒适型</td><!-- MODEL -->
+                            <td>上汽通用五菱宝骏</td><!-- MAKE -->
+                            <td>510 2017款 1.5L 手动 舒适型</td><!-- MODEL -->
                             <td>P</td><!-- Front 25% Offset -->
                             <td>P</td><!-- Side -->
                             <td>M</td><!-- Top -->

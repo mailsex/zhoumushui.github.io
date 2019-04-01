@@ -401,41 +401,7 @@ $(document).ready(function () {
         },
         formatters: {
             "make": function (column, row) {
-                switch (row.make) {
-                    case'长城':
-                    case'吉利':
-                    case'浙江豪情':  // 领克
-                    case'比亚迪':
-                    case'奇瑞':
-                    case'广汽传祺':
-                    case'众泰':
-                    case'江淮':
-                        return "<img class=\"country-flag\" src=\"img/China.png\"> " + row.make;
-                    case'广汽丰田':
-                    case'一汽丰田':
-                    case'广汽本田':
-                    case'东风本田':
-                    case'东风日产':
-                        return "<img class=\"country-flag\" src=\"img/Japan.png\"> " + row.make;
-                    case'上汽大众':
-                    case'上海大众斯柯达':
-                    case'一汽大众':
-                    case'北京奔驰':
-                    case'华晨宝马':
-                        return "<img class=\"country-flag\" src=\"img/Germany.png\"> " + row.make;
-                    case'北京现代':
-                    case'东风悦达起亚':
-                        return "<img class=\"country-flag\" src=\"img/SouthKorea.png\"> " + row.make;
-                    case'上汽通用':
-                    case'上汽通用别克':
-                    case'上汽通用凯迪拉克':
-                    case'上汽通用五菱':
-                        return "<img class=\"country-flag\" src=\"img/America.png\"> " + row.make;
-                    case'东风雷诺':
-                        return "<img class=\"country-flag\" src=\"img/France.png\"> " + row.make;
-                    default:
-                        return row.make;
-                }
+                return getLogoByMake(row.make) + row.make + getCountryByMake(row.make);
             },
             "front_offset": function (column, row) {
                 return getCarSafeDescriptionByWord(row.front_offset);
@@ -458,18 +424,133 @@ $(document).ready(function () {
         }
     });
 
+    // 品牌
+    function getLogoByMake(make) {
+        if (make.indexOf("丰田") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Toyota.png\">";
+        } else if (make.indexOf("本田") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Honda.png\">";
+        } else if (make.indexOf("日产") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_NISSAN.png\">";
+        } else if (make.indexOf("斯柯达") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Skoda.png\">";
+        } else if (make.indexOf("大众") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Volkswagen.png\">";
+        } else if (make.indexOf("别克") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Buick.png\">";
+        } else if (make.indexOf("宝马") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_BMW.png\">";
+        } else if (make.indexOf("宝骏") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_BaoJun.png\">";
+        } else if (make.indexOf("奔驰") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Benz.png\">";
+        } else if (make.indexOf("现代") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Hyundai.png\">";
+        } else if (make.indexOf("起亚") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_KIA.png\">";
+        } else if (make.indexOf("雷诺") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_RENAULT.png\">";
+        } else if (make.indexOf("浙江豪情") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_LynkCo.png\">";
+        } else if (make.indexOf("传祺") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Chuanqi.png\">";
+        } else if (make.indexOf("奇瑞") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Chery.png\">";
+        } else if (make.indexOf("魏派") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_WEY.png\">";
+        } else if (make.indexOf("江淮") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_JAC.png\">";
+        } else if (make.indexOf("比亚迪") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_BYD.png\">";
+        } else if (make.indexOf("众泰") != -1) {
+            return "<img class=\"car-logo\" src=\"img/Car_Zotye.png\">";
+        } else {
+            return "";
+        }
+        /*
+         if (make.indexOf("长城") != -1 ||
+         make.indexOf("吉利") != -1 ||
+         make.indexOf("浙江豪情") != -1 || // 领克
+         make.indexOf("比亚迪") != -1 ||
+         make.indexOf("奇瑞") != -1 ||
+         make.indexOf("传祺") != -1 ||
+         make.indexOf("众泰") != -1 ||
+         make.indexOf("江淮") != -1 ||
+         make.indexOf("五菱") != -1) {
+         return "<img class=\"country-flag\" src=\"img/Country_China.png\">";
+         } else if (
+         make.indexOf("丰田") != -1 ||
+         make.indexOf("本田") != -1 ||
+         make.indexOf("日产") != -1) {
+         return "<img class=\"country-flag\" src=\"img/Country_Japan.png\">";
+         } else if (
+         make.indexOf("大众") != -1 ||
+         make.indexOf("奔驰") != -1 ||
+         make.indexOf("宝马") != -1) {
+         return "<img class=\"country-flag\" src=\"img/Country_Germany.png\">";
+         } else if (
+         make.indexOf("现代") != -1 ||
+         make.indexOf("起亚") != -1) {
+         return "<img class=\"country-flag\" src=\"img/Country_SouthKorea.png\">";
+         } else if (make.indexOf("通用") != -1) {
+         return "<img class=\"country-flag\" src=\"img/Country_America.png\">";
+         } else if (make.indexOf("雷诺") != -1) {
+         return "<img class=\"country-flag\" src=\"img/Country_France.png\">";
+         } else {
+         return "";
+         }
+         */
+    }
+
+    // 国家
+    function getCountryByMake(make) {
+        if (make.indexOf("长城") != -1 ||
+            make.indexOf("吉利") != -1 ||
+            make.indexOf("浙江豪情") != -1 || // 领克
+            make.indexOf("比亚迪") != -1 ||
+            make.indexOf("奇瑞") != -1 ||
+            make.indexOf("传祺") != -1 ||
+            make.indexOf("众泰") != -1 ||
+            make.indexOf("江淮") != -1 ||
+            make.indexOf("五菱") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_China.png\">";
+        } else if (
+            make.indexOf("丰田") != -1 ||
+            make.indexOf("本田") != -1 ||
+            make.indexOf("日产") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_Japan.png\">";
+        } else if (
+            make.indexOf("大众") != -1 ||
+            make.indexOf("奔驰") != -1 ||
+            make.indexOf("宝马") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_Germany.png\">";
+        } else if (
+            make.indexOf("现代") != -1 ||
+            make.indexOf("起亚") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_SouthKorea.png\">";
+        } else if (make.indexOf("通用") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_America.png\">";
+        } else if (make.indexOf("雷诺") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_France.png\">";
+        } else {
+            return "";
+        }
+    }
+
     function getCarSafeDescriptionByWord(word) {
         switch (word) {
             case 'G': // Good
-                return "<span class=\"green\">G 优秀</span>";
+                return "<span class=\"grade green-bg\">G 优秀</span>";
             case 'A': // Adequate
-                return "<span class=\"yellow\">A 良好</span>";
+                return "<span class=\"grade yellow-bg\">A 良好</span>";
             case 'M': // Marginal
-                return "<span class=\"orange\">M 一般</span>";
+                return "<span class=\"grade orange-bg\">M 一般</span>";
             case 'P': // Poor
-                return "<span class=\"red\">P 较差</span>";
+                return "<span class=\"grade red-bg\">P 较差</span>";
+            case '-': // None
+                return "<span class=\"grade grey-bg\">未配置</span>";
             default:
-                return "<span class=\"red\">" + word + "</span>";
+                return "<span class=\"grade grey-bg\">" + word + "</span>";
         }
     }
 
