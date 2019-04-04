@@ -467,39 +467,6 @@ $(document).ready(function () {
         } else {
             return "";
         }
-        /*
-         if (make.indexOf("长城") != -1 ||
-         make.indexOf("吉利") != -1 ||
-         make.indexOf("浙江豪情") != -1 || // 领克
-         make.indexOf("比亚迪") != -1 ||
-         make.indexOf("奇瑞") != -1 ||
-         make.indexOf("传祺") != -1 ||
-         make.indexOf("众泰") != -1 ||
-         make.indexOf("江淮") != -1 ||
-         make.indexOf("五菱") != -1) {
-         return "<img class=\"country-flag\" src=\"img/Country_China.png\">";
-         } else if (
-         make.indexOf("丰田") != -1 ||
-         make.indexOf("本田") != -1 ||
-         make.indexOf("日产") != -1) {
-         return "<img class=\"country-flag\" src=\"img/Country_Japan.png\">";
-         } else if (
-         make.indexOf("大众") != -1 ||
-         make.indexOf("奔驰") != -1 ||
-         make.indexOf("宝马") != -1) {
-         return "<img class=\"country-flag\" src=\"img/Country_Germany.png\">";
-         } else if (
-         make.indexOf("现代") != -1 ||
-         make.indexOf("起亚") != -1) {
-         return "<img class=\"country-flag\" src=\"img/Country_SouthKorea.png\">";
-         } else if (make.indexOf("通用") != -1) {
-         return "<img class=\"country-flag\" src=\"img/Country_America.png\">";
-         } else if (make.indexOf("雷诺") != -1) {
-         return "<img class=\"country-flag\" src=\"img/Country_France.png\">";
-         } else {
-         return "";
-         }
-         */
     }
 
     // 国家
@@ -516,8 +483,13 @@ $(document).ready(function () {
             return "<img class=\"country-flag\" src=\"img/Country_China.png\">";
         } else if (
             make.indexOf("丰田") != -1 ||
+            make.indexOf("雷克萨斯") != -1 ||
+            make.indexOf("斯巴鲁") != -1 ||
             make.indexOf("本田") != -1 ||
-            make.indexOf("日产") != -1) {
+            make.indexOf("讴歌") != -1 ||
+            make.indexOf("日产") != -1 ||
+            make.indexOf("英菲尼迪") != -1||
+            make.indexOf("马自达") != -1) {
             return "<img class=\"country-flag\" src=\"img/Country_Japan.png\">";
         } else if (
             make.indexOf("大众") != -1 ||
@@ -528,11 +500,18 @@ $(document).ready(function () {
             make.indexOf("现代") != -1 ||
             make.indexOf("起亚") != -1) {
             return "<img class=\"country-flag\" src=\"img/Country_SouthKorea.png\">";
-        } else if (make.indexOf("通用") != -1) {
+        } else if (make.indexOf("通用") != -1 ||
+            make.indexOf("福特") != -1 ||
+            make.indexOf("雪佛兰") != -1 ||
+            make.indexOf("克莱斯勒") != -1) {
             return "<img class=\"country-flag\" src=\"img/Country_America.png\">";
         } else if (make.indexOf("雷诺") != -1) {
             return "<img class=\"country-flag\" src=\"img/Country_France.png\">";
-        } else {
+        }  else if (make.indexOf("捷豹") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_England.png\">";
+        }else if (make.indexOf("沃尔沃") != -1) {
+            return "<img class=\"country-flag\" src=\"img/Country_Sweden.png\">";
+        }  else {
             return "";
         }
     }
@@ -553,6 +532,44 @@ $(document).ready(function () {
                 return "<span class=\"grade grey-bg\">" + word + "</span>";
         }
     }
+
+
+    // AZ: for lists of Ward's 10 Best Engines.
+    $("#table-ward-list").bootgrid({
+        //Override default icon classes
+        rowCount: 10, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "make": function (column, row) {
+                return getCountryByMake(row.make) + row.make;
+            }
+        }
+    });
+
 
     // AZ: for lists of make page.
     $("#table-make-list").bootgrid({
