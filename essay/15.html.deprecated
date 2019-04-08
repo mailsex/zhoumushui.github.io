@@ -729,5 +729,96 @@
 
 <script>var directoryDepth = 1;</script>
 <script src="../js/zms.page.pattern.js"></script>
+<script>
+    // AZ: for lists of CPU page.
+    $("#table-cpu-list").bootgrid({
+        ajax: false,
+        selection: false, // AZ:Show Select Icon
+        rowCount: 1000, // AZ: -1 mains show all
+        //Override default icon classes
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "brand": function (column, row) {
+                switch (row.brand) {
+                    case 'Intel':
+                        return "<span class=\"cpu-brand-intel\">" + row.brand + "</span>";
+                    case 'AMD':
+                        return "<span class=\"cpu-brand-amd\">" + row.brand + "</span>";
+                    default:
+                        return row.brand;
+                }
+            },
+            "series": function (column, row) {
+                switch (row.brand) {
+                    case 'Intel':
+                        return "<span class=\"cpu-brand-intel\">" + row.series + "</span>";
+                    case 'AMD':
+                        return "<span class=\"cpu-brand-amd\">" + row.series + "</span>";
+                    default:
+                        return row.series;
+                }
+            },
+            "name": function (column, row) {
+                switch (row.name) {
+                    case 'i7 6700K':
+                    case 'i7 2630QM':
+                    case 'i5 760':
+                    case 'i5 460M':
+                        return "<span class=\"cpu-used\">" + row.name + "</span>";
+                    default:
+                        return row.name;
+                }
+            },
+            "freq_base": function (column, row) {
+                return row.freq_base.toFixed(2);
+            },
+            "freq_turbo": function (column, row) {
+                return row.freq_turbo.toFixed(2);
+            },
+            "tdp": function (column, row) {
+                var tdp = row.tdp;
+                if (tdp < 0) {
+                    return tdp;
+                } else if (tdp < 50) {
+                    return "<span class=\"cpu-tdp-low\">" + tdp + "</span>";
+                } else if (tdp < 100) {
+                    return "<span class=\"cpu-tdp-middle\">" + tdp + "</span>";
+                } else {
+                    return "<span class=\"cpu-tdp-high\">" + tdp + "</span>";
+                }
+            },
+            "az": function (column, row) {
+                var frequencyTurbo = row.freq_turbo; // V1: freq_turbo * thread * 100
+                var thread = row.thread;
+                var pricePerformance = 100; // 价格-性能系数
+                return parseInt(frequencyTurbo * thread * pricePerformance);
+            }
+        }
+    });
+</script>
 </body>
 </html>

@@ -2793,6 +2793,85 @@
         }
 
     });
+
+
+    // AZ: for lists of make page.
+    $("#table-make-list").bootgrid({
+        ajax: false,
+        selection: false, // AZ:Show Select Icon
+        //Override default icon classes
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "number": function (column, row) {
+                var result = '';
+                switch (row.with) {
+                    case 'A': // Anne Zhang
+                        result = "<span class=\"make-with-a\">";
+                        break;
+                    case 'B':
+                        result = "<span class=\"make-with-b\">";
+                        break;
+                    case 'C':
+                        result = "<span class=\"make-with-c\">";
+                        break;
+                    case 'D':
+                        result = "<span class=\"make-with-d\">";
+                        break;
+                    case 'E':
+                        result = "<span class=\"make-with-e\">";
+                        break;
+                    default:
+                        result = "<span class=\"make-with-default\">";
+                        break;
+                }
+                for (var i = 0; i < row.number; i++) {
+                    result = result + "<i class=\"zmdi zmdi-circle\"></i> ";
+                }
+                result = result + "</span>";
+                return result;
+            },
+            "with": function (column, row) {
+                switch (row.with) {
+                    case 'A':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-a\"></i>";
+                    case 'B':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-b\"></i>";
+                    case 'C':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-c\"></i>";
+                    case 'D':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-d\"></i>";
+                    case 'E':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-e\"></i>";
+                    default:
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-default\"></i>";
+                }
+            }
+        }
+    });
 </script>
 
 <!-- Toolbox -->

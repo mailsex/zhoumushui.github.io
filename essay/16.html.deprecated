@@ -760,5 +760,83 @@
 
 <script>var directoryDepth = 1;</script>
 <script src="../js/zms.page.pattern.js"></script>
+<script>
+    // AZ: for lists of GPU page.
+    $("#table-gpu-list").bootgrid({
+        ajax: false,
+        selection: false, // AZ:Show Select Icon
+        rowCount: 1000, // AZ: -1 mains show all
+        //Override default icon classes
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "brand": function (column, row) {
+                switch (row.brand) {
+                    case 'nVIDIA':
+                        return "<span class=\"gpu-brand-nvidia\">" + row.brand + "</span>";
+                    case 'AMD':
+                        return "<span class=\"cpu-brand-amd\">" + row.brand + "</span>";
+                    case 'Intel':
+                        return "<span class=\"cpu-brand-intel\">" + row.brand + "</span>";
+                    default:
+                        return row.brand;
+                }
+            },
+            "name": function (column, row) {
+                switch (row.name) {
+                    case 'GTX 1060(6G)':
+                    case 'GT555M':
+                    case 'GT720M':
+                    case 'GF210':
+                    case 'HD530':
+                        return "<span class=\"cpu-used\">" + row.name + "</span>";
+                    default:
+                        return row.name;
+                }
+            },
+            "clock_base": function (column, row) {
+                return row.clock_base;
+            },
+            "clock_boost": function (column, row) {
+                return row.clock_boost;
+            },
+            "tdp": function (column, row) {
+                var tdp = row.tdp;
+                if (tdp < 0) {
+                    return tdp;
+                } else if (tdp < 100) {
+                    return "<span class=\"cpu-tdp-low\">" + tdp + "</span>";
+                } else if (tdp < 200) {
+                    return "<span class=\"cpu-tdp-middle\">" + tdp + "</span>";
+                } else {
+                    return "<span class=\"cpu-tdp-high\">" + tdp + "</span>";
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>

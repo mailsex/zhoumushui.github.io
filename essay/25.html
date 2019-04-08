@@ -377,5 +377,66 @@
 
 <script>var directoryDepth = 1;</script>
 <script src="../js/zms.page.pattern.js"></script>
+<script>
+
+    // AZ: for lists of TV page.
+    $("#table-tv-list").bootgrid({
+        ajax: false,
+        selection: false, // AZ:Show Select Icon
+        rowCount: 1000, // AZ: -1 mains show all
+        //Override default icon classes
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "os": function (column, row) {
+                switch (row.os) {
+                    case 'android':
+                        return "<span style='color: #00a21b'><i class=\"zmdi zmdi-android\"></i></span>";
+                    case 'windows':
+                        return "<span style='color:#00a1d8;'><i class=\"zmdi zmdi-windows\"></i></span>";
+                    case 'tizen':
+                        return "<span style='color:#0000ff;'><i class=\"zmdi zmdi-search\"></i></span>";
+                    default:
+                        return row.os;
+                }
+            },
+            "tdp": function (column, row) {
+                var tdp = row.tdp;
+                if (tdp < 0) {
+                    return tdp;
+                } else if (tdp < 100) {
+                    return "<span class=\"cpu-tdp-low\">" + tdp + "</span>";
+                } else if (tdp < 200) {
+                    return "<span class=\"cpu-tdp-middle\">" + tdp + "</span>";
+                } else {
+                    return "<span class=\"cpu-tdp-high\">" + tdp + "</span>";
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>
