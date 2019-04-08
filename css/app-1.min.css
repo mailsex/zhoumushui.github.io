@@ -8071,7 +8071,7 @@ p {
 
 @media (min-width: 1280px) {
     #main {
-        padding: 0 40px 30px 270px;
+        padding: 0 40px 30px 200px; /* AZ, Modify Navigation Width, Step 2, Raw data: 0 40px 30px 270px; */
         min-height: calc(100vh - 159px)
     }
 }
@@ -8758,7 +8758,7 @@ p {
 
 @media (min-width: 1280px) {
     #navigation {
-        width: 270px;
+        width: 200px; /* AZ, Modify Navigation Width, Step 1, Raw data:270px */
         position: absolute;
         height: 100%;
         top: 0
