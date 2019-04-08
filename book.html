@@ -551,6 +551,12 @@
 
                         <!-- R -->
                         <tr id="book_r">
+                            <td>人类简史：从动物到上帝</td>
+                            <td>尤瓦尔·赫拉利（林俊宏）</td>
+                            <td>307</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
                             <td>人生</td>
                             <td>路遥</td>
                             <td>144</td>
@@ -660,7 +666,7 @@
                             <td>4</td>
                         </tr>
 
-                        <tr >
+                        <tr>
                             <td>我与五叔的六次相遇</td>
                             <td>路遥</td>
                             <td>78</td>
@@ -770,14 +776,14 @@
 
                         <tr>
                             <td>这世界既残酷也温柔</td>
-                            <td>孙宇晨 </td>
+                            <td>孙宇晨</td>
                             <td>92</td>
                             <td>3</td>
                         </tr>
 
                         <tr>
                             <td>真幌站前多田便利屋</td>
-                            <td>三浦紫苑 </td>
+                            <td>三浦紫苑</td>
                             <td>122</td>
                             <td>4</td>
                         </tr>
@@ -853,7 +859,8 @@
 
                 // 给书名添加样式
                 var tdName = trs[i].getElementsByTagName('td')[tdNameIndex];
-                tdName.innerHTML = "<strong style='color: #00A1D8;font-size: 16px'>" + tdName.innerHTML + "</strong>";
+                tdName.innerHTML = "<strong style='color: #00A1D8;font-size: 18px;font-family: 仿宋,微软雅黑'>"
+                    + tdName.innerHTML + "</strong>";
             }
             document.getElementById("wordCount").innerHTML = totalWordCount / 10;
 
