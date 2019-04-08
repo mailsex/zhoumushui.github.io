@@ -160,6 +160,8 @@ $(document).ready(function () {
                         return "<i class=\"essay-list-type zmdi zmdi-bike orange\"></i>";
                     case 'car':
                         return "<i class=\"essay-list-type zmdi zmdi-car blue\"></i>";
+                    case 'car-red':
+                        return "<i class=\"essay-list-type zmdi zmdi-car red\"></i>";
                     case 'chip-green':
                         return "<i class=\"essay-list-type zmdi zmdi-memory green\"></i>";
                     case 'chip-red':
@@ -453,7 +455,7 @@ $(document).ready(function () {
         } else if (make.indexOf("浙江豪情") != -1) {
             return "<img class=\"car-logo\" src=\"img/Car_LynkCo.png\">";
         } else if (make.indexOf("传祺") != -1) {
-            return "<img class=\"car-logo\" src=\"img/Car_Chuanqi.png\">";
+            return "<img class=\"car-logo\" src=\"img/Car_Trumpchi.png\">";
         } else if (make.indexOf("奇瑞") != -1) {
             return "<img class=\"car-logo\" src=\"img/Car_Chery.png\">";
         } else if (make.indexOf("魏派") != -1) {
