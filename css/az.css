@@ -345,11 +345,14 @@
 }
 
 .dream-todo {
-    color: #E91E63;
+    color: #FFEB3B;
 }
 
 .dream-drop {
-    color: #9C27B0;
+    color: #E91E63;
+}
+
+.line-through {
     text-decoration: line-through;
 }
 
