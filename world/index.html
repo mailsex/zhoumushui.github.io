@@ -73,6 +73,17 @@
             margin-bottom: 4px;
             cursor: pointer;
         }
+
+        .dot-legend {
+            position: absolute;
+            bottom: 45%;
+            right: 0.5%;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            text-shadow: 1px 1px 1px #000;
+            font-weight: bolder;
+            z-index: 1;
+        }
     </style>
 
     <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
@@ -129,7 +140,17 @@
             <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
 
 
-            <div class="card__body" style="font-size: 15px" id="container_amap" tabindex="0"></div>
+            <div class="card__body" style="font-size: 15px" id="container_amap" tabindex="0">
+
+                <div class="dot-legend">
+                    <img src="img/dot_grey.png"/><span style="color: #9C9C9C"> NOT</span>
+                    <br><img src="img/dot_blue.png"/><span style="color: #2196F3"> 1D+</span>
+                    <br><img src="img/dot_green.png"/><span style="color: #4CAF50"> 7D+</span>
+                    <br><img src="img/dot_orange.png"/><span style="color: #FF9800"> 1M+</span>
+                    <br><img src="img/dot_red.png"/><span style="color: #f44336"> 6M+</span>
+                    <br><img src="img/dot_purple.png"/><span style="color: #9C27B0"> 1Y+</span>
+                </div>
+            </div>
             <div class="button-fullscreen">
                 <span class="button" style="display:block;cursor:pointer;text-align:center;">
                     <i class="zmdi zmdi-fullscreen-alt" id="fullscreen"> 全屏查看</i>
