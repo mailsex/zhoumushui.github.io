@@ -113,20 +113,20 @@
 
         <div class="card">
 
-                <!--
-                AZ Share: Material Floating Button;
-                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
-                Position:mfb-component--br,bl,tr,tl;
-                Action:hover,click
-                -->
-                <script>
-                    var essayTitle = '足迹';
-                    var essaySummary = '足迹';
-                    var essayUrl = 'http://www.zhoumushui.com/world/';
-                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
-                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
-                </script>
-                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            <!--
+            AZ Share: Material Floating Button;
+            Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+            Position:mfb-component--br,bl,tr,tl;
+            Action:hover,click
+            -->
+            <script>
+                var essayTitle = '足迹';
+                var essaySummary = '足迹';
+                var essayUrl = 'http://www.zhoumushui.com/world/';
+                //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+            </script>
+            <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
 
 
             <div class="card__body" style="font-size: 15px" id="container_amap" tabindex="0"></div>
@@ -146,8 +146,7 @@
             <script type="text/javascript" src="js/array.path.js"></script>
             <script type="text/javascript">
                 var map;
-                var iconStar, iconCar;
-                var iconPurpleDot, iconBlueDot, iconTealDot, iconGreenDot, iconYellowDot, iconRedDot;
+                var dotGrey, dotBlue, dotGreen, dotOrange, dotRed, dotPurple;
                 // var colorYellow;
                 var colorRed;
                 var colorBlue;
@@ -190,17 +189,12 @@
                 }
 
                 function initialIcon() {
-                    iconStar = new AMap.Icon({
-                        image: 'img/type_star.png',
-                        size: new AMap.Size(24, 24)
-                    });
-                    iconCar = "http://webapi.amap.com/images/car.png";
-                    iconTealDot = new AMap.Icon({image: 'img/type_0.png', size: new AMap.Size(15, 15)});
-                    iconBlueDot = new AMap.Icon({image: 'img/type_1.png', size: new AMap.Size(15, 15)});
-                    iconGreenDot = new AMap.Icon({image: 'img/type_2.png', size: new AMap.Size(15, 15)});
-                    iconYellowDot = new AMap.Icon({image: 'img/type_3.png', size: new AMap.Size(15, 15)});
-                    iconRedDot = new AMap.Icon({image: 'img/type_4.png', size: new AMap.Size(15, 15)});
-                    iconPurpleDot = new AMap.Icon({image: 'img/type_5.png', size: new AMap.Size(15, 15)});
+                    dotGrey = new AMap.Icon({image: 'img/dot_grey.png', size: new AMap.Size(15, 15)});
+                    dotBlue = new AMap.Icon({image: 'img/dot_blue.png', size: new AMap.Size(15, 15)});
+                    dotGreen = new AMap.Icon({image: 'img/dot_green.png', size: new AMap.Size(15, 15)});
+                    dotOrange = new AMap.Icon({image: 'img/dot_orange.png', size: new AMap.Size(15, 15)});
+                    dotRed = new AMap.Icon({image: 'img/dot_red.png', size: new AMap.Size(15, 15)});
+                    dotPurple = new AMap.Icon({image: 'img/dot_purple.png', size: new AMap.Size(15, 15)});
                 }
 
                 function initialColor() {
@@ -217,23 +211,23 @@
                         var iconPoint;
                         switch (arrayFootprint[i].type) {
                             case 1:
-                                iconPoint = iconBlueDot;
+                                iconPoint = dotBlue;
                                 break;
                             case 2:
-                                iconPoint = iconGreenDot;
+                                iconPoint = dotGreen;
                                 break;
                             case 3:
-                                iconPoint = iconYellowDot;
+                                iconPoint = dotOrange;
                                 break;
                             case 4:
-                                iconPoint = iconRedDot;
+                                iconPoint = dotRed;
                                 break;
                             case 5:
-                                iconPoint = iconPurpleDot;
+                                iconPoint = dotPurple;
                                 break;
                             case 0:
                             default:
-                                iconPoint = iconTealDot;
+                                iconPoint = dotGrey;
                                 break;
                         }
                         markerPoint = new AMap.Marker({
