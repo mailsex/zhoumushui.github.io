@@ -88,7 +88,7 @@
 
     <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
     <script type="text/javascript"
-            src="http://webapi.amap.com/maps?v=1.4.0&key=00adddac7e40038a02471b299a505dbd"></script>
+            src="http://webapi.amap.com/maps?v=1.4.14&key=00adddac7e40038a02471b299a505dbd"></script>
     <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 </head>
 
@@ -316,6 +316,22 @@
 //                    }, false);
                 }
 
+                // 计算区域面积
+                function countArea(map, path) {
+                    var area = Math.round(AMap.GeometryUtil.ringArea(path));
+                    var text = new AMap.Text({
+                        position: path[0],
+                        text: (area / 10000000000).toFixed(0),
+                        offset: new AMap.Pixel(-15, -14),
+                        draggable: false, // 是否可拖拽移动
+                        title: '万平方公里', // 鼠标滑过的文字提示
+                        angle: 0, // 旋转角度
+                        // shadow:Amap.Icon, // 点标记阴影
+                        animation: 'AMAP_ANIMATION_NONE'// NONE, DROP, BOUNCE
+                    });
+                    map.add(text);
+                }
+
                 initialMap();
                 initialIcon();
                 initialColor();
@@ -339,6 +355,7 @@
                 drawPath(map, arrayPath_HomeToWork5, 1, colorRed, "solid");
                 drawPath(map, arrayPathStep_20170909, 1, colorRed, "solid");
                 drawPath(map, arrayRectangleLimit, 1, colorTeal, "dashed");
+                countArea(map, arrayRectangleLimit);
                 drawPoint();
             </script>
         </div>
