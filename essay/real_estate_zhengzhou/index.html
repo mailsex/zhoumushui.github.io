@@ -226,12 +226,12 @@
                         size: new AMap.Size(24, 24)
                     });
                     iconCar = "http://webapi.amap.com/images/car.png";
-                    iconTealDot = new AMap.Icon({image: '../../world/img/type_0.png', size: new AMap.Size(15, 15)});
-                    iconBlueDot = new AMap.Icon({image: '../../world/img/type_1.png', size: new AMap.Size(15, 15)});
-                    iconGreenDot = new AMap.Icon({image: '../../world/img/type_2.png', size: new AMap.Size(15, 15)});
-                    iconYellowDot = new AMap.Icon({image: '../../world/img/type_3.png', size: new AMap.Size(15, 15)});
-                    iconRedDot = new AMap.Icon({image: '../../world/img/type_4.png', size: new AMap.Size(15, 15)});
-                    iconPurpleDot = new AMap.Icon({image: '../../world/img/type_5.png', size: new AMap.Size(15, 15)});
+                    iconTealDot = new AMap.Icon({image: '../../world/img/dot_star.png', size: new AMap.Size(15, 15)});
+                    iconBlueDot = new AMap.Icon({image: '../../world/img/dot_blue.png', size: new AMap.Size(15, 15)});
+                    iconGreenDot = new AMap.Icon({image: '../../world/img/dot_green.png', size: new AMap.Size(15, 15)});
+                    iconYellowDot = new AMap.Icon({image: '../../world/img/dot_orange.png', size: new AMap.Size(15, 15)});
+                    iconRedDot = new AMap.Icon({image: '../../world/img/dot_red.png', size: new AMap.Size(15, 15)});
+                    iconPurpleDot = new AMap.Icon({image: '../../world/img/dot_purple.png', size: new AMap.Size(15, 15)});
                 }
 
                 function initialColor() {
@@ -269,7 +269,7 @@
                         var iconPoint;
                         switch (arrayHouse[i].zx) {
                             case 1: // 精装
-                                iconPoint = iconTealDot;
+                                iconPoint = iconRedDot;
                                 break;
                             case 0: // 毛坯
                             default:
