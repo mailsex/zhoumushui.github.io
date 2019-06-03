@@ -533,7 +533,7 @@
         },
         formatters: {
             "make": function (column, row) {
-                return getLogoByMake(row.make) + row.make + getCountryByMake(row.make);
+                return getLogoByMake(row.make) + row.make/* + getCountryByMake(row.make) */;
             },
             "front_offset": function (column, row) {
                 return getCarSafeDescriptionByWord(row.front_offset);
