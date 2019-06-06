@@ -113,6 +113,8 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_NISSAN.png\">";
     } else if (make.indexOf("英菲尼迪") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Infiniti.png\">";
+    } else if (make.indexOf("三菱") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Mitsubishi.png\">";
     } else if (make.indexOf("马自达") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Mazda.png\">";
     } else if (make.indexOf("大众") != -1) {
@@ -137,16 +139,22 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Ford.png\">";
     } else if (make.indexOf("雪佛兰") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Chevrolet.png\">";
+    } else if (make.indexOf("凯迪拉克") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Cadillac.png\">";
     } else if (make.indexOf("道奇") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Dodge.png\">";
     } else if (make.indexOf("雷诺") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_RENAULT.png\">";
-    } else if (make.indexOf("浙江豪情") != -1) {
+    } else if (make.indexOf("领克") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_LynkCo.png\">";
+    } else if (make.indexOf("沃尔沃") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Volvo.png\">";
     } else if (make.indexOf("传祺") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Trumpchi.png\">";
     } else if (make.indexOf("奇瑞") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Chery.png\">";
+    } else if (make.indexOf("哈弗") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_HAVAL.png\">";
     } else if (make.indexOf("魏派") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_WEY.png\">";
     } else if (make.indexOf("江淮") != -1) {
@@ -157,6 +165,10 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_BaoJun.png\">";
     } else if (make.indexOf("众泰") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Zotye.png\">";
+    } else if (make.indexOf("北京汽车") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Baic.png\">";
+    } else if (make.indexOf("东风") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_DongFeng.png\">";
     } else {
         return "";
     }

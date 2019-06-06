@@ -53,7 +53,7 @@
         }
 
         .ciasi-logo {
-            height: 25px;
+            height: 20px;
             padding: 2px;
             margin-right: 5px;
             background-color: #2196F3;
@@ -63,15 +63,23 @@
             border-radius: 4px;
         }
 
+        .same-width-font {
+            font-family: Monaco, Consolas, MingLiU, "Courier New", Courier, monospace;
+        }
+
         .grade {
             font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
-            color: #000000;
-            padding: 5px 8px;
             font-weight: bold;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            -o-border-radius: 2px;
-            border-radius: 2px;
+            color: #000000;
+            padding: 5px 0px;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            width: 60px;
+            height: 28px;
+            display: block
         }
     </style>
 </head>
@@ -145,7 +153,11 @@
                     <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
                 </span>&nbsp;&nbsp;&nbsp;
                 <span class="essay-title">
-                    <img src="img/C-IASI.png" class="ciasi-logo">中国保险汽车安全指数
+                    中国保险汽车安全指数
+                    <span style="color: #2196F3;font-size: large;">
+                        ( 数据来源：<a href="http://c-iasi.com" target="_blank"><img src="img/C-IASI.png"
+                                                                                class="ciasi-logo"/></a>)
+                    </span>
                     <!--
                     <i class="zmdi zmdi-car green"></i>
                     <i class="zmdi zmdi-car yellow"></i>
@@ -159,8 +171,7 @@
                 </span>
             </div>
 
-
-            <div class="card__body">
+            <div class="card__body" style="padding-top: 10px">
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
                     <table id="table-carsafe-list" class="table table-striped table--vmiddle"
@@ -434,6 +445,117 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>-</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
+                        </tr>
+
+                        <tr>
+                            <td>广汽本田</td><!-- MAKE -->
+                            <td>凌派 2019款 180 Turbo CVT舒适版</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>长安福特</td><!-- MAKE -->
+                            <td>福克斯</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>北京汽车</td><!-- MAKE -->
+                            <td>绅宝 D50 2018款1.5L CVT尊贵智驾版</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>北京现代</td><!-- MAKE -->
+                            <td>菲斯塔 2019款 240 TGDi GLX DCT运动版</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>东风汽车</td><!-- MAKE -->
+                            <td>风神 AX7 AI 先锋型</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>广汽三菱</td><!-- MAKE -->
+                            <td>欧蓝德 2019款2.0L 畅享版</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>上汽通用凯迪拉克</td><!-- MAKE -->
+                            <td>XT4 2018款 技术型</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>长城哈弗</td><!-- MAKE -->
+                            <td>F5</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>比亚迪</td><!-- MAKE -->
+                            <td>唐</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
+                        </tr>
+                        <tr>
+                            <td>浙江豪情沃尔沃</td><!-- MAKE -->
+                            <td>XC60 2019款 T5 四驱智逸版</td><!-- MODEL -->
+                            <td></td><!-- Front 25% Offset -->
+                            <td></td><!-- Side -->
+                            <td></td><!-- Top -->
+                            <td></td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td></td><!-- ASSIST -->
+                            <td></td><!-- ROAD_USER -->
                         </tr>
 
                         </tbody>
