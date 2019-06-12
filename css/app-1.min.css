@@ -8051,7 +8051,7 @@ body:before {
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     body:before {
-        height: 204px /* AZ:Headr background dard area, raw height:265px */
+        height: 154px /* AZ:Headr background dard area, raw height:265px */
     }
 }
 
@@ -8402,7 +8402,7 @@ p {
 
 #header {
     user-select: none;
-    padding: 40px 45px;
+    padding: 15px 40px; /* AZ:raw: 40px 45px; */
     margin-bottom: 0px; /* AZ:raw margin-bottom: 20px; */
     z-index: 10
 }
