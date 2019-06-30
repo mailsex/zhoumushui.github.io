@@ -268,8 +268,8 @@ if (GetQueryString("pm") == 1) {
     insertNavigation();
     insertFooter();
     setCopyRightYear();
+    insertShareButton();
 }
 
-insertShareButton();
 insertIEWarning();
 

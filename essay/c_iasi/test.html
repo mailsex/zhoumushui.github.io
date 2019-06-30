@@ -1,160 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-
     <meta charset="utf-8">
-    <head>
+    <meta name="viewport" content="width=320,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>实现HTML转图片</title>
+    <style type="text/css" media="screen">
+        .bg {
+            width: 100%;
+            min-height: 100%;
+            height: 100vh;
+            background-color: #a799ac;
+            text-align: center;
+        }
 
-        <!-- jQuery -->
-        <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="js/html2canvas.min.js"></script>
-        <style>
-            body {
-                background: #ccc
-            }
+        .text {
+            width: 50%;
+            margin-top: 20%;
+            height: 25px;
+            border: 1px solid #b7c092;
+            border-radius: 10px;
+            outline: none;
+        }
 
-            #dw {
-                position: absolute;
-                top: 10px;
-                left: 10%;
-                height: 620px;
-                width: 1030px;
-                background: #fff;
-                border: 1px solid black;
-                padding: 10px
-            }
+        .save, .picture {
+            border-radius: 10px;
+            border: none;
+            width: 60px;
+            padding: 0;
+            height: 25px;
+            background: #9cd8b1;
+            outline: none;
+        }
 
-            .close {
-                position: relative;
-                left: 10px;
-                width: 0.2em;
-                height: 1em;
-                background: #333;
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-                display: inline-block;
-            }
+        .title {
+            /* margin-top: 100px; */
+        }
 
-            .close:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 0.2em;
-                height: 1em;
-                background: #333;
-                -webkit-transform: rotate(270deg);
-                -moz-transform: rotate(270deg);
-                -o-transform: rotate(270deg);
-                -ms-transform: rotate(270deg);
-                transform: rotate(270deg);
-            }
-        </style>
-    </head>
-<body>
-<!-- 要截图的div main 蓝色区域 -->
-<div id="main" style="width: 50%; margin-left: 100px;padding: 50px;height: 400px;background: #5a90a0">
-    　　
-    <div style="height: 200px;width: 200px;background: #ccc;"></div>
-</div>
-　
-<div style="height: 30px;width: 168px;border:2px solid black;background: red;text-align: center;"
-     onclick="doScreenShot()">截图
-</div>
-<!-- 生成图片展示的DIV dw-->
-<div id="dw">
-    　　
-    <div style="float: right;width: 25px;height: 25px;" title="关闭" onclick="closeok()">
-        　　　　<span class="close"></span>
-        　　
+        .need {
+            /* background: url(20.jpg) no-repeat; */
+            background-size: 400px;
+            background: linear-gradient(#3793b6, #c993d3);
+        }
+
+        img {
+            margin-top: 50px;
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body style="padding: 0;margin: 0;">
+<div class="bg">
+    <button id="save" type="button" class="picture">生成图片</button>
+    <div  id="content"  class="need" style="height: 200px;width: 400px">
+        <p class="title" style="color: white">hello</p>
+        <p class="area" style="color: white">欢迎，这里是你需要截取到的区域</p>
     </div>
 </div>
-</body>
-<script>
-    $("#dw").hide();
-    //关闭图片
-    function closeok() {
-        $("#dw").hide();
-    }
-    //点击截图
-    function doScreenShot() {
-        $("#dw").show();
-        html2canvas($("#main"), {
-            onrendered: function (canvas) {
-                canvas.id = "mycanvas";
-                var mainwh = $("#main").width();
-                var mainhg = $("#main").height();
-                var img = convertCanvasToImage(canvas);
-                console.log(img);
-                //document.body.appendChild(img);
-                $("#dw").append(img) //添加到展示图片div区域
-                img.onload = function () {
-                    img.onload = null;
-                    canvas = convertImageToCanvas(img, 0, 0, 1024, 600); //设置图片大小和位置
-                    img.src = convertCanvasToImage(canvas).src;
-                    $(img).css({
-                        background: "#fff"
-                    });
-                    //调用下载方法 
-                    if (browserIsIe()) { //假如是ie浏览器    
-                        DownLoadReportIMG(img.src);
-                    } else {
-                        download(img.src)
-                    }
-                }
-            }
-        });
-    }
-    //绘制显示图片 
-    function convertCanvasToImage(canvas) {
-        var image = new Image();
-        image.src = canvas.toDataURL("image/png"); //获得图片地址
-        return image;
-    }
-    //生成canvas元素，相当于做了一个装相片的框架
-    function convertImageToCanvas(image, startX, startY, width, height) {
-        var canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
-        canvas.getContext("2d").drawImage(image, startX, startY, width, height, 20, 20, 960, 600); //在这调整图片中内容的显示（大小,放大缩小,位置等）
-        return canvas;
-    }
-    function DownLoadReportIMG(imgPathURL) {
-        //如果隐藏IFRAME不存在，则添加
-        if (!document.getElementById("IframeReportImg"))
-            $('<iframe style="display:none;" id="IframeReportImg" name="IframeReportImg" onload="DoSaveAsIMG();" width="0" height="0" src="about:blank"></iframe>').appendTo("body");
-        if (document.all.IframeReportImg.src != imgPathURL) {
-            //加载图片
-            document.all.IframeReportImg.src = imgPathURL;
-        }
-        else {
-            //图片直接另存为
-            DoSaveAsIMG();
-        }
-    }
-    function DoSaveAsIMG() {
-        if (document.all.IframeReportImg.src != "about:blank")
-            window.frames["IframeReportImg"].document.execCommand("SaveAs");
-    }
-    // 另存为图片
-    function download(src) {
-        var $a = $("<a></a>").attr("href", src).attr("download", "img.png");
-        $a[0].click();
-    }
-    //判断是否为ie浏览器
-    function browserIsIe() {
-        if (!!window.ActiveXObject || "ActiveXObject" in window)
-            return true;
-        else
-            return false;
-    }
-</script>
-</head>
-<body>
 
 </body>
-</html>
+
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
+<script>
+    $('#save').click(function (e) {
+        html2canvas(document.getElementById("content")).then(function (canvas) {
+            var canvasWidth = canvas.width;
+            var canvasHeight = canvas.height;
+            console.log(canvasWidth + "    " + canvasHeight);
+            Canvas2Image.convertToImage(canvas, canvasWidth, canvasHeight);
+            Canvas2Image.saveAsJPEG(canvas, canvasWidth, canvasHeight);
+        });
+    });
+</script>
