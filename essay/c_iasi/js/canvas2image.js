@@ -44,8 +44,25 @@ var Canvas2Image = function () {
     }
 
     function saveFile(strData) {
+        strData.replace('image/jpeg', 'image/octet-stream');
         document.location.href = strData;
     }
+
+    var _fixType = function (type) {
+        type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+        var r = type.match(/png|jpeg|bmp|gif/)[0];
+        return 'image/' + r;
+    };
+
+    var saveFileToName = function (data, fileName) {
+        var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        save_link.href = data;
+        save_link.download = fileName;
+
+        var event = document.createEvent('MouseEvents');
+        event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        save_link.dispatchEvent(event);
+    };
 
     function genImage(strData) {
         var img = document.createElement('img');
@@ -218,7 +235,27 @@ var Canvas2Image = function () {
                 saveFile(makeURI(strData, downloadMime));
             } else {
                 var strData = getDataURL(canvas, type, width, height);
-                saveFile(strData.replace(type, downloadMime));
+                azSaveFile(strData.replace(type, downloadMime));
+            }
+        }
+    };
+
+    var saveAsImageToName = function (canvas, width, height, type, fileName) {
+        if ($support.canvas && $support.dataURL) {
+            if (typeof canvas == "string") {
+                canvas = document.getElementById(canvas);
+            }
+            if (type == undefined) {
+                type = 'png';
+            }
+            type = fixType(type);
+            if (/bmp/.test(type)) {
+                var data = getImageData(scaleCanvas(canvas, width, height));
+                var strData = genBitmapImage(data);
+                saveFile(makeURI(strData, downloadMime));
+            } else {
+                var strData = getDataURL(canvas, type, width, height);
+                saveFileToName(strData.replace(type, downloadMime), fileName);
             }
         }
     };
@@ -245,6 +282,7 @@ var Canvas2Image = function () {
     };
 
     return {
+        saveAsImageToName: saveAsImageToName,
         saveAsImage: saveAsImage,
         saveAsPNG: function (canvas, width, height) {
             return saveAsImage(canvas, width, height, 'png');

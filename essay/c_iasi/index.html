@@ -95,13 +95,13 @@
             border-radius: 4px;
         }
 
-        .btn-save-image:hover{
+        .btn-save-image:hover {
             height: 20px;
             margin-left: 50px;
             padding: 4px;
             cursor: pointer;
             color: #FFEB3B;
-            background-color: #009688;
+            background-color: #607D8B;
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             -o-border-radius: 4px;
@@ -206,7 +206,7 @@
                 </span>
             </div>
 
-            <div class="card__body" style="padding-top: 10px">
+            <div id="card_body" class="card__body" style="padding-top: 10px">
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
                     <table id="table-carsafe-list" class="table table-striped table--vmiddle"
@@ -739,11 +739,14 @@
 <script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
 <script>
     $('#btnSaveImage').click(function (e) {
+        document.getElementById("btnSaveImage").style.display = "none";
         html2canvas(document.getElementById("content")).then(function (canvas) {
             var contentW = canvas.width;
             var contentH = canvas.height;
-            Canvas2Image.saveAsImage(canvas, contentW, contentH, 'jpeg');
+            Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', 'car.jpg');
         });
+
+        document.getElementById("btnSaveImage").style.display = "";
     });
 </script>
 </body>
