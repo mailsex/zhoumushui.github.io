@@ -253,10 +253,23 @@ function getBrowserInfo() {
     console.log("appName:" + appName + ",appVersion:" + appVersion + ",userAgent:" + userAgent);
 }
 
-insertHeader();
-insertNavigation();
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURI(r[2]);
+    return null;
+}
+
+if (GetQueryString("pm") == 1) {
+    document.getElementById("navigation").style.display = "none";
+    document.getElementById("essay_arrow_back").style.display = "none";
+} else {
+    insertHeader();
+    insertNavigation();
+    insertFooter();
+    setCopyRightYear();
+}
+
 insertShareButton();
-insertFooter();
-setCopyRightYear();
 insertIEWarning();
 
