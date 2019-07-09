@@ -108,6 +108,22 @@
             border-radius: 4px;
 
         }
+
+        .btn-detail-link {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
+        .btn-detail-link:hover {
+            font-size: x-large;
+            color: #2196F3;
+        }
+
+        .btn-detail-nolink {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
     </style>
 </head>
 
@@ -182,11 +198,10 @@
                 <span class="essay-title">
                     中国保险汽车安全指数
                     <span style="color: #2196F3;font-size: large;">
-                        ( 数据来源：
+                        数据来源:
                         <a href="http://c-iasi.com" target="_blank">
                             <img src="img/C-IASI.png" class="ciasi-logo"/>
                         </a>
-                        )
                     </span>
                     <!--
                     <i class="zmdi zmdi-car green"></i>
@@ -201,8 +216,8 @@
                 </span>
 
                 <span align="right" style="float: right;">
-                    <i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;
-                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-06-30</span>
+                    <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-07-09</span>
                 </span>
             </div>
 
@@ -215,16 +230,16 @@
                         <tr>
                             <!-- data-type="numeric"-->
                             <th data-column-id="make" data-formatter="make">厂商</th>
-                            <th data-column-id="model" data-formatter="model">款式</th>
+                            <th data-column-id="model" data-formatter="model" data-sortable="false">款式</th>
                             <th data-column-id="front_offset" data-formatter="front_offset">正面偏置</th><!--25%-->
                             <th data-column-id="side" data-formatter="side">侧面碰撞</th>
                             <th data-column-id="top" data-formatter="top">车顶强度</th>
                             <th data-column-id="seat" data-formatter="seat">座椅头枕</th>
-                            <th>|</th>
+                            <th data-sortable="false">|</th>
                             <th data-column-id="assist" data-formatter="assist">辅助安全</th>
                             <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
                             <th data-column-id="fix" data-formatter="fix" data-visible="false">耐撞维修</th>
-                            <th data-column-id="link" data-formatter="link">详情</th>
+                            <th data-column-id="link" data-formatter="link" data-sortable="false">详情</th>
 
                         </tr>
                         </thead>
@@ -801,11 +816,11 @@
                     var linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
                     return "<span style='font-size: 15px' >" +
                         "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
-                        + "<i class=\"essay-list-type zmdi zmdi-link blue\"></i>"
+                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
                         + "</a>" +
                         "</span>";
                 } else {
-                    return row.link;
+                    return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
                 }
             }
         }
@@ -829,7 +844,6 @@
     var directoryDepth = 2;
 </script>
 <script src="../../js/zms.page.pattern.js"></script>
-
 
 <script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
