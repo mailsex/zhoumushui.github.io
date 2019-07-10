@@ -230,6 +230,7 @@
 </section>
 
 <script>
+
     // Draw resolution canvas
     var canvasResolution = document.getElementById("canvas_resolution");
     var context = canvasResolution.getContext("2d");
@@ -242,12 +243,14 @@
     context.fillText("8K", 746, 15);
     context.fillText("7680x4320", 690, 427);
 
+    /*
     // 5K 5120x2880
     context.fillStyle = "#4CAF50";
     context.strokeStyle = "#4CAF50";
     context.strokeRect(0, 0, 512, 288); // 5120*2880-5K
     context.fillText("5K", 491, 15);
     context.fillText("5120x2880", 435, 284);
+    */
 
     // 4K 3840x2160
     context.fillStyle = "#E91E63";
@@ -277,40 +280,43 @@
     context.fillText("720P", 91, 15);
     context.fillText("1280x720", 61, 69);
 
+    /*
     // 480P 640x480
     context.fillStyle = "#FFFFFF";
     context.strokeStyle = "#FFFFFF";
     context.strokeRect(0, 0, 64, 48); // 640*480-480P
     context.fillText("480P", 27, 15);
     context.fillText("640x480", 4, 45);
+    */
 
     // Copyright
     context.fillStyle = "#2B3942";
     context.fillText("©zhoumushui.com", 325, 428);
 
-
     <!-- Draw size canvas:786x432 X4-->
     var canvasSize = document.getElementById("canvas_size");
     var ctxSize = canvasSize.getContext("2d");
-    var TIMES = 4.6; // fit for canvas size
+    var TIMES = 4.06; // fit for canvas size
     ctxSize.font = "15px Arial";
-    // 75'   166.03cm 93.375mm
-    ctxSize.fillStyle = "#2196F3";
-    ctxSize.strokeStyle = "#2196F3";
-    ctxSize.strokeRect(0, 0, 166.03 * TIMES, 93.375 * TIMES);
-    ctxSize.fillText("75'", 740, 15);
 
-    // 65'   143.90cm 80.93cm
-    ctxSize.fillStyle = "#4CAF50";
-    ctxSize.strokeStyle = "#4CAF50";
-    ctxSize.strokeRect(0, 0, 143.9 * TIMES, 80.93 * TIMES);
-    ctxSize.fillText("65'", 635, 15);
+    // Count inch
+    function drawRectangleByInch(size, color) {
+        var diagonal = 2.54 * size;
+        var x = Math.sqrt((diagonal * diagonal) / 337);
+        console.log("[" + size + "]" + 16 * x + " x " + 9 * x);
+        ctxSize.fillStyle = color;
+        ctxSize.strokeStyle = color;
+        ctxSize.strokeRect(0, 0, x * 16 * TIMES, x * 9 * TIMES);
+        ctxSize.fillText(size + "'", x * 16 * TIMES - 23, 15);
+    }
 
-    // 55'   121.76cm 68.49cm
-    ctxSize.fillStyle = "#E91E63";
-    ctxSize.strokeStyle = "#E91E63";
-    ctxSize.strokeRect(0, 0, 121.76 * TIMES, 68.49 * TIMES);
-    ctxSize.fillText("55'", 535, 15);
+    drawRectangleByInch(85, "#4CAF50");
+    drawRectangleByInch(75, "#2196F3");
+    drawRectangleByInch(65, "#E91E63");
+    drawRectangleByInch(55, "#FFEB3B");
+    //drawRectangleByInch(45, "#4CAF50");
+    //drawRectangleByInch(35, "#FF9800");
+    //drawRectangleByInch(25, "#9C27B0");
 </script>
 
 <!-- Older IE Warning -->
