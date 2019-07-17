@@ -38,6 +38,18 @@
 
     <!-- Material Floating Button -->
     <link href="css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        .book-rate-star {
+            color: #00A1D8;
+            font-size: 18px
+        }
+
+        .book-name {
+            color: #00A1D8;
+            font-size: 16px;
+            font-family: 微软雅黑, 仿宋;
+        }
+    </style>
 </head>
 
 <body>
@@ -870,15 +882,15 @@
                 // Replace rate by star
                 var tdRate = trs[i].getElementsByTagName('td')[tdRateIndex];
                 if (tdRate.innerHTML.indexOf('5') == 0) {
-                    tdRate.innerHTML = '<span style="color: #00A1D8;font-size: 15px">★★★★★</span>';
+                    tdRate.innerHTML = '<span class="book-rate-star">★★★★★</span>';
                 } else if (tdRate.innerHTML.indexOf('4') == 0) {
-                    tdRate.innerHTML = '<span style="color: #4CAF50;font-size: 15px">★★★★</span>';
+                    tdRate.innerHTML = '<span class="book-rate-star">★★★★</span>';
                 } else if (tdRate.innerHTML.indexOf('3') == 0) {
-                    tdRate.innerHTML = '<span style="color: #FFEB3B;font-size: 15px">★★★</span>';
+                    tdRate.innerHTML = '<span class="book-rate-star">★★★</span>';
                 } else if (tdRate.innerHTML.indexOf('2') == 0) {
-                    tdRate.innerHTML = '<span style="color: #FF9800;font-size: 15px">★★</span>';
+                    tdRate.innerHTML = '<span class="book-rate-star">★★</span>';
                 } else if (tdRate.innerHTML.indexOf('1') == 0) {
-                    tdRate.innerHTML = '<span style="color: #F44336;font-size: 15px">★</span>';
+                    tdRate.innerHTML = '<span class="book-rate-star">★</span>';
                 } else {
                     tdRate.innerHTML = '';
                 }
@@ -893,8 +905,8 @@
 
                 // 给书名添加样式
                 var tdName = trs[i].getElementsByTagName('td')[tdNameIndex];
-                tdName.innerHTML = "<strong style='color: #00A1D8;font-size: 18px;font-family: 仿宋,微软雅黑'>"
-                    + tdName.innerHTML + "</strong>";
+                tdName.innerHTML = "<span class='book-name'>"
+                    + tdName.innerHTML + "</span>";
             }
             document.getElementById("wordCount").innerHTML = totalWordCount / 10;
 
