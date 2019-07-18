@@ -217,7 +217,7 @@
 
                 <span align="right" style="float: right;">
                     <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
-                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-07-16</span>
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-07-18</span>
                 </span>
             </div>
 
@@ -597,7 +597,49 @@
                             <td>17</td><!-- C-IASI ID -->
                         </tr>
 
-                        <!-- TODO -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="content2">
+
+        <div class="card">
+
+            <!-- TODO -->
+            <div id="card_body2" class="card__body" style="padding-top: 10px">
+                <h3>即将测试车型</h3><br>
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-carsafe-list-todo" class="table table-striped table--vmiddle"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <!-- data-type="numeric"-->
+                            <th data-column-id="make" data-formatter="make">厂商</th>
+                            <th data-column-id="model" data-formatter="model" data-sortable="false">款式</th>
+                            <th data-column-id="front_offset" data-formatter="front_offset" data-visible="false">正面偏置
+                            </th><!--25%-->
+                            <th data-column-id="side" data-formatter="side" data-visible="false">侧面碰撞</th>
+                            <th data-column-id="top" data-formatter="top" data-visible="false">车顶强度</th>
+                            <th data-column-id="seat" data-formatter="seat" data-visible="false">座椅头枕</th>
+                            <th data-sortable="false" data-visible="false">|</th>
+                            <th data-column-id="assist" data-formatter="assist" data-visible="false">辅助安全</th>
+                            <th data-column-id="road_user" data-formatter="road_user" data-visible="false">行人保护</th>
+                            <th data-column-id="fix" data-formatter="fix" data-visible="false">耐撞维修</th>
+                            <th data-column-id="test_time" data-visible="true">测试批次</th>
+                            <th data-column-id="link" data-formatter="link" data-sortable="false" data-visible="false">
+                                详情
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
                         <tr>
                             <td>长安福特</td><!-- MAKE -->
                             <td>福克斯 2019款 三厢 1.5L 锋跃型</td><!-- MODEL -->
@@ -1002,6 +1044,73 @@
             }
         }
     });
+    $("#table-carsafe-list-todo").bootgrid({
+        //Override default icon classes
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "make": function (column, row) {
+                return getLogoByMake(row.make) + row.make/* + getCountryByMake(row.make) */;
+            },
+            "front_offset": function (column, row) {
+                return getCarSafeDescriptionByWord(row.front_offset);
+            },
+            "side": function (column, row) {
+                return getCarSafeDescriptionByWord(row.side);
+            },
+            "top": function (column, row) {
+                return getCarSafeDescriptionByWord(row.top);
+            },
+            "seat": function (column, row) {
+                return getCarSafeDescriptionByWord(row.seat);
+            },
+            "assist": function (column, row) {
+                return getCarSafeDescriptionByWord(row.assist);
+            },
+            "road_user": function (column, row) {
+                return getCarSafeDescriptionByWord(row.road_user);
+            },
+            "fix": function (column, row) {
+                return getCarSafeDescriptionByWord(row.fix);
+            },
+            "link": function (column, row) {
+                if (row.link) {
+                    var linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
+                    return "<span style='font-size: 15px' >" +
+                        "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
+                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
+                        + "</a>" +
+                        "</span>";
+                } else {
+                    return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
+                }
+            }
+        }
+    });
 </script>
 
 <!-- Site Functions & Actions -->
@@ -1011,8 +1120,10 @@
 <script async src="../../js/busuanzi.pure.mini.js"></script>
 
 <!-- Nest Follow Mouse Background -->
+<!--
 <script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
         src="../../js/canvas-nest.min.js"></script>
+-->
 
 <!-- Toolbox -->
 <script src="../../js/toolbox.main.js"></script>
