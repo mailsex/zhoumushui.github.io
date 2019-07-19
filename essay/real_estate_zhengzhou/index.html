@@ -175,14 +175,14 @@
             <script type="text/javascript"
                     src="js/essay.zhengzhouhouse.array.js"></script>
             <script type="text/javascript">
-                var map;
-                var iconStar, iconCar;
-                var iconPurpleDot, iconBlueDot, iconTealDot, iconGreenDot, iconYellowDot, iconRedDot;
-                var colorYellow;
-                var colorRed;
-                var colorBlue;
-                var colorTeal;
-                var colorGrey;
+                let map;
+                let iconStar, iconCar;
+                let iconPurpleDot, iconBlueDot, iconTealDot, iconGreenDot, iconYellowDot, iconRedDot;
+                let colorYellow;
+                let colorRed;
+                let colorBlue;
+                let colorTeal;
+                let colorGrey;
 
                 function initialMap(center) {
                     map = new AMap.Map('container_amap', { // AZ:Initial Map
@@ -244,7 +244,7 @@
 
                 // AZ:替换JSON中的户型数字为汉字
                 function getHouseTypeString(hx) {
-                    var strHx = hx.toString();
+                    let strHx = hx.toString();
                     if (strHx.indexOf("0") >= 0) {
                         strHx = strHx.replace(/0/g, "未知");
                     } else {
@@ -263,10 +263,10 @@
                 }
 
                 function drawPoint() {
-                    var arrayMarkerPoint = []; // array.footprint.js
-                    for (var i = 0; i < arrayHouse.length; i += 1) {
-                        var markerPoint;
-                        var iconPoint;
+                    let arrayMarkerPoint = []; // array.footprint.js
+                    for (let i = 0; i < arrayHouse.length; i += 1) {
+                        let markerPoint;
+                        let iconPoint;
                         switch (arrayHouse[i].zx) {
                             case 1: // 精装
                                 iconPoint = iconRedDot;
@@ -314,7 +314,7 @@
                  */
                 function drawPath(destinationMap, arrayPathPoint, lineWeight, lineColor, strokeStyle, strokeOpacity) {
                     // 绘制轨迹
-                    var polyline = new AMap.Polyline({
+                    let polyline = new AMap.Polyline({
                         map: destinationMap,
                         path: arrayPathPoint,
                         strokeColor: lineColor,  // 线颜色
@@ -323,7 +323,7 @@
                         showDir: false, // 显示方向箭头
                         strokeStyle: strokeStyle  // 线样式:solid/dashed
                     });
-                    var passedPolyline = new AMap.Polyline({
+                    let passedPolyline = new AMap.Polyline({
                         map: destinationMap,
                         // path: arrayPathPoint,
                         strokeColor: "#FF0000",  //线颜色
@@ -359,11 +359,11 @@
                     })
                 }
 
-                var pointZiJinShan = [113.682049, 34.762173]; // 紫荆山（1&2号线换乘站）
-                var pointXingYang = [113.383221, 34.787375]; // 荥阳市政府
-                var pointAirport = [113.854823, 34.526056]; // 新郑国际机场
-                var pointKaiFeng = [114.341447, 34.797049]; // 开封
-                var pointZhongMu = [113.975817, 34.720374]; // 中牟县政府
+                let pointZiJinShan = [113.682049, 34.762173]; // 紫荆山（1&2号线换乘站）
+                let pointXingYang = [113.383221, 34.787375]; // 荥阳市政府
+                let pointAirport = [113.854823, 34.526056]; // 新郑国际机场
+                let pointKaiFeng = [114.341447, 34.797049]; // 开封
+                let pointZhongMu = [113.975817, 34.720374]; // 中牟县政府
 
 
                 initialMap(pointZiJinShan);
@@ -444,7 +444,7 @@
 
 <script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
-    var panel = document.getElementById('panel'),
+    let panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
         showcode = document.getElementById('showcode'),
         selectFx = document.getElementById('selections-fx'),
@@ -489,11 +489,11 @@
 <script>
 
     function requestFullScreen(element) {
-        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+        let requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
         if (requestMethod) {
             requestMethod.call(element);
         } else if (typeof window.ActiveXObject !== "undefined") {
-            var wscript = new ActiveXObject("WScript.Shell");
+            let wscript = new ActiveXObject("WScript.Shell");
             if (wscript !== null) {
                 wscript.SendKeys("{F11}");
             }
@@ -519,9 +519,9 @@
         return document.fullscreen;
     }
 
-    var btnFullscreen = document.getElementById("fullscreen");
+    let btnFullscreen = document.getElementById("fullscreen");
     btnFullscreen.onclick = function () {
-        var elem = document.getElementById("container_amap");
+        let elem = document.getElementById("container_amap");
         requestFullScreen(elem);
     };
 </script>

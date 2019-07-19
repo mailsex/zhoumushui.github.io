@@ -946,7 +946,7 @@
 
 <script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
-    var panel = document.getElementById('panel'),
+    let panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
         showcode = document.getElementById('showcode'),
         selectFx = document.getElementById('selections-fx'),
@@ -994,34 +994,34 @@
 <script src="../../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 <script type="text/javascript">
-    var dataArrayPushUp = []; // 俯卧撑
-    var dataArraySitUp = []; // 仰卧起坐
-    var dataArrayRopeSkip = []; // 跳绳
-    var dataArraySpringExpander = []; // 弹簧拉力器
-    var dataArrayRun = []; // 跑步
-    var calculateFit = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
-        var trs = table.getElementsByTagName('tr');
-        var start = 1, // 开始计算的行号，忽略第一行的表头
+    let dataArrayPushUp = []; // 俯卧撑
+    let dataArraySitUp = []; // 仰卧起坐
+    let dataArrayRopeSkip = []; // 跳绳
+    let dataArraySpringExpander = []; // 弹簧拉力器
+    let dataArrayRun = []; // 跑步
+    let calculateFit = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        let trs = table.getElementsByTagName('tr');
+        let start = 1, // 开始计算的行号，忽略第一行的表头
             end = trs.length; // 结束计算的行号，忽略最后合计的一行
-        var pushUpTotal = 0, pushUpDay = 0; // 俯卧撑
-        var sitUpTotal = 0, sitUpDay = 0; // 仰卧起坐
-        var ropeSkipTotal = 0, ropeSkipDay = 0; // 跳绳
-        var springExpanderTotal = 0, springExpanderDay = 0; // 弹簧拉力器
-        var runTotal = 0, runDay = 0; // 跑步
+        let pushUpTotal = 0, pushUpDay = 0; // 俯卧撑
+        let sitUpTotal = 0, sitUpDay = 0; // 仰卧起坐
+        let ropeSkipTotal = 0, ropeSkipDay = 0; // 跳绳
+        let springExpanderTotal = 0, springExpanderDay = 0; // 弹簧拉力器
+        let runTotal = 0, runDay = 0; // 跑步
 
-        for (var i = start; i < end; i++) {
-            var tdDate = trs[i].getElementsByTagName('td')[0];
-            var tdNumberPushUp = trs[i].getElementsByTagName('td')[1];
-            var tdNumberSitUp = trs[i].getElementsByTagName('td')[2];
-            var tdNumberRopeSkip = trs[i].getElementsByTagName('td')[3];
-            var tdNumberSpringExpander = trs[i].getElementsByTagName('td')[4];
-            var tdNumberRun = trs[i].getElementsByTagName('td')[5];
+        for (let i = start; i < end; i++) {
+            let tdDate = trs[i].getElementsByTagName('td')[0];
+            let tdNumberPushUp = trs[i].getElementsByTagName('td')[1];
+            let tdNumberSitUp = trs[i].getElementsByTagName('td')[2];
+            let tdNumberRopeSkip = trs[i].getElementsByTagName('td')[3];
+            let tdNumberSpringExpander = trs[i].getElementsByTagName('td')[4];
+            let tdNumberRun = trs[i].getElementsByTagName('td')[5];
 
-            var numberPushUp = parseFloat(tdNumberPushUp.innerHTML);
-            var numberSitUp = parseFloat(tdNumberSitUp.innerHTML);
-            var numberRopeSkip = parseFloat(tdNumberRopeSkip.innerHTML);
-            var numberSpringExpander = parseFloat(tdNumberSpringExpander.innerHTML);
-            var numberRun = parseFloat(tdNumberRun.innerHTML);
+            let numberPushUp = parseFloat(tdNumberPushUp.innerHTML);
+            let numberSitUp = parseFloat(tdNumberSitUp.innerHTML);
+            let numberRopeSkip = parseFloat(tdNumberRopeSkip.innerHTML);
+            let numberSpringExpander = parseFloat(tdNumberSpringExpander.innerHTML);
+            let numberRun = parseFloat(tdNumberRun.innerHTML);
 
             dataArrayPushUp.push([end - i - 1, numberPushUp]);
             dataArraySitUp.push([end - i - 1, numberSitUp]);
@@ -1053,7 +1053,7 @@
         document.getElementById("push-up-row-count").innerHTML = pushUpDay;
         document.getElementById("pushUpTotal").innerHTML = pushUpTotal; // Total
         if (pushUpTotal > 0) {
-            var pushUpAverage = Math.round(( pushUpTotal / (pushUpDay)) * 100) / 100;
+            let pushUpAverage = Math.round(( pushUpTotal / (pushUpDay)) * 100) / 100;
             document.getElementById("pushUpAverage").innerHTML = pushUpAverage;
             if (pushUpTotal < 55555) {
                 document.getElementById("push-up-day-left").innerHTML = Math.round((55555 - pushUpTotal) / pushUpAverage);
@@ -1067,7 +1067,7 @@
         document.getElementById("sitUpTotal").innerHTML = sitUpTotal; // Total
         document.getElementById("sit-up-row-count").innerHTML = sitUpDay;
         if (sitUpTotal > 0) {
-            var sitUpAverage = Math.round(( sitUpTotal / (sitUpDay)) * 100) / 100;
+            let sitUpAverage = Math.round(( sitUpTotal / (sitUpDay)) * 100) / 100;
             document.getElementById("sitUpAverage").innerHTML = sitUpAverage;
             if (sitUpTotal < 55555) {
                 document.getElementById("sit-up-day-left").innerHTML = Math.round((55555 - sitUpTotal) / sitUpAverage);
@@ -1081,7 +1081,7 @@
         document.getElementById("ropeSkipTotal").innerHTML = ropeSkipTotal; // Total
         document.getElementById("rope-skip-row-count").innerHTML = ropeSkipDay;
         if (ropeSkipTotal > 0) {
-            var ropeSkipAverage = Math.round(( ropeSkipTotal / (ropeSkipDay)) * 100) / 100;
+            let ropeSkipAverage = Math.round(( ropeSkipTotal / (ropeSkipDay)) * 100) / 100;
             document.getElementById("ropeSkipAverage").innerHTML = ropeSkipAverage;
             if (ropeSkipTotal < 55555) {
                 document.getElementById("rope-skip-day-left").innerHTML = Math.round((55555 - ropeSkipTotal) / ropeSkipAverage);
@@ -1095,7 +1095,7 @@
         document.getElementById("springExpanderTotal").innerHTML = springExpanderTotal; // Total
         document.getElementById("spring-expander-row-count").innerHTML = springExpanderDay;
         if (springExpanderTotal > 0) {
-            var springExpanderAverage = Math.round(( springExpanderTotal / (springExpanderDay)) * 100) / 100;
+            let springExpanderAverage = Math.round(( springExpanderTotal / (springExpanderDay)) * 100) / 100;
             document.getElementById("springExpanderAverage").innerHTML = springExpanderAverage;
             if (springExpanderTotal < 55555) {
                 document.getElementById("spring-expander-day-left").innerHTML = Math.round((55555 - springExpanderTotal) / springExpanderAverage);
@@ -1109,7 +1109,7 @@
         document.getElementById("runTotal").innerHTML = runTotal; // Total
         document.getElementById("run-row-count").innerHTML = runDay;
         if (runTotal > 0) {
-            var runAverage = Math.round(( runTotal / (runDay)) * 100) / 100;
+            let runAverage = Math.round(( runTotal / (runDay)) * 100) / 100;
             document.getElementById("runAverage").innerHTML = runAverage;
             if (runTotal < 5555) {
                 document.getElementById("run-day-left").innerHTML = Math.round((5555 - runTotal) / runAverage);
@@ -1149,7 +1149,7 @@
 
         /* Create Chart */
         if ($('#push-up-trend-dynamic')[0]) {
-            var plotPushUp = $.plot("#push-up-trend-dynamic", [dataArrayPushUp], {
+            let plotPushUp = $.plot("#push-up-trend-dynamic", [dataArrayPushUp], {
                 series: {
                     label: " 俯卧撑",
                     lines: {
@@ -1197,7 +1197,7 @@
                 }
             });
 
-            var plotSitUp = $.plot("#sit-up-trend-dynamic", [dataArraySitUp], {
+            let plotSitUp = $.plot("#sit-up-trend-dynamic", [dataArraySitUp], {
                 series: {
                     label: " 仰卧起坐",
                     lines: {
@@ -1245,7 +1245,7 @@
                 }
             });
 
-            var plotRopeSkip = $.plot("#rope-skip-trend-dynamic", [dataArrayRopeSkip], {
+            let plotRopeSkip = $.plot("#rope-skip-trend-dynamic", [dataArrayRopeSkip], {
                 series: {
                     label: " 跳绳",
                     lines: {
@@ -1293,7 +1293,7 @@
                 }
             });
 
-            var plotSpringExpander = $.plot("#spring-expander-trend-dynamic", [dataArraySpringExpander], {
+            let plotSpringExpander = $.plot("#spring-expander-trend-dynamic", [dataArraySpringExpander], {
                 series: {
                     label: " 弹簧拉力器",
                     lines: {
@@ -1341,7 +1341,7 @@
                 }
             });
 
-            var plotRun = $.plot("#run-trend-dynamic", [dataArrayRun], {
+            let plotRun = $.plot("#run-trend-dynamic", [dataArrayRun], {
                 series: {
                     label: " 跑步",
                     lines: {
@@ -1433,7 +1433,7 @@
         },
         formatters: {
             "number_push_up": function (column, row) {
-                var num = row.number_push_up;
+                let num = row.number_push_up;
                 if (num == 0)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
                 else if (num < 50)
@@ -1443,7 +1443,7 @@
 
             },
             "number_sit_up": function (column, row) {
-                var num = row.number_sit_up;
+                let num = row.number_sit_up;
                 if (num == 0)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
                 else if (num < 100)
@@ -1453,7 +1453,7 @@
 
             },
             "number_rope_skip": function (column, row) {
-                var num = row.number_rope_skip;
+                let num = row.number_rope_skip;
                 if (num == 0)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
                 else if (num < 200)
@@ -1463,7 +1463,7 @@
 
             },
             "number_spring_expander": function (column, row) {
-                var num = row.number_spring_expander;
+                let num = row.number_spring_expander;
                 if (num == 0)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
                 else if (num < 100)
@@ -1473,7 +1473,7 @@
 
             },
             "number_run": function (column, row) {
-                var num = row.number_run;
+                let num = row.number_run;
                 if (num == 0)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
                 else if (num < 10)

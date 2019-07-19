@@ -291,9 +291,9 @@
         -->
 
 <script type="text/javascript">
-    var offsetX = $("#loveHeart").width() / 2;
-    var offsetY = $("#loveHeart").height() / 2 - 55;
-    var together = new Date();
+    let offsetX = $("#loveHeart").width() / 2;
+    let offsetY = $("#loveHeart").height() / 2 - 55;
+    let together = new Date();
     together.setFullYear(2013, 11-1, 1); // 2003-11-01
     together.setHours(0);
     together.setMinutes(0);
@@ -301,7 +301,7 @@
     together.setMilliseconds(0);
 
     if (!document.createElement('canvas').getContext) {
-        var msg = document.createElement("div");
+        let msg = document.createElement("div");
         msg.id = "errorMsg";
         msg.innerHTML = "Your browser doesn't support HTML5!";
         document.body.appendChild(msg);
@@ -326,10 +326,10 @@
 
 <!-- AZ:Love Heart Background -->
 <script>
-    var canvas = document.querySelector("canvas"),
+    let canvas = document.querySelector("canvas"),
         ctx = canvas.getContext("2d");
 
-    var ww, wh;
+    let ww, wh;
 
     function onResize() {
         ww = canvas.width = window.innerWidth;
@@ -340,9 +340,9 @@
     ctx.shadowBlur = 25;
     ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
 
-    var precision = 100;
-    var hearts = [];
-    var mouseMoved = false;
+    let precision = 100;
+    let hearts = [];
+    let mouseMoved = false;
     function onMove(e) {
         mouseMoved = true;
         if (e.type === "touchmove") {
@@ -365,9 +365,9 @@
         this.speedSize = Math.random() * 0.05 + 0.01;
         this.opacity = 1;
         this.vertices = [];
-        for (var i = 0; i < precision; i++) {
-            var step = (i / precision - 0.5) * (Math.PI * 2);
-            var vector = {
+        for (let i = 0; i < precision; i++) {
+            let step = (i / precision - 0.5) * (Math.PI * 2);
+            let vector = {
                 x: (15 * Math.pow(Math.sin(step), 3)),
                 y: -(13 * Math.cos(step) - 5 * Math.cos(2 * step) - 2 * Math.cos(3 * step) - Math.cos(4 * step))
             }
@@ -383,8 +383,8 @@
         ctx.translate(-1000, this.y);
         ctx.scale(this.size, this.size);
         ctx.beginPath();
-        for (var i = 0; i < precision; i++) {
-            var vector = this.vertices[i];
+        for (let i = 0; i < precision; i++) {
+            let vector = this.vertices[i];
             ctx.lineTo(vector.x, vector.y);
         }
         ctx.globalAlpha = this.size;
@@ -402,7 +402,7 @@
 
         hearts.push(new Heart())
         ctx.clearRect(0, 0, ww, wh);
-        for (var i = 0; i < hearts.length; i++) {
+        for (let i = 0; i < hearts.length; i++) {
             hearts[i].draw();
             if (hearts[i].size <= 0) {
                 hearts.splice(i, 1);

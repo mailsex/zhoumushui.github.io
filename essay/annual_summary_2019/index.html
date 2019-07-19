@@ -228,7 +228,7 @@
 
 <script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
-    var panel = document.getElementById('panel'),
+    let panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
         showcode = document.getElementById('showcode'),
         selectFx = document.getElementById('selections-fx'),
@@ -279,16 +279,16 @@
     'use strict';
     $(document).ready(function () {
         <!-- AZ: Month Line 每月日均步数 data from SAMSUNG Health-->
-        var data2015 = [[1,], [2,], [3, 4197], [4, 8659], [5, 8484], [6, 8721],
+        let data2015 = [[1,], [2,], [3, 4197], [4, 8659], [5, 8484], [6, 8721],
             [7, 7469], [8, 8292], [9, 9578], [10, 9898], [11, 11505], [12, 9467]];
-        var data2016 = [[1, 8626], [2, 7635], [3, 9188], [4, 7594], [5, 7300], [6, 5912],
+        let data2016 = [[1, 8626], [2, 7635], [3, 9188], [4, 7594], [5, 7300], [6, 5912],
             [7, 6304], [8, 5410], [9, 5449], [10, 7652], [11, 7448], [12, 6939]];
-        var data2017 = [[1, 6939], [2, 6157], [3, 3939], [4, 5053], [5, 4000/* 数据不详，粗略估计 */], [6, 3127],
+        let data2017 = [[1, 6939], [2, 6157], [3, 3939], [4, 5053], [5, 4000/* 数据不详，粗略估计 */], [6, 3127],
             [7, 4621], [8, 3971], [9, 6402], [10, 6363], [11, 3317], [12, 6273]];
-        var data2018 = [[1, 5611], [2, 11110], [3, 7168], [4, 8051], [5, 8252], [6, 9728],
+        let data2018 = [[1, 5611], [2, 11110], [3, 7168], [4, 8051], [5, 8252], [6, 9728],
             [7, 7075], [8, 8357], [9, 6023], [10, 5301], [11, 4235], [12, 3522]];
 
-        var barData = [ // Create an Array push the data + Draw the bars
+        let barData = [ // Create an Array push the data + Draw the bars
             {
                 label: '2015',
                 data: data2015,
@@ -352,7 +352,7 @@
         if ($('.step-month-line')[0]) {
             $('.step-month-line').bind('plothover', function (event, pos, item) {
                 if (item) {
-                    var x = item.datapoint[0].toFixed(2),
+                    let x = item.datapoint[0].toFixed(2),
                         y = item.datapoint[1].toFixed(2);
                     $('.flot-tooltip').html(item.series.label + ' of ' + x + ' = ' + y).css({
                         top: item.pageY + 5,
@@ -370,14 +370,14 @@
     'use strict';
     $(document).ready(function () { // 共享单车
         <!-- AZ: Month Line -->
-        var data2016 = [[1,], [2,], [3,], [4,], [5,], [6,],
+        let data2016 = [[1,], [2,], [3,], [4,], [5,], [6,],
             [7,], [8,], [9,], [10,], [11, 0], [12, 3]];
-        var data2017 = [[1, 2], [2, 0], [3, 76], [4, 60], [5, 63], [6, 66],
+        let data2017 = [[1, 2], [2, 0], [3, 76], [4, 60], [5, 63], [6, 66],
             [7, 68], [8, 69], [9, 76], [10, 88], [11, 103], [12, 114]];
-        var data2018 = [[1, 71], [2, 39], [3, 82], [4, 92], [5, 73], [6, 83],
+        let data2018 = [[1, 71], [2, 39], [3, 82], [4, 92], [5, 73], [6, 83],
             [7, 93], [8, 75], [9, 97], [10, 3], [11, 3], [12, 0]];
 
-        var barData = [ // Create an Array push the data + Draw the bars
+        let barData = [ // Create an Array push the data + Draw the bars
             {
                 label: '2016',
                 data: data2016,

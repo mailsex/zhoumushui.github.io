@@ -7738,7 +7738,7 @@
 
 <script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
-    var panel = document.getElementById('panel'),
+    let panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
         showcode = document.getElementById('showcode'),
         selectFx = document.getElementById('selections-fx'),
@@ -7786,20 +7786,20 @@
 <script src="../../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 <script type="text/javascript">
-    var dataArray = [];
-    var numMobike = 0, numOfo = 0, numBluegogo = 0, numHelloBike = 0, numQingJu = 0;
-    var calculateMake = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
-        var trs = table.getElementsByTagName('tr');
-        var start = 1, // 开始计算的行号，忽略第一行的表头
+    let dataArray = [];
+    let numMobike = 0, numOfo = 0, numBluegogo = 0, numHelloBike = 0, numQingJu = 0;
+    let calculateMake = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        let trs = table.getElementsByTagName('tr');
+        let start = 1, // 开始计算的行号，忽略第一行的表头
             end = trs.length; // 结束计算的行号，忽略最后合计的一行
-        var total = 0;
-        var num2016 = 0, num2017 = 0, num2018 = 0, num2019 = 0;
+        let total = 0;
+        let num2016 = 0, num2017 = 0, num2018 = 0, num2019 = 0;
 
-        for (var i = start; i < end; i++) {
-            var tdNumber = trs[i].getElementsByTagName('td')[0];
-            var tdWith = trs[i].getElementsByTagName('td')[1];
-            var tdDate = trs[i].getElementsByTagName('td')[2];
-            var number = parseFloat(tdNumber.innerHTML);
+        for (let i = start; i < end; i++) {
+            let tdNumber = trs[i].getElementsByTagName('td')[0];
+            let tdWith = trs[i].getElementsByTagName('td')[1];
+            let tdDate = trs[i].getElementsByTagName('td')[2];
+            let number = parseFloat(tdNumber.innerHTML);
             dataArray.push([end - i - 1, number]); // for Dynamic Array
 
             if (number) {
@@ -7848,16 +7848,16 @@
     'use strict';
     $(document).ready(function () {
         <!-- AZ: Month Line -->
-        var data2016 = [[1,], [2,], [3,], [4,], [5,], [6,],
+        let data2016 = [[1,], [2,], [3,], [4,], [5,], [6,],
             [7,], [8,], [9,], [10,], [11, 0], [12, 3]];
-        var data2017 = [[1, 2], [2, 0], [3, 76], [4, 60], [5, 63], [6, 66],
+        let data2017 = [[1, 2], [2, 0], [3, 76], [4, 60], [5, 63], [6, 66],
             [7, 68], [8, 69], [9, 76], [10, 88], [11, 103], [12, 114]];
-        var data2018 = [[1, 71], [2, 39], [3, 82], [4, 92], [5, 73], [6, 83],
+        let data2018 = [[1, 71], [2, 39], [3, 82], [4, 92], [5, 73], [6, 83],
             [7, 93], [8, 75], [9, 97], [10, 3], [11, 3], [12, 0]];
-        var data2019 = [[1, 2], [2, 0], [3, 0], [4, 0], [5, 1], [6,],
+        let data2019 = [[1, 2], [2, 0], [3, 0], [4, 0], [5, 1], [6,],
             [7,], [8,], [9,], [10,], [11,], [12,]];
 
-        var barData = [ // Create an Array push the data + Draw the bars
+        let barData = [ // Create an Array push the data + Draw the bars
             {
                 label: '2016',
                 data: data2016,
@@ -7921,7 +7921,7 @@
         if ($('.bike-month-line')[0]) {
             $('.bike-month-line').bind('plothover', function (event, pos, item) {
                 if (item) {
-                    var x = item.datapoint[0].toFixed(2),
+                    let x = item.datapoint[0].toFixed(2),
                         y = item.datapoint[1].toFixed(2);
                     $('.flot-tooltip').html(item.series.label + ' of ' + x + ' = ' + y).css({
                         top: item.pageY + 5,
@@ -7937,7 +7937,7 @@
         }
 
         // AZ:Donut Pie
-        var pieData = [
+        let pieData = [
             {data: numMobike, color: '#E91E63', label: numMobike}, // See az.css
             {data: numOfo, color: '#FFEB3B', label: numOfo},
             {data: numBluegogo, color: '#2196F3', label: numBluegogo},
@@ -7967,15 +7967,15 @@
         // Dynamic Line
         'use strict';
         /* Make some random data*/
-        var data = [];
-        var totalPoints = 300;
-        var updateInterval = 30;
+        let data = [];
+        let totalPoints = 300;
+        let updateInterval = 30;
 
         function getRandomData() {
             if (data.length > 0)
                 data = data.slice(1);
             while (data.length < totalPoints) {
-                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                let prev = data.length > 0 ? data[data.length - 1] : 50,
                     y = prev + Math.random() * 10 - 5;
                 if (y < 0) {
                     y = 0;
@@ -7984,8 +7984,8 @@
                 }
                 data.push(y);
             }
-            var res = [];
-            for (var i = 0; i < data.length; ++i) {
+            let res = [];
+            for (let i = 0; i < data.length; ++i) {
                 res.push([i, data[i]])
             }
             return res;
@@ -8001,7 +8001,7 @@
 
         /* Create Chart */
         if ($('#bike-trend-dynamic')[0]) {
-            var plot = $.plot("#bike-trend-dynamic", [dataArray], {
+            let plot = $.plot("#bike-trend-dynamic", [dataArray], {
                 series: {
                     label: " 趋势",
                     lines: {
@@ -8086,7 +8086,7 @@
         },
         formatters: {
             "number": function (column, row) {
-                var result = '';
+                let result = '';
                 switch (row.with) {
                     case 'M': // Mobike
                         result = "<span class=\"bike-mobike\">";
@@ -8107,7 +8107,7 @@
                         result = "<span class=\"bike-default\">";
                         break;
                 }
-                for (var i = 0; i < row.number; i++) {
+                for (let i = 0; i < row.number; i++) {
                     result = result + "<i class=\"zmdi zmdi-bike\"></i> ";
                 }
                 result = result + "</span>";

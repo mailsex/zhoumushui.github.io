@@ -239,7 +239,7 @@
                             <th data-column-id="assist" data-formatter="assist">辅助安全</th>
                             <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
                             <th data-column-id="fix" data-formatter="fix" data-visible="false">耐撞维修</th>
-                            <th data-column-id="test_time" data-visible="false">测试批次</th>
+                            <th data-column-id="test_time" data-formatter="test_time" data-visible="false">测试批次</th>
                             <th data-column-id="link" data-formatter="link" data-sortable="false">详情</th>
 
                         </tr>
@@ -631,7 +631,7 @@
                             <th data-column-id="assist" data-formatter="assist" data-visible="false">辅助安全</th>
                             <th data-column-id="road_user" data-formatter="road_user" data-visible="false">行人保护</th>
                             <th data-column-id="fix" data-formatter="fix" data-visible="false">耐撞维修</th>
-                            <th data-column-id="test_time" data-visible="true">测试批次</th>
+                            <th data-column-id="test_time" data-formatter="test_time" data-visible="true">测试批次</th>
                             <th data-column-id="link" data-formatter="link" data-sortable="false" data-visible="false">
                                 详情
                             </th>
@@ -1032,7 +1032,7 @@
             },
             "link": function (column, row) {
                 if (row.link) {
-                    var linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
+                    let linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
                     return "<span style='font-size: 15px' >" +
                         "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
                         + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
@@ -1097,9 +1097,12 @@
             "fix": function (column, row) {
                 return getCarSafeDescriptionByWord(row.fix);
             },
+            "test_time": function (column, row) {
+                return "20" + row.test_time.replace('A', ' 第一批').replace('B', ' 第二批');
+            },
             "link": function (column, row) {
                 if (row.link) {
-                    var linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
+                    let linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
                     return "<span style='font-size: 15px' >" +
                         "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
                         + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
@@ -1139,8 +1142,8 @@
     $('#btnSaveImage').click(function (e) {
         document.getElementById("btnSaveImage").style.display = "none";
         html2canvas(document.getElementById("content")).then(function (canvas) {
-            var contentW = canvas.width;
-            var contentH = canvas.height;
+            let contentW = canvas.width;
+            let contentH = canvas.height;
             Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', 'car.jpg');
         });
 

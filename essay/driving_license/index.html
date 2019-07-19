@@ -1016,32 +1016,31 @@
 <!-- AZ:Count Date -->
 <script>
     function getNowFormatDate() {
-        var date = new Date();
-        var seperator1 = ".";
-        var year = date.getFullYear();
-        var month = date.getMonth() + 1;
-        var strDate = date.getDate();
+        let date = new Date();
+        let seperator1 = ".";
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let strDate = date.getDate();
         if (month >= 1 && month <= 9) {
             month = "0" + month;
         }
         if (strDate >= 0 && strDate <= 9) {
             strDate = "0" + strDate;
         }
-        var currentdate = year + seperator1 + month + seperator1 + strDate;
-        return currentdate;
+        return year + seperator1 + month + seperator1 + strDate;
     }
 
     function getTimeElapse(dateStart, dateEnd) {
-        var seconds = (Date.parse(dateEnd) - Date.parse(dateStart)) / 1000;
+        let seconds = (Date.parse(dateEnd) - Date.parse(dateStart)) / 1000;
         /*
-         var days = Math.floor(seconds / (3600 * 24));
+         let days = Math.floor(seconds / (3600 * 24));
          seconds = seconds % (3600 * 24);
-         var hours = Math.floor(seconds / 3600);
+         let hours = Math.floor(seconds / 3600);
          if (hours < 10) {
          hours = "0" + hours;
          }
          seconds = seconds % 3600;
-         var minutes = Math.floor(seconds / 60);
+         let minutes = Math.floor(seconds / 60);
          if (minutes < 10) {
          minutes = "0" + minutes;
          }
@@ -1055,14 +1054,13 @@
 
     document.getElementById('today_date').innerHTML = "2018.06.14";//getNowFormatDate();
 
-    var dateStart = new Date();
+    let dateStart = new Date();
     dateStart.setFullYear(2017, 10 - 1, 29); // 2017-10-29
     // dateStart.setHours(0);
     // dateStart.setMinutes(0);
     // dateStart.setSeconds(0);
     // dateStart.setMilliseconds(0);
-    // var dateEnd = Date();
-    var dateEnd = new Date();
+    let dateEnd = new Date();
     dateEnd.setFullYear(2018, 6 - 1, 14); // 2018-06-14
     document.getElementById('day_past').innerHTML = getTimeElapse(dateStart, dateEnd);
 

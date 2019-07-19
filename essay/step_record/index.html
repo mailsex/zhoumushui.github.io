@@ -99,15 +99,15 @@
                     var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
 
                     <!-- AZ: Month Line 每月日均步数 data from SAMSUNG Health-->
-                    var data2015 = [[1,], [2,], [3, 4197], [4, 8659], [5, 8484], [6, 8721],
+                    let data2015 = [[1,], [2,], [3, 4197], [4, 8659], [5, 8484], [6, 8721],
                         [7, 7469], [8, 8292], [9, 9578], [10, 9898], [11, 11505], [12, 9467]];
-                    var data2016 = [[1, 8626], [2, 7635], [3, 9188], [4, 7594], [5, 7300], [6, 5912],
+                    let data2016 = [[1, 8626], [2, 7635], [3, 9188], [4, 7594], [5, 7300], [6, 5912],
                         [7, 6304], [8, 5410], [9, 5449], [10, 7652], [11, 7448], [12, 6939]];
-                    var data2017 = [[1, 6939], [2, 6157], [3, 3939], [4, 5053], [5, 4000/* 数据不详，粗略估计 */], [6, 3127],
+                    let data2017 = [[1, 6939], [2, 6157], [3, 3939], [4, 5053], [5, 4000/* 数据不详，粗略估计 */], [6, 3127],
                         [7, 4621], [8, 3971], [9, 6402], [10, 6363], [11, 3317], [12, 6273]];
-                    var data2018 = [[1, 5611], [2, 11110], [3, 7168], [4, 8051], [5, 8252], [6, 9728],
+                    let data2018 = [[1, 5611], [2, 11110], [3, 7168], [4, 8051], [5, 8252], [6, 9728],
                         [7, 7075], [8, 8357], [9, 6023], [10, 5301], [11, 4235], [12, 3522]];
-                    var data2019 = [[1, 5443], [2, 2685], [3, 2439], [4, 3007], [5, 5029], [6, 5959],
+                    let data2019 = [[1, 5443], [2, 2685], [3, 2439], [4, 3007], [5, 5029], [6, 5959],
                         [7,], [8,], [9,], [10,], [11,], [12,]];
 
                 </script>
@@ -6574,7 +6574,7 @@
 
 <script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
-    var panel = document.getElementById('panel'),
+    let panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
         showcode = document.getElementById('showcode'),
         selectFx = document.getElementById('selections-fx'),
@@ -6622,19 +6622,19 @@
 <script src="../../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 <script type="text/javascript">
-    var dataArray = [];
-    var numSmall = 0, numMiddle = 0, numLarge = 0;
-    var calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
-        var trs = table.getElementsByTagName('tr');
-        var start = 1, // 开始计算的行号，忽略第一行的表头
+    let dataArray = [];
+    let numSmall = 0, numMiddle = 0, numLarge = 0;
+    let calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        let trs = table.getElementsByTagName('tr');
+        let start = 1, // 开始计算的行号，忽略第一行的表头
             end = trs.length; // 结束计算的行号，忽略最后合计的一行
-        var total = 0;
-        var num2015 = 0, num2016 = 0, num2017 = 0, num2018 = 0, num2019 = 0;
+        let total = 0;
+        let num2015 = 0, num2016 = 0, num2017 = 0, num2018 = 0, num2019 = 0;
 
-        for (var i = start; i < end; i++) {
-            var tdNumber = trs[i].getElementsByTagName('td')[0];
-            var tdDate = trs[i].getElementsByTagName('td')[1];
-            var number = parseFloat(tdNumber.innerHTML);
+        for (let i = start; i < end; i++) {
+            let tdNumber = trs[i].getElementsByTagName('td')[0];
+            let tdDate = trs[i].getElementsByTagName('td')[1];
+            let number = parseFloat(tdNumber.innerHTML);
             dataArray.push([end - i - 1, number]); // for Dynamic Array
 
             if (number) {
@@ -6661,7 +6661,7 @@
                 }
             }
         }
-        var unit10K = "万";
+        let unit10K = "万";
         document.getElementById("stepTotal").innerHTML = (total / 10000).toFixed(0) + unit10K; // Total
         document.getElementById("stepAverage").innerHTML = (total / (trs.length - 1)).toFixed(0);
         document.getElementById("list-row-count").innerHTML = trs.length - 1;
@@ -6680,7 +6680,7 @@
     'use strict';
     $(document).ready(function () {
 
-        var barData = [ // Create an Array push the data + Draw the bars
+        let barData = [ // Create an Array push the data + Draw the bars
             {
                 label: '2015',
                 data: data2015,
@@ -6749,7 +6749,7 @@
         if ($('.step-month-line')[0]) {
             $('.step-month-line').bind('plothover', function (event, pos, item) {
                 if (item) {
-                    var x = item.datapoint[0].toFixed(2),
+                    let x = item.datapoint[0].toFixed(2),
                         y = item.datapoint[1].toFixed(2);
                     $('.flot-tooltip').html(item.series.label + ' of ' + x + ' = ' + y).css({
                         top: item.pageY + 5,
@@ -6764,7 +6764,7 @@
         }
 
         // AZ:Donut Pie
-        var pieData = [
+        let pieData = [
             {data: numSmall, color: '#009688', label: '轻度 ' + numSmall},
             {data: numMiddle, color: '#FFEB3B', label: '中度 ' + numMiddle},
             {data: numLarge, color: '#E91E63', label: '重度 ' + numLarge}
@@ -6782,15 +6782,15 @@
         // Dynamic Line
         'use strict';
         /* Make some random data*/
-        var data = [];
-        var totalPoints = 300;
-        var updateInterval = 30;
+        let data = [];
+        let totalPoints = 300;
+        let updateInterval = 30;
 
         function getRandomData() {
             if (data.length > 0)
                 data = data.slice(1);
             while (data.length < totalPoints) {
-                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                let prev = data.length > 0 ? data[data.length - 1] : 50,
                     y = prev + Math.random() * 10 - 5;
                 if (y < 0) {
                     y = 0;
@@ -6799,8 +6799,8 @@
                 }
                 data.push(y);
             }
-            var res = [];
-            for (var i = 0; i < data.length; ++i) {
+            let res = [];
+            for (let i = 0; i < data.length; ++i) {
                 res.push([i, data[i]])
             }
             return res;
@@ -6816,7 +6816,7 @@
 
         /* Create Chart */
         if ($('#step-day-trend')[0]) {
-            var plot = $.plot("#step-day-trend", [dataArray], {
+            let plot = $.plot("#step-day-trend", [dataArray], {
                 series: {
                     label: " 趋势",
                     lines: {show: true, lineWidth: 0.2, fill: 0.8},
@@ -6895,7 +6895,7 @@
         },
         formatters: {
             "number": function (column, row) {
-                var num = row.number;
+                let num = row.number;
                 if (num < 3000)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
                 else if (num < 5000)

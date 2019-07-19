@@ -950,19 +950,19 @@
 <script src="../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 <script type="text/javascript">
-    var numDone = 0, numTotal = 0;
-    var num2002 = 0, num2009 = 0, num2010 = 0, num2011 = 0, num2012 = 0;
-    var num2013 = 0, num2014 = 0, num2015 = 0, num2016 = 0, num2017 = 0;
-    var num2018 = 0, num2019 = 0;
-    var calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
-        var trs = table.getElementsByTagName('tr');
-        var start = 1, // 开始计算的行号，忽略第一行的表头
+    let numDone = 0, numTotal = 0;
+    let num2002 = 0, num2009 = 0, num2010 = 0, num2011 = 0, num2012 = 0;
+    let num2013 = 0, num2014 = 0, num2015 = 0, num2016 = 0, num2017 = 0;
+    let num2018 = 0, num2019 = 0;
+    calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        let trs = table.getElementsByTagName('tr');
+        let start = 1, // 开始计算的行号，忽略第一行的表头
             end = trs.length; // 结束计算的行号，忽略最后合计的一行
         numTotal = trs.length - 1;
 
-        for (var i = start; i < end; i++) {
-            var tdState = trs[i].getElementsByTagName('td')[0];
-            var tdDate = trs[i].getElementsByTagName('td')[2];
+        for (let i = start; i < end; i++) {
+            let tdState = trs[i].getElementsByTagName('td')[0];
+            let tdDate = trs[i].getElementsByTagName('td')[2];
 
             if (tdState.innerHTML.indexOf('1') == 0) { // Achieved Dreams
                 numDone++; // Done
@@ -1010,7 +1010,7 @@
 
     'use strict';
     $(document).ready(function () {
-        var dataDone = [
+        let dataDone = [
             // [2002, num2002],
             [2009, num2009],
             [2010, num2010],
@@ -1025,7 +1025,7 @@
             [2019, num2019]
         ];
 
-        var barData = [ // Create an Array push the data + Draw the bars
+        let barData = [ // Create an Array push the data + Draw the bars
             {
                 label: numDone + '/' + numTotal,
                 data: dataDone,
@@ -1075,18 +1075,18 @@
 
     // AZ:Count Date.
     function timeElapse(dateBirth, dateDeath) {
-        var current = Date();
+        let current = Date();
         // Birth-->Now
-        var secondPast = (Date.parse(current) - Date.parse(dateBirth)) / 1000;
-        var dayPast = Math.floor(secondPast / (3600 * 24));
-        var yearPast = (dayPast / 365).toFixed(2);
+        let secondPast = (Date.parse(current) - Date.parse(dateBirth)) / 1000;
+        let dayPast = Math.floor(secondPast / (3600 * 24));
+        let yearPast = (dayPast / 365).toFixed(2);
         secondPast = secondPast % (3600 * 24);
-        var hourPast = Math.floor(secondPast / 3600);
+        let hourPast = Math.floor(secondPast / 3600);
         if (hourPast < 10) {
             hourPast = "0" + hourPast;
         }
         secondPast = secondPast % 3600;
-        var minutePast = Math.floor(secondPast / 60);
+        let minutePast = Math.floor(secondPast / 60);
         if (minutePast < 10) {
             minutePast = "0" + minutePast;
         }
@@ -1095,22 +1095,22 @@
             secondPast = "0" + secondPast;
         }
 
-        var resultPast = "<span class='digit-blue'>" + dayPast + "</span> 天 <span class='digit-blue'>"
+        let resultPast = "<span class='digit-blue'>" + dayPast + "</span> 天 <span class='digit-blue'>"
             + hourPast + "</span> 时 <span class='digit-blue'>" + minutePast
             + "</span> 分 <span class='digit-blue'>" + secondPast +
             "</span> 秒 (<span class='digit-blue'>" + yearPast + "</span> 年) <span class='digit-blue'>PAST</span></div><br>";
 
         // Now-->Death
-        var secondLeft = (Date.parse(dateDeath) - Date.parse(current)) / 1000;
-        var dayLeft = Math.floor(secondLeft / (3600 * 24));
-        var yearLeft = (dayLeft / 365).toFixed(2);
+        let secondLeft = (Date.parse(dateDeath) - Date.parse(current)) / 1000;
+        let dayLeft = Math.floor(secondLeft / (3600 * 24));
+        let yearLeft = (dayLeft / 365).toFixed(2);
         secondLeft = secondLeft % (3600 * 24);
-        var hourLeft = Math.floor(secondLeft / 3600);
+        let hourLeft = Math.floor(secondLeft / 3600);
         if (hourLeft < 10) {
             hourLeft = "0" + hourLeft;
         }
         secondLeft = secondLeft % 3600;
-        var minuteLeft = Math.floor(secondLeft / 60);
+        let minuteLeft = Math.floor(secondLeft / 60);
         if (minuteLeft < 10) {
             minuteLeft = "0" + minuteLeft;
         }
@@ -1118,7 +1118,7 @@
         if (secondLeft < 10) {
             secondLeft = "0" + secondLeft;
         }
-        var resultLeft = "<span class='digit-red'>" + dayLeft + "</span> 天 <span class='digit-red'>"
+        let resultLeft = "<span class='digit-red'>" + dayLeft + "</span> 天 <span class='digit-red'>"
             + hourLeft + "</span> 时 <span class=\"digit-red\">" + minuteLeft
             + "</span> 分 <span class='digit-red'>" + secondLeft +
             "</span> 秒 (<span class='digit-red'>" + yearLeft + "</span> 年) <span class='digit-red'>LEFT</span></div>";
@@ -1127,28 +1127,27 @@
     }
 
     function getNowFormatDate() {
-        var date = new Date();
-        var seperator1 = ".";
-        var year = date.getFullYear();
-        var month = date.getMonth() + 1;
-        var strDate = date.getDate();
+        let date = new Date();
+        let seperator1 = ".";
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let strDate = date.getDate();
         if (month >= 1 && month <= 9) {
             month = "0" + month;
         }
         if (strDate >= 0 && strDate <= 9) {
             strDate = "0" + strDate;
         }
-        var currentdate = year + seperator1 + month + seperator1 + strDate;
-        return currentdate;
+        return year + seperator1 + month + seperator1 + strDate;
     }
 
-    var dateBirth = new Date();
+    let dateBirth = new Date();
     dateBirth.setFullYear(1991, 9 - 1, 23); // 1991.09.23
     dateBirth.setHours(0);
     dateBirth.setMinutes(0);
     dateBirth.setSeconds(0);
     dateBirth.setMilliseconds(0);
-    var dateDeath = new Date();
+    let dateDeath = new Date();
     dateDeath.setFullYear(2055, 12 - 1, 12); // 2055.12.12
     dateDeath.setHours(0);
     dateDeath.setMinutes(0);

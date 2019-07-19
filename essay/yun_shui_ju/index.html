@@ -389,14 +389,14 @@
 
 
         <script>
-            var calculateLoan = function (table, rowId) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
-                var trs = table.getElementsByTagName('tr');
-                var start = 1, // 开始计算的行号，忽略第一行的表头
+            let calculateLoan = function (table, rowId) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+                let trs = table.getElementsByTagName('tr');
+                let start = 1, // 开始计算的行号，忽略第一行的表头
                     end = trs.length; // 结束计算的行号，忽略最后合计的一行
-                var total = 0;
-                for (var i = start; i < end; i++) {
-                    var tdSelect = trs[i].getElementsByTagName('td')[rowId];
-                    var number = parseFloat(tdSelect.innerHTML);
+                let total = 0;
+                for (let i = start; i < end; i++) {
+                    let tdSelect = trs[i].getElementsByTagName('td')[rowId];
+                    let number = parseFloat(tdSelect.innerHTML);
                     if (number)
                         total += number; // Total Interest
                 }
@@ -466,7 +466,7 @@
 
 <script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
-    var panel = document.getElementById('panel'),
+    let panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
         showcode = document.getElementById('showcode'),
         selectFx = document.getElementById('selections-fx'),

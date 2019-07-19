@@ -852,8 +852,8 @@
     });
 
 
-    var dataArray = [];
-    var numTotal = 0,
+    let dataArray = [];
+    let numTotal = 0,
         numToyota = 0,
         numSubaru = 0,
         numHonda = 0,
@@ -867,13 +867,13 @@
         numBMW = 0,
         numTesla = 0;
     numOther = 0;
-    var calculateMake = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
-        var trs = table.getElementsByTagName('tr');
-        var start = 1, // 开始计算的行号，忽略第一行的表头
+    let calculateMake = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        let trs = table.getElementsByTagName('tr');
+        let start = 1, // 开始计算的行号，忽略第一行的表头
             end = trs.length; // 结束计算的行号，忽略最后合计的一行
 
-        for (var i = start; i < end; i++) {
-            var tdMake = trs[i].getElementsByTagName('td')[0];
+        for (let i = start; i < end; i++) {
+            let tdMake = trs[i].getElementsByTagName('td')[0];
             //dataArray.push([end - i - 1, 1]); // for Dynamic Array
             numTotal++; // Total
             if (tdMake.innerHTML.indexOf('丰田') == 0) {

@@ -232,8 +232,8 @@
 <script>
 
     // Draw resolution canvas
-    var canvasResolution = document.getElementById("canvas_resolution");
-    var context = canvasResolution.getContext("2d");
+    let canvasResolution = document.getElementById("canvas_resolution");
+    let context = canvasResolution.getContext("2d");
     context.font = "15px Arial";
 
     // 8K 7680x4320
@@ -294,15 +294,15 @@
     context.fillText("©zhoumushui.com", 325, 428);
 
     <!-- Draw size canvas:786x432 X4-->
-    var canvasSize = document.getElementById("canvas_size");
-    var ctxSize = canvasSize.getContext("2d");
-    var TIMES = 4.06; // fit for canvas size
+    let canvasSize = document.getElementById("canvas_size");
+    let ctxSize = canvasSize.getContext("2d");
+    let TIMES = 4.06; // fit for canvas size
     ctxSize.font = "15px Arial";
 
     // Count inch
     function drawRectangleByInch(size, color) {
-        var diagonal = 2.54 * size;
-        var x = Math.sqrt((diagonal * diagonal) / 337);
+        let diagonal = 2.54 * size;
+        let x = Math.sqrt((diagonal * diagonal) / 337);
         console.log("[" + size + "]" + 16 * x + " x " + 9 * x);
         ctxSize.fillStyle = color;
         ctxSize.strokeStyle = color;
@@ -365,7 +365,7 @@
 
 <script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
-    var panel = document.getElementById('panel'),
+    let panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
         showcode = document.getElementById('showcode'),
         selectFx = document.getElementById('selections-fx'),

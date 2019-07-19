@@ -381,12 +381,14 @@
                             <td>4</td>
                         </tr>
 
+                        <!--
                         <tr>
                             <td>候补圣女</td>
                             <td>月下小羊</td>
-                            <td>5141</td><!-- K -->
+                            <td>5141</td>
                             <td>3</td>
                         </tr>
+                        -->
 
                         <!-- I -->
 
@@ -859,7 +861,7 @@
          * @param table 要计算的表格
          * @param displayTarget 结果显示到的目标
          */
-        var calculateTableCount = function (table, displayTarget) {
+        calculateTableCount = function (table, displayTarget) {
             displayTarget.innerHTML = table.getElementsByTagName('tr').length - 1; // AZ:Minus head of table
         };
         calculateTableCount(document.getElementById('table-book-list'), document.getElementById("bookCount"));
@@ -871,16 +873,16 @@
          * @param tdWordIndex 字数下标
          * @param tdNameIndex 书名下标
          */
-        var replaceSomething = function (table, tdRateIndex, tdWordIndex, tdNameIndex) {
-            var trs = table.getElementsByTagName('tr');
-            var start = 1, // 开始计算的行号，忽略第一行的表头
+        replaceSomething = function (table, tdRateIndex, tdWordIndex, tdNameIndex) {
+            let trs = table.getElementsByTagName('tr');
+            let start = 1, // 开始计算的行号，忽略第一行的表头
                 end = trs.length; // 结束计算的行号，忽略最后合计的一行
 
-            var totalWordCount = 0;
+            let totalWordCount = 0;
 
-            for (var i = start; i < end; i++) {
+            for (let i = start; i < end; i++) {
                 // Replace rate by star
-                var tdRate = trs[i].getElementsByTagName('td')[tdRateIndex];
+                let tdRate = trs[i].getElementsByTagName('td')[tdRateIndex];
                 if (tdRate.innerHTML.indexOf('5') == 0) {
                     tdRate.innerHTML = '<span class="book-rate-star">★★★★★</span>';
                 } else if (tdRate.innerHTML.indexOf('4') == 0) {
@@ -896,15 +898,15 @@
                 }
 
                 // 计算字数
-                var tdWord = trs[i].getElementsByTagName('td')[tdWordIndex];
-                var singleBookWordCount = 0;
+                let tdWord = trs[i].getElementsByTagName('td')[tdWordIndex];
+                let singleBookWordCount = 0;
                 if (tdWord.innerHTML != "") {
                     singleBookWordCount = parseFloat(tdWord.innerHTML);
                 }
                 totalWordCount += singleBookWordCount;
 
                 // 给书名添加样式
-                var tdName = trs[i].getElementsByTagName('td')[tdNameIndex];
+                let tdName = trs[i].getElementsByTagName('td')[tdNameIndex];
                 tdName.innerHTML = "<span class='book-name'>"
                     + tdName.innerHTML + "</span>";
             }
