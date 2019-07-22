@@ -117,11 +117,11 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Mitsubishi.png\">";
     } else if (make.indexOf("马自达") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Mazda.png\">";
-    } else if (make.indexOf("大众") != -1) {
-        return "<img class=\"car-logo\" src=\"../../img/car/Car_Volkswagen.png\">";
     } else if (make.indexOf("斯柯达") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Skoda.png\">";
-    } else if (make.indexOf("奥迪") != -1) {
+    }  else if (make.indexOf("大众") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Volkswagen.png\">";
+    }else if (make.indexOf("奥迪") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Audi.png\">";
     } else if (make.indexOf("宝马") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_BMW.png\">";
