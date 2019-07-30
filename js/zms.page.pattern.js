@@ -1,7 +1,7 @@
 // <script src="js/zms.page.pattern.js"></script>
 // "  --->  \"
 
-var path = "";
+let path = "";
 if (directoryDepth != null) {
     switch (directoryDepth) {
         case 1:
@@ -238,7 +238,7 @@ function insertIEWarning() {
         "</ul>" +
         "</div>" +
         "<p>Sorry for the inconvenience!</p>"
-};
+}
 
 
 function isIEBrowser() { //ie?
