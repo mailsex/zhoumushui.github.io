@@ -248,7 +248,7 @@ function isIEBrowser() { //ie?
 function getBrowserInfo() {
     var appName = navigator.appName; // Chrome:Netscape
     var appVersion = navigator.appVersion;
-    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串
     var version = parseFloat(appVersion);
     console.log("appName:" + appName + ",appVersion:" + appVersion + ",userAgent:" + userAgent);
 }

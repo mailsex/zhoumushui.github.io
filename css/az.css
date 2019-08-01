@@ -88,24 +88,6 @@
     color: #f44336;
 }
 
-.movie-title {
-    color: #00a5bb;
-    text-overflow: clip; /* ellipsis,clip */
-    font-size: xx-small;
-    font-family: 'Microsoft YaHei', sans-serif;
-    word-break: normal; /* keep-all,break-all */
-    white-space: normal; /* nowrap */
-    overflow: auto; /* hidden */
-    text-align: center;
-    width: 65px
-}
-
-.movie-image { /* Thumbnail Image */
-    height: 100px;
-    width: 65px;
-    align: center;
-}
-
 @keyframes aniBlink120 {
     from {
         margin-left: -60px

@@ -1,5 +1,8 @@
 User-agent: *
 
-Disallow: /link.html
-Disallow: /pass.html
+Disallow: /dream/
+Disallow: /link/
 Disallow: /diary.html
+Disallow: /pass.html
+Disallow: /profile.html
+Disallow: /timeline.html
