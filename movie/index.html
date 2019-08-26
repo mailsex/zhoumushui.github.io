@@ -7367,6 +7367,16 @@
                         <h2 class="year-movie-count">+8</h2>
                         <div class="lightbox clearfix">
 
+                            <!--
+                            <movie data-src="img/1982/09.webp">
+                                <a href="https://movie.douban.com/subject/1461403/" target="_blank">
+                                    <img class="movie-image" src="img/1982/09s.jpg"/>
+                                    <div class="movie-title">茶馆</div>
+                                    <span class="movie-rate-star">0</span>
+                                </a>
+                            </movie>
+                            -->
+
                             <movie data-src="img/1982/08.webp">
                                 <a href="https://movie.douban.com/subject/1401135/" target="_blank">
                                     <img class="movie-image" src="img/1982/08s.jpg"/>
@@ -8523,6 +8533,16 @@
                         <h2 class="year-movie-count">+1</h2>
                         <div class="lightbox clearfix">
 
+                            <!--
+                            <movie data-src="img/1949/02.webp">
+                                <a href="https://movie.douban.com/subject/4719384/" target="_blank">
+                                    <img class="movie-image" src="img/1949/02s.jpg"/>
+                                    <div class="movie-title">哀乐中年</div>
+                                    <span class="movie-rate-star">0</span>
+                                </a>
+                            </movie>
+                            -->
+
                             <movie data-src="img/1949/01.webp">
                                 <a href="https://movie.douban.com/subject/1295451/" target="_blank">
                                     <img class="movie-image" src="img/1949/01s.jpg"/>
@@ -9131,13 +9151,7 @@
 
     <!-- AZ: Add for movie count -->
     <script>
-        var calculateMovieCount = function (list) {
-            var movieList = list.getElementsByTagName('movie');
-            document.getElementById("movieCount").innerHTML = movieList.length;
-            document.title = "看过 " + movieList.length + " 部电影"; // 设置标题
-        };
-        calculateMovieCount(document.getElementById('div-movie-list'));
-
+        let todoCount = 0;
         var replaceDigitByStar = function (list) {
             var movieList = list.getElementsByTagName('movie');
             for (var i = 0; i < movieList.length; i++) {
@@ -9152,12 +9166,22 @@
                     star.innerHTML = '★★';
                 } else if (star.innerHTML.indexOf('1') == 0) {
                     star.innerHTML = '★';
+                }  else if (star.innerHTML.indexOf('0') == 0) {
+                    star.innerHTML = '待看';
+                    todoCount++;
                 } else {
                     star.innerHTML = '';
                 }
             }
         };
         replaceDigitByStar(document.getElementById('div-movie-list'));
+
+        var calculateMovieCount = function (list) {
+            var movieList = list.getElementsByTagName('movie');
+            document.getElementById("movieCount").innerHTML = movieList.length;
+            document.title = "看过 " + (movieList.length-todoCount) + " 部电影"; // 设置标题
+        };
+        calculateMovieCount(document.getElementById('div-movie-list'));
     </script>
 
     <link rel="stylesheet" href="../css/toolbox.reset.css"> <!-- CSS reset -->
