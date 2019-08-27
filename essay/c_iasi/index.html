@@ -63,10 +63,6 @@
             border-radius: 4px;
         }
 
-        .same-width-font {
-            font-family: Monaco, Consolas, MingLiU, "Courier New", Courier, monospace;
-        }
-
         .grade {
             font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
             font-weight: bold;
@@ -124,6 +120,15 @@
             color: #9E9E9E;
         }
 
+        .section {
+            width: 920px;
+        }
+
+        .score-detail {
+            width: 100%; /*920px;*/
+            height: 1200px;
+        }
+
     </style>
 </head>
 
@@ -159,7 +164,7 @@
 
         <script>
             var essayTitle = document.title;
-            var essaySummary = '随便写点什么';
+            var essaySummary = document.title;//'随便写点什么';
             var essayUrl = window.location.href;
             //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
             var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
@@ -652,7 +657,6 @@
 
         <div class="card">
 
-            <!-- TODO -->
             <div id="card_body2" class="card__body" style="padding-top: 10px">
                 <h3>即将测试车型</h3><br>
                 <div class="table-responsive">
@@ -958,6 +962,19 @@
 
     </section>
 
+    <section id="content3">
+        <div class="card">
+            <div id="card_body3" class="card__body" style="padding-top: 10px">
+                <h3>分数详解</h3><br>
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailFront" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <link rel="stylesheet" href="../../css/toolbox.reset.css"><!-- CSS reset -->
     <link rel="stylesheet" href="../../css/toolbox.style.css"><!-- Resource style -->
     <footer id="footer" class="font-yahei"></footer>
@@ -1158,6 +1175,7 @@
     });
 </script>
 
+
 <!-- Site Functions & Actions -->
 <script src="../../js/app.min.js"></script>
 
@@ -1192,5 +1210,152 @@
         document.getElementById("btnSaveImage").style.display = "";
     });
 </script>
+
+
+<script src="js/echarts.min.js"></script>
+
+<script>
+    $(function () {
+        initData();
+    });
+
+    //生成数据
+    function initData() {
+        let legendData = ['正面25%偏置'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('途观L', 24);
+        addData('宋MAX', 24);
+        addData('GL8', 24);
+        addData('智跑', 24);
+        addData('AX7', 23);
+        addData('宝骏510', 22);
+        addData('艾瑞泽5', 18);
+        addData('菲斯塔', 18);
+        addData('瑞风S3', 16);
+        addData('西玛', 16);
+        addData('宝马318i', 14);
+        addData('迈腾', 12);
+        addData('凌派', 12);
+        addData('昂科威', 12);
+        addData('柯迪亚克', 9);
+        addData('思域', 9);
+        addData('GS7', 9);
+        addData('T600', 8);
+        addData('科雷傲', 8);
+        addData('雅阁', 6);
+        addData('XT4', 6);
+        addData('C级', 6);
+        addData('欧蓝德', 4);
+        addData('领动', 2);
+        addData('VV5', 2);
+        addData('领克01', 2);
+        addData('凯美瑞', 2);
+        addData('奕泽', 0);
+
+        // 正面25%偏置： 0~3分G，4~9A，10~19M，20+P
+
+        function getColorByScore(score){
+            return '#31BDF2';
+        }
+
+        for (var i = 0; i < legendData.length; i++) {
+            var seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                //name: '正面25%偏置碰撞',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: getColorByScore(5)//'#31BDF2'
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+
+        }
+
+        buildChart(legendData, arrayCar, seriesValue);
+
+    }
+
+    //生成Echarts图形
+    function buildChart(legendData, arrayCar, seriesValue) {
+        var chart = document.getElementById('detailFront');
+        var echart = echarts.init(chart);
+        var option = {
+            title: {
+                text: "正面25%偏置碰撞详情(越低越好)",//正标题
+                x: "center", //标题水平方向位置
+                y: "0", //标题竖直方向位置
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'normal',
+                    color: '#666'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'//阴影，若需要为直线，则值为'line'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                x: 'left',
+                y: 'top',//图例说明文字设置
+                padding: [15, 0, 0, 10],
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '10%',
+                top: '10%',
+                containLabel: true
+            },
+            yAxis: [{
+                min: 0,
+                type: 'category', //纵向柱状图，若需要为横向，则此处值为'value'， 下面 yAxis 的type值为'category'
+                data: arrayCar
+            }],
+            xAxis: [{
+                min: 0,
+                type: 'value',
+                splitArea: {show: false}
+            }],
+            label: {
+                normal: { //显示bar数据
+                    show: true,
+                    position: 'top'
+                }
+            },
+            series: seriesValue
+        };
+
+        echart.setOption(option);
+    }
+</script>
+
 </body>
 </html>
