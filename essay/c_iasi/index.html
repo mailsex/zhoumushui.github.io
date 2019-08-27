@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>中保研测试列表</title>
+    <title>中保研测试汇总</title>
 
     <!-- Vendors -->
 
@@ -121,12 +121,12 @@
         }
 
         .section {
-            width: 920px;
+            width: 100%;
         }
 
         .score-detail {
-            width: 100%; /*920px;*/
-            height: 1200px;
+            width: 100%;
+            height: 800px;
         }
 
     </style>
@@ -970,6 +970,14 @@
                     <div class="section bg-info">
                         <div id="detailFront" class="score-detail"></div>
                     </div>
+                    <br>
+                    <div class="section bg-info">
+                        <div id="detailSide" class="score-detail"></div>
+                    </div>
+                    <br>
+                    <div class="section bg-info">
+                        <div id="detailTop" class="score-detail"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1215,12 +1223,15 @@
 <script src="js/echarts.min.js"></script>
 
 <script>
+    // 正面25%偏置： 0~3分G，4~9A，10~19M，20+P
     $(function () {
-        initData();
+        initDataFront();
+        initDataSide();
+        initDataTop();
     });
 
     //生成数据
-    function initData() {
+    function initDataFront() {
         let legendData = ['正面25%偏置'];
         let arrayCar = [];
         let seriesValue = [];
@@ -1231,40 +1242,34 @@
             arrayScore.push(score);
         }
 
-        addData('途观L', 24);
-        addData('宋MAX', 24);
-        addData('GL8', 24);
-        addData('智跑', 24);
-        addData('AX7', 23);
+        addData('大众途观L', 24);
+        addData('比亚迪宋MAX', 24);
+        addData('别克GL8', 24);
+        addData('起亚智跑', 24);
+        addData('东风AX7', 23);
         addData('宝骏510', 22);
-        addData('艾瑞泽5', 18);
-        addData('菲斯塔', 18);
-        addData('瑞风S3', 16);
-        addData('西玛', 16);
+        addData('奇瑞艾瑞泽5', 18);
+        addData('现代菲斯塔', 18);
+        addData('江淮瑞风S3', 16);
+        addData('日产西玛', 16);
         addData('宝马318i', 14);
-        addData('迈腾', 12);
-        addData('凌派', 12);
-        addData('昂科威', 12);
-        addData('柯迪亚克', 9);
-        addData('思域', 9);
-        addData('GS7', 9);
-        addData('T600', 8);
-        addData('科雷傲', 8);
-        addData('雅阁', 6);
-        addData('XT4', 6);
-        addData('C级', 6);
-        addData('欧蓝德', 4);
-        addData('领动', 2);
-        addData('VV5', 2);
+        addData('大众迈腾', 12);
+        addData('本田凌派', 12);
+        addData('别克昂科威', 12);
+        addData('斯柯达柯迪亚克', 9);
+        addData('本田思域', 9);
+        addData('传祺GS7', 9);
+        addData('众泰T600', 8);
+        addData('雷诺科雷傲', 8);
+        addData('本田雅阁', 6);
+        addData('凯迪拉克XT4', 6);
+        addData('奔驰C200', 6);
+        addData('三菱欧蓝德', 4);
+        addData('现代领动', 2);
+        addData('魏派VV5', 2);
         addData('领克01', 2);
-        addData('凯美瑞', 2);
-        addData('奕泽', 0);
-
-        // 正面25%偏置： 0~3分G，4~9A，10~19M，20+P
-
-        function getColorByScore(score){
-            return '#31BDF2';
-        }
+        addData('丰田凯美瑞', 2);
+        addData('丰田奕泽', 0);
 
         for (var i = 0; i < legendData.length; i++) {
             var seriesDataVal = null;
@@ -1276,7 +1281,7 @@
                     normal: {
                         show: true,//鼠标悬停时显示label数据
                         barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
-                        color: getColorByScore(5)//'#31BDF2'
+                        color: '#31BDF2'
                     }
                 },
                 label: {
@@ -1288,20 +1293,147 @@
                 data: arrayScore
             };
             seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailFront', "\n正面25%偏置碰撞（越低越好）", legendData, arrayCar, seriesValue);
+    }
 
+    function initDataSide() {
+        let legendData = ['侧面碰撞'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
         }
 
-        buildChart(legendData, arrayCar, seriesValue);
+        addData('本田思域', 84);
+        addData('宝骏510', 80);
+        addData('比亚迪宋MAX', 60);
+        addData('奇瑞艾瑞泽5', 58);
+        addData('江淮瑞风S3', 56);
+        addData('现代领动', 44);
+        addData('斯柯达柯迪亚克', 34);
+        addData('现代菲斯塔', 28);
+        addData('别克GL8', 26);
+        addData('本田凌派', 24);
+        addData('本田雅阁', 14);
+        addData('三菱欧蓝德', 12);
+        addData('大众迈腾', 10);
+        addData('起亚智跑', 10);
+        addData('别克昂科威', 10);
+        addData('魏派VV5', 10);
+        addData('奔驰C200', 10);
+        addData('大众途观L', 8);
+        addData('东风AX7', 8);
+        addData('传祺GS7', 8);
+        addData('雷诺科雷傲', 6);
+        addData('宝马318i', 2);
+        addData('日产西玛', 2);
+        addData('众泰T600', 0);
+        addData('凯迪拉克XT4', 0);
+        addData('领克01', 0);
+        addData('丰田凯美瑞', 0);
+        addData('丰田奕泽', 0);
 
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: '#31BDF2'
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailSide', "\n侧面碰撞（越低越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataTop() {
+        let legendData = ['车顶强度'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('雷诺科雷傲', 2.70);
+        addData('宝骏510', 2.86);
+        addData('三菱欧蓝德', 2.89);
+        addData('东风AX7', 3.42);
+        addData('别克GL8', 3.51);
+        addData('日产西玛', 3.57);
+        addData('魏派VV5', 3.60);
+        addData('起亚智跑', 3.70);
+        addData('传祺GS7', 3.75);
+        addData('众泰T600', 3.79);
+        addData('比亚迪宋MAX', 3.85);
+        addData('江淮瑞风S3', 3.90);
+        addData('本田雅阁', 4.15);
+        addData('现代菲斯塔', 4.17);
+        addData('别克昂科威', 4.36);
+        addData('大众途观L', 4.44);
+        addData('本田凌派', 4.49);
+        addData('奇瑞艾瑞泽5', 4.53);
+        addData('斯柯达柯迪亚克', 4.55);
+        addData('凯迪拉克XT4', 4.59);
+        addData('宝马318i', 4.89);
+        addData('大众迈腾', 5.12);
+        addData('领克01', 5.21);
+        addData('现代领动', 5.32);
+        addData('本田思域', 5.34);
+        addData('丰田奕泽', 5.75);
+        addData('丰田凯美瑞', 5.98);
+        addData('奔驰C200', 6.06);
+
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: '#31BDF2'
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailTop', "\n车顶强度（越高越好）", legendData, arrayCar, seriesValue);
     }
 
     //生成Echarts图形
-    function buildChart(legendData, arrayCar, seriesValue) {
-        var chart = document.getElementById('detailFront');
+    function buildChart(chartId, title, legendData, arrayCar, seriesValue) {
+        var chart = document.getElementById(chartId);
         var echart = echarts.init(chart);
         var option = {
             title: {
-                text: "正面25%偏置碰撞详情(越低越好)",//正标题
+                text: title,//正标题
                 x: "center", //标题水平方向位置
                 y: "0", //标题竖直方向位置
                 textStyle: {
@@ -1313,7 +1445,7 @@
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
-                    type: 'shadow'//阴影，若需要为直线，则值为'line'
+                    type: 'shadow'//阴影，若需要为直线，则值为'line';'shadow'
                 }
             },
             toolbox: {
@@ -1330,8 +1462,8 @@
             grid: {
                 left: '3%',
                 right: '4%',
-                bottom: '10%',
-                top: '10%',
+                bottom: '5%',
+                top: '5%',
                 containLabel: true
             },
             yAxis: [{
