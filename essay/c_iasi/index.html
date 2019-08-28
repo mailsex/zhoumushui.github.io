@@ -1473,7 +1473,16 @@
                     normal: {
                         show: true,//鼠标悬停时显示label数据
                         barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
-                        color: '#31BDF2'
+                        color: function (params) {
+                            if (params.value < 4) {
+                                return "#4CAF50";
+                            } else if (params.value < 10) {
+                                return "#FFEB3B";
+                            } else if (params.value < 20) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
                     }
                 },
                 label: {
@@ -1539,7 +1548,16 @@
                     normal: {
                         show: true,//鼠标悬停时显示label数据
                         barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
-                        color: '#31BDF2'
+                        color: function (params) {
+                            if (params.value < 7) {
+                                return "#4CAF50";
+                            } else if (params.value < 21) {
+                                return "#FFEB3B";
+                            } else if (params.value < 33) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
                     }
                 },
                 label: {
@@ -1605,7 +1623,16 @@
                     normal: {
                         show: true,//鼠标悬停时显示label数据
                         barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
-                        color: '#31BDF2'
+                        color: function (params) {
+                            if (params.value >= 4.0) {
+                                return "#4CAF50";
+                            } else if (params.value >= 3.25) {
+                                return "#FFEB3B";
+                            } else if (params.value >= 2.50) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
                     }
                 },
                 label: {
