@@ -1030,7 +1030,7 @@
                         </tr>
                         </tbody>
                     </table>
-
+                    <br>
                     <div class="section bg-info">
                         <div id="detailFront" class="score-detail"></div>
                     </div>
@@ -1129,7 +1129,7 @@
                         </tbody>
                     </table>
                     <div class="blue-grey">*注：若头部和颈部或躯干评级为较差，总体评价不得高于一般。</div>
-                    <br><br>
+                    <br>
                     <div class="section bg-info">
                         <div id="detailSide" class="score-detail"></div>
                     </div>
@@ -1165,6 +1165,7 @@
                         </tr>
                         </tbody>
                     </table>
+                    <br>
                     <div class="section bg-info">
                         <div id="detailTop" class="score-detail"></div>
                     </div>
@@ -1495,7 +1496,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailFront', "\n正面25%偏置碰撞（越低越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailFront', "正面25%偏置碰撞（越低越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataSide() {
@@ -1570,7 +1571,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailSide', "\n侧面碰撞（越低越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailSide', "侧面碰撞（越低越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataTop() {
@@ -1645,7 +1646,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailTop', "\n车顶强度（越高越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailTop', "车顶强度（越高越好）", legendData, arrayCar, seriesValue);
     }
 
     //生成Echarts图形
@@ -1660,7 +1661,7 @@
                 textStyle: {
                     fontSize: 18,
                     fontWeight: 'normal',
-                    color: '#666'
+                    color: '#BDBDBD'
                 }
             },
             tooltip: {
@@ -1690,12 +1691,18 @@
             yAxis: [{
                 min: 0,
                 type: 'category', //纵向柱状图，若需要为横向，则此处值为'value'， 下面 yAxis 的type值为'category'
-                data: arrayCar
+                data: arrayCar,
+                axisLabel: {
+                    color: "#BDBDBD" //刻度线标签颜色
+                }
             }],
             xAxis: [{
                 min: 0,
                 type: 'value',
-                splitArea: {show: false}
+                splitArea: {show: false},
+                axisLabel: {
+                    color: "#BDBDBD" //刻度线标签颜色
+                }
             }],
             label: {
                 normal: { //显示bar数据
@@ -1703,7 +1710,8 @@
                     position: 'top'
                 }
             },
-            series: seriesValue
+            series: seriesValue,
+            backgroundColor: '#2b3942'
         };
 
         echart.setOption(option);
