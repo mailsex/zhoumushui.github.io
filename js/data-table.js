@@ -101,11 +101,11 @@ $(document).ready(function () {
 
 // 品牌
 function getLogoByMake(make) {
-    if (make.indexOf("丰田") != -1) {
+    if (make.indexOf("丰田") != -1 || make.indexOf("Toyota") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Toyota.png\">";
     } else if (make.indexOf("雷克萨斯") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Lexus.png\">";
-    } else if (make.indexOf("斯巴鲁") != -1) {
+    } else if (make.indexOf("斯巴鲁") != -1 || make.indexOf("Subaru") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Subaru.png\">";
     } else if (make.indexOf("本田") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Honda.png\">";
@@ -113,21 +113,29 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_NISSAN.png\">";
     } else if (make.indexOf("英菲尼迪") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Infiniti.png\">";
-    } else if (make.indexOf("三菱") != -1) {
+    } else if (make.indexOf("三菱") != -1 || make.indexOf("Mitsubishi") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Mitsubishi.png\">";
-    } else if (make.indexOf("马自达") != -1) {
+    } else if (make.indexOf("马自达") != -1 || make.indexOf("Mazda") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Mazda.png\">";
-    } else if (make.indexOf("斯柯达") != -1) {
+    } else if (make.indexOf("法拉利") != -1 || make.indexOf("Ferrari") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Ferrari.png\">";
+    } else if (make.indexOf("捷豹") != -1 || make.indexOf("Jaguar") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Jaguar.png\">";
+    } else if (make.indexOf("斯柯达") != -1 || make.indexOf("Skoda") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Skoda.png\">";
-    } else if (make.indexOf("大众") != -1) {
+    } else if (make.indexOf("宾利") != -1 || make.indexOf("Bentley") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Bentley.png\">";
+    } else if (make.indexOf("保时捷") != -1 || make.indexOf("Porsche") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Porsche.png\">";
+    } else if (make.indexOf("大众") != -1 || make.indexOf("Volkswagen") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Volkswagen.png\">";
-    } else if (make.indexOf("奥迪") != -1) {
+    } else if (make.indexOf("奥迪") != -1 || make.indexOf("Audi") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Audi.png\">";
-    } else if (make.indexOf("宝马") != -1) {
+    } else if (make.indexOf("宝马") != -1 || make.indexOf("BMW") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_BMW.png\">";
-    } else if (make.indexOf("奔驰") != -1) {
+    } else if (make.indexOf("奔驰") != -1 || make.indexOf("Benz") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Benz.png\">";
-    } else if (make.indexOf("现代") != -1) {
+    } else if (make.indexOf("现代") != -1 || make.indexOf("Hyundai") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Hyundai.png\">";
     } else if (make.indexOf("起亚") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_KIA.png\">";
@@ -135,7 +143,7 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Tesla.png\">";
     } else if (make.indexOf("别克") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Buick.png\">";
-    } else if (make.indexOf("福特") != -1) {
+    } else if (make.indexOf("福特") != -1 || make.indexOf("Ford") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Ford.png\">";
     } else if (make.indexOf("雪佛兰") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Chevrolet.png\">";
@@ -143,8 +151,20 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Cadillac.png\">";
     } else if (make.indexOf("道奇") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Dodge.png\">";
-    } else if (make.indexOf("雷诺") != -1) {
+    } else if (make.indexOf("Alpine") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Alpine.png\">";
+    } else if (make.indexOf("雷诺") != -1 || make.indexOf("Renault") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_RENAULT.png\">";
+    } else if (make.indexOf("标致") != -1 || make.indexOf("Peugeot") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Peugeot.png\">";
+    } else if (make.indexOf("雪铁龙") != -1 || make.indexOf("Citroen") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Citroen.png\">";
+    } else if (make.indexOf("蓝西亚") != -1 || make.indexOf("Lancia") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Lancia.png\">";
+    } else if (make.indexOf("塔伯特") != -1 || make.indexOf("Talbot") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Talbot.png\">";
+    } else if (make.indexOf("菲亚特") != -1 || make.indexOf("Fiat") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Fiat.png\">";
     } else if (make.indexOf("Jeep") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Jeep.png\">";
     } else if (make.indexOf("领克") != -1) {

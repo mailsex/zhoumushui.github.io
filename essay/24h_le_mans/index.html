@@ -134,22 +134,11 @@
                         HEURES DU MANS）。
                     </p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;
-                            勒芒24小时耐力赛同世界一级方程式锦标赛(F1)、世界汽车拉力锦标赛(WRC)并称为世界最著名和最艰苦的三大汽车赛事。自从首届比赛于1923年举行以来，除了二战前后的几年以外（1936年，1940－1948年未举行），勒芒耐力赛从未间断过。
+                        勒芒24小时耐力赛同世界一级方程式锦标赛(F1)、世界汽车拉力锦标赛(WRC)并称为世界最著名和最艰苦的三大汽车赛事。自从首届比赛于1923年举行以来，除了二战前后的几年以外（1936年，1940－1948年未举行），勒芒耐力赛从未间断过。
                     </p>
-                    <p><a href="https://www.lemans.org/en/24-hours-of-le-mans" target="_blank">官方网站</a> </p>
+                    <p><a href="https://www.lemans.org/en/24-hours-of-le-mans" target="_blank">官方网站</a></p>
                 </div>
                 <br>
-
-
-
-
-                <!-- http://www.360doc.com/content/19/0520/18/35510265_837085344.shtml
-                https://www.lemans.org/en/page/results/1420
-
-                https://www.17sucai.com/preview/1/2015-03-17/html5%E5%93%8D%E5%BA%94%E5%BC%8F%E6%97%B6%E9%97%B4%E8%BD%B4%E9%A1%B5%E9%9D%A2/index.html
-                https://www.17sucai.com/preview/1528155/2018-12-23/yun/index.html
-                -->
-
 
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
@@ -158,12 +147,12 @@
                         <thead>
                         <tr>
                             <!-- data-type="numeric" data-order="desc|asc" -->
-                            <th data-column-id="Year" data-formatter="Year"data-order="desc">Year</th>
+                            <th data-column-id="Year" data-formatter="Year">Year</th>
                             <th data-column-id="car" data-formatter="car">Car</th>
-                            <th data-column-id="team" data-formatter="team" >Team</th>
-                            <th data-column-id="no" data-formatter="no">Car Number</th>
+                            <th data-column-id="team" data-formatter="team">Team</th>
+                            <th data-column-id="no" data-formatter="no">No</th>
                             <th data-column-id="drivers" data-formatter="drivers">Drivers</th>
-                            <th data-column-id="class" data-formatter="class">Class</th>
+                            <th data-column-id="class" data-formatter="class" data-visible="false">Class</th>
                             <th data-column-id="laps" data-formatter="class">Laps</th>
                             <th data-column-id="km" data-formatter="class">Km</th>
                             <th data-column-id="km_h" data-formatter="class">Km/h</th>
@@ -332,7 +321,7 @@
                             <td></td><!-- Drivers -->
                             <td>LMP1</td><!-- Class -->
                             <td></td><!-- Laps -->
-                            <td>5050.500 </td><!-- Km -->
+                            <td>5050.500</td><!-- Km -->
                             <td>210.216</td><!-- Km/h -->
                         </tr>
                         <tr>
@@ -399,7 +388,7 @@
                             <td>LMP1</td><!-- Class -->
                             <td></td><!-- Laps -->
                             <td>4967.90</td><!-- Km -->
-                            <td>207.00 </td><!-- Km/h -->
+                            <td>207.00</td><!-- Km/h -->
                         </tr>
                         <tr>
                             <td>1998</td><!-- Year -->
@@ -695,7 +684,7 @@
                             <td></td><!-- Drivers -->
                             <td>LMP1</td><!-- Class -->
                             <td></td><!-- Laps -->
-                            <td>5233.53 </td><!-- Km -->
+                            <td>5233.53</td><!-- Km -->
                             <td>150.33</td><!-- Km/h -->
                         </tr>
                         <tr>
@@ -1209,8 +1198,8 @@
             footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
         },
         formatters: {
-            "make": function (column, row) {
-                return row.make;
+            "car": function (column, row) {
+                return getLogoByMake(row.car) + "&nbsp;&nbsp;"+ row.car;
             }
         }
     });
