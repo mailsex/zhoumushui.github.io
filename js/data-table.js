@@ -103,15 +103,15 @@ $(document).ready(function () {
 function getLogoByMake(make) {
     if (make.indexOf("丰田") != -1 || make.indexOf("Toyota") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Toyota.png\">";
-    } else if (make.indexOf("雷克萨斯") != -1) {
+    } else if (make.indexOf("雷克萨斯") != -1 || make.indexOf("Lexus") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Lexus.png\">";
     } else if (make.indexOf("斯巴鲁") != -1 || make.indexOf("Subaru") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Subaru.png\">";
-    } else if (make.indexOf("本田") != -1) {
+    } else if (make.indexOf("本田") != -1 || make.indexOf("Honda") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Honda.png\">";
-    } else if (make.indexOf("日产") != -1) {
+    } else if (make.indexOf("日产") != -1 || make.indexOf("Nissan") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_NISSAN.png\">";
-    } else if (make.indexOf("英菲尼迪") != -1) {
+    } else if (make.indexOf("英菲尼迪") != -1 || make.indexOf("Infiniti") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Infiniti.png\">";
     } else if (make.indexOf("三菱") != -1 || make.indexOf("Mitsubishi") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Mitsubishi.png\">";
@@ -171,6 +171,8 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_LynkCo.png\">";
     } else if (make.indexOf("沃尔沃") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Volvo.png\">";
+    } else if (make.indexOf("吉利") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Geely.png\">";
     } else if (make.indexOf("传祺") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Trumpchi.png\">";
     } else if (make.indexOf("奇瑞") != -1) {
@@ -199,8 +201,6 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_XiaoPeng.png\">";
     } else if (make.indexOf("海马") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_HaiMa.png\">";
-    } else if (make.indexOf("吉利") != -1) {
-        return "<img class=\"car-logo\" src=\"../../img/car/Car_Geely.png\">";
     } else {
         return "";
     }
