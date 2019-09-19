@@ -222,7 +222,7 @@
 
                 <span align="right" style="float: right;">
                     <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
-                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-09-12</span>
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-09-19</span>
                 </span>
             </div>
 
@@ -240,7 +240,7 @@
                             <th data-column-id="side" data-formatter="side">侧面碰撞</th>
                             <th data-column-id="top" data-formatter="top">车顶强度</th>
                             <th data-column-id="seat" data-formatter="seat">座椅头枕</th>
-                            <th data-sortable="false">|</th>
+                            <th data-sortable="false" data-visible="false">|</th>
                             <th data-column-id="assist" data-formatter="assist">辅助安全</th>
                             <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
                             <th data-column-id="fix" data-formatter="fix" data-visible="false">耐撞维修</th>
@@ -250,7 +250,6 @@
                         </tr>
                         </thead>
                         <tbody>
-
                         <tr>
                             <td>一汽丰田</td><!-- MAKE -->
                             <td>奕泽IZOA 2018款 奕驰版</td><!-- MODEL -->
@@ -264,6 +263,20 @@
                             <td>B</td><!-- FIX -->
                             <td>18B</td><!-- TEST TIME -->
                             <td>26</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>浙江豪情沃尔沃</td><!-- MAKE -->
+                            <td>XC60 2019款 T5 四驱智逸版</td><!-- MODEL -->
+                            <td>A</td><!-- FRONT 25% OFFSET -->
+                            <td>A</td><!-- SIDE -->
+                            <td>A</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>40</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
                             <td>广汽丰田</td><!-- MAKE -->
@@ -745,20 +758,6 @@
                         <tr>
                             <td>比亚迪</td><!-- MAKE -->
                             <td>唐 2018款 智联尊悦型</td><!-- MODEL -->
-                            <td>T</td><!-- FRONT 25% OFFSET -->
-                            <td>T</td><!-- SIDE -->
-                            <td>T</td><!-- TOP -->
-                            <td>T</td><!-- SEAT -->
-                            <td>|</td><!-- NOT IMPORTANT BELOW-->
-                            <td>T</td><!-- ASSIST -->
-                            <td>T</td><!-- ROAD_USER -->
-                            <td>T</td><!-- FIX -->
-                            <td>19A</td><!-- TEST TIME -->
-                            <td></td><!-- C-IASI ID -->
-                        </tr>
-                        <tr>
-                            <td>浙江豪情沃尔沃</td><!-- MAKE -->
-                            <td>XC60 2019款 T5 四驱智逸版</td><!-- MODEL -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -1478,6 +1477,7 @@
         addData('领克01', 2);
         addData('丰田凯美瑞', 2);
         addData('日产天籁', 0);
+        addData('沃尔沃XC60', 0);
         addData('丰田奕泽', 0);
 
         for (var i = 0; i < legendData.length; i++) {
@@ -1556,6 +1556,7 @@
         addData('凯迪拉克XT4', 0);
         addData('领克01', 0);
         addData('丰田凯美瑞', 0);
+        addData('沃尔沃XC60', 0);
         addData('丰田奕泽', 0);
 
         for (let i = 0; i < legendData.length; i++) {
@@ -1627,6 +1628,7 @@
         addData('凯迪拉克XT4', 4.59);
         addData('日产天籁', 4.73);
         addData('宝马318i', 4.89);
+        addData('沃尔沃XC60', 5.06);
         addData('大众迈腾', 5.12);
         addData('领克01', 5.21);
         addData('现代领动', 5.32);
