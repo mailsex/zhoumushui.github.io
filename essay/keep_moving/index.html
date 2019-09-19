@@ -168,6 +168,16 @@
                         <tr>
                             <td>1</td>
                             <td>A</td>
+                            <td>2019-09-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
                             <td>2019-09-14</td>
                         </tr>
                         <tr>
@@ -2879,22 +2889,22 @@
     'use strict';
     $(document).ready(function () {
         <!-- AZ: Month Line -->
-        var data2013 = [[1,], [2,], [3,], [4,], [5,], [6,],
+        let data2013 = [[1,], [2,], [3,], [4,], [5,], [6,],
             [7,], [8,], [9,], [10,], [11, 3], [12, 14]];
-        var data2014 = [[1, 22], [2, 20], [3, 4], [4, 0], [5, 34], [6, 21],
+        let data2014 = [[1, 22], [2, 20], [3, 4], [4, 0], [5, 34], [6, 21],
             [7, 17], [8, 16], [9, 18], [10, 20], [11, 17], [12, 16]];
-        var data2015 = [[1, 8], [2, 22], [3, 12], [4, 10], [5, 14], [6, 12],
+        let data2015 = [[1, 8], [2, 22], [3, 12], [4, 10], [5, 14], [6, 12],
             [7, 12], [8, 11], [9, 12], [10, 12], [11, 12], [12, 14]];
-        var data2016 = [[1, 15], [2, 9], [3, 13], [4, 12], [5, 13], [6, 15],
+        let data2016 = [[1, 15], [2, 9], [3, 13], [4, 12], [5, 13], [6, 15],
             [7, 14], [8, 9], [9, 13], [10, 11], [11, 12], [12, 13]];
-        var data2017 = [[1, 9], [2, 13], [3, 13], [4, 18], [5, 10], [6, 12],
+        let data2017 = [[1, 9], [2, 13], [3, 13], [4, 18], [5, 10], [6, 12],
             [7, 11], [8, 10], [9, 11], [10, 9], [11, 9], [12, 10]];
-        var data2018 = [[1, 6], [2, 3], [3, 10], [4, 12], [5, 6], [6, 5],
+        let data2018 = [[1, 6], [2, 3], [3, 10], [4, 12], [5, 6], [6, 5],
             [7, 6], [8, 7], [9, 3], [10, 1], [11, 0], [12, 0]];
-        var data2019 = [[1, 0], [2, 0], [3, 5], [4, 4], [5, 2], [6, 5],
+        let data2019 = [[1, 0], [2, 0], [3, 5], [4, 4], [5, 2], [6, 5],
             [7, 7], [8, 3], [9,], [10,], [11,], [12,]];
 
-        var barData = [ // Create an Array push the data + Draw the bars
+        let barData = [ // Create an Array push the data + Draw the bars
             {
                 label: '2013',
                 data: data2013,
@@ -2975,7 +2985,7 @@
         if ($('.chart-month-line')[0]) {
             $('.chart-month-line').bind('plothover', function (event, pos, item) {
                 if (item) {
-                    var x = item.datapoint[0].toFixed(2),
+                    let x = item.datapoint[0].toFixed(2),
                         y = item.datapoint[1].toFixed(2);
                     $('.flot-tooltip').html(item.series.label + ' of ' + x + ' = ' + y).css({
                         top: item.pageY + 5,
@@ -2990,7 +3000,7 @@
         }
 
         // AZ:Donut Pie
-        var pieData = [
+        let pieData = [
             {data: numA, color: '#009688', label: numA}, // See az.css:make-with-a
             {data: numB, color: '#E91E63', label: numB}, // See az.css:make-with-b
             {data: numC, color: '#2196F3', label: numC}, // See az.css:make-with-c
@@ -3020,15 +3030,15 @@
         // Dynamic Line
         'use strict';
         /* Make some random data*/
-        var data = [];
-        var totalPoints = 300;
-        var updateInterval = 30;
+        let data = [];
+        let totalPoints = 300;
+        let updateInterval = 30;
 
         function getRandomData() {
             if (data.length > 0)
                 data = data.slice(1);
             while (data.length < totalPoints) {
-                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                let prev = data.length > 0 ? data[data.length - 1] : 50,
                     y = prev + Math.random() * 10 - 5;
                 if (y < 0) {
                     y = 0;
@@ -3037,8 +3047,8 @@
                 }
                 data.push(y);
             }
-            var res = [];
-            for (var i = 0; i < data.length; ++i) {
+            let res = [];
+            for (let i = 0; i < data.length; ++i) {
                 res.push([i, data[i]])
             }
             return res;
@@ -3054,7 +3064,7 @@
 
         /* Create Chart */
         if ($('#chart-trend-dynamic')[0]) {
-            var plot = $.plot("#chart-trend-dynamic", [dataArray], {
+            let plot = $.plot("#chart-trend-dynamic", [dataArray], {
                 series: {
                     label: " 趋势",
                     lines: {
@@ -3137,7 +3147,7 @@
         },
         formatters: {
             "number": function (column, row) {
-                var result = '';
+                let result = '';
                 switch (row.with) {
                     case 'A': // Anne Zhang
                         result = "<span class=\"make-with-a\">";
@@ -3158,7 +3168,7 @@
                         result = "<span class=\"make-with-default\">";
                         break;
                 }
-                for (var i = 0; i < row.number; i++) {
+                for (let i = 0; i < row.number; i++) {
                     result = result + "<i class=\"zmdi zmdi-circle\"></i> ";
                 }
                 result = result + "</span>";

@@ -166,12 +166,12 @@
             <script type="text/javascript" src="js/array.footprint.js"></script>
             <script type="text/javascript" src="js/array.path.js"></script>
             <script type="text/javascript">
-                var map;
-                var dotGrey, dotBlue, dotGreen, dotOrange, dotRed, dotPurple;
-                // var colorYellow;
-                var colorRed;
-                var colorBlue;
-                var colorTeal;
+                let map;
+                let dotGrey, dotBlue, dotGreen, dotOrange, dotRed, dotPurple;
+                let colorYellow;
+                let colorRed;
+                let colorBlue;
+                let colorTeal;
 
                 function initialMap() {
                     map = new AMap.Map('container_amap', { // AZ:Initial Map
@@ -219,17 +219,17 @@
                 }
 
                 function initialColor() {
-                    // colorYellow = "#FFEB3B"; // 非机动车、步行
+                    colorYellow = "#FFEB3B"; // 非机动车、步行
                     colorRed = "#f44336";
                     colorTeal = "#009688";
                     colorBlue = "#00BCD4"; // 机动车、火车
                 }
 
                 function drawPoint() {
-                    var arrayMarkerPoint = []; // array.footprint.js
-                    for (var i = 0; i < arrayFootprint.length; i += 1) {
-                        var markerPoint;
-                        var iconPoint;
+                    let arrayMarkerPoint = []; // array.footprint.js
+                    for (let i = 0; i < arrayFootprint.length; i += 1) {
+                        let markerPoint;
+                        let iconPoint;
                         switch (arrayFootprint[i].type) {
                             case 1:
                                 iconPoint = dotBlue;
@@ -281,7 +281,7 @@
                  */
                 function drawPath(destinationMap, arrayPathPoint, lineWeight, lineColor, strokeStyle) {
                     // 绘制轨迹
-                    var polyline = new AMap.Polyline({
+                    let polyline = new AMap.Polyline({
                         map: destinationMap,
                         path: arrayPathPoint,
                         strokeColor: lineColor,  // 线颜色
@@ -290,7 +290,7 @@
                         showDir: false, // 显示方向箭头
                         strokeStyle: strokeStyle  // 线样式
                     });
-                    var passedPolyline = new AMap.Polyline({
+                    let passedPolyline = new AMap.Polyline({
                         map: destinationMap,
                         // path: arrayPathPoint,
                         strokeColor: "#FF0000",  //线颜色
@@ -318,8 +318,8 @@
 
                 // 计算区域面积
                 function countArea(map, path) {
-                    var area = Math.round(AMap.GeometryUtil.ringArea(path));
-                    var text = new AMap.Text({
+                    let area = Math.round(AMap.GeometryUtil.ringArea(path));
+                    let text = new AMap.Text({
                         position: path[0],
                         text: (area / 10000000000).toFixed(0),
                         offset: new AMap.Pixel(-15, -14),
@@ -488,9 +488,9 @@
         return document.fullscreen;
     }
 
-    var btnFullscreen = document.getElementById("fullscreen");
+    let btnFullscreen = document.getElementById("fullscreen");
     btnFullscreen.onclick = function () {
-        var elem = document.getElementById("container_amap");
+        let elem = document.getElementById("container_amap");
         requestFullScreen(elem);
     };
 </script>

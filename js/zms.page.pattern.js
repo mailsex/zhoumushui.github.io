@@ -174,8 +174,11 @@ function insertFooter() {
         "<li>" +
         "<div class=\"sucaihuo-container\">" +
         "<section class=\"cd-section toolbox-link\">" +
+        /*
         "<a class=\"cd-bouncy-nav-trigger\" href=\"#0\">工具箱</a>" +
         "</section>" +
+
+         */
         "<div class=\"cd-bouncy-nav-modal\">" +
         "<nav><ul class=\"cd-bouncy-nav\">" +
         "<li><a target=\"_blank\" href=\"" + path + "link\">导航</a></li>" +
@@ -190,7 +193,8 @@ function insertFooter() {
         "</div>" +
         "</li>" +
         "<li><a href=\"" + path + "comment\">留言板</a></li>" +
-        "<span id=\"busuanzi_container_site_pv\">本站访问量: <span id=\"busuanzi_value_site_pv\"></span></span>" +
+        "<span id=\"busuanzi_container_site_pv\">PV: <span id=\"busuanzi_value_site_pv\"></span></span>" +
+        "<span id=\"busuanzi_container_site_uv\"> | UV: <span id=\"busuanzi_value_site_uv\"></span></span>" +
         "</ul>"
 };
 

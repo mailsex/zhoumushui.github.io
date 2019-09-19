@@ -92,7 +92,12 @@
             -->
             <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
 
-            <div class="contacts row">
+            <div class="page-error__inner">
+                <h3>Deprecated! 不再使用！</h3>
+                <p><span id="time" class="count-down-404">3</span>秒后<a href="index.html">返回主页</a></p>
+            </div>
+
+            <div class="contacts row" style="display: none">
 
                 <div class="col-md-2 col-sm-4">
                     <div class="contacts__item">
@@ -278,5 +283,18 @@ zhoujie, 2016-9-9, PrivateKeyEntry,
 
 <script>var directoryDepth = 1;</script>
 <script src="../js/zms.page.pattern.js"></script>
+<script type="text/javascript">
+    let time = document.getElementById('time');
+
+    function count() {
+        if (+time.innerHTML > 0) {
+            time.innerHTML = time.innerHTML - 1;
+        } else {
+            location.href = '../';
+        }
+    }
+
+    setInterval(count, 1000);
+</script>
 </body>
 </html>
