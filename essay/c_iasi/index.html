@@ -49,14 +49,14 @@
         .car-logo {
             width: 30px;
             height: 20px;
-            margin-right: 20px;
+            margin-right: 18px;
         }
 
         .ciasi-logo {
             height: 20px;
             padding: 2px;
             margin-right: 5px;
-            background-color: #2196F3;
+            background-color: #ffffff;
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             -o-border-radius: 4px;
@@ -127,6 +127,14 @@
         .score-detail {
             width: 100%;
             height: 800px;
+        }
+
+        .car-make {
+            color: #ffffff;
+        }
+
+        .car-model {
+            color: #ffffff;
         }
 
     </style>
@@ -201,9 +209,8 @@
                     <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
                 </span>&nbsp;&nbsp;&nbsp;
                 <span class="essay-title">
-                    中国保险汽车安全指数
-                    <span style="color: #2196F3;font-size: large;">
-                        数据来源:
+                    中保研测试汇总
+                    <span style="color: #2196F3;font-size: large;display: none">
                         <a href="http://c-iasi.com" target="_blank">
                             <img src="img/C-IASI.png" class="ciasi-logo"/>
                         </a>
@@ -222,7 +229,7 @@
 
                 <span align="right" style="float: right;">
                     <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
-                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-09-19</span>
+                    <i class="zmdi zmdi-time"></i> 2019.09.19
                 </span>
             </div>
 
@@ -235,7 +242,8 @@
                         <tr>
                             <!-- data-type="numeric"-->
                             <th data-column-id="make" data-formatter="make">厂商</th>
-                            <th data-column-id="model" data-formatter="model" data-sortable="false">款式</th>
+                            <th data-column-id="model" data-formatter="model" data-sortable="false">型号</th>
+                            <th data-column-id="year" data-formatter="year" data-sortable="false">款式</th>
                             <th data-column-id="front_offset" data-formatter="front_offset">正面偏置</th><!--25%-->
                             <th data-column-id="side" data-formatter="side">侧面碰撞</th>
                             <th data-column-id="top" data-formatter="top">车顶强度</th>
@@ -243,7 +251,7 @@
                             <th data-sortable="false" data-visible="false">|</th>
                             <th data-column-id="assist" data-formatter="assist">辅助安全</th>
                             <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
-                            <th data-column-id="fix" data-formatter="fix" data-visible="false">耐撞维修</th>
+                            <th data-column-id="fix" data-formatter="fix" data-visible="true">耐撞维修</th>
                             <th data-column-id="test_time" data-formatter="test_time" data-visible="false">测试批次</th>
                             <th data-column-id="link" data-formatter="link" data-sortable="false">详情</th>
 
@@ -252,7 +260,8 @@
                         <tbody>
                         <tr>
                             <td>一汽丰田</td><!-- MAKE -->
-                            <td>奕泽IZOA 2018款 奕驰版</td><!-- MODEL -->
+                            <td>奕泽</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>A</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -265,8 +274,9 @@
                             <td>26</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
-                            <td>浙江豪情沃尔沃</td><!-- MAKE -->
-                            <td>XC60 2019款 T5 四驱智逸版</td><!-- MODEL -->
+                            <td>豪情沃尔沃</td><!-- MAKE -->
+                            <td>XC60</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>A</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -280,7 +290,8 @@
                         </tr>
                         <tr>
                             <td>广汽丰田</td><!-- MAKE -->
-                            <td>凯美瑞 2018款 2.0E 精英版</td><!-- MODEL -->
+                            <td>凯美瑞</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>A</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -293,8 +304,9 @@
                             <td>15</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
-                            <td>浙江豪情领克</td><!-- MAKE -->
-                            <td>01 2017款</td><!-- MODEL -->
+                            <td>豪情领克</td><!-- MAKE -->
+                            <td>01</td><!-- MODEL -->
+                            <td>2017</td><!-- Year -->
                             <td>A</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -308,7 +320,8 @@
                         </tr>
                         <tr>
                             <td>东风日产</td><!-- MAKE -->
-                            <td>天籁 2019款2.0L XL舒适版</td><!-- MODEL -->
+                            <td>天籁</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>A</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -321,8 +334,9 @@
                             <td>39</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
-                            <td>上汽通用凯迪拉克</td><!-- MAKE -->
-                            <td>XT4 2018款 28T技术型</td><!-- MODEL -->
+                            <td>上汽凯迪拉克</td><!-- MAKE -->
+                            <td>XT4</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -336,7 +350,8 @@
                         </tr>
                         <tr>
                             <td>长城魏派</td><!-- MAKE -->
-                            <td>VV5 2017款 超豪型</td><!-- MODEL -->
+                            <td>VV5</td><!-- MODEL -->
+                            <td>2017</td><!-- Year -->
                             <td>A</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -350,7 +365,8 @@
                         </tr>
                         <tr>
                             <td>广汽本田</td><!-- MAKE -->
-                            <td>雅阁 2018款 230 TURBO 舒适版</td><!-- MODEL -->
+                            <td>雅阁</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -364,7 +380,8 @@
                         </tr>
                         <tr>
                             <td>北京奔驰</td><!-- MAKE -->
-                            <td>C200 2018款 运动版</td><!-- MODEL -->
+                            <td>C200</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -378,7 +395,8 @@
                         </tr>
                         <tr>
                             <td>众泰</td><!-- MAKE -->
-                            <td>T600 2019款 运动版 1.5T MT尊享型</td><!-- MODEL -->
+                            <td>T600</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -392,7 +410,8 @@
                         </tr>
                         <tr>
                             <td>广汽传祺</td><!-- MAKE -->
-                            <td>GS7 2017款 280T 豪华版</td><!-- MODEL -->
+                            <td>GS7</td><!-- MODEL -->
+                            <td>2017</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -406,7 +425,8 @@
                         </tr>
                         <tr>
                             <td>东风雷诺</td><!-- MAKE -->
-                            <td>科雷傲 2018款 2.0L 两驱舒适版</td><!-- MODEL -->
+                            <td>科雷傲</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>C</td><!-- TOP -->
@@ -420,7 +440,8 @@
                         </tr>
                         <tr>
                             <td>长城哈弗</td><!-- MAKE -->
-                            <td>F5 2019款 i型</td><!-- MODEL -->
+                            <td>F5</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>C</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -434,7 +455,8 @@
                         </tr>
                         <tr>
                             <td>华晨宝马</td><!-- MAKE -->
-                            <td>318i 2018款</td><!-- MODEL -->
+                            <td>318i</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -448,7 +470,8 @@
                         </tr>
                         <tr>
                             <td>东风日产</td><!-- MAKE -->
-                            <td>西玛 2016款 2.5XL 豪华版</td><!-- MODEL -->
+                            <td>西玛</td><!-- MODEL -->
+                            <td>2016</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>A</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -461,8 +484,9 @@
                             <td>31</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
-                            <td>上汽通用别克</td><!-- MAKE -->
-                            <td>昂科威 2018款 20T 前驱领先型</td><!-- MODEL -->
+                            <td>上汽别克</td><!-- MAKE -->
+                            <td>昂科威</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -476,7 +500,8 @@
                         </tr>
                         <tr>
                             <td>一汽大众</td><!-- MAKE -->
-                            <td>迈腾 2018款 280TSI DSG舒适型</td><!-- MODEL -->
+                            <td>迈腾</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -490,7 +515,8 @@
                         </tr>
                         <tr>
                             <td>广汽本田</td><!-- MAKE -->
-                            <td>凌派 2019款 180 Turbo CVT舒适版</td><!-- MODEL -->
+                            <td>凌派</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>C</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -504,7 +530,8 @@
                         </tr>
                         <tr>
                             <td>北京现代</td><!-- MAKE -->
-                            <td>菲斯塔 2019款 240 TGDi GLX DCT运动版</td><!-- MODEL -->
+                            <td>菲斯塔</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>C</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -518,7 +545,8 @@
                         </tr>
                         <tr>
                             <td>广汽三菱</td><!-- MAKE -->
-                            <td>欧蓝德 2019款 2.0L 畅享版</td><!-- MODEL -->
+                            <td>欧蓝德</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>C</td><!-- TOP -->
@@ -532,7 +560,8 @@
                         </tr>
                         <tr>
                             <td>北京现代</td><!-- MAKE -->
-                            <td>领动 2018款 双离合炫动活力型</td><!-- MODEL -->
+                            <td>领动</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>A</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -546,7 +575,8 @@
                         </tr>
                         <tr>
                             <td>东风本田</td><!-- MAKE -->
-                            <td>思域 2016款 舒适版自动 180TURBO</td><!-- MODEL -->
+                            <td>思域</td><!-- MODEL -->
+                            <td>2016</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -559,8 +589,9 @@
                             <td>19</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
-                            <td>上海大众斯柯达</td><!-- MAKE -->
-                            <td>柯迪亚克 2018款 TSI330 5座标准版</td><!-- MODEL -->
+                            <td>上汽斯柯达</td><!-- MAKE -->
+                            <td>柯迪亚克</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>B</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -574,7 +605,8 @@
                         </tr>
                         <tr>
                             <td>奇瑞</td><!-- MAKE -->
-                            <td>艾瑞泽5 2018款 致敬青春版CVT</td><!-- MODEL -->
+                            <td>艾瑞泽5</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -588,7 +620,8 @@
                         </tr>
                         <tr>
                             <td>江淮</td><!-- MAKE -->
-                            <td>瑞风S3 2018款 智驱版 1.6L CVT豪华型</td><!-- MODEL -->
+                            <td>瑞风S3</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -602,7 +635,8 @@
                         </tr>
                         <tr>
                             <td>北京汽车</td><!-- MAKE -->
-                            <td>绅宝 D50 2018款1.5L CVT尊贵智驾版</td><!-- MODEL -->
+                            <td>绅宝D50</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>C</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -616,7 +650,8 @@
                         </tr>
                         <tr>
                             <td>上汽大众</td><!-- MAKE -->
-                            <td>途观L 2018款 330TSI 风尚版</td><!-- MODEL -->
+                            <td>途观L</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>D</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>A</td><!-- TOP -->
@@ -630,7 +665,8 @@
                         </tr>
                         <tr>
                             <td>东风悦达起亚</td><!-- MAKE -->
-                            <td>智跑 2018款 智享豪华A/T</td><!-- MODEL -->
+                            <td>智跑</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>D</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -644,7 +680,8 @@
                         </tr>
                         <tr>
                             <td>东风汽车</td><!-- MAKE -->
-                            <td>风神 AX7 2019款 AI 先锋型</td><!-- MODEL -->
+                            <td>风神AX7</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>D</td><!-- FRONT 25% OFFSET -->
                             <td>B</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -657,8 +694,9 @@
                             <td>35</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
-                            <td>上汽通用别克</td><!-- MAKE -->
-                            <td>GL8 2017款 28T 舒适型</td><!-- MODEL -->
+                            <td>上汽别克</td><!-- MAKE -->
+                            <td>GL8</td><!-- MODEL -->
+                            <td>2017</td><!-- Year -->
                             <td>D</td><!-- FRONT 25% OFFSET -->
                             <td>C</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -672,7 +710,8 @@
                         </tr>
                         <tr>
                             <td>比亚迪</td><!-- MAKE -->
-                            <td>宋MAX 2018款 1.5TI 自动智联豪华型 6座</td><!-- MODEL -->
+                            <td>宋MAX</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>D</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>B</td><!-- TOP -->
@@ -685,8 +724,9 @@
                             <td>30</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
-                            <td>上汽通用五菱宝骏</td><!-- MAKE -->
-                            <td>510 2017款 1.5L 手动 舒适型</td><!-- MODEL -->
+                            <td>上汽五菱宝骏</td><!-- MAKE -->
+                            <td>510</td><!-- MODEL -->
+                            <td>2017</td><!-- Year -->
                             <td>D</td><!-- FRONT 25% OFFSET -->
                             <td>D</td><!-- SIDE -->
                             <td>C</td><!-- TOP -->
@@ -722,7 +762,8 @@
                         <tr>
                             <!-- data-type="numeric"-->
                             <th data-column-id="make" data-formatter="make">厂商</th>
-                            <th data-column-id="model" data-formatter="model" data-sortable="false">款式</th>
+                            <th data-column-id="model" data-formatter="model" data-sortable="false">型号</th>
+                            <th data-column-id="year" data-formatter="year" data-sortable="false">款式</th>
                             <th data-column-id="front_offset" data-formatter="front_offset" data-visible="false">正面偏置
                             </th><!--25%-->
                             <th data-column-id="side" data-formatter="side" data-visible="false">侧面碰撞</th>
@@ -743,7 +784,8 @@
 
                         <tr>
                             <td>长安福特</td><!-- MAKE -->
-                            <td>福克斯 2019款 三厢 1.5L 锋跃型</td><!-- MODEL -->
+                            <td>福克斯</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -757,7 +799,8 @@
                         </tr>
                         <tr>
                             <td>比亚迪</td><!-- MAKE -->
-                            <td>唐 2018款 智联尊悦型</td><!-- MODEL -->
+                            <td>唐</td><!-- MODEL -->
+                            <td>2018</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -771,7 +814,8 @@
                         </tr>
                         <tr>
                             <td>一汽丰田</td><!-- MAKE -->
-                            <td>亚洲龙 2019款 2.5L 进取版</td><!-- MODEL -->
+                            <td>亚洲龙</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -785,7 +829,8 @@
                         </tr>
                         <tr>
                             <td>广汽丰田</td><!-- MAKE -->
-                            <td>雷凌 2019款185T进取版</td><!-- MODEL -->
+                            <td>雷凌</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -799,7 +844,8 @@
                         </tr>
                         <tr>
                             <td>吉利</td><!-- MAKE -->
-                            <td>星越 2019款300T耀星者</td><!-- MODEL -->
+                            <td>星越</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -813,8 +859,9 @@
                         </tr>
 
                         <tr>
-                            <td>上汽通用雪佛兰</td><!-- MAKE -->
+                            <td>上汽雪佛兰</td><!-- MAKE -->
                             <td>科鲁泽</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -829,6 +876,7 @@
                         <tr>
                             <td>长安马自达</td><!-- MAKE -->
                             <td>3</td><!-- MODEL -->
+                            <td></td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -843,6 +891,7 @@
                         <tr>
                             <td>东风本田</td><!-- MAKE -->
                             <td>INSPIRE</td><!-- MODEL -->
+                            <td></td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -857,6 +906,7 @@
                         <tr>
                             <td>上汽大众</td><!-- MAKE -->
                             <td>帕萨特</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -870,7 +920,8 @@
                         </tr>
                         <tr>
                             <td>长安</td><!-- MAKE -->
-                            <td>CS75 Plus</td><!-- MODEL -->
+                            <td>CS75Plus</td><!-- MODEL -->
+                            <td></td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -885,6 +936,7 @@
                         <tr>
                             <td>一汽奔腾</td><!-- MAKE -->
                             <td>T77</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -899,6 +951,7 @@
                         <tr>
                             <td>海马小鹏</td><!-- MAKE -->
                             <td>G3</td><!-- MODEL -->
+                            <td></td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -912,7 +965,8 @@
                         </tr>
                         <tr>
                             <td>北京奔驰</td><!-- MAKE -->
-                            <td>GLC L</td><!-- MODEL -->
+                            <td>GLC-L</td><!-- MODEL -->
+                            <td></td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -927,6 +981,7 @@
                         <tr>
                             <td>奇瑞</td><!-- MAKE -->
                             <td>捷途X70</td><!-- MODEL -->
+                            <td></td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -941,6 +996,7 @@
                         <tr>
                             <td>广汽菲克Jeep</td><!-- MAKE -->
                             <td>大指挥官</td><!-- MODEL -->
+                            <td></td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -954,7 +1010,8 @@
                         </tr>
                         <tr>
                             <td>华晨宝马</td><!-- MAKE -->
-                            <td>325Li 2020款 M运动套装</td><!-- MODEL -->
+                            <td>325Li</td><!-- MODEL -->
+                            <td>2020</td><!-- Year -->
                             <td>T</td><!-- FRONT 25% OFFSET -->
                             <td>T</td><!-- SIDE -->
                             <td>T</td><!-- TOP -->
@@ -1278,7 +1335,10 @@
         },
         formatters: {
             "make": function (column, row) {
-                return getLogoByMake(row.make) + row.make/* + getCountryByMake(row.make) */;
+                return getLogoByMake(row.make) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            },
+            "model": function (column, row) {
+                return "<span class='car-model'>" + row.model + "</span>";
             },
             "front_offset": function (column, row) {
                 return getCarSafeDescriptionByWord(row.front_offset);
@@ -1345,7 +1405,10 @@
         },
         formatters: {
             "make": function (column, row) {
-                return getLogoByMake(row.make) + row.make/* + getCountryByMake(row.make) */;
+                return getLogoByMake(row.make) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            },
+            "model": function (column, row) {
+                return "<span class='car-model'>" + row.model + "</span>";
             },
             "front_offset": function (column, row) {
                 return getCarSafeDescriptionByWord(row.front_offset);
