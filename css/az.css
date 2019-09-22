@@ -329,6 +329,11 @@
     color: #009688;
 }
 
+.dream-time {
+    color:#2196F3;
+    text-decoration: underline;
+}
+
 .dream-todo {
     color: #FF9800;
 }
