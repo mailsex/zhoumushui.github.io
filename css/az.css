@@ -330,8 +330,11 @@
 }
 
 .dream-time {
+    color: #03A9F4;
+    /*
     color:#2196F3;
     text-decoration: underline;
+     */
 }
 
 .dream-todo {
