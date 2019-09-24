@@ -78,6 +78,10 @@
             display: block
         }
 
+        .not-official {
+            text-decoration: underline;
+        }
+
         .btn-save-image {
             height: 20px;
             margin-left: 50px;
@@ -299,7 +303,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>C*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>15</td><!-- C-IASI ID -->
                         </tr>
@@ -314,7 +318,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>C*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>16</td><!-- C-IASI ID -->
                         </tr>
@@ -374,7 +378,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>18</td><!-- C-IASI ID -->
                         </tr>
@@ -389,7 +393,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>8</td><!-- C-IASI ID -->
                         </tr>
@@ -404,7 +408,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>B</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>20</td><!-- C-IASI ID -->
                         </tr>
@@ -449,7 +453,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>D</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>C*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>7</td><!-- C-IASI ID -->
                         </tr>
@@ -494,7 +498,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>-</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>4</td><!-- C-IASI ID -->
                         </tr>
@@ -524,7 +528,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>9</td><!-- C-IASI ID -->
                         </tr>
@@ -539,7 +543,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>A*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>14</td><!-- C-IASI ID -->
                         </tr>
@@ -614,7 +618,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>A</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>19</td><!-- C-IASI ID -->
                         </tr>
@@ -674,7 +678,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>A</td><!-- ASSIST -->
                             <td>B</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>B*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>12</td><!-- C-IASI ID -->
                         </tr>
@@ -749,7 +753,7 @@
                             <td>|</td><!-- NOT IMPORTANT BELOW-->
                             <td>-</td><!-- ASSIST -->
                             <td>B</td><!-- ROAD_USER -->
-                            <td></td><!-- FIX -->
+                            <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- TEST TIME -->
                             <td>17</td><!-- C-IASI ID -->
                         </tr>
@@ -1286,15 +1290,24 @@
 
 <script>
     function getCarSafeDescriptionByWord(word) {
+        let SHOW_NON_OFFICIAL = false; // 显示非官方数据
         switch (word) {
             case 'A': // Good
                 return "<span class=\"grade green-bg\">G 优秀</span>";
+            case 'A*': // Good
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade green-bg not-official\">G 优秀*</span>" : "<span class=\"grade grey-bg\"></span>";
             case 'B': // Adequate
                 return "<span class=\"grade yellow-bg\">A 良好</span>";
+            case 'B*': // Adequate
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade yellow-bg not-official\">A 良好*</span>" : "<span class=\"grade grey-bg\"></span>";
             case 'C': // Marginal
                 return "<span class=\"grade orange-bg\">M 一般</span>";
+            case 'C*': // Marginal
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade orange-bg not-official\">M 一般*</span>" : "<span class=\"grade grey-bg\"></span>";
             case 'D': // Poor
                 return "<span class=\"grade red-bg\">P 较差</span>";
+            case 'D*': // Poor
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade red-bg not-official\">P 较差*</span>" : "<span class=\"grade grey-bg\"></span>";
             case '-': // None
                 return "<span class=\"grade grey-bg\">未配置</span>";
             case 'T': // T0D0
