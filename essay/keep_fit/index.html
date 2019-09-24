@@ -207,6 +207,14 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <td>2019-09-24</td><!-- date -->
+                            <td>20</td><!-- push-up -->
+                            <td>0</td><!-- sit-up -->
+                            <td>1000</td><!-- rope-skipping -->
+                            <td>150</td><!-- spring-expander -->
+                            <td>5</td><!-- running -->
+                        </tr>
+                        <tr>
                             <td>2019-09-23</td><!-- date -->
                             <td>40</td><!-- push-up -->
                             <td>0</td><!-- sit-up -->
@@ -1481,7 +1489,7 @@
                 let num = row.number_rope_skip;
                 if (num == 0)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
-                else if (num < 200)
+                else if (num < 500)
                     return "<span class=\"fit-rate-poor\">" + num + "</span>";
                 else
                     return "<span class=\"fit-rate-good\">" + num + "</span>";
@@ -1491,7 +1499,7 @@
                 let num = row.number_spring_expander;
                 if (num == 0)
                     return "<span class=\"fit-rate-none\">" + num + "</span>";
-                else if (num < 100)
+                else if (num < 200)
                     return "<span class=\"fit-rate-poor\">" + num + "</span>";
                 else
                     return "<span class=\"fit-rate-good\">" + num + "</span>";
