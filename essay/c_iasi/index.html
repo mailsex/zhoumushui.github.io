@@ -233,7 +233,7 @@
 
                 <span align="right" style="float: right;">
                     <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
-                    <i class="zmdi zmdi-time"></i> 2019.09.23
+                    <i class="zmdi zmdi-time"></i> 2019.09.27
                 </span>
             </div>
 
@@ -257,7 +257,7 @@
                             <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
                             <th data-column-id="fix" data-formatter="fix" data-visible="true">耐撞维修</th>
                             <th data-column-id="test_time" data-formatter="test_time" data-visible="false">测试批次</th>
-                            <th data-column-id="link" data-formatter="link" data-sortable="false" data-visible="false">详情</th>
+                            <th data-column-id="link" data-formatter="link" data-sortable="false" data-visible="true">详情</th>
 
                         </tr>
                         </thead>
@@ -351,6 +351,21 @@
                             <td>C</td><!-- FIX -->
                             <td>19A</td><!-- TEST TIME -->
                             <td>41</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>长安福特</td><!-- MAKE -->
+                            <td>福克斯</td><!-- MODEL -->
+                            <td>2019</td><!-- Year -->
+                            <td>B</td><!-- FRONT 25% OFFSET -->
+                            <td>A</td><!-- SIDE -->
+                            <td>A</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>|</td><!-- NOT IMPORTANT BELOW-->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>B</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>42</td><!-- C-IASI ID -->
                         </tr>
                         <tr>
                             <td>上汽凯迪拉克</td><!-- MAKE -->
@@ -801,21 +816,6 @@
                         </thead>
                         <tbody>
 
-                        <tr>
-                            <td>长安福特</td><!-- MAKE -->
-                            <td>福克斯</td><!-- MODEL -->
-                            <td>2019</td><!-- Year -->
-                            <td>T</td><!-- FRONT 25% OFFSET -->
-                            <td>T</td><!-- SIDE -->
-                            <td>T</td><!-- TOP -->
-                            <td>T</td><!-- SEAT -->
-                            <td>|</td><!-- NOT IMPORTANT BELOW-->
-                            <td>T</td><!-- ASSIST -->
-                            <td>T</td><!-- ROAD_USER -->
-                            <td>T</td><!-- FIX -->
-                            <td>19A</td><!-- TEST TIME -->
-                            <td></td><!-- C-IASI ID -->
-                        </tr>
                         <tr>
                             <td>一汽丰田</td><!-- MAKE -->
                             <td>亚洲龙</td><!-- MODEL -->
@@ -1376,7 +1376,7 @@
             },
             "link": function (column, row) {
                 if (row.link) {
-                    let linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
+                    let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
                     return "<span style='font-size: 15px' >" +
                         "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
                         + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
@@ -1546,6 +1546,7 @@
         addData('本田雅阁', 6);
         addData('凯迪拉克XT4', 6);
         addData('奔驰C200', 6);
+        addData('福特福克斯', 5);
         addData('哈弗F5', 4);
         addData('三菱欧蓝德', 4);
         addData('现代领动', 2);
@@ -1628,6 +1629,7 @@
         addData('比亚迪唐', 8); // 21.5
         addData('雷诺科雷傲', 6); //  4.5
         addData('日产天籁', 6); // 10.5
+        addData('福特福克斯', 4); // 21.0
         addData('日产西玛', 2); //  5.5
         addData('宝马318i', 2); // 18.5
         addData('众泰T600', 0); // 14.0
@@ -1712,6 +1714,7 @@
         addData('领克01', 5.21);
         addData('现代领动', 5.32);
         addData('本田思域', 5.34);
+        addData('福特福克斯', 5.61);
         addData('丰田奕泽', 5.75);
         addData('丰田凯美瑞', 5.98);
         addData('奔驰C200', 6.06);
