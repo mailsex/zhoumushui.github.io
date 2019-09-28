@@ -73,7 +73,7 @@
             -moz-border-radius: 3px;
             -o-border-radius: 3px;
             border-radius: 3px;
-            width: 60px;
+            width: 55px;
             height: 28px;
             display: block
         }
@@ -139,6 +139,10 @@
 
         .car-model {
             color: #ffffff;
+        }
+
+        .car-year {
+            font-size:xx-small;
         }
 
         .car-price {
@@ -1400,7 +1404,7 @@
             search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
             header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
-            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+            footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
         },
         formatters: {
             "make": function (column, row) {
@@ -1408,6 +1412,9 @@
             },
             "model": function (column, row) {
                 return "<span class='car-model'>" + row.model + "</span>";
+            },
+            "year": function (column, row) {
+                return "<span class='car-year'>" + row.year + "</span>";
             },
             "price": function (column, row) {
                 return "<span class='car-price'>" + row.price + "</span>";
@@ -1481,6 +1488,9 @@
             },
             "model": function (column, row) {
                 return "<span class='car-model'>" + row.model + "</span>";
+            },
+            "year": function (column, row) {
+                return "<span class='car-year'>" + row.year + "</span>";
             },
             "price": function (column, row) {
                 return "<span class='car-price'>" + row.price + "</span>";
