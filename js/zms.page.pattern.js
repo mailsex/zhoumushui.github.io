@@ -101,21 +101,21 @@ function insertNavigation() {
     var liActive = "<li class=\"navigation__active\">"; // 高亮
 
     document.getElementById("page-pattern-navigation").innerHTML = "<ul>" +
-        ((htmlName == 'index' || htmlName == 'zhoumushui.github.io' || htmlName == 'www.zhoumushui.com') ? liActive : liNormal ) +
+        ((htmlName == 'index' || htmlName == 'zhoumushui.github.io' || htmlName == 'www.zhoumushui.com') ? liActive : liNormal) +
         "<a href=\"" + path + "index.html\"><i class=\"zmdi zmdi-file-text\"></i><span class=\"nav-left\">随笔</span></a></li>" +
         // (htmlName == 'app' ? liActive : liNormal )+
         // "<a href=\"" + path + "app.html\"><i class=\"zmdi zmdi-android\"></i><span class=\"nav-left\">开发</span></a></li>" +
-        (htmlName == 'movie' ? liActive : liNormal ) +
+        (htmlName == 'movie' ? liActive : liNormal) +
         "<a href=\"" + path + "movie\"><i class=\"zmdi zmdi-movie\"></i><span class=\"nav-left\">电影</span></a></li>" +
-        (htmlName == 'book' ? liActive : liNormal ) +
+        (htmlName == 'book' ? liActive : liNormal) +
         "<a href=\"" + path + "book.html\"><i class=\"zmdi zmdi-book\"></i><span class=\"nav-left\">书籍</span></a></li>" +
-        (htmlName == 'world' ? liActive : liNormal ) +
+        (htmlName == 'world' ? liActive : liNormal) +
         "<a href=\"" + path + "world\"><i class=\"zmdi zmdi-globe\"></i><span class=\"nav-left\">足迹</span></a></li>" +
         //(htmlName == 'timeline' ? liActive : liNormal ) +
         //"<a href=\"" + path + "timeline.html\"><i class=\"zmdi zmdi-chart\"></i><span class=\"nav-left\">年鉴</span></a></li>" +
-        (htmlName == 'dream' ? liActive : liNormal ) +
+        (htmlName == 'dream' ? liActive : liNormal) +
         "<a href=\"" + path + "dream\"><i class=\"zmdi zmdi-flag\"></i><span class=\"nav-left\">梦想</span></a></li>" +
-        (htmlName == 'profile' ? liActive : liNormal ) +
+        (htmlName == 'profile' ? liActive : liNormal) +
         "<a href=\"" + path + "profile.html\"><i class=\"zmdi zmdi-account-circle\"></i><span class=\"nav-left\">关于</span></a></li>" +
         "</ul>"
 };
@@ -258,13 +258,21 @@ function getBrowserInfo() {
 }
 
 function GetQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-    var r = window.location.search.substr(1).match(reg);
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    let r = window.location.search.substr(1).match(reg);
     if (r != null) return decodeURI(r[2]);
     return null;
 }
 
-if (GetQueryString("pm") == 1) {
+function isPureMode() { // Do not show header, footer and side navigation bar.
+    let str = window.location.href;
+    if (str.indexOf("c_iasi") != -1)
+        return true;
+    else
+        return false;
+}
+
+if (isPureMode() || GetQueryString("pm") == 1) {
     document.getElementById("navigation").style.display = "none";
     document.getElementById("essay_arrow_back").style.display = "none";
 } else {
