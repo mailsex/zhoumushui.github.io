@@ -47,9 +47,9 @@
         }
 
         .car-logo {
-            width: 30px;
-            height: 20px;
-            margin-right: 18px;
+            width: 24px; /* 30px;3 */
+            height: 16px; /* 20px;2 */
+            margin-right: 15px; /* 18px */
         }
 
         .ciasi-logo {
@@ -160,7 +160,7 @@
 <header id="header" style="display: none"></header>
 -->
 
-<section id="main" style="margin:auto;padding:0;width: 1050px;">
+<section id="main" style="margin:auto;padding:0;width: 990px;">
 
     <aside id="navigation">
         <div class="navigation__header">
@@ -217,7 +217,7 @@
                     <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
                 </span>&nbsp;&nbsp;&nbsp;
                 -->
-                <span class="essay-title">
+                <span class="essay-title" style="font-size: larger;font-weight: bold;">
                     中保研碰撞测试汇总
                     <!--
                     <span style="color: #2196F3;font-size: large;display: none">
@@ -242,7 +242,7 @@
                 </span>
             </div>
 
-            <div id="card_body" class="card__body" style="padding-top: 0;margin-left: -20px">
+            <div id="card_body" class="card__body" style="padding-top: 0;margin-left: -20px;margin-right: -20px">
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
                     <table id="table-carsafe-list" class="table table-striped table--vmiddle"
@@ -795,7 +795,7 @@
         <div class="card">
 
             <div id="card_body2" class="card__body" style="padding-top: 10px">
-                <h3>即将测试车型</h3><br>
+                <h4 style="font-weight: bold">即将测试车型</h4><br>
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
                     <table id="table-carsafe-list-todo" class="table table-striped table--vmiddle"
@@ -1049,7 +1049,7 @@
     <section id="content3">
         <div class="card">
             <div id="card_body3" class="card__body" style="padding-top: 10px">
-                <h3>正面25%偏置碰撞详情</h3><br>
+                <h4 style="font-weight: bold">正面25%偏置碰撞详情</h4><br>
                 <div class="table-responsive">
 
                     <table class="table" style="text-align: center;">
@@ -1125,7 +1125,7 @@
     <section id="content4">
         <div class="card">
             <div id="card_body4" class="card__body" style="padding-top: 10px">
-                <h3>侧面碰撞详情</h3><br>
+                <h4 style="font-weight: bold">侧面碰撞详情</h4><br>
                 <div class="table-responsive">
                     <table class="table" style="text-align: center;">
                         <thead>
@@ -1226,7 +1226,7 @@
     <section id="content5">
         <div class="card">
             <div id="card_body5" class="card__body" style="padding-top: 10px">
-                <h3>车顶强度详情</h3><br>
+                <h4 style="font-weight: bold">车顶强度详情</h4><br>
                 <div class="table-responsive">
                     <table class="table" style="text-align: center;">
                         <thead>
@@ -1785,8 +1785,8 @@
                 y: "0", //标题竖直方向位置
                 textStyle: {
                     fontSize: 18,
-                    fontWeight: 'normal',
-                    color: '#BDBDBD'
+                    fontWeight: 'bold',//'normal',
+                    color: '#DDDDDD' //'#BDBDBD'
                 }
             },
             tooltip: {
@@ -1818,11 +1818,11 @@
                 type: 'category', //纵向柱状图，若需要为横向，则此处值为'value'， 下面 yAxis 的type值为'category'
                 data: arrayCar,
                 axisLabel: {
-                    color: "#BDBDBD" //刻度线标签颜色
+                    color: '#DDDDDD' //"#BDBDBD" //刻度线标签颜色
                 },
                 axisLine: {
                     lineStyle: {
-                        color: '#BDBDBD' //更改坐标轴颜色
+                        color: '#DDDDDD' //'#BDBDBD' //更改坐标轴颜色
                     }
                 }
             }],
@@ -1831,11 +1831,11 @@
                 type: 'value',
                 splitArea: {show: false},
                 axisLabel: {
-                    color: "#BDBDBD" //刻度线标签颜色
+                    color: '#DDDDDD' //"#BDBDBD" //刻度线标签颜色
                 },
                 axisLine: {
                     lineStyle: {
-                        color: '#BDBDBD' //更改坐标轴颜色
+                        color: '#DDDDDD' //'#BDBDBD' //更改坐标轴颜色
                     }
                 }
             }],
