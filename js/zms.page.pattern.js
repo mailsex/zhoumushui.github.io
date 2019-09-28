@@ -274,7 +274,7 @@ function isPureMode() { // Do not show header, footer and side navigation bar.
 
 if (isPureMode() || GetQueryString("pm") == 1) {
     document.getElementById("navigation").style.display = "none";
-    document.getElementById("essay_arrow_back").style.display = "none";
+    // document.getElementById("essay_arrow_back").style.display = "none";
 } else {
     insertHeader();
     insertNavigation();

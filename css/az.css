@@ -362,10 +362,12 @@
     color: #edeff0
 }
 
+/*
 @font-face {
-    font-family: Roboto-Regular; /*为引入的字体命名*/
-    src: url(../font/Roboto-Regular-webfont.ttf); /*定义要引入字体文件的路径*/
+    font-family: Roboto-Regular;
+    src: url(../font/Roboto-Regular-webfont.ttf);
 }
+*/
 
 @font-face {
     font-family: Helvetica-Neue-LT-Pro; /*为引入的字体命名*/
