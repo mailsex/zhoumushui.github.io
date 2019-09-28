@@ -221,7 +221,7 @@
                     中保研碰撞测试汇总
                     <!--
                     <span style="color: #2196F3;font-size: large;display: none">
-                        <a href="http://c-iasi.com" target="_blank">
+                        <a href="http://ciasi.org.cn" target="_blank">
                             <img src="img/C-IASI.png" class="ciasi-logo"/>
                         </a>
                     </span>
@@ -1513,7 +1513,7 @@
         html2canvas(document.getElementById("content")).then(function (canvas) {
             let contentW = canvas.width;
             let contentH = canvas.height;
-            Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', 'car.jpg');
+            Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', 'car.jpg', 8);
         });
 
         document.getElementById("btnSaveImage").style.display = "";

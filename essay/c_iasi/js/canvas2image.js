@@ -38,8 +38,52 @@ var Canvas2Image = function () {
         return retCanvas;
     }
 
+    /**
+     * AZ:移动截图范围
+     * @param canvas
+     * @param width
+     * @param height
+     * @param shift 偏移量
+     * @returns {HTMLCanvasElement}
+     */
+    function scaleCanvasWithShift(canvas, width, height, shift) {
+        // Source Image 源图片
+        let sx = shift;
+        let sy = 0;
+        let w = canvas.width - shift;
+        let h = canvas.height;
+
+        if (width == undefined) {
+            width = w;
+        }
+        if (height == undefined) {
+            height = h;
+        }
+        width = w;
+
+        // Destination Image 目标图片
+        let dx = 0;
+        let dy = 0;
+        let dw = width;
+        let dh = height;
+
+        var retCanvas = document.createElement('canvas');
+        var retCtx = retCanvas.getContext('2d');
+        retCanvas.width = width;
+        retCanvas.height = height;
+
+        console.log("scaleCanvasWithShift:[" + sx + "," + sy + "]" + w + "x" + h + " -> [" + dx + "," + dy + "]" + dw + "x" + dh);
+        retCtx.drawImage(canvas, sx, sy, w, h, dx, dy, dw, dh);
+        return retCanvas;
+    }
+
     function getDataURL(canvas, type, width, height) {
         canvas = scaleCanvas(canvas, width, height);
+        return canvas.toDataURL(type);
+    }
+
+    function getDataURLWithShift(canvas, type, width, height, shift) {
+        canvas = scaleCanvasWithShift(canvas, width, height, shift);
         return canvas.toDataURL(type);
     }
 
@@ -54,7 +98,7 @@ var Canvas2Image = function () {
         return 'image/' + r;
     };
 
-    var saveFileToName = function (data, fileName) {
+    var saveFileToName = function (data, fileName, shift) {
         var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
         save_link.href = data;
         save_link.download = fileName;
@@ -240,7 +284,7 @@ var Canvas2Image = function () {
         }
     };
 
-    var saveAsImageToName = function (canvas, width, height, type, fileName) {
+    var saveAsImageToName = function (canvas, width, height, type, fileName, shift) {
         if ($support.canvas && $support.dataURL) {
             if (typeof canvas == "string") {
                 canvas = document.getElementById(canvas);
@@ -254,7 +298,7 @@ var Canvas2Image = function () {
                 var strData = genBitmapImage(data);
                 saveFile(makeURI(strData, downloadMime));
             } else {
-                var strData = getDataURL(canvas, type, width, height);
+                var strData = getDataURLWithShift(canvas, type, width, height, shift);
                 saveFileToName(strData.replace(type, downloadMime), fileName);
             }
         }
