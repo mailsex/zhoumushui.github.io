@@ -1369,25 +1369,25 @@
                 return "<span class='car-price'>" + row.price + "</span>";
             },
             "front_offset": function (column, row) {
-                return getCarSafeDescriptionByWord(row.front_offset);
+                return "<a title='正面偏置'>" + getCarSafeDescriptionByWord(row.front_offset) + "</a>";
             },
             "side": function (column, row) {
-                return getCarSafeDescriptionByWord(row.side);
+                return "<a title='侧面碰撞'>" + getCarSafeDescriptionByWord(row.side) + "</a>";
             },
             "top": function (column, row) {
-                return getCarSafeDescriptionByWord(row.top);
+                return "<a title='车顶强度'>" + getCarSafeDescriptionByWord(row.top) + "</a>";
             },
             "seat": function (column, row) {
-                return getCarSafeDescriptionByWord(row.seat);
+                return "<a title='座椅头枕'>" + getCarSafeDescriptionByWord(row.seat) + "</a>";
             },
             "assist": function (column, row) {
-                return getCarSafeDescriptionByWord(row.assist);
+                return "<a title='辅助安全'>" + getCarSafeDescriptionByWord(row.assist) + "</a>";
             },
             "road_user": function (column, row) {
-                return getCarSafeDescriptionByWord(row.road_user);
+                return "<a title='行人保护'>" + getCarSafeDescriptionByWord(row.road_user) + "</a>";
             },
             "fix": function (column, row) {
-                return getCarSafeDescriptionByWord(row.fix);
+                return "<a title='耐撞维修'>" + getCarSafeDescriptionByWord(row.fix) + "</a>";
             },
             "link": function (column, row) {
                 if (row.link) {
