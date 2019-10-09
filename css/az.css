@@ -213,15 +213,6 @@
     color: #00aced;
 }
 
-.essay-list-type {
-    font-size: x-large;
-}
-
-.essay-list-date {
-    font-size: medium;
-    font-family: Helvetica-Neue-LT-Pro;
-}
-
 .essay-back-arrow {
     position: absolute;
     z-index: 2;

@@ -165,7 +165,7 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Talbot.png\">";
     } else if (make.indexOf("菲亚特") != -1 || make.indexOf("Fiat") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Fiat.png\">";
-    } else if (make.indexOf("Jeep") != -1) {
+    } else if (make.indexOf("吉普") != -1 || make.indexOf("Jeep") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Jeep.png\">";
     } else if (make.indexOf("领克") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_LynkCo.png\">";
@@ -173,6 +173,8 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Volvo.png\">";
     } else if (make.indexOf("吉利") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Geely.png\">";
+    } else if (make.indexOf("红旗") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_HongQi.png\">";
     } else if (make.indexOf("传祺") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_Trumpchi.png\">";
     } else if (make.indexOf("奇瑞") != -1) {
@@ -201,6 +203,8 @@ function getLogoByMake(make) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_XiaoPeng.png\">";
     } else if (make.indexOf("海马") != -1) {
         return "<img class=\"car-logo\" src=\"../../img/car/Car_HaiMa.png\">";
+    } else if (make.indexOf("荣威") != -1) {
+        return "<img class=\"car-logo\" src=\"../../img/car/Car_Roewe.png\">";
     } else {
         return "";
     }
