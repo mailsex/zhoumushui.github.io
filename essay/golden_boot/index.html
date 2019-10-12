@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>五大足球联赛金靴</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        .country-flag {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .club-logo {
+            width: 20px; /* 30px;3 */
+            height: 20px; /* 20px;2 */
+        }
+
+        .ciasi-logo {
+            height: 20px;
+            padding: 2px;
+            margin-right: 5px;
+            background-color: #ffffff;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .grade {
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+            font-weight: bold;
+            color: #000000;
+            padding: 5px 0px;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            width: 55px;
+            height: 28px;
+            display: block
+        }
+
+        .not-official {
+            text-decoration: underline;
+        }
+
+        .btn-save-image {
+            font-size: small;
+            margin-left: 20px;
+            padding: 4px 5px;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #009688;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .btn-save-image:hover {
+            color: #FFEB3B;
+            background-color: #607D8B;
+        }
+
+        .btn-detail-link {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
+        .btn-detail-link:hover {
+            font-size: x-large;
+            color: #2196F3;
+        }
+
+        .btn-detail-nolink {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
+        .section {
+            width: 100%;
+        }
+
+        .score-detail {
+            width: 100%;
+            height: 800px;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<!--
+<header id="header" style="display: none"></header>
+-->
+
+<section id="main" style="margin:auto;padding:0;width: 1100px;">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <!--
+        <script>
+            var essayTitle = document.title;
+            var essaySummary = document.title;//'随便写点什么';
+            var essayUrl = window.location.href;
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        -->
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <!--
+        <div class="content__header">
+            <h2 class="font-yahei"><i class="zmdi zmdi-flag"></i> 随笔</h2>
+            <div class="actions">
+                <a href=""><i class="zmdi zmdi-check-all"></i></a>
+                <a href=""><i class="zmdi zmdi-trending-up"></i></a>
+                <div class="dropdown">
+                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="">Change Date Range</a></li>
+                        <li><a href="">Change Graph Type</a></li>
+                        <li><a href="">Other Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+        <div class="card" style="margin-top: 15px">
+
+            <div class="action-header">
+                <!--
+                <span id="essay_arrow_back" class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                -->
+                <span class="essay-title" style="font-size: larger;font-weight: bold;">
+                    五大足球联赛金靴
+                </span>
+
+                <span id="btnSaveImage" class="btn-save-image">
+                    <i class="zmdi zmdi-download"></i> 下载图片
+                </span>
+
+                <span align="right" style="float: right;">
+                    <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
+                    <i class="zmdi zmdi-time"></i> 2019.10.12
+                </span>
+            </div>
+
+            <div id="card_body" class="card__body" style="padding-top: 0;margin-left: -20px;margin-right: -20px">
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-golden-list" class="table table-striped table--vmiddle"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <!-- data-type="numeric"-->
+                            <th data-column-id="year" data-formatter="year">赛季</th>
+                            <th data-column-id="spain" data-formatter="spain" data-sortable="false">西甲</th>
+                            <th data-column-id="uk" data-formatter="uk" data-sortable="false">英超</th>
+                            <th data-column-id="italy" data-formatter="italy" data-sortable="false">意甲</th>
+                            <th data-column-id="germany" data-formatter="germany" data-sortable="false">德甲</th>
+                            <th data-column-id="france" data-formatter="france" data-sortable="false">法甲</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>18-19</td>
+                            <td>巴塞罗那-梅西-36</td><!-- 西甲 -->
+                            <td>利物浦-萨拉赫-22;利物浦-马内-22;阿森纳-奥巴梅扬-22</td><!-- 英超 -->
+                            <td>桑普多利亚-夸利亚雷拉-26</td><!-- 意甲 -->
+                            <td>拜仁慕尼黑-莱万-22</td><!-- 德甲 -->
+                            <td>巴黎圣日耳曼-姆巴佩-33</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>17-18</td>
+                            <td>巴塞罗那-梅西-34</td><!-- 西甲 -->
+                            <td>利物浦-萨拉赫-32</td><!-- 英超 -->
+                            <td>国际米兰-伊卡尔迪-29;拉齐奥-因莫比莱-29</td><!-- 意甲 -->
+                            <td>拜仁慕尼黑-莱万-29</td><!-- 德甲 -->
+                            <td>巴黎圣日耳曼-卡瓦尼-28</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>16-17</td>
+                            <td>巴塞罗那-梅西-37</td><!-- 西甲 -->
+                            <td>热刺-凯恩-29</td><!-- 英超 -->
+                            <td>罗马-哲科-27</td><!-- 意甲 -->
+                            <td>多特蒙德-奥巴梅杨-31</td><!-- 德甲 -->
+                            <td>巴黎圣日耳曼-卡瓦尼-35</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>15-16</td>
+                            <td>巴塞罗那-苏亚雷斯-40</td><!-- 西甲 -->
+                            <td>热刺-凯恩-25</td><!-- 英超 -->
+                            <td>那不勒斯-伊瓜因-36</td><!-- 意甲 -->
+                            <td>拜仁慕尼黑-莱万-30</td><!-- 德甲 -->
+                            <td>巴黎圣日耳曼-伊布-38</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>14-15</td>
+                            <td>皇马-C罗-48</td><!-- 西甲 -->
+                            <td>曼城-阿圭罗-26</td><!-- 英超 -->
+                            <td>国际米兰-伊卡尔迪-22;那不勒斯-卡瓦尼-22</td><!-- 意甲 -->
+                            <td>法兰克福-迈尔-19</td><!-- 德甲 -->
+                            <td>里昂-拉卡泽特-28</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>13-14</td>
+                            <td>皇马-C罗-31</td><!-- 西甲 -->
+                            <td>利物浦-苏亚雷斯-31</td><!-- 英超 -->
+                            <td>都灵-因莫比莱-22</td><!-- 意甲 -->
+                            <td>多特蒙德-莱万-20</td><!-- 德甲 -->
+                            <td>巴黎圣日耳曼-伊布-26</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>12-13</td>
+                            <td>巴塞罗那-梅西-46</td><!-- 西甲 -->
+                            <td>曼联-范佩西-26</td><!-- 英超 -->
+                            <td>那不勒斯-卡瓦尼-29</td><!-- 意甲 -->
+                            <td>勒沃库森-基斯林-25</td><!-- 德甲 -->
+                            <td>巴黎圣日耳曼-伊布-30</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>11-12</td>
+                            <td>巴塞罗那-梅西-50</td><!-- 西甲 -->
+                            <td>阿森纳-范佩西-30</td><!-- 英超 -->
+                            <td>AC米兰-伊布-28</td><!-- 意甲 -->
+                            <td>沙尔克04-亨特拉尔-29</td><!-- 德甲 -->
+                            <td>蒙彼利埃-吉鲁-21</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>10-11</td>
+                            <td>皇马-C罗-40</td><!-- 西甲 -->
+                            <td>曼城-特维斯-21;曼联-贝尔巴托夫-21</td><!-- 英超 -->
+                            <td>乌迪内斯-迪纳塔莱-28</td><!-- 意甲 -->
+                            <td>拜仁-戈麦斯-28</td><!-- 德甲 -->
+                            <td>里尔-索乌-25</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>09-10</td>
+                            <td>巴塞罗那-梅西-34</td><!-- 西甲 -->
+                            <td>切尔西-德罗巴-29</td><!-- 英超 -->
+                            <td>乌迪内斯-迪纳塔莱-29</td><!-- 意甲 -->
+                            <td>沃尔夫斯堡-哲科-22</td><!-- 德甲 -->
+                            <td>马赛-马马多尼昂-18</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>08-09</td>
+                            <td>马德里竞技-弗兰-32</td><!-- 西甲 -->
+                            <td>切尔西-阿内尔卡-19</td><!-- 英超 -->
+                            <td>国米-伊布-25</td><!-- 意甲 -->
+                            <td>沃尔夫斯堡-格拉菲特-28</td><!-- 德甲 -->
+                            <td>图卢兹-吉尼亚克-24</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>07-08</td>
+                            <td>马洛卡-古伊萨-27</td><!-- 西甲 -->
+                            <td>曼联-C罗-31</td><!-- 英超 -->
+                            <td>尤文-皮耶罗-21</td><!-- 意甲 -->
+                            <td>拜仁-托尼-24</td><!-- 德甲 -->
+                            <td>里昂-本泽马-20</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>06-07</td>
+                            <td>皇马-范尼-25</td><!-- 西甲 -->
+                            <td>切尔西-德罗巴-20</td><!-- 英超 -->
+                            <td>罗马-托蒂-26</td><!-- 意甲 -->
+                            <td>波鸿-耶卡斯-20</td><!-- 德甲 -->
+                            <td>巴黎-保莱塔-15</td><!-- 法甲 -->
+                        </tr>
+                        <tr>
+                            <td>05-06</td>
+                            <td>巴萨-埃托奥-26</td><!-- 西甲 -->
+                            <td>阿森纳-亨利-27</td><!-- 英超 -->
+                            <td>佛罗伦萨-托尼-31</td><!-- 意甲 -->
+                            <td>云达不莱梅-克洛泽-25</td><!-- 德甲 -->
+                            <td>巴黎-保莱塔-21</td><!-- 法甲 -->
+                        </tr>
+                        <!--
+                        西甲 https://www.qtx.com/laliga/30111.html
+                        英超 https://www.qtx.com/premierleague/5759.html
+                        意甲 http://blog.sina.com.cn/s/blog_14fa234ab0102xmoc.html
+                        德甲 https://www.qtx.com/bundesliga/30118.html
+                        法甲 https://vipc.cn/article/594ceb6790d623001a9941e8
+                        荷甲 https://www.qtx.com/others/39979.html
+                        -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <link rel="stylesheet" href="../../css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../js/data-table.js"></script>
+
+<script>
+    function convertData(data) {
+        let result = "";
+        let strs = new Array(); //定义一数组
+        strs = data.split(";"); //字符分割
+        for (i = 0; i < strs.length; i++) {
+            //分割后的字符输出
+            let item = new Array();
+
+            item = strs[i].split("-");
+
+            let club = item[0];
+            let name = item[1];
+            let goal = item[2];
+
+            result += getClubLogo(club) +
+                " <span style='color: #0D9BF2;font-weight: normal;font-size: medium'>" + name + "</span>" +
+                "<sup style='color: #00b38a;'> " + goal + "</sup> ";
+
+        }
+        return result;
+    }
+
+    $("#table-golden-list").bootgrid({
+        //Override default icon classes
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "", // "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "", // "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "spain": function (column, row) {
+                return convertData(row.spain);
+            },
+            "uk": function (column, row) {
+                return convertData(row.uk);
+            },
+            "italy": function (column, row) {
+                return convertData(row.italy);
+            },
+            "germany": function (column, row) {
+                return convertData(row.germany);
+            },
+            "france": function (column, row) {
+                return convertData(row.france);
+            }
+        }
+    });
+</script>
+
+
+<!-- Site Functions & Actions -->
+<script src="../../js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<!--
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../js/canvas-nest.min.js"></script>
+-->
+
+<!-- Toolbox -->
+<!--<script src="../../js/toolbox.main.js"></script>-->
+
+<script>
+    var directoryDepth = 2;
+</script>
+<script src="../../js/zms.page.pattern.js"></script>
+
+<script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
+<script>
+    $('#btnSaveImage').click(function (e) {
+        document.getElementById("btnSaveImage").style.display = "none";
+        html2canvas(document.getElementById("content")).then(function (canvas) {
+            let contentW = canvas.width;
+            let contentH = canvas.height;
+            Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', 'GoldenBoot.jpg', 10);
+        });
+
+        document.getElementById("btnSaveImage").style.display = "";
+    });
+</script>
+
+<script src="js/echarts.min.js"></script>
+
+</body>
+</html>

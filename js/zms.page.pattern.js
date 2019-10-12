@@ -266,7 +266,9 @@ function GetQueryString(name) {
 
 function isPureMode() { // Do not show header, footer and side navigation bar.
     let str = window.location.href;
-    if (str.indexOf("c_iasi") != -1)
+    if (str.indexOf("c_iasi") != -1 ||
+        str.indexOf("i-vista") != -1 ||
+        str.indexOf("golden_boot") != -1)
         return true;
     else
         return false;
