@@ -46,8 +46,8 @@
 
     <!-- Frappe Chart -->
     <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/frappe_theme.css" media="screen">
+    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/frappe_theme.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="css/index.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/default.css" media="screen">
     <script src="js/highlight.pack.js"></script>
@@ -105,7 +105,8 @@
                 -->
                 <script>
                     var essayTitle = '一';
-                    var essaySummary = '一';
+                    var essaySummary = essayTitle;
+                    document.title = essayTitle;
                     var essayUrl = 'http://www.zhoumushui.com/essay/poetry/';
                     //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
                     var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
@@ -113,384 +114,162 @@
                 <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
             </div>
 
-            <div id="card_body" class="card__body">
-
-                <div  class="container">
-
-                <div class="row hero" style="padding-top: 30px; padding-bottom: 0px;">
-
-                    <div class="col-sm-10 push-sm-1 later" style="font-size: 14px;">
-                        <div id="chart-composite-1" class="border"><svg height=225></svg></div>
-                        <p class="mt-1">Click or use arrow keys to navigate data points</p>
-                    </div>
-                    <div class="col-sm-10 push-sm-1 later" style="font-size: 14px;">
-                        <div id="chart-composite-2" class="border"><svg height=225></svg></div>
-                    </div>
-                </div>
-
-                <div class="group later">
-                    <div class="row section">
-
-                        <div class="col-sm-10 push-sm-1">
-                            <div class="dashboard-section">
-                                <h6 class="margin-vertical-rem">Create a chart</h6>
-                                <pre><code class="hljs html">  &lt!--HTML--&gt;
-  &lt;div id="chart"&gt;&lt;/div&gt;</code></pre>
-                                <pre><code class="hljs javascript">  // Javascript
-  let chart = new Chart( "#chart", { // or DOM element
-    data: {
-      labels: ["12am-3am", "3am-6am", "6am-9am", "9am-12pm",
-      "12pm-3pm", "3pm-6pm", "6pm-9pm", "9pm-12am"],
-
-      datasets: [
-        {
-          label: "Some Data", type: 'bar',
-          values: [25, 40, 30, 35, 8, 52, 17, -4]
-        },
-        {
-          label: "Another Set", type: 'bar',
-          values: [25, 50, -10, 15, 18, 32, 27, 14]
-        },
-        {
-          label: "Yet Another", type: 'line',
-          values: [15, 20, -3, -15, 58, 12, -17, 37]
-        }
-      ],
-
-      yMarkers: [{ label: "Marker", value: 70 }],
-      yRegions: [{ label: "Region", start: -10, end: 50 }]
-    },
-
-    title: "My Awesome Chart",
-    type: 'axis-mixed', // or 'bar', 'line', 'pie', 'percentage'
-    height: 250,
-    colors: ['purple', '#ffa3ef', 'red']
-  });</code></pre>
-                                <!-- <div id="chart-types" class="border" style="margin-bottom: 15px"></div> -->
-                                <!-- <div >
-                                  <div class="btn-group x-axis-buttons margin-vertical-px" role="group">
-                                    <button type="button" class="btn btn-sm btn-secondary active" data-type='span'>X span</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-type='tick'>X tick</button>
-                                  </div>
-                                  <div class="btn-group y-axis-buttons margin-vertical-px" role="group">
-                                    <button type="button" class="btn btn-sm btn-secondary active" data-type='span'>Y span</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-type='tick'>Y tick</button>
-                                  </div>
-                                  <div class="input-group input-group-sm">
-                                    <span class="input-group-addon">.00</span>
-                                    <input type="text" class="form-control" aria-label="Amount (rounded to the nearest dollar)">
-                                  </div>
-                                </div> -->
-
-                                <div id="chart-aggr" class="border"></div>
-                                <div class="btn-group aggr-type-buttons margin-vertical-px mx-auto" role="group">
-                                    <button type="button" class="btn btn-sm btn-secondary active" data-type='axis-mixed'>Mixed</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-type='pie'>Pie Chart</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-type='percentage'>Percentage Chart</button>
-                                </div>
-                                <!-- <p class="text-muted">
-                                  <a target="_blank" href="http://www.storytellingwithdata.com/blog/2011/07/death-to-pie-charts">Why Percentage?</a>
-                                </p> -->
-                            </div>
-                        </div>
-
-                        <div class="col-sm-10 push-sm-1">
-                            <div class="dashboard-section">
-                                <h6 class="margin-vertical-rem">
-                                    Update Values
-                                </h6>
-                                <div id="chart-update" class="border"></div>
-                                <div class="chart-update-buttons mt-1 mx-auto" role="group">
-                                    <button type="button" class="btn btn-sm btn-secondary" data-update="random">Random Data</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-update="add">Add Value</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-update="remove">Remove Value</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-10 push-sm-1">
-                            <div class="dashboard-section">
-                                <h6 class="margin-vertical-rem">
-                                    Plot Trends
-                                </h6>
-                                <div id="chart-trends" class="border"></div>
-                                <div class="btn-group chart-plot-buttons mt-1 mx-auto" role="group">
-                                    <button type="button" class="btn btn-sm btn-secondary" data-type="hideDots">Line</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-type="hideLine">Dots</button>
-                                    <button type="button" class="btn btn-sm btn-secondary active" data-type="heatline">HeatLine</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-type="regionFill">Region</button>
-                                </div>
-                                <!-- <pre><code class="hljs javascript margin-vertical-px">  ...
-                      lineOptions: 'line',   // Line Chart specific properties:
-
-                      hideDots: 1,   // Hide data points on the line; default 0
-                      heatline: 1,    // Show a value-wise line gradient; default 0
-                      regionFill: 1, // Fill the area under the graph; default 0
-                    ...</code></pre> -->
-                            </div>
-                        </div>
-
-                        <div class="col-sm-10 push-sm-1">
-                            <div class="dashboard-section">
-                                <h6 class="margin-vertical-rem">
-                                    Listen to state change
-                                </h6>
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <div id="chart-events" class="border"></div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="chart-events-data" class="border data-container">
-                                            <div class="image-container border">
-                                                <img class="moon-image" src="docs/assets/img/europa.jpg">
-                                            </div>
-                                            <div class="data margin-vertical-px">
-                                                <h6 class="moon-name">Europa</h6>
-                                                <p>Semi-major-axis: <span class="semi-major-axis">671034</span> km</p>
-                                                <p>Mass: <span class="mass">4800000</span>  x 10^16 kg</p>
-                                                <p>Diameter: <span class="diameter">3121.6</span> km</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <pre><code class="hljs javascript margin-vertical-px">  ...
-    isNavigable: 1, // Navigate across data points; default 0
-  ...
-
-  chart.parent.addEventListener('data-select', (e) => {
-    update_moon_data(e.index); // e contains index and value of current datapoint
-  });</code></pre>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-10 push-sm-1">
-                            <div class="dashboard-section">
-                                <h6 class="margin-vertical-rem">
-                                    And a Month-wise Heatmap
-                                </h6>
-                                <div id="chart-heatmap" class="border"
-                                     style="overflow: scroll; text-align: center; padding: 20px;"></div>
-                                <div class="heatmap-mode-buttons btn-group mt-1 mx-auto" role="group">
-                                    <button type="button" class="btn btn-sm btn-secondary active" data-mode="discrete">Discrete</button>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-mode="continuous">Continuous</button>
-                                </div>
-                                <div class="heatmap-color-buttons btn-group mt-1 mx-auto" role="group">
-                                    <button type="button" class="btn btn-sm btn-secondary" data-color="default">Default green</button>
-                                    <button type="button" class="btn btn-sm btn-secondary active" data-color="halloween">GitHub's Halloween</button>
-                                </div>
-                                <pre><code class="hljs javascript margin-vertical-px">  let heatmap = new Chart("#heatmap", {
-    type: 'heatmap',
-    height: 115,
-    data: heatmapData,  // object with date/timestamp-value pairs
-
-    discreteDomains: 1  // default: 0
-
-    start: startDate,
-                  // A Date object;
-                  // default: today's date in past year
-                  //          for an annual heatmap
-
-    legendColors: ['#ebedf0', '#fdf436', '#ffc700', '#ff9100', '#06001c'],
-                  // Set of five incremental colors,
-                  // beginning with a low-saturation color for zero data;
-                  // default: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
-
-  });</code></pre>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-10 push-sm-1">
-                            <div class="dashboard-section">
-                                <h6 class="margin-vertical-rem">Available options:</h6>
-                                <pre><code class="hljs javascript">
-  ...
-  {
-    data: {
-      labels: [],
-      datasets: [],
-      yRegions: [],
-      yMarkers: []
-    }
-    title: '',
-    colors: [],
-    height: 200,
-
-    tooltipOptions: {
-      formatTooltipX: d => (d + '').toUpperCase(),
-      formatTooltipY: d => d + ' pts',
-    }
-
-    // Axis charts
-    isNavigable: 1,        // default: 0
-    valuesOverPoints: 1,   // default: 0
-    barOptions: {
-      stacked: 1           // default: 0
-    }
-
-    lineOptions: {
-      dotSize: 6,          // default: 4
-      hideLine: 0,         // default: 0
-      hideDots: 1,         // default: 0
-      heatline: 1,         // default: 0
-      regionFill: 1        // default: 0
-    }
-
-    axisOptions: {
-      yAxisMode: 'span',   // Axis lines, default
-      xAxisMode: 'tick',   // No axis lines, only short ticks
-      xIsSeries: 1         // Allow skipping x values for space
-                           // default: 0
-    },
-
-    // Pie/Percentage charts
-
-    maxLegendPoints: 6,    // default: 20
-    maxSlices: 10,         // default: 20
-
-    // Heatmap
-
-    discreteDomains: 1,    // default: 1
-    start: startDate,      // Date object
-    legendColors: []
-  }
-  ...
-
-    // Updating values
-    chart.update(data);
-
-    // Axis charts:
-    chart.addDataPoint(label, valueFromEachDataset, index)
-    chart.removeDataPoint(index)
-    chart.updateDataset(datasetValues, index)
-
-  </code></pre>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-10 push-sm-1">
-                            <div class="dashboard-section">
-                                <h6 class="margin-vertical-rem">Install</h6>
-                                <p class="step-explain">Install via npm</p>
-                                <pre><code class="hljs console">  npm install frappe-charts</code></pre>
-                                <p class="step-explain">And include it in your project</p>
-                                <pre><code class="hljs javascript">  import Chart from "frappe-charts/dist/frappe-charts.min.esm"</code></pre>
-                                <p class="step-explain">... or include it directly in your HTML</p>
-                                <pre><code class="hljs html">  &lt;script src="https://unpkg.com/frappe-charts@1.0.0/dist/frappe-charts.min.iife.js"&gt;&lt;/script&gt;</code></pre>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-</div>
+            <div id="card_body" style="background: #ffffff">
+                <!-- 体重趋势 -->
+                <div id="weight-trends" class="border"></div>
 
             </div>
+
 
         </div>
 
 
+        <link rel="stylesheet" href="../../css/toolbox.reset.css"> <!-- CSS reset -->
+        <link rel="stylesheet" href="../../css/toolbox.style.css"> <!-- Resource style -->
+        <footer id="footer" class="font-yahei"></footer>
     </section>
 
+    <!-- Older IE Warning -->
+    <!--[if lt IE 9]>
+    <div class="ie-warning"></div>
+    <![endif]-->
 
-    <link rel="stylesheet" href="../../css/toolbox.reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="../../css/toolbox.style.css"> <!-- Resource style -->
-    <footer id="footer" class="font-yahei"></footer>
-</section>
+    <!-- Javascript Libraries -->
 
-<!-- Older IE Warning -->
-<!--[if lt IE 9]>
-<div class="ie-warning"></div>
-<![endif]-->
+    <!-- jQuery -->
+    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
-<!-- Javascript Libraries -->
+    <!-- Go Up -->
+    <script type="text/javascript" src="../../js/zms.goup.js"></script>
 
-<!-- jQuery -->
-<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- Go Up -->
-<script type="text/javascript" src="../../js/zms.goup.js"></script>
+    <!-- Malihu ScrollBar -->
+    <script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
-<!-- Bootstrap -->
-<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Notify -->
+    <script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
 
-<!-- Malihu ScrollBar -->
-<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Bootgrid -->
+    <script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
 
-<!-- Bootstrap Notify -->
-<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+    <script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
 
-<!-- Bootgrid -->
-<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+    <!-- Demo Only -->
+    <!--<script src="js/misc.js"></script>-->
+    <script src="../../js/data-table.js"></script>
 
-<!-- Placeholder for IE9 -->
-<!--[if IE 9 ]>
-<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-<![endif]-->
+    <!-- Site Functions & Actions -->
+    <script src="../../js/app.min.js"></script>
 
-<!-- Demo Only -->
-<!--<script src="js/misc.js"></script>-->
-<script src="../../js/data-table.js"></script>
+    <!-- busuanzi PV&UV -->
+    <script async src="../../js/busuanzi.pure.mini.js"></script>
 
-<!-- Site Functions & Actions -->
-<script src="../../js/app.min.js"></script>
+    <!-- Nest Follow Mouse Background -->
+    <script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+            src="../../js/canvas-nest.min.js"></script>
 
-<!-- busuanzi PV&UV -->
-<script async src="../../js/busuanzi.pure.mini.js"></script>
+    <script src="../../js/essay.material.floating.button.js"></script>
+    <script type="text/javascript">
+        let panel = document.getElementById('panel'),
+            menu = document.getElementById('menu'),
+            showcode = document.getElementById('showcode'),
+            selectFx = document.getElementById('selections-fx'),
+            selectPos = document.getElementById('selections-pos'),
+            // demo defaults
+            effect = 'mfb-zoomin',
+            pos = 'mfb-component--br';
 
-<!-- Nest Follow Mouse Background -->
-<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
-        src="../../js/canvas-nest.min.js"></script>
+        showcode.addEventListener('click', _toggleCode);
+        selectFx.addEventListener('change', switchEffect);
+        selectPos.addEventListener('change', switchPos);
 
-<script src="../../js/essay.material.floating.button.js"></script>
-<script type="text/javascript">
-    let panel = document.getElementById('panel'),
-        menu = document.getElementById('menu'),
-        showcode = document.getElementById('showcode'),
-        selectFx = document.getElementById('selections-fx'),
-        selectPos = document.getElementById('selections-pos'),
-        // demo defaults
-        effect = 'mfb-zoomin',
-        pos = 'mfb-component--br';
+        function _toggleCode() {
+            panel.classList.toggle('viewCode');
+        }
 
-    showcode.addEventListener('click', _toggleCode);
-    selectFx.addEventListener('change', switchEffect);
-    selectPos.addEventListener('change', switchPos);
+        function switchEffect(e) {
+            effect = this.options[this.selectedIndex].value;
+            renderMenu();
+        }
 
-    function _toggleCode() {
-        panel.classList.toggle('viewCode');
-    }
+        function switchPos(e) {
+            pos = this.options[this.selectedIndex].value;
+            renderMenu();
+        }
 
-    function switchEffect(e) {
-        effect = this.options[this.selectedIndex].value;
-        renderMenu();
-    }
+        function renderMenu() {
+            menu.style.display = 'none';
+            // ?:-)
+            setTimeout(function () {
+                menu.style.display = 'block';
+                menu.className = pos + effect;
+            }, 1);
+        }
+    </script>
 
-    function switchPos(e) {
-        pos = this.options[this.selectedIndex].value;
-        renderMenu();
-    }
+    <!-- Toolbox -->
+    <script src="../../js/toolbox.main.js"></script>
 
-    function renderMenu() {
-        menu.style.display = 'none';
-        // ?:-)
-        setTimeout(function () {
-            menu.style.display = 'block';
-            menu.className = pos + effect;
-        }, 1);
-    }
-</script>
+    <script>var directoryDepth = 2;</script>
+    <script src="../../js/zms.page.pattern.js"></script>
 
-<!-- Toolbox -->
-<script src="../../js/toolbox.main.js"></script>
+    <!-- Frappe Charts -->
+    <script src="js/frappe-charts.min.js"></script>
+    <!--<script src="js/index.js"></script>-->
 
-<script>var directoryDepth = 2;</script>
-<script src="../../js/zms.page.pattern.js"></script>
+    <script>
+        // 体重数据
+        let weight_data = {
+            labels: [
+                1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910,// 1911, 1912, // 2019
+                //2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, // 2020
+                //2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, // 2021
+            ],
+            datasets: [
+                {
+                    values: [
+                        // 1,    2,    3,    4,    5,    6,    7,    8,    9,   10,   11,   12
+                        3.38, 4.90, 0.00, 6.20, 0.00, 0.00, 7.19, 0.00, 0.00, 8.00,// 0.00, 0.00, // 2019
+                        //0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, // 2020
+                        //0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, // 2021
+                    ]
+                }
+            ],
+        };
+        
 
-<!-- Frappe Charts -->
-<script src="js/frappe-charts.min.js"></script>
-<script src="js/index.js"></script>
+        let weightChartArgs = {
+            title: "体重（Kg）",
+            data: weight_data,
+            type: 'line', // line;
+            height: 500,
+            colors: ['#238e38'],
+
+            isNavigable: 1, // 能否选中
+            valuesOverPoints: 0,   // 显示数字
+            barOptions: {
+                stacked: 1           // default: 0
+            },
+            lineOptions: {
+                hideDots: 0, // 隐藏圆点
+                hideLine: 1, // 隐藏线段
+                heatline: 0, // 热区渐变
+                regionFill: 1, // 底部填充
+                dotSize: 5 // 圆点大小
+            },
+            axisOptions: {
+                xAxisMode: 'tick',
+                yAxisMode: 'span',
+                xIsSeries: 1
+            }
+        };
+
+        new Chart("#weight-trends", weightChartArgs);
+    </script>
 </body>
 </html>

@@ -328,24 +328,6 @@ let trends_data = {
     ]
 };
 
-let plotChartArgs = {
-    title: "Mean Total Sunspot Count - Yearly",
-    data: trends_data,
-    type: 'line',
-    height: 250,
-    colors: ['#238e38'],
-    lineOptions: {
-        hideDots: 1,
-        heatline: 1,
-    },
-    axisOptions: {
-        xAxisMode: 'tick',
-        yAxisMode: 'span',
-        xIsSeries: 1
-    }
-};
-
-new Chart("#chart-trends", plotChartArgs);
 
 Array.prototype.slice.call(
     document.querySelectorAll('.chart-plot-buttons button')
