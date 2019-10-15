@@ -118,7 +118,7 @@
                 <span class="actions essay-back-arrow">
                     <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
                 </span>&nbsp;&nbsp;&nbsp;
-                <span class="essay-title">WRC世界汽车拉力锦标赛</span>
+                <span class="essay-title">WRC历届年度冠军</span>
                 <span align="right" style="float: right;">
                     <i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;
                     <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-09-11 19:30</span>
@@ -126,12 +126,11 @@
             </div>
 
             <div class="card__body">
-
-                <div>
-                    <p><a href="https://www.wrc.com/en" target="_blank">官方网站</a></p>
-                    <h4>历届年度冠军车手、冠军车队</h4>
-                </div>
-                <br>
+                <!--
+                1   2   3   4   5   6   7   8   9   10
+                25  18  15  12  10  8   6   4   2   1
+                5   4   3   2   1
+                -->
 
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
@@ -141,7 +140,7 @@
                         <tr>
                             <!-- data-type="numeric" data-order="desc|asc" -->
                             <th data-column-id="Year" data-formatter="Year">Year</th>
-                            <th data-column-id="driver" data-formatter="driver">Driver(Car)</th>
+                            <th data-column-id="driver" data-formatter="driver">Driver (Car)</th>
                             <th data-column-id="team" data-formatter="team">Team</th>
                         </tr>
                         </thead>
@@ -381,10 +380,20 @@
                     </table>
                 </div>
 
-
             </div>
         </div>
 
+    </section>
+
+    <section id="content7">
+        <div class="card">
+            <div id="card_body7" class="card__body" style="padding-top: 10px">
+                <br>
+                <div class="table-responsive" style="text-align: center;">
+                    <span style="font-size: large;font-weight: bold"><a href="https://www.wrc.com/en" target="_blank">WRC世界汽车拉力锦标赛</a></span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <link rel="stylesheet" href="../../css/toolbox.reset.css"><!-- CSS reset -->
@@ -459,10 +468,10 @@
         },
         formatters: {
             "driver": function (column, row) {
-                return getLogoByMake(row.driver) + "&nbsp;&nbsp;"+ row.driver;
+                return getLogoByMake(row.driver) + "&nbsp;&nbsp;" + row.driver;
             },
             "team": function (column, row) {
-                return getLogoByMake(row.team) + "&nbsp;&nbsp;"+ row.team;
+                return getLogoByMake(row.team) + "&nbsp;&nbsp;" + row.team;
             },
 
         }
