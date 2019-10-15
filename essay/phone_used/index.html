@@ -52,6 +52,36 @@
     <!-- jQuery -->
     <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
+    <style>
+        .date-buy {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .day-and-price {
+            color: #CCCCCC;
+        }
+
+        .phone-model {
+            font-size: large;
+            font-weight: bold;
+            color: #2B3942;
+        }
+
+        .phone-preview {
+            margin-top: 32px;
+            width: auto;
+            height: 150px;
+        }
+
+        .list-item-link {
+            height: 20px;
+            padding: 0 5px 0;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -86,8 +116,8 @@
 
         <script>
             var essayTitle = '那些年用过的手机';
-            var essaySummary = '那些年用过的手机';
-            document.title = essaySummary;
+            var essaySummary = essayTitle;
+            document.title = essayTitle;
             var essayUrl = 'http://www.zhoumushui.com/essay/12.html';
             //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
             var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
@@ -122,18 +152,17 @@
                         2.3.00-/Day.
                     -->
 
-
                     <div class="cd-timeline-block">
                         <div class="cd-timeline-img" style="text-align: center;background-color: #E91E63">
                             <i class="zmdi zmdi-android timeline-icon"></i>
                         </div>
                         <div class="cd-timeline-content">
-                            <h2>SAMSUNG Galaxy Note9 美版</h2>
-
                             <span class="lightbox">
                                  <span data-src="img/6.png">
-                                     <a class="btn btn-default btn-default btn--icon-text list-item-link">
-                                         <i class="zmdi zmdi-image"></i> 查看图片</a>
+                                     <span class="phone-model">SAMSUNG Galaxy Note9 美版</span>
+                                     <a class="list-item-link">
+                                         <img alt="" class="phone-preview" src="img/6.png">
+                                     </a>
                                  </span>
                             </span>
                             <p>
@@ -150,8 +179,10 @@
                                 ¥2650/888 = 2.98/Day
                                 -->
                             </p>
-                            <span class="cd-date">2020-01-01</span>
-
+                            <span class="cd-date">
+                                <span class="date-buy">2020.01.01</span><br>
+                                <span class="day-and-price">2.98 * 888</span>
+                            </span>
                         </div>
                     </div>
 
@@ -160,12 +191,12 @@
                             <i class="zmdi zmdi-android timeline-icon"></i>
                         </div>
                         <div class="cd-timeline-content">
-                            <h2>SAMSUNG Galaxy S7 edge 美版</h2>
-
                             <span class="lightbox">
                                  <span data-src="img/5.png">
-                                     <a class="btn btn-default btn-default btn--icon-text list-item-link">
-                                         <i class="zmdi zmdi-image"></i> 查看图片</a>
+                                     <span class="phone-model">SAMSUNG Galaxy S7 edge 美版</span>
+                                     <a class="list-item-link">
+                                         <img alt="" class="phone-preview" src="img/5.png">
+                                     </a>
                                  </span>
                             </span>
                             <p>
@@ -182,8 +213,10 @@
                                 ¥900/586 = 1.78/Day
                                 -->
                             </p>
-                            <span class="cd-date">2018.05.24</span>
-
+                            <span class="cd-date">
+                                <span class="date-buy">2018.05.24</span><br>
+                                <span class="day-and-price">1.78 * 507</span>
+                            </span>
                         </div>
                     </div>
 
@@ -192,12 +225,12 @@
                             <i class="zmdi zmdi-android timeline-icon"></i>
                         </div>
                         <div class="cd-timeline-content">
-                            <h2>SAMSUNG Galaxy S6 edge+ 美版</h2>
-
                             <span class="lightbox">
                                  <span data-src="img/4.png">
-                                     <a class="btn btn-default btn-default btn--icon-text list-item-link">
-                                         <i class="zmdi zmdi-image"></i> 查看图片</a>
+                                     <span class="phone-model">SAMSUNG Galaxy S6 edge+ 美版</span>
+                                     <a class="list-item-link">
+                                         <img alt="" class="phone-preview" src="img/4.png">
+                                     </a>
                                  </span>
                             </span>
                             <p>
@@ -215,8 +248,10 @@
                                 ¥1899/635 = 2.99/Day
                                 -->
                             </p>
-                            <span class="cd-date">2016.11.14</span>
-
+                            <span class="cd-date">
+                                <span class="date-buy">2016.11.14</span><br>
+                                <span class="day-and-price">2.99 * 635</span>
+                            </span>
                         </div>
                     </div>
 
@@ -225,12 +260,12 @@
                             <i class="zmdi zmdi-android timeline-icon"></i>
                         </div>
                         <div class="cd-timeline-content">
-                            <h2>SAMSUNG Galaxy Note3 日版</h2>
-
                             <span class="lightbox">
                                  <span data-src="img/3.png">
-                                     <a class="btn btn-default btn-default btn--icon-text list-item-link">
-                                         <i class="zmdi zmdi-image"></i> 查看图片</a>
+                                     <span class="phone-model">SAMSUNG Galaxy Note3 日版</span>
+                                     <a class="list-item-link">
+                                         <img alt="" class="phone-preview" src="img/3.png">
+                                     </a>
                                  </span>
                             </span>
                             <p>
@@ -247,8 +282,10 @@
                                 ¥2050/764 = 2.68/Day
                                 -->
                             </p>
-                            <span class="cd-date">2014.10.12</span>
-
+                            <span class="cd-date">
+                                <span class="date-buy">2014.10.12</span><br>
+                                <span class="day-and-price">2.68 * 764</span>
+                            </span>
                         </div>
                     </div>
 
@@ -257,12 +294,12 @@
                             <i class="zmdi zmdi-android timeline-icon"></i>
                         </div>
                         <div class="cd-timeline-content">
-                            <h2>SAMSUNG Galaxy Nexus 日版</h2>
-
                             <span class="lightbox">
                                  <span data-src="img/2.png">
-                                     <a class="btn btn-default btn-default btn--icon-text list-item-link">
-                                         <i class="zmdi zmdi-image"></i> 查看图片</a>
+                                     <span class="phone-model">SAMSUNG Galaxy Nexus 日版</span>
+                                     <a class="list-item-link">
+                                         <img alt="" class="phone-preview" src="img/2.png">
+                                     </a>
                                  </span>
                             </span>
                             <p>
@@ -279,8 +316,10 @@
                                 ¥2450/932 = 2.63/Day
                                 -->
                             </p>
-                            <span class="cd-date">2012.03.24</span>
-
+                            <span class="cd-date">
+                                <span class="date-buy">2012.03.24</span><br>
+                                <span class="day-and-price">2.63 * 932</span>
+                            </span>
                         </div>
                     </div>
 
@@ -289,12 +328,12 @@
                             <i class="zmdi zmdi-windows timeline-icon"></i>
                         </div>
                         <div class="cd-timeline-content">
-                            <h2>SAMSUNG SGH-i900(Omnia) 港版</h2>
-
                             <span class="lightbox">
                                  <span data-src="img/1.png">
-                                     <a class="btn btn-default btn-default btn--icon-text list-item-link">
-                                         <i class="zmdi zmdi-image"></i> 查看图片</a>
+                                     <span class="phone-model">SAMSUNG SGH-i900(Omnia) 港版</span>
+                                     <a class="list-item-link">
+                                         <img alt="" class="phone-preview" src="img/1.png">
+                                     </a>
                                  </span>
                             </span>
                             <p>
@@ -311,8 +350,10 @@
                                 ¥1280/580 = 2.21/Day
                                 -->
                             </p>
-                            <span class="cd-date">2010.08.22</span>
-
+                            <span class="cd-date">
+                                <span class="date-buy">2010.08.22</span><br>
+                                <span class="day-and-price">2.21 * 580</span>
+                            </span>
                         </div>
                     </div>
 
