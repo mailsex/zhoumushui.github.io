@@ -446,5 +446,77 @@
 
 <script>var directoryDepth = 2;</script>
 <script src="../../js/zms.page.pattern.js"></script>
+
+<!-- Frappe Charts -->
+<script src="js/frappe-charts.min.js"></script>
+
+<script>
+    // 体重数据
+    let weight_data = {
+        labels: [
+            1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910,// 1911, 1912, // 2019
+        ],
+        datasets: [
+            {
+                name: "天数",
+                values: [
+                    // 1,    2,    3,    4,    5,    6,    7,    8,    9,   10,   11,   12
+                    3.20, 4.00, 5.00, 5.80, 6.40, 6.90, 7.30, 7.60, 8.00, 8.20, //8.50, 8.70, // 0+
+                ]
+            },
+            {
+                name: "价格",
+                values: [
+                    // 1,    2,    3,    4,    5,    6,    7,    8,    9,   10,   11,   12
+                    3.38, 4.90, 5.60, 6.20, 6.55, 6.90, 7.19, 7.50, 7.80, 8.00,// 0.00, 0.00, // 2019
+                ]
+            }
+
+        ],
+        // yMarkers: [
+        //     {
+        //         label: "Altitude",
+        //         value: 25,
+        //         type: 'dashed'
+        //     }
+        // ],
+        yRegions: [
+            {
+                label: "",
+                start: 1,
+                end: 15
+            },
+        ],
+    };
+
+    let weightChartArgs = {
+        title: "体重（Kg）",
+        data: weight_data,
+        type: 'line', // line;
+        height: 500,
+        colors: ['#238e38', '#03A9F4'],
+
+        isNavigable: 1, // 能否选中
+        valuesOverPoints: 0,   // 显示数字
+        barOptions: {
+            stacked: 1           // default: 0
+        },
+        lineOptions: {
+            hideDots: 0, // 隐藏圆点
+            hideLine: 0, // 隐藏线段
+            heatline: 0, // 热区渐变
+            regionFill: 1, // 底部填充
+            dotSize: 5 // 圆点大小
+        },
+        axisOptions: {
+            xAxisMode: 'tick',
+            yAxisMode: 'span',
+            xIsSeries: 1
+        }
+    };
+
+    new Chart("#weight-trends", weightChartArgs);
+</script>
+
 </body>
 </html>
