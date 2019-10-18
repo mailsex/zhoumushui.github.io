@@ -359,6 +359,7 @@
 
                 </section>
 
+                <div id="phone-trends" class="border" style="background: #ffffff"></div>
             </div>
         </div>
     </section>
@@ -448,27 +449,30 @@
 <script src="../../js/zms.page.pattern.js"></script>
 
 <!-- Frappe Charts -->
-<script src="js/frappe-charts.min.js"></script>
+<script src="../yi/js/frappe-charts.min.js"></script>
 
 <script>
-    // 体重数据
-    let weight_data = {
+    let phone_data = {
         labels: [
-            1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910,// 1911, 1912, // 2019
+            'i900', 'Nexus', 'Note3', 'S6edge+', 'S7edge', 'Note9'
         ],
         datasets: [
             {
-                name: "天数",
+                name: "Price",
                 values: [
-                    // 1,    2,    3,    4,    5,    6,    7,    8,    9,   10,   11,   12
-                    3.20, 4.00, 5.00, 5.80, 6.40, 6.90, 7.30, 7.60, 8.00, 8.20, //8.50, 8.70, // 0+
+                    1280, 2450, 2050, 1899, 900, 2650,
                 ]
             },
             {
-                name: "价格",
+                name: "Day",
                 values: [
-                    // 1,    2,    3,    4,    5,    6,    7,    8,    9,   10,   11,   12
-                    3.38, 4.90, 5.60, 6.20, 6.55, 6.90, 7.19, 7.50, 7.80, 8.00,// 0.00, 0.00, // 2019
+                    580, 932, 764, 562, 586, 894,
+                ]
+            },
+            {
+                name: "P/D",
+                values: [
+                    2.21, 2.63, 2.68, 3.38, 1.54, 2.96,
                 ]
             }
 
@@ -489,15 +493,15 @@
         ],
     };
 
-    let weightChartArgs = {
-        title: "体重（Kg）",
-        data: weight_data,
+    let phoneChartArgs = {
+        //title: "",
+        data: phone_data,
         type: 'line', // line;
-        height: 500,
-        colors: ['#238e38', '#03A9F4'],
+        height: 300,
+        colors: ['#238e38', '#03A9F4', '#f44336'],
 
         isNavigable: 1, // 能否选中
-        valuesOverPoints: 0,   // 显示数字
+        valuesOverPoints: 1,   // 显示数字
         barOptions: {
             stacked: 1           // default: 0
         },
@@ -515,7 +519,7 @@
         }
     };
 
-    new Chart("#weight-trends", weightChartArgs);
+    new Chart("#phone-trends", phoneChartArgs);
 </script>
 
 </body>
