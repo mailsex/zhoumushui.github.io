@@ -142,7 +142,7 @@
 
         .watermark {
             width: 100%;
-            margin-top: -20px;
+            margin-top: -15px;
             margin-bottom: -20px;
         }
 
@@ -150,16 +150,29 @@
             font-size: small;
             font-style: italic;
             position: relative;
-            padding: 0 1.875rem;
+            padding: 0 1.5rem;
             color: #CCC;
+            /**
+            background: linear-gradient(to right, red, yellow, red);
+            -webkit-background-clip: text;
+            color: transparent;
+            **/
         }
 
-        .watermark .line {
+        .watermark .line-left {
             display: inline-block;
             vertical-align: middle;
-            width: 35%;
+            width: 10%;
             height: 1px;
-            background: #CCC;
+            background: linear-gradient(to left, #f44336, #FFEB3B, #4CAF50);
+        }
+
+        .watermark .line-right {
+            display: inline-block;
+            vertical-align: middle;
+            width: 10%;
+            height: 1px;
+            background: linear-gradient(to right, #f44336, #FFEB3B, #4CAF50);
         }
 
     </style>
@@ -1254,10 +1267,10 @@
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
             //footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
             footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
-                "<span class='line'></span>" +
-                "<span class='text'>www.zhoumushui.com/car</span>" +
-                "<span class='line'></span>" +
-                "</div>"
+            "<span class='line-left'></span>" +
+            "<span class='text'>zhoumushui.com/car</span>" +
+            "<span class='line-right'></span>" +
+            "</div>"
 
         },
         formatters: {
