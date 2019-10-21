@@ -468,10 +468,10 @@
         },
         formatters: {
             "driver": function (column, row) {
-                return getLogoByMake(row.driver) + "&nbsp;&nbsp;" + row.driver;
+                return getLogoByMake(row.driver, 2) + "&nbsp;&nbsp;" + row.driver;
             },
             "team": function (column, row) {
-                return getLogoByMake(row.team) + "&nbsp;&nbsp;" + row.team;
+                return getLogoByMake(row.team, 2) + "&nbsp;&nbsp;" + row.team;
             },
 
         }

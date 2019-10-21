@@ -748,7 +748,7 @@
         },
         formatters: {
             "make": function (column, row) {
-                return getLogoByMake(row.make) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+                return getLogoByMake(row.make, 2) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
             },
             "model": function (column, row) {
                 return "<span class='car-model'>" + row.model + "</span>";

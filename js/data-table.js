@@ -243,19 +243,19 @@ function getLogoByMake(make, depth) {
         carName = "Benz";
     } else if (make.indexOf("现代") != -1 || make.indexOf("Hyundai") != -1) {
         carName = "Hyundai";
-    } else if (make.indexOf("起亚") != -1) {
+    } else if (make.indexOf("起亚") != -1 || make.indexOf("KIA") != -1) {
         carName = "KIA";
-    } else if (make.indexOf("特斯拉") != -1) {
+    } else if (make.indexOf("特斯拉") != -1 || make.indexOf("Tesla") != -1) {
         carName = "Tesla";
-    } else if (make.indexOf("别克") != -1) {
+    } else if (make.indexOf("别克") != -1 || make.indexOf("Buick") != -1) {
         carName = "Buick";
     } else if (make.indexOf("福特") != -1 || make.indexOf("Ford") != -1) {
         carName = "Ford";
-    } else if (make.indexOf("雪佛兰") != -1) {
+    } else if (make.indexOf("雪佛兰") != -1 || make.indexOf("Chevrolet") != -1) {
         carName = "Chevrolet";
-    } else if (make.indexOf("凯迪拉克") != -1) {
+    } else if (make.indexOf("凯迪拉克") != -1 || make.indexOf("Cadillac") != -1) {
         carName = "Cadillac";
-    } else if (make.indexOf("道奇") != -1) {
+    } else if (make.indexOf("道奇") != -1 || make.indexOf("Dodge") != -1) {
         carName = "Dodge";
     } else if (make.indexOf("Alpine") != -1) {
         carName = "Alpine";
@@ -275,7 +275,7 @@ function getLogoByMake(make, depth) {
         carName = "Jeep";
     } else if (make.indexOf("领克") != -1) {
         carName = "LynkCo";
-    } else if (make.indexOf("沃尔沃") != -1) {
+    } else if (make.indexOf("沃尔沃") != -1 || make.indexOf("Volvo") != -1) {
         carName = "Volvo";
     } else if (make.indexOf("吉利") != -1) {
         carName = "Geely";
