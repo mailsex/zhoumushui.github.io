@@ -11,34 +11,34 @@
     <!-- Vendors -->
 
     <!-- Animate CSS -->
-    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
           rel="stylesheet">
 
     <!-- Malihu Scrollbar -->
-    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
           rel="stylesheet">
 
     <!-- Bootgrid -->
-    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
 
     <!-- Site CSS -->
-    <link href="../../css/app-1.min.css" rel="stylesheet">
+    <link href="../css/app-1.min.css" rel="stylesheet">
 
-    <link href="../../css/az.css" rel="stylesheet">
+    <link href="../css/az.css" rel="stylesheet">
 
     <!-- Page loader -->
     <!--
     <script src="js/page-loader.min.js"></script>
     -->
 
-    <link type="image/x-icon" href="../../img/favicon.ico" rel=icon/>
-    <link type="image/x-icon" href="../../img/favicon.ico" rel="shortcut icon"/>
+    <link type="image/x-icon" href="../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../img/favicon.ico" rel="shortcut icon"/>
 
     <!-- Material Floating Button -->
-    <link href="../../css/essay.material.floating.button.css" rel="stylesheet">
+    <link href="../css/essay.material.floating.button.css" rel="stylesheet">
     <style>
         .country-flag {
             width: 20px;
@@ -140,6 +140,14 @@
             color: #ffffff;
         }
 
+        .watermark {
+            font-style: italic;
+            width: 100%;
+            font-size: small;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+
     </style>
 </head>
 
@@ -236,7 +244,7 @@
                     <i class="zmdi zmdi-download"></i> 下载图片
                 </span>
 
-                <span align="right" style="float: right;">
+                <span align="right" style="float: right;font-weight: bold">
                     <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
                     <i class="zmdi zmdi-time"></i> 2019.10.09
                 </span>
@@ -1102,8 +1110,8 @@
         </div>
     </section>
 
-    <link rel="stylesheet" href="../../css/toolbox.reset.css"><!-- CSS reset -->
-    <link rel="stylesheet" href="../../css/toolbox.style.css"><!-- Resource style -->
+    <link rel="stylesheet" href="../css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../css/toolbox.style.css"><!-- Resource style -->
     <footer id="footer" class="font-yahei"></footer>
 </section>
 <!-- Older IE Warning -->
@@ -1115,31 +1123,31 @@
 <!-- Javascript Libraries -->
 
 <!-- jQuery -->
-<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Go Up -->
-<script type="text/javascript" src="../../js/zms.goup.js"></script>
+<script type="text/javascript" src="../js/zms.goup.js"></script>
 
 <!-- Bootstrap -->
-<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Malihu ScrollBar -->
-<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Bootstrap Notify -->
-<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
 
 <!-- Bootgrid -->
-<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
 
 <!-- Placeholder for IE9 -->
 <!--[if IE 9 ]>
-<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
 <![endif]-->
 
 <!-- Demo Only -->
 <!--<script src="js/misc.js"></script>-->
-<script src="../../js/data-table.js"></script>
+<script src="../js/data-table.js"></script>
 
 <script>
     function getCarSafeDescriptionByWord(word) {
@@ -1230,11 +1238,13 @@
             search: "", // "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
             header: "", // "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
-            footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+            //footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+            footer: "<div id='watermark' align='center' class='watermark' style='display: none;'>www.zhoumushui.com/car</div>"
+
         },
         formatters: {
             "make": function (column, row) {
-                return getLogoByMake(row.make, 2) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+                return getLogoByMake(row.make, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
             },
             "model": function (column, row) {
                 return "<span class='car-model'>" + row.model + "</span>";
@@ -1310,7 +1320,7 @@
         },
         formatters: {
             "make": function (column, row) {
-                return getLogoByMake(row.make, 2) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+                return getLogoByMake(row.make, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
             },
             "model": function (column, row) {
                 return "<span class='car-model'>" + row.model + "</span>";
@@ -1363,10 +1373,10 @@
 
 
 <!-- Site Functions & Actions -->
-<script src="../../js/app.min.js"></script>
+<script src="../js/app.min.js"></script>
 
 <!-- busuanzi PV&UV -->
-<script async src="../../js/busuanzi.pure.mini.js"></script>
+<script async src="../js/busuanzi.pure.mini.js"></script>
 
 <!-- Nest Follow Mouse Background -->
 <!--
@@ -1378,15 +1388,16 @@
 <!--<script src="../../js/toolbox.main.js"></script>-->
 
 <script>
-    var directoryDepth = 2;
+    var directoryDepth = 1;
 </script>
-<script src="../../js/zms.page.pattern.js"></script>
+<script src="../js/zms.page.pattern.js"></script>
 
 <script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
 <script>
     $('#btnSaveImage').click(function (e) {
         document.getElementById("btnSaveImage").style.display = "none";
+        document.getElementById("watermark").style.display = "";
         html2canvas(document.getElementById("content")).then(function (canvas) {
             let contentW = canvas.width;
             let contentH = canvas.height;
@@ -1394,6 +1405,7 @@
         });
 
         document.getElementById("btnSaveImage").style.display = "";
+        document.getElementById("watermark").style.display = "none";
     });
 </script>
 
@@ -1817,10 +1829,6 @@
 
         echart.setOption(option);
     }
-</script>
-
-<script type="text/javascript">
-    location.href = '/car';
 </script>
 
 </body>

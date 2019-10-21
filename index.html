@@ -127,7 +127,7 @@
                             <!-- data-type="numeric"-->
                             <th data-column-id="type" data-formatter="type">分类</th>
                             <th data-column-id="title" data-formatter="title">标题</th>
-                            <th data-column-id="time" data-formatter="time" data-order="desc">日期</th>
+                            <th data-column-id="time" data-formatter="time">日期</th>
                             <!-- data-order="desc,asc" -->
                             <th data-column-id="link" data-formatter="link" data-visible="false" data-sortable="false">
                                 操作
@@ -137,6 +137,15 @@
                         </thead>
 
                         <tbody>
+                        <!-- 置顶 -->
+                        <tr>
+                            <td>c_iasi</td>
+                            <td>car-green</td>
+                            <td>中保研碰撞测试汇总</td>
+                            <td>2019-03-30 03:00</td>
+                        </tr>
+
+                        <!-- 正序 -->
                         <tr>
                             <td>golden_boot</td>
                             <td>golden_boot</td>
@@ -193,12 +202,6 @@
                             <td>2019-04-04 21:30</td>
                         </tr>
                         -->
-                        <tr>
-                            <td>c_iasi</td>
-                            <td>car-green</td>
-                            <td>C-IASI 中国保险汽车安全指数</td>
-                            <td>2019-03-30 03:00</td>
-                        </tr>
                         <tr>
                             <td>delicious_kingdom</td>
                             <td>eat</td>
@@ -521,9 +524,13 @@
         },
         formatters: {
             "title": function (column, row) {
-                return "<span style='font-size: 15px' >" +
-                    "<a  href=\"essay\\" + row.id + "\">" + row.title + " </a>" +
-                    "</span>";
+                if (row.id.indexOf('c_iasi') == 0)
+                    return "<span style='font-size: 15px' >" +
+                        "<a  href='\car\' > " + row.title + " </a></span > ";
+                else
+                    return "<span style='font-size: 15px' >" +
+                        "<a  href=\"essay\\" + row.id + "\">" + row.title + " </a>" +
+                        "</span>";
             },
             "type": function (column, row) {
                 switch (row.type) {
