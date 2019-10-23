@@ -277,7 +277,7 @@ function getLogoByMake(make, depth) {
         carName = "LynkCo";
     } else if (make.indexOf("沃尔沃") != -1 || make.indexOf("Volvo") != -1) {
         carName = "Volvo";
-    } else if (make.indexOf("吉利") != -1) {
+    } else if (make.indexOf("吉利") != -1 || make.indexOf("Geely") != -1) {
         carName = "Geely";
     } else if (make.indexOf("红旗") != -1) {
         carName = "HongQi";
@@ -285,9 +285,9 @@ function getLogoByMake(make, depth) {
         carName = "Trumpchi";
     } else if (make.indexOf("奇瑞") != -1) {
         carName = "Chery";
-    } else if (make.indexOf("哈弗") != -1) {
+    } else if (make.indexOf("哈弗") != -1 || make.indexOf("HAVAL") != -1) {
         carName = "HAVAL";
-    } else if (make.indexOf("魏派") != -1) {
+    } else if (make.indexOf("魏派") != -1 || make.indexOf("WEY") != -1) {
         carName = "WEY";
     } else if (make.indexOf("江淮") != -1) {
         carName = "JAC";
