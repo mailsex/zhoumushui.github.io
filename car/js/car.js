@@ -25,6 +25,7 @@ function initDataFront() {
     addData('大众迈腾', 12);
     addData('本田凌派', 12);
     addData('别克昂科威', 12);
+    addData('吉利星越', 12);
     addData('斯柯达柯迪亚克', 9);
     addData('本田思域', 9);
     addData('传祺GS7', 9);
@@ -114,6 +115,7 @@ function initDataSide() {
     addData('比亚迪唐', 8); // 21.5
     addData('雷诺科雷傲', 6); //  4.5
     addData('日产天籁', 6); // 10.5
+    addData('吉利星越', 6); // 17.0
     addData('福特福克斯', 4); // 21.0
     addData('日产西玛', 2); //  5.5
     addData('宝马318i', 2); // 18.5
@@ -193,6 +195,7 @@ function initDataTop() {
     addData('日产天籁', 4.73);
     addData('宝马318i', 4.89);
     addData('沃尔沃XC60', 5.06);
+    addData('吉利星越', 5.10);
     addData('大众迈腾', 5.12);
     addData('领克01', 5.21);
     addData('现代领动', 5.32);
@@ -270,6 +273,7 @@ function initDataRoadUser() {
     addData('宝马318i', 21.000);
     addData('比亚迪宋MAX', 21.393);
     addData('斯柯达柯迪亚克', 21.411);
+    addData('吉利星越', 21.488);
     addData('福特福克斯', 21.557);
     addData('丰田亚洲龙', 21.779);
     addData('三菱欧蓝德', 22.093);
