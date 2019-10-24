@@ -150,6 +150,7 @@
                         换机标准1.0 (2019.09.29)
                         1.500+ Days.
                         2.3.00-/Day.
+                        3.丢失、损坏等无法继续使用情况除外.
                     -->
 
                     <div class="cd-timeline-block">
@@ -241,7 +242,7 @@
                                 <br>相机：后-1600W 前-500W
                                 <br>存储：4GB + 32GB
                                 <br>电池：3000mAh 不可拆卸
-                                <br>尺寸：154.45 × 75.80 × 6.9mm
+                                <br>尺寸：154.45 × 75.8 × 6.9mm
                                 <br>重量：153g
                                 <!--
                                 2016.11.14 ~ 2018.05.24 556
@@ -359,6 +360,8 @@
 
                 </section>
 
+                <div id="phone-trends2" class="border" style="background: #ffffff"></div>
+                <br>
                 <div id="phone-trends" class="border" style="background: #ffffff"></div>
             </div>
         </div>
@@ -452,58 +455,37 @@
 <script src="../yi/js/frappe-charts.min.js"></script>
 
 <script>
+    let phoneName = ['i900', 'Nexus', 'Note3', 'S6edge+', 'S7edge', 'Note9'];
+    let phonePrice = [1280, 2450, 2050, 1567, 900, 2682];
+    let phoneDay = [580, 932, 764, 562, 586, 1000];
+    let phonePerDay = [2.21, 2.63, 2.68, 2.79, 1.54, 2.68];
+    let phoneHeight = [112.0, 135.5, 151.2, 154.5, 150.9, 161.9];
+    let phoneWidth = [56, 67.9, 79.2, 75.8, 72.6, 76.4];
+    let phoneThick = [12.5, 8.9, 8.3, 6.9, 7.7, 8.8];
+    let phoneWeight = [122, 135, 168, 153, 157, 201];
+    let phoneBattery = [1440, 1750, 3200, 3000, 3600, 4000];
+    let color3 = ['#03A9F4', '#238e38', '#f44336'];
+
     let phone_data = {
-        labels: [
-            'i900', 'Nexus', 'Note3', 'S6edge+', 'S7edge', 'Note9'
-        ],
+        labels: phoneName,
         datasets: [
-            {
-                name: "Price",
-                values: [
-                    1280, 2450, 2050, 1567, 900, 2682,
-                ]
-            },
-            {
-                name: "Day",
-                values: [
-                    580, 932, 764, 562, 586, 1000,
-                ]
-            },
-            {
-                name: "P/D",
-                values: [
-                    2.21, 2.63, 2.68, 2.79, 1.54, 2.68,
-                ]
-            }
-
+            {name: "Price", values: phonePrice},
+            {name: "Day", values: phoneDay},
+            {name: "P/D", values: phonePerDay}
         ],
-        // yMarkers: [
-        //     {
-        //         label: "Altitude",
-        //         value: 25,
-        //         type: 'dashed'
-        //     }
-        // ],
-        yRegions: [
-            {
-                label: "",
-                start: 1,
-                end: 15
-            },
-        ],
+        // yMarkers: [{label: "Altitude", value: 25, type: 'dashed'}],
+        // yRegions: [{label: "", start: 1, end: 15},],
     };
-
     let phoneChartArgs = {
         //title: "",
         data: phone_data,
         type: 'line', // line;
-        height: 500,
-        colors: ['#238e38', '#03A9F4', '#f44336'],
-
+        height: 300,
+        colors: color3,
         isNavigable: 1, // 能否选中
         valuesOverPoints: 1,   // 显示数字
         barOptions: {
-            stacked: 1           // default: 0
+            stacked: 0           // 是否增大y轴最大值 default: 0
         },
         lineOptions: {
             hideDots: 0, // 隐藏圆点
@@ -512,14 +494,43 @@
             regionFill: 1, // 底部填充
             dotSize: 5 // 圆点大小
         },
-        axisOptions: {
-            xAxisMode: 'tick',
-            yAxisMode: 'span',
-            xIsSeries: 1
-        }
+        axisOptions: {xAxisMode: 'tick', yAxisMode: 'span', xIsSeries: 1}
     };
-
     new Chart("#phone-trends", phoneChartArgs);
+
+    let phone_data2 = {
+        labels: phoneName,
+        datasets: [
+            {name: "Height", values: phoneHeight},
+            {name: "Width", values: phoneWidth},
+            {name: "Thick", values: phoneThick},
+            //{name: "Weight", values: phoneWeight},
+            //{name: "Battery", values: phoneBattery},
+        ],
+        // yMarkers: [{label: "Altitude", value: 25, type: 'dashed'}],
+        // yRegions: [{label: "", start: 1, end: 15},],
+    };
+    let phoneChartArgs2 = {
+        //title: "",
+        data: phone_data2,
+        type: 'line', // line;
+        height: 300,
+        colors: color3,
+        isNavigable: 1, // 能否选中
+        valuesOverPoints: 1,   // 显示数字
+        barOptions: {
+            stacked: 0 // 是否增大y轴最大值 default: 0
+        },
+        lineOptions: {
+            hideDots: 0, // 隐藏圆点
+            hideLine: 0, // 隐藏线段
+            heatline: 0, // 热区渐变
+            regionFill: 1, // 底部填充
+            dotSize: 5 // 圆点大小
+        },
+        axisOptions: {xAxisMode: 'tick', yAxisMode: 'span', xIsSeries: 1}
+    };
+    new Chart("#phone-trends2", phoneChartArgs2);
 </script>
 
 </body>
