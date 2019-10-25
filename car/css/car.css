@@ -40,7 +40,7 @@
     margin-left: 26%;
     cursor: pointer;
     color: #ffffff;
-    background-color: #009688;
+    background-color: #607D8B;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
@@ -49,7 +49,7 @@
 
 .btn-save-image:hover {
     color: #FFEB3B;
-    background-color: #607D8B;
+    background-color: #009688;
 }
 
 .btn-detail-link {
