@@ -1,4 +1,3 @@
-
 function initDataFront() {
     let legendData = ['正面25%偏置'];
     let arrayCar = [];
@@ -483,10 +482,10 @@ $("#table-carsafe-list").bootgrid({
         actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
         //footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
         footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
-            "<span class='line-left'></span>" +
-            "<span class='text'>zhoumushui.com/car</span>" +
-            "<span class='line-right'></span>" +
-            "</div>"
+        "<span class='line-left'></span>" +
+        "<span class='text'>zhoumushui.com/car</span>" +
+        "<span class='line-right'></span>" +
+        "</div>"
 
     },
     formatters: {
@@ -577,4 +576,25 @@ $("#table-carsafe-list-todo").bootgrid({
             return "20" + row.test_time.replace('A', ' 第一批').replace('B', ' 第二批');
         }
     }
+});
+
+$('#btnSaveImage').click(function (e) {
+    document.getElementById("btnSaveImage").style.display = "none";
+    document.getElementById("watermark").style.display = "";
+    html2canvas(document.getElementById("content")).then(function (canvas) {
+        let contentW = canvas.width;
+        let contentH = canvas.height;
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = (date.getMonth() + 1);
+        let day = date.getDate();
+        if (month < 10)
+            month = "0" + month;
+        if (day < 10)
+            day = "0" + day;
+        let fileName = "中保研_" + year + month + day + ".jpg";
+        Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', fileName, 10);
+    });
+    document.getElementById("btnSaveImage").style.display = "";
+    document.getElementById("watermark").style.display = "none";
 });

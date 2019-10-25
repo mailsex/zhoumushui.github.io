@@ -36,8 +36,8 @@
 
 .btn-save-image {
     font-size: small;
-    margin-left: 20px;
     padding: 4px 5px;
+    margin-left: 26%;
     cursor: pointer;
     color: #ffffff;
     background-color: #009688;
@@ -125,4 +125,12 @@
     width: 10%;
     height: 1px;
     background: linear-gradient(to right, #f44336, #FFEB3B, #4CAF50);
+}
+
+.main-frame {
+    padding: 0px 5px 30px 5px;
+}
+
+.detail-frame {
+    padding: 5px 5px;
 }
