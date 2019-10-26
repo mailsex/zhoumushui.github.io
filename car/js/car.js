@@ -330,7 +330,7 @@ function buildChart(chartId, title, legendData, arrayCar, seriesValue) {
                 color: '#DDDDDD'
             }
         },
-        tooltip: {
+        tooltip: { // 弹窗组件
             trigger: 'axis',
             axisPointer: {
                 type: 'shadow'//阴影，若需要为直线，则值为'line';'shadow'
@@ -339,7 +339,11 @@ function buildChart(chartId, title, legendData, arrayCar, seriesValue) {
         toolbox: {
             show: true,
             feature: {
-                saveAsImage: {show: true}
+                saveAsImage: {show: true},
+                // magicType:{type: ['bar', 'line']} // 动态类型切换
+                // dataView: {show: true}, // 数据视图
+                // restore: {show: true}, // 重置
+                // dataZoom: {show: true}, // 数据缩放视图
             }
         },
         legend: {
@@ -348,11 +352,7 @@ function buildChart(chartId, title, legendData, arrayCar, seriesValue) {
             padding: [15, 0, 0, 10],
         },
         grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '5%',
-            top: '5%',
-            containLabel: true
+            left: '3%', right: '4%', bottom: '5%', top: '5%', containLabel: true
         },
         yAxis: [{
             min: 0,
@@ -482,10 +482,10 @@ $("#table-carsafe-list").bootgrid({
         actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
         //footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
         footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
-        "<span class='line-left'></span>" +
-        "<span class='text'>zhoumushui.com/car</span>" +
-        "<span class='line-right'></span>" +
-        "</div>"
+            "<span class='line-left'></span>" +
+            "<span class='text'>zhoumushui.com/car</span>" +
+            "<span class='line-right'></span>" +
+            "</div>"
 
     },
     formatters: {
@@ -592,8 +592,8 @@ $('#btnSaveImage').click(function (e) {
             month = "0" + month;
         if (day < 10)
             day = "0" + day;
-        let fileName = "中保研_" + year + month + day + ".jpg";
-        Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', fileName, 10);
+        let fileName = "中保研_" + year + month + day + ".png";
+        Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'png', fileName, 10); // jpeg
     });
     document.getElementById("btnSaveImage").style.display = "";
     document.getElementById("watermark").style.display = "none";
