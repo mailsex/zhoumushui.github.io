@@ -5648,34 +5648,6 @@ button.close {
     }
 }
 
-@font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto/Roboto-Light-webfont.woff) format('woff'), url(../fonts/Roboto/Roboto-Light-webfont.svg#icon) format('svg');
-    font-weight: 300;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto/Roboto-Regular-webfont.woff) format('woff'), url(../fonts/Roboto/Roboto-Regular-webfont.svg#icon) format('svg');
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto/Roboto-Medium-webfont.woff) format('woff'), url(../fonts/Roboto/Roboto-Medium-webfont.svg#icon) format('svg');
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto/Roboto-Bold-webfont.woff) format('woff'), url(../fonts/Roboto/Roboto-Bold-webfont.svg#icon) format('svg');
-    font-weight: 700;
-    font-style: normal
-}
-
 .btn-file {
     overflow: hidden;
     position: relative

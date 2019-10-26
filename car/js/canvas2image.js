@@ -102,11 +102,38 @@ var Canvas2Image = function () {
         var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
         save_link.href = data;
         save_link.download = fileName;
-
         var event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
         save_link.dispatchEvent(event);
     };
+
+    // AZ Add:兼容Edge下载
+    function downloadFile(fileName, content) {
+        let aLink = document.createElement('a');
+        let blob = base64ToBlob(content); //new Blob([content]);
+
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("click", true, true);//initEvent 不加后两个参数在FF下会报错  事件类型，是否冒泡，是否阻止浏览器的默认行为
+        aLink.download = fileName;
+        aLink.href = URL.createObjectURL(blob);
+
+        aLink.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));//兼容火狐
+    }
+
+    //AZ Add:base64转blob
+    function base64ToBlob(code) {
+        let parts = code.split(';base64,');
+        let contentType = parts[0].split(':')[1];
+        let raw = window.atob(parts[1]);
+        let rawLength = raw.length;
+
+        let uInt8Array = new Uint8Array(rawLength);
+
+        for (let i = 0; i < rawLength; ++i) {
+            uInt8Array[i] = raw.charCodeAt(i);
+        }
+        return new Blob([uInt8Array], {type: contentType});
+    }
 
     function genImage(strData) {
         var img = document.createElement('img');
@@ -299,7 +326,8 @@ var Canvas2Image = function () {
                 saveFile(makeURI(strData, downloadMime));
             } else {
                 var strData = getDataURLWithShift(canvas, type, width, height, shift);
-                saveFileToName(strData.replace(type, downloadMime), fileName);
+                //saveFileToName(strData.replace(type, downloadMime), fileName);
+                downloadFile(fileName,strData.replace(type, downloadMime)); // AZ:兼容Edge下载
             }
         }
     };

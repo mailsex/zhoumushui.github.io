@@ -593,8 +593,38 @@ $('#btnSaveImage').click(function (e) {
         if (day < 10)
             day = "0" + day;
         let fileName = "中保研_" + year + month + day + ".png";
-        Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'png', fileName, 10); // jpeg
+        let shift =10; // 偏移
+        let webType = getExplorer();
+        if(webType  == 'Edge' || webType  == 'ie')
+            shift = 0;
+        console.log("getExplorer:" + getExplorer() + ";shift=" + shift); // Chrome Edge
+        Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'png', fileName, shift); // jpeg
     });
     document.getElementById("btnSaveImage").style.display = "";
     document.getElementById("watermark").style.display = "none";
 });
+
+function getExplorer() {
+    let explorer = window.navigator.userAgent,
+        compare = function (s) {
+            return (explorer.indexOf(s) >= 0);
+        },
+        ie11 = (function () {
+            return ("ActiveXObject" in window)
+        })();
+    if (compare("MSIE") || ie11) {
+        return 'ie';
+    } else if (compare("Firefox") && !ie11) {
+        return 'Firefox';
+    } else if (compare("Chrome") && !ie11) {
+        if (explorer.indexOf("Edge") > -1) {
+            return 'Edge';
+        } else {
+            return 'Chrome';
+        }
+    } else if (compare("Opera") && !ie11) {
+        return 'Opera';
+    } else if (compare("Safari") && !ie11) {
+        return 'Safari';
+    }
+}
