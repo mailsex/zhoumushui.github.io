@@ -9691,9 +9691,9 @@
         replaceDigitByStar(document.getElementById('div-movie-list'));
 
         var calculateMovieCount = function (list) {
-            var movieList = list.getElementsByTagName('movie');
-            document.getElementById("movieCount").innerHTML = movieList.length;
-            document.title = "看过 " + (movieList.length - todoCount) + " 部电影"; // 设置标题
+            let movieCount = list.getElementsByTagName('movie').length - todoCount;
+            document.getElementById("movieCount").innerHTML = movieCount;
+            document.title = "看过 " + movieCount + " 部电影"; // 设置标题
         };
         calculateMovieCount(document.getElementById('div-movie-list'));
     </script>
