@@ -28,27 +28,27 @@ if (directoryDepth != null) {
  */
 function insertHeader() {
     document.getElementById("header").innerHTML = "<div class=\"logo\">" +
-        "<a href=\"" + path + "profile.html\" class=\"hidden-xs\">周木水<small>时间过得好快。</small></a>" +
+        "<a href=\"" + path + "index.html\" class=\"hidden-xs\">周木水<small>时间过得好快。</small></a>" +
         "<i class=\"logo__trigger zmdi zmdi-menu\" data-mae-action=\"block-open\" data-mae-target=\"#navigation\"></i>" +
         "</div>" +
         "<ul class=\"top-menu\">" +
         "<li class=\"top-menu__apps dropdown hidden-xs hidden-sm\">" +
         "<a data-toggle=\"dropdown\" href=\"\"> <i class=\"zmdi zmdi-apps\"></i> </a>" +
         "<ul class=\"dropdown-menu pull-right\">" +
-        "<li><a href=\"" + path + "index.html\"><i class=\"zmdi zmdi-file-text\"></i><small>随笔</small></a></li>" +
+        "<li><a href=\"" + path + "\"><i class=\"zmdi zmdi-file-text\"></i><small>随笔</small></a></li>" +
         // "<li><a href=\"" + path + "app.html\"> <i class=\"zmdi zmdi-android\"></i><small>开发</small></a></li>" +
         "<li><a href=\"" + path + "movie\"><i class=\"zmdi zmdi-movie\"></i><small>电影</small></a></li>" +
-        "<li><a href=\"" + path + "book.html\"> <i class=\"zmdi zmdi-book\"></i><small>书籍</small></a></li>" +
+        "<li><a href=\"" + path + "book\"> <i class=\"zmdi zmdi-book\"></i><small>书籍</small></a></li>" +
         "<li><a href=\"" + path + "world\"> <i class=\"zmdi zmdi-globe\"></i><small>足迹</small></a></li>" +
         //"<li><a href=\"" + path + "timeline.html\"> <i class=\"zmdi zmdi-chart\"></i><small>年鉴</small></a></li>" +
         "<li><a href=\"" + path + "dream\"> <i class=\"zmdi zmdi-flag\"></i><small>愿望</small></a></li>" +
-        "<li><a href=\"" + path + "profile.html\"> <i class=\"zmdi zmdi-account-circle\"></i><small>关于</small></a></li>" +
+        "<li><a href=\"" + path + "profile\"> <i class=\"zmdi zmdi-account-circle\"></i><small>关于</small></a></li>" +
         "</ul>" +
         "</li>" +
         "<li class=\"top-menu__profile dropdown\">" +
         "<a data-toggle=\"dropdown\" href=\"\"> <img src=\"" + path + "img/logo/1.jpg\" alt=\"\"> </a>" +
         "<ul class=\"dropdown-menu pull-right dropdown-menu--icon\">" +
-        "<li class=\"hidden-xs\"><a href=\"" + path + "profile.html\"><i class=\"zmdi zmdi-home\"></i>返回主页</a></li>" +
+        "<li class=\"hidden-xs\"><a href=\"" + path + "index.html\"><i class=\"zmdi zmdi-home\"></i>返回主页</a></li>" +
         "<li class=\"hidden-xs\"><a data-mae-action=\"fullscreen\" href=\"\"><i class=\"zmdi zmdi-fullscreen\"></i>全屏模式</a></li>" +
         "<li><a data-mae-action=\"clear-localstorage\" href=\"\"><i class=\"zmdi zmdi-delete\"></i>清除缓存</a></li>" +
         "</ul>" +
@@ -102,13 +102,13 @@ function insertNavigation() {
 
     document.getElementById("page-pattern-navigation").innerHTML = "<ul>" +
         ((htmlName == 'index' || htmlName == 'zhoumushui.github.io' || htmlName == 'www.zhoumushui.com') ? liActive : liNormal) +
-        "<a href=\"" + path + "index.html\"><i class=\"zmdi zmdi-file-text\"></i><span class=\"nav-left\">随笔</span></a></li>" +
+        "<a href=\"" + path + "\"><i class=\"zmdi zmdi-file-text\"></i><span class=\"nav-left\">随笔</span></a></li>" +
         // (htmlName == 'app' ? liActive : liNormal )+
         // "<a href=\"" + path + "app.html\"><i class=\"zmdi zmdi-android\"></i><span class=\"nav-left\">开发</span></a></li>" +
         (htmlName == 'movie' ? liActive : liNormal) +
         "<a href=\"" + path + "movie\"><i class=\"zmdi zmdi-movie\"></i><span class=\"nav-left\">电影</span></a></li>" +
         (htmlName == 'book' ? liActive : liNormal) +
-        "<a href=\"" + path + "book.html\"><i class=\"zmdi zmdi-book\"></i><span class=\"nav-left\">书籍</span></a></li>" +
+        "<a href=\"" + path + "book\"><i class=\"zmdi zmdi-book\"></i><span class=\"nav-left\">书籍</span></a></li>" +
         (htmlName == 'world' ? liActive : liNormal) +
         "<a href=\"" + path + "world\"><i class=\"zmdi zmdi-globe\"></i><span class=\"nav-left\">足迹</span></a></li>" +
         //(htmlName == 'timeline' ? liActive : liNormal ) +
@@ -116,7 +116,7 @@ function insertNavigation() {
         (htmlName == 'dream' ? liActive : liNormal) +
         "<a href=\"" + path + "dream\"><i class=\"zmdi zmdi-flag\"></i><span class=\"nav-left\">梦想</span></a></li>" +
         (htmlName == 'profile' ? liActive : liNormal) +
-        "<a href=\"" + path + "profile.html\"><i class=\"zmdi zmdi-account-circle\"></i><span class=\"nav-left\">关于</span></a></li>" +
+        "<a href=\"" + path + "profile\"><i class=\"zmdi zmdi-account-circle\"></i><span class=\"nav-left\">关于</span></a></li>" +
         "</ul>"
 };
 

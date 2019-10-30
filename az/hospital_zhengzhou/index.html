@@ -11,40 +11,40 @@
     <!-- Vendors -->
 
     <!-- Animate CSS -->
-    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
           rel="stylesheet">
 
     <!-- Malihu Scrollbar -->
-    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
           rel="stylesheet">
 
     <!-- Light Gallery -->
-    <link href="../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+    <link href="../../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
 
     <!-- Bootgrid -->
-    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
 
     <!-- Site CSS -->
-    <link href="../css/app-1.min.css" rel="stylesheet">
+    <link href="../../css/app-1.min.css" rel="stylesheet">
 
-    <link href="../css/az.css" rel="stylesheet">
+    <link href="../../css/az.css" rel="stylesheet">
 
     <!-- Prettify -->
-    <script src="../js/google.prettify.js"></script>
+    <script src="../../js/google.prettify.js"></script>
 
     <!-- Page loader -->
     <!--
     <script src="js/page-loader.min.js"></script>
     -->
 
-    <link type="image/x-icon" href="../img/favicon.ico" rel=icon/>
-    <link type="image/x-icon" href="../img/favicon.ico" rel="shortcut icon"/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="shortcut icon"/>
 
     <!-- Material Floating Button -->
-    <link href="../css/essay.material.floating.button.css" rel="stylesheet">
+    <link href="../../css/essay.material.floating.button.css" rel="stylesheet">
 
     <!-- AMap -->
     <style type="text/css">
@@ -125,12 +125,12 @@
         <div class="card">
             <div class="action-header">
                 <span class="actions essay-back-arrow">
-                    <a href="../essay.html"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                    <a href="../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
                 </span>&nbsp;&nbsp;&nbsp;
-                <span class="essay-title">郑州地铁</span>
+                <span class="essay-title">郑州医院</span>
                 <span align="right" style="float: right;">
-                    <i class="zmdi zmdi-subway"></i>&nbsp;<span class="essay-type">Subway</span>&nbsp;&nbsp;
-                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2018-03-08 15:15</span>
+                    <i class="zmdi zmdi-hospital"></i>&nbsp;<span class="essay-type">Hospital</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2018-03-08 18:18</span>
                 </span>
 
                 <!--
@@ -140,8 +140,8 @@
                 Action:hover,click
                 -->
                 <script>
-                    var essayTitle = '郑州地铁';
-                    var essaySummary = '交通（地铁）';
+                    var essayTitle = '郑州医院';
+                    var essaySummary = '医疗（三甲医院）';
                     var essayUrl = 'http://www.zhoumushui.com/essay/33.html';
                     //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
                     var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
@@ -173,7 +173,7 @@
              -->
 
             <script type="text/javascript"
-                    src="../js/essay.zhengzhoumetro.array.js"></script>
+                    src="../../js/essay.zhengzhouhospital.array.js"></script>
             <script type="text/javascript">
                 var map;
                 var iconStar, iconCar;
@@ -257,19 +257,10 @@
 
                 function drawPoint() {
                     var arrayMarkerPoint = []; // essay.zhengzhoumetro.array.js
-                    for (var i = 0; i < arrayMetro.length; i += 1) {
+                    for (var i = 0; i < arrayHospital.length; i += 1) {
                         var markerPoint;
-                        var iconPoint;
-                        switch (arrayMetro[i].state) {
-                            case 2: // 建成
-                                iconPoint = iconBlueDot;
-                                break;
-                            case 0: // 规划
-                            case 1: // 修建
-                            default:
-                                iconPoint = iconTealDot;
-                                break;
-                        }
+                        var iconPoint = iconBlueDot;
+
                         markerPoint = new AMap.Marker({
                             animation: "AMAP_ANIMATION_NONE",//点标记的动画效果：AMAP_ANIMATION_NONE-无动画效果(默认)；AMAP_ANIMATION_DROP-点标掉落效果；AMAP_ANIMATION_BOUNCE-点标弹跳效果
                             bubble: false, // 默认false，true的时候事件可以穿透到地图
@@ -280,13 +271,11 @@
                             icon: iconPoint, // icon可缺省，缺省时为默认的蓝色水滴图标
                             map: map,
                             offset: new AMap.Pixel(-7, -7), // (-12,-12)
-                            position: arrayMetro[i].position.split(','),
+                            position: arrayHospital[i].position.split(','),
                             //shadow:, // 点标记阴影，不设置该属性则点标记无阴影
                             visible: true, // 点标记是否可见，默认为true
                             title: // 鼠标滑过点标记时的文字提示，不设置则鼠标滑过点标无文字提示
-                            "【线路】" + arrayMetro[i].line +
-                            "\n【名称】" + arrayMetro[i].name +
-                            "\n【状态】" + getMetroState(arrayMetro[i].state),
+                            "【名称】" + arrayHospital[i].name,
                             zIndex: 101 // 标记的叠加顺序。地图上存在多个点标记叠加时，通过该属性使级别较高的点标记在上层显示，默认100
                         });
 //                            map.setCenter(markerPoint.getPosition());
@@ -374,8 +363,8 @@
 
     </section>
 
-    <link rel="stylesheet" href="../css/toolbox.reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="../css/toolbox.style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="../../css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/toolbox.style.css"> <!-- Resource style -->
     <footer id="footer" class="font-yahei"></footer>
 </section>
 
@@ -387,50 +376,50 @@
 <!-- Javascript Libraries -->
 
 <!-- jQuery -->
-<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Go Up -->
-<script type="text/javascript" src="../js/zms.goup.js"></script>
+<script type="text/javascript" src="../../js/zms.goup.js"></script>
 
 <!-- Bootstrap -->
-<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Malihu ScrollBar -->
-<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Bootstrap Notify -->
-<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
 
 <!-- Bootgrid -->
-<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
 
 <!-- Light Gallery -->
-<script src="../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
 
 <!-- Placeholder for IE9 -->
 <!--[if IE 9 ]>
-<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
 <![endif]-->
 
 <!-- Demo Only -->
 <!--<script src="js/misc.js"></script>-->
-<script src="../js/data-table.js"></script>
+<script src="../../js/data-table.js"></script>
 
 <!-- Site Functions & Actions -->
-<script src="../js/app.min.js"></script>
+<script src="../../js/app.min.js"></script>
 
 <!-- busuanzi PV&UV -->
-<script async src="../js/busuanzi.pure.mini.js"></script>
+<script async src="../../js/busuanzi.pure.mini.js"></script>
 
 <!-- Nest Follow Mouse Background -->
 <!--<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
         src="../js/canvas-nest.min.js"></script>-->
 
-<script src="../js/essay.material.floating.button.js"></script>
+<script src="../../js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
     var panel = document.getElementById('panel'),
         menu = document.getElementById('menu'),
@@ -470,10 +459,10 @@
 </script>
 
 <!-- Toolbox -->
-<script src="../js/toolbox.main.js"></script>
+<script src="../../js/toolbox.main.js"></script>
 
-<script>var directoryDepth = 1;</script>
-<script src="../js/zms.page.pattern.js"></script>
+<script>var directoryDepth = 2;</script>
+<script src="../../js/zms.page.pattern.js"></script>
 <script>
 
     function requestFullScreen(element) {
