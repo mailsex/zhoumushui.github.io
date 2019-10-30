@@ -186,7 +186,7 @@ function insertFooter() {
         "<li><a target=\"_blank\" href=\"" + path + "game\">游戏</a></li>" +
         "<li><a target=\"_blank\" href=\"" + path + "file\">文件</a></li>" +
         "<li><a target=\"_blank\" href=\"" + path + "module/colorpicker\">颜色</a></li>" +
-        "<li><a target=\"_blank\" href=\"" + path + "icon.html\">图标</a></li>" +
+        "<li><a target=\"_blank\" href=\"" + path + "module/icon\">图标</a></li>" +
         "</ul></nav>" +
         "<a href=\"#0\" class=\"cd-close\">Close</a>" +
         "</div>" +
