@@ -99,96 +99,149 @@ $(document).ready(function () {
 
 });
 
-function getClubLogo(club) {
+function getClubLogo(club, depth) {
+
+    let imgPath = "";
+    switch (depth) {
+        case 0:
+            imgPath = "resource/img/football_club/";
+            break;
+        case 1:
+            imgPath = "../resource/img/football_club/";
+            break;
+        case 2:
+        default:
+            imgPath = "../../resource/img/football_club/";
+            break;
+    }
+    let clubName = "";
+
     switch (club) {
         // 西甲
         case '巴萨':
         case '巴塞罗那':
-            return "<img class=\"club-logo\" title='巴塞罗那' src=\"../img/football_club/Barcelona.png\">";
+            clubName = "Barcelona";
+            break;
         case '皇马':
         case '皇家马德里':
-            return "<img class=\"club-logo\" title='皇家马德里' src=\"../img/football_club/RealMadrid.png\">";
+            clubName = "RealMadrid";
+            break;
         case '马竞':
         case '马德里竞技':
-            return "<img class=\"club-logo\" title='马德里竞技' src=\"../img/football_club/Atletico.png\">";
+            clubName = "Atletico";
+            break;
 
         // 英超
         case '利物浦':
-            return "<img class=\"club-logo\" title='利物浦' src=\"../img/football_club/Liverpool.png\">";
+            clubName = "Liverpool";
+            break;
         case '曼联':
-            return "<img class=\"club-logo\" title='曼联' src=\"../img/football_club/ManchesterUnited.png\">";
+            clubName = "ManchesterUnited";
+            break;
         case '曼城':
-            return "<img class=\"club-logo\" title='曼城' src=\"../img/football_club/ManchesterCity.png\">";
+            clubName = "ManchesterCity";
+            break;
         case '阿森纳':
-            return "<img class=\"club-logo\" title='阿森纳' src=\"../img/football_club/Arsenal.png\">";
+            clubName = "Arsenal";
+            break;
         case '热刺':
-            return "<img class=\"club-logo\" title='热刺' src=\"../img/football_club/Hotspur.png\">";
+            clubName = "Hotspur";
+            break;
         case '切尔西':
-            return "<img class=\"club-logo\" title='切尔西' src=\"../img/football_club/Chelsea.png\">";
+            clubName = "Chelsea";
+            break;
 
         // 意甲
         case '尤文':
         case '尤文图斯':
-            return "<img class=\"club-logo\" title='尤文图斯' src=\"../img/football_club/Juventus.png\">";
+            clubName = "Juventus";
+            break;
         case '国米':
         case '国际米兰':
-            return "<img class=\"club-logo\" title='国际米兰' src=\"../img/football_club/Inter.png\">";
+            clubName = "Inter";
+            break;
         case 'AC米兰':
-            return "<img class=\"club-logo\" title='AC米兰' src=\"../img/football_club/ACMilan.png\">";
+            clubName = "ACMilan";
+            break;
         case '罗马':
-            return "<img class=\"club-logo\" title='罗马' src=\"../img/football_club/Rome.png\">";
+            clubName = "Rome";
+            break;
         case '拉齐奥':
-            return "<img class=\"club-logo\" title='拉齐奥' src=\"../img/football_club/Lazio.png\">";
+            clubName = "Lazio";
+            break;
         case '里昂':
-            return "<img class=\"club-logo\" title='里昂' src=\"../img/football_club/Lyon.png\">";
+            clubName = "Lyon";
+            break;
         case '那不勒斯':
-            return "<img class=\"club-logo\" title='那不勒斯' src=\"../img/football_club/Napoli.png\">";
+            clubName = "Napoli";
+            break;
         case '都灵':
-            return "<img class=\"club-logo\" title='都灵' src=\"../img/football_club/Torino.png\">";
+            clubName = "Torino";
+            break;
         case '桑普多利亚':
-            return "<img class=\"club-logo\" title='桑普多利亚' src=\"../img/football_club/Sampdoria.png\">";
+            clubName = "Sampdoria";
+            break;
         case '乌迪内斯':
-            return "<img class=\"club-logo\" title='乌迪内斯' src=\"../img/football_club/Udinese.png\">";
+            clubName = "Udinese";
+            break;
         case '佛罗伦萨':
-            return "<img class=\"club-logo\" title='佛罗伦萨' src=\"../img/football_club/Fiorentina.png\">";
+            clubName = "Fiorentina";
+            break;
 
         // 德甲
         case '拜仁':
         case '拜仁慕尼黑':
-            return "<img class=\"club-logo\" title='拜仁慕尼黑' src=\"../img/football_club/Bayern.png\">";
+            clubName = "Bayern";
+            break;
         case '多特':
         case '多特蒙德':
-            return "<img class=\"club-logo\" title='多特蒙德' src=\"../img/football_club/BVB.png\">";
+            clubName = "BVB";
+            break;
         case '沙尔克04':
-            return "<img class=\"club-logo\" title='沙尔克04' src=\"../img/football_club/Schalke04.png\">";
+            clubName = "Schalke04";
+            break;
         case '法兰克福':
-            return "<img class=\"club-logo\" title='法兰克福' src=\"../img/football_club/Frankfurt.png\">";
+            clubName = "Frankfurt";
+            break;
         case '勒沃库森':
-            return "<img class=\"club-logo\" title='勒沃库森' src=\"../img/football_club/Leverkusen.png\">";
+            clubName = "Leverkusen";
+            break;
         case '沃尔夫斯堡':
-            return "<img class=\"club-logo\" title='沃尔夫斯堡' src=\"../img/football_club/Wolfsburg.png\">";
+            clubName = "Wolfsburg";
+            break;
         case '不莱梅':
         case '云达不莱梅':
-            return "<img class=\"club-logo\" title='云达不莱梅' src=\"../img/football_club/Bremen.png\">";
+            clubName = "Bremen";
+            break;
         case '波鸿':
-            return "<img class=\"club-logo\" title='波鸿' src=\"../img/football_club/Bochum.png\">";
+            clubName = "Bochum";
+            break;
 
         // 法甲
         case '巴黎':
         case '巴黎圣日耳曼':
-            return "<img class=\"club-logo\" title='巴黎圣日耳曼' src=\"../img/football_club/PSG.png\">";
+            clubName = "PSG";
+            break;
         case '蒙彼利埃':
-            return "<img class=\"club-logo\" title='蒙彼利埃' src=\"../img/football_club/Montpellier.png\">";
+            clubName = "Montpellier";
+            break;
         case '里尔':
-            return "<img class=\"club-logo\" title='里尔' src=\"../img/football_club/Lille.png\">";
+            clubName = "Lille";
+            break;
         case '马赛':
-            return "<img class=\"club-logo\" title='马赛' src=\"../img/football_club/Marseille.png\">";
+            clubName = "Marseille";
+            break;
         case '图卢兹':
-            return "<img class=\"club-logo\" title='图卢兹' src=\"../img/football_club/Toulouse.png\">";
+            clubName = "Toulouse";
+            break;
 
         default:
-            return "<img class=\"club-logo\" title='" + club + "' src=\"../img/football_club/Default.png\">";
+            clubName = "Default";
+            break;
     }
+
+
+    return "<img class='club-logo' src='" + imgPath + clubName + ".png'>";
 }
 
 // 品牌
@@ -196,14 +249,14 @@ function getLogoByMake(make, depth) {
     let imgPath = "";
     switch (depth) {
         case 0:
-            imgPath = "img/car/";
+            imgPath = "resource/img/car/";
             break;
         case 1:
-            imgPath = "../img/car/";
+            imgPath = "../resource/img/car/";
             break;
         case 2:
         default:
-            imgPath = "../../img/car/";
+            imgPath = "../../resource/img/car/";
             break;
     }
     let carName = "";
@@ -320,7 +373,22 @@ function getLogoByMake(make, depth) {
 
 
 // 国家
-function getCountryByMake(make) {
+function getCountryByMake(make, depth) {
+    let imgPath = "";
+    switch (depth) {
+        case 0:
+            imgPath = "resource/img/country/";
+            break;
+        case 1:
+            imgPath = "../resource/img/country/";
+            break;
+        case 2:
+        default:
+            imgPath = "../../resource/img/country/";
+            break;
+    }
+    let carCountry = "";
+
     if (make.indexOf("长城") != -1 ||
         make.indexOf("吉利") != -1 ||
         make.indexOf("浙江豪情") != -1 || // 领克
@@ -330,7 +398,7 @@ function getCountryByMake(make) {
         make.indexOf("众泰") != -1 ||
         make.indexOf("江淮") != -1 ||
         make.indexOf("五菱") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_China.png\">";
+        carCountry = "China";
     } else if (
         make.indexOf("丰田") != -1 ||
         make.indexOf("雷克萨斯") != -1 ||
@@ -340,28 +408,30 @@ function getCountryByMake(make) {
         make.indexOf("日产") != -1 ||
         make.indexOf("英菲尼迪") != -1 ||
         make.indexOf("马自达") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_Japan.png\">";
+        carCountry = "Japan";
     } else if (
         make.indexOf("大众") != -1 ||
         make.indexOf("奔驰") != -1 ||
         make.indexOf("宝马") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_Germany.png\">";
+        carCountry = "Germany";
     } else if (
         make.indexOf("现代") != -1 ||
         make.indexOf("起亚") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_SouthKorea.png\">";
+        carCountry = "SouthKorea";
     } else if (make.indexOf("通用") != -1 ||
         make.indexOf("福特") != -1 ||
         make.indexOf("雪佛兰") != -1 ||
         make.indexOf("克莱斯勒") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_America.png\">";
+        carCountry = "America";
     } else if (make.indexOf("雷诺") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_France.png\">";
+        carCountry = "France";
     } else if (make.indexOf("捷豹") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_England.png\">";
+        carCountry = "England";
     } else if (make.indexOf("沃尔沃") != -1) {
-        return "<img class=\"country-flag\" src=\"../img/country/Country_Sweden.png\">";
+        carCountry = "Sweden";
     } else {
         return "";
     }
+
+    return "<img class='country-flag' src='" + imgPath + "Country_" + carCountry + ".png'>";
 }

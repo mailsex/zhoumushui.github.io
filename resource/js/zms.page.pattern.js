@@ -28,7 +28,7 @@ if (directoryDepth != null) {
  */
 function insertHeader() {
     document.getElementById("header").innerHTML = "<div class=\"logo\">" +
-        "<a href=\"" + path + "index.html\" class=\"hidden-xs\">周木水<small>时间过得好快。</small></a>" +
+        "<a href=\"" + path + "\" class=\"hidden-xs\">周木水<small>时间过得好快。</small></a>" +
         "<i class=\"logo__trigger zmdi zmdi-menu\" data-mae-action=\"block-open\" data-mae-target=\"#navigation\"></i>" +
         "</div>" +
         "<ul class=\"top-menu\">" +
@@ -46,7 +46,7 @@ function insertHeader() {
         "</ul>" +
         "</li>" +
         "<li class=\"top-menu__profile dropdown\">" +
-        "<a data-toggle=\"dropdown\" href=\"\"> <img src=\"" + path + "img/logo/1.jpg\" alt=\"\"> </a>" +
+        "<a data-toggle=\"dropdown\" href=\"\"> <img src=\"" + path + "/resource/img/logo/1.jpg\" alt=\"\"> </a>" +
         "<ul class=\"dropdown-menu pull-right dropdown-menu--icon\">" +
         "<li class=\"hidden-xs\"><a href=\"" + path + "index.html\"><i class=\"zmdi zmdi-home\"></i>返回主页</a></li>" +
         "<li class=\"hidden-xs\"><a data-mae-action=\"fullscreen\" href=\"\"><i class=\"zmdi zmdi-fullscreen\"></i>全屏模式</a></li>" +
