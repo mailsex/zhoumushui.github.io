@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>随笔</title>
+    <title>IN ≠ OUT</title>
 
     <!-- Vendors -->
 
@@ -119,19 +119,19 @@
 
                     <br>
                     2014
-                    <span id="inSalary2014" class="text-in"></span>.<span id="outHouse2014" class="text-out"></span>
+                    <span id="inSalary2014" class="text-in"></span>.<span id="outRent2014" class="text-out"></span>
                     &nbsp;&nbsp;2015
-                    <span id="inSalary2015" class="text-in"></span>.<span id="outHouse2015" class="text-out"></span>
+                    <span id="inSalary2015" class="text-in"></span>.<span id="outRent2015" class="text-out"></span>
                     &nbsp;&nbsp;2016
-                    <span id="inSalary2016" class="text-in"></span>.<span id="outHouse2016" class="text-out"></span>
+                    <span id="inSalary2016" class="text-in"></span>.<span id="outRent2016" class="text-out"></span>
                     &nbsp;&nbsp;2017
-                    <span id="inSalary2017" class="text-in"></span>.<span id="outHouse2017" class="text-out"></span>
+                    <span id="inSalary2017" class="text-in"></span>.<span id="outRent2017" class="text-out"></span>
                     &nbsp;&nbsp;2018
-                    <span id="inSalary2018" class="text-in"></span>.<span id="outHouse2018" class="text-out"></span>
+                    <span id="inSalary2018" class="text-in"></span>.<span id="outRent2018" class="text-out"></span>
                     &nbsp;&nbsp;2019
-                    <span id="inSalary2019" class="text-in"></span>.<span id="outHouse2019" class="text-out"></span>
+                    <span id="inSalary2019" class="text-in"></span>.<span id="outRent2019" class="text-out"></span>
                     &nbsp;&nbsp;2020
-                    <span id="inSalary2020" class="text-in"></span>.<span id="outHouse2020" class="text-out"></span>
+                    <span id="inSalary2020" class="text-in"></span>.<span id="outRent2020" class="text-out"></span>
                 </div>
 
                 <div class="card__body">
@@ -152,11 +152,12 @@
                 </div>
                 <div class="card__body">
                     <div id="in-salary-month-trend" class="flot-chart"></div>
-                    <div id="out-house-month-trend" class="flot-chart"></div>
+                    <div id="out-rent-month-trend" class="flot-chart"></div>
+                    <div id="out-loan-month-trend" class="flot-chart"></div>
                 </div>
             </div>
 
-            <div class="card__body"><!-- HIDE  style="display: none" -->
+            <div class="card__body" style="display: none"><!-- HIDE  -->
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
                     <table id="table-in-list" class="table table-striped"
@@ -165,7 +166,8 @@
                         <tr>
                             <th data-column-id="date" data-formatter="date" data-order="desc">@</th>
                             <th data-column-id="in_salary" data-formatter="in_salary" data-type="numeric">+</th>
-                            <th data-column-id="out_house" data-formatter="out_house" data-type="numeric">-</th>
+                            <th data-column-id="out_rent" data-formatter="out_rent" data-type="numeric">-</th>
+                            <th data-column-id="out_loan" data-formatter="out_loan" data-type="numeric">-</th>
                             <!--<th data-column-id="id"  data-identifier="true">编号</th>-->
 
                             <!-- data-order="desc,asc" -->
@@ -173,251 +175,391 @@
                         </thead>
 
                         <tbody>
-
+                        <tr>
+                            <td>2019-10</td>
+                            <td>13109</td><!-- 调休1天 -->
+                            <td>1438</td><!-- RENT -->
+                            <td>4718</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-09</td>
+                            <td>13109</td>
+                            <td>1503</td><!-- RENT -->
+                            <td>4846</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-08</td>
+                            <td>13109</td><!-- 调休5天 -->
+                            <td>1590</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-07</td>
+                            <td>14109</td><!-- Sideline:+1000 -->
+                            <td>1838</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-06</td>
+                            <td>13120</td>
+                            <td>1756</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-05</td>
+                            <td>13090</td>
+                            <td>1621</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-04</td>
+                            <td>13129</td>
+                            <td>1544</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-03</td>
+                            <td>13120</td>
+                            <td>1511</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-02</td>
+                            <td>13120</td>
+                            <td>1609</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2019-01</td>
+                            <td>13120</td>
+                            <td>1424</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-12</td>
+                            <td>25455</td>
+                            <td>1436</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-11</td>
+                            <td>12451</td>
+                            <td>1357</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-10</td>
+                            <td>12604</td>
+                            <td>1317</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-09</td>
+                            <td>12396</td>
+                            <td>1490</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-08</td>
+                            <td>12396</td>
+                            <td>1340</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-07</td>
+                            <td>12461</td>
+                            <td>1321</td><!-- RENT -->
+                            <td>5741</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-06</td>
+                            <td>12611</td>
+                            <td>1326</td><!-- RENT -->
+                            <td>6057</td><!-- LOAN -->
+                        </tr>
+                        <tr>
+                            <td>2018-05</td>
+                            <td>12582</td>
+                            <td>1392</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
+                        </tr>
                         <tr>
                             <td>2018-04</td>
-                            <td></td><!-- 请假0.5天) -->
-                            <td></td><!-- 房租:1100 卫生:20 网费:60 水电: -->
+                            <td>12611</td><!-- 请假0.5天 -->
+                            <td>1338</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2018-03</td>
-                            <td></td><!-- 请假2+0.5+0.5天) -->
-                            <td></td><!-- 房租:1100 卫生:20 网费:60 水电: -->
+                            <td>11024</td><!-- 请假2+0.5+0.5天 -->
+                            <td>1389</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2018-02</td>
-                            <td>9389</td><!-- 请假10天，其中2天调休，相当请假8天 -->
-                            <td>1280</td><!-- 房租:1100 卫生:20 网费:60 水电:100 -->
+                            <td>9389</td><!-- 调休2天，请假8天 -->
+                            <td>1280</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2018-01</td>
-                            <td>25611</td><!-- 年终13000 -->
-                            <td>1490</td><!-- 房租:1100 卫生:20 网费:60 水电:210 -->
+                            <td>25611</td>
+                            <td>1540</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2017-12</td>
                             <td>12611</td>
-                            <td>1480</td><!-- 房租：1400 水费：  电费：  网费：80 -->
+                            <td>1838</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2017-11</td>
                             <td>12400</td>
-                            <td>1480</td><!-- 房租：1400 水费：  电费：  网费：80 -->
+                            <td>1586</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2017-10</td>
                             <td>12400</td>
-                            <td>1567</td><!-- 房租：1300 水费：28  电费：159  网费：80 -->
+                            <td>1486</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2017-09</td>
                             <td>12450</td>
-                            <td>1550</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1470</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2017-08</td>
                             <td>12600</td>
-                            <td>1566</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1566</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2017-07</td>
                             <td>12650</td>
-                            <td>1554</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1554</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         <tr>
                             <td>2017-06</td>
                             <td>12620</td>
-                            <td>1570</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1570</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2017-05</td>
                             <td>12620</td>
-                            <td>1559</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1559</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2017-04</td>
                             <td>12620</td>
-                            <td>1564</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1564</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2017-03</td>
                             <td>12620</td>
-                            <td>1584</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1584</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2017-02</td>
                             <td>12620</td>
-                            <td>1535</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1535</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2017-01</td>
                             <td>12620</td>
-                            <td>1561</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1561</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-12</td>
                             <td>25570</td>
-                            <td>1565</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1565</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-11</td>
                             <td>11627</td>
-                            <!-- 深圳市宝安区西乡街道盐田新一村五巷20号201 [一室一厅] [4403060010280400215000005] -->
-                            <td>1645</td><!-- 房租：1300 水费：-  电费：-  网费：80 -->
+                            <td>1645</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-10</td>
                             <td>11627</td>
-                            <td>1430</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                            <td>1430</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-09</td>
                             <td>11627</td>
-                            <td>1608</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                            <td>1608</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-08</td>
                             <td>11632</td>
-                            <td>1555</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                            <td>1555</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-07</td>
                             <td>11634</td>
-                            <td>1581</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                            <td>1581</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-06</td>
                             <td>11634</td>
-                            <td>1686</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                            <td>1686</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-05</td>
                             <td>9616</td>
-                            <!-- 深圳市宝安区西乡街道华侨新村西堤二巷20号 309 [单房] [4403060010211200160000024] -->
-                            <td>1453</td><!-- 房租：1300 水费：-  电费：-  网费：- -->
+                            <td>1453</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-04</td>
                             <td>9634</td>
-                            <td>1236</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1236</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-03</td>
                             <td>9634</td>
-                            <td>1191</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1191</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-02</td>
                             <td>9634</td>
-                            <td>1090</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1090</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2016-01</td>
                             <td>9634</td>
-                            <td>1292</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1292</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-12</td>
                             <td>21634</td>
-                            <td>1202</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1202</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-11</td>
                             <td>9625</td>
-                            <td>1201</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1201</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-10</td>
                             <td>9623</td>
-                            <td>1143</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1143</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-09</td>
                             <td>9429</td>
-                            <td>1139</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>1139</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-08</td>
                             <td>11721</td>
-                            <!-- 深圳市宝安区西乡街道华侨新村西堤二巷2号 1007 [单房][ 4403060010211200142000171] -->
-                            <td>617</td><!-- 房租：1000 水费：-  电费：-  网费：- -->
+                            <td>617</td>
+                            <!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-07</td>
                             <td>5228</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-06</td>
                             <td>5228</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-05</td>
                             <td>5228</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-04</td>
                             <td>5228</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-03</td>
                             <td>5228</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-02</td>
                             <td>4041</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2015-01</td>
                             <td>4228</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2014-12</td>
                             <td>3761</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2014-11</td>
                             <td>3761</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2014-10</td>
                             <td>3761</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2014-09</td>
                             <td>3188</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2014-08</td>
                             <td>3261</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
                         <tr>
                             <td>2014-07</td>
                             <td>2989</td>
-                            <td>0</td>
+                            <td>0</td><!-- RENT -->
+                            <td>0</td><!-- LOAN -->
                         </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -525,29 +667,31 @@
 <script src="../../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 <script type="text/javascript">
-    var dataArrayInSalary = [];
-    var dataArrayOutHouse = [];
-    var inSalary2014 = 0, outHouse2014 = 0;
-    var inSalary2015 = 0, outHouse2015 = 0;
-    var inSalary2016 = 0, outHouse2016 = 0;
-    var inSalary2017 = 0, outHouse2017 = 0;
-    var inSalary2018 = 0, outHouse2018 = 0;
-    var inSalary2019 = 0, outHouse2019 = 0;
-    var inSalary2020 = 0, outHouse2020 = 0;
+    let dataArrayInSalary = [];
+    let dataArrayOutRent = [];
+    let dataArrayOutLoan = [];
+    let inSalary2014 = 0, outRent2014 = 0, outLoan2014 = 0;
+    let inSalary2015 = 0, outRent2015 = 0, outLoan2015 = 0;
+    let inSalary2016 = 0, outRent2016 = 0, outLoan2016 = 0;
+    let inSalary2017 = 0, outRent2017 = 0, outLoan2017 = 0;
+    let inSalary2018 = 0, outRent2018 = 0, outLoan2018 = 0;
+    let inSalary2019 = 0, outRent2019 = 0, outLoan2019 = 0;
+    let inSalary2020 = 0, outRent2020 = 0, outLoan2020 = 0;
 
     var calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
-        var trs = table.getElementsByTagName('tr');
-        var start = 1, // 开始计算的行号，忽略第一行的表头
+        let trs = table.getElementsByTagName('tr');
+        let start = 1, // 开始计算的行号，忽略第一行的表头
             end = trs.length; // 结束计算的行号，忽略最后合计的一行
-        var inSalaryTotal = 0;
-        var outHouseTotal = 0;
+        let inSalaryTotal = 0;
+        let outRentTotal = 0;
+        let outLoanTotal = 0;
 
-        for (var i = start; i < end; i++) {
-            var tdDate = trs[i].getElementsByTagName('td')[0];
+        for (let i = start; i < end; i++) {
+            let tdDate = trs[i].getElementsByTagName('td')[0];
 
             // IN.Salary
-            var tdNumberInSalary = trs[i].getElementsByTagName('td')[1];
-            var numInSalary = parseFloat(tdNumberInSalary.innerHTML);
+            let tdNumberInSalary = trs[i].getElementsByTagName('td')[1];
+            let numInSalary = parseFloat(tdNumberInSalary.innerHTML);
             dataArrayInSalary.push([end - i - 1, numInSalary]); // for Dynamic Array
             if (numInSalary) {
                 inSalaryTotal += numInSalary; // Total
@@ -568,26 +712,49 @@
                 }
             }
 
-            // OUT.House
-            var tdNumberOutHouse = trs[i].getElementsByTagName('td')[2];
-            var numOutHouse = parseFloat(tdNumberOutHouse.innerHTML);
-            dataArrayOutHouse.push([end - i - 1, numOutHouse]); // for Dynamic Array
-            if (numOutHouse) {
-                outHouseTotal += numOutHouse; // Total
+            // OUT.Rent
+            let tdNumberOutRent = trs[i].getElementsByTagName('td')[2];
+            let numOutRent = parseFloat(tdNumberOutRent.innerHTML);
+            dataArrayOutRent.push([end - i - 1, numOutRent]); // for Dynamic Array
+            if (numOutRent) {
+                outRentTotal += numOutRent; // Total
                 if (tdDate.innerHTML.indexOf('2014') == 0) { // Year
-                    outHouse2014 += numOutHouse;
+                    outRent2014 += numOutRent;
                 } else if (tdDate.innerHTML.indexOf('2015') == 0) { // Year
-                    outHouse2015 += numOutHouse;
+                    outRent2015 += numOutRent;
                 } else if (tdDate.innerHTML.indexOf('2016') == 0) {
-                    outHouse2016 += numOutHouse;
+                    outRent2016 += numOutRent;
                 } else if (tdDate.innerHTML.indexOf('2017') == 0) {
-                    outHouse2017 += numOutHouse;
+                    outRent2017 += numOutRent;
                 } else if (tdDate.innerHTML.indexOf('2018') == 0) {
-                    outHouse2018 += numOutHouse;
+                    outRent2018 += numOutRent;
                 } else if (tdDate.innerHTML.indexOf('2019') == 0) {
-                    outHouse2019 += numOutHouse;
+                    outRent2019 += numOutRent;
                 } else if (tdDate.innerHTML.indexOf('2020') == 0) {
-                    outHouse2020 += numOutHouse;
+                    outRent2020 += numOutRent;
+                }
+            }
+
+            // OUT.Loan
+            let tdNumberOutLoan = trs[i].getElementsByTagName('td')[3];
+            let numOutLoan = parseFloat(tdNumberOutLoan.innerHTML);
+            dataArrayOutLoan.push([end - i - 1, numOutLoan]); // for Dynamic Array
+            if (numOutLoan) {
+                outLoanTotal += numOutLoan; // Total
+                if (tdDate.innerHTML.indexOf('2014') == 0) { // Year
+                    outLoan2014 += numOutLoan;
+                } else if (tdDate.innerHTML.indexOf('2015') == 0) { // Year
+                    outLoan2015 += numOutLoan;
+                } else if (tdDate.innerHTML.indexOf('2016') == 0) {
+                    outLoan2016 += numOutLoan;
+                } else if (tdDate.innerHTML.indexOf('2017') == 0) {
+                    outLoan2017 += numOutLoan;
+                } else if (tdDate.innerHTML.indexOf('2018') == 0) {
+                    outLoan2018 += numOutLoan;
+                } else if (tdDate.innerHTML.indexOf('2019') == 0) {
+                    outLoan2019 += numOutLoan;
+                } else if (tdDate.innerHTML.indexOf('2020') == 0) {
+                    outLoan2020 += numOutLoan;
                 }
             }
 
@@ -595,7 +762,7 @@
         document.getElementById("list-row-count").innerHTML = trs.length - 1;
         // IN.Salary
         document.getElementById("inSalaryTotal").innerHTML = inSalaryTotal; // Total
-        document.getElementById("inSalaryAverage").innerHTML = Math.round(( inSalaryTotal / (trs.length - 1)) * 100) / 100;
+        document.getElementById("inSalaryAverage").innerHTML = Math.round((inSalaryTotal / (trs.length - 1)) * 100) / 100;
         document.getElementById("inSalary2014").innerHTML = inSalary2014;
         document.getElementById("inSalary2015").innerHTML = inSalary2015;
         document.getElementById("inSalary2016").innerHTML = inSalary2016;
@@ -603,23 +770,23 @@
         document.getElementById("inSalary2018").innerHTML = inSalary2018;
         document.getElementById("inSalary2019").innerHTML = inSalary2019;
         document.getElementById("inSalary2020").innerHTML = inSalary2020;
-        // OUT.House
-        document.getElementById("outHouseTotal").innerHTML = outHouseTotal; // Total
-        document.getElementById("outHouseAverage").innerHTML = Math.round(( outHouseTotal / (trs.length - 1)) * 100) / 100;
-        document.getElementById("outHouse2014").innerHTML = outHouse2014;
-        document.getElementById("outHouse2015").innerHTML = outHouse2015;
-        document.getElementById("outHouse2016").innerHTML = outHouse2016;
-        document.getElementById("outHouse2017").innerHTML = outHouse2017;
-        document.getElementById("outHouse2018").innerHTML = outHouse2018;
-        document.getElementById("outHouse2019").innerHTML = outHouse2019;
-        document.getElementById("outHouse2020").innerHTML = outHouse2020;
+        // OUT.Rent
+        document.getElementById("outHouseTotal").innerHTML = outRentTotal; // Total
+        document.getElementById("outHouseAverage").innerHTML = Math.round((outRentTotal / (trs.length - 1)) * 100) / 100;
+        document.getElementById("outRent2014").innerHTML = outRent2014;
+        document.getElementById("outRent2015").innerHTML = outRent2015;
+        document.getElementById("outRent2016").innerHTML = outRent2016;
+        document.getElementById("outRent2017").innerHTML = outRent2017;
+        document.getElementById("outRent2018").innerHTML = outRent2018;
+        document.getElementById("outRent2019").innerHTML = outRent2019;
+        document.getElementById("outRent2020").innerHTML = outRent2020;
 
     };
     calculateStep(document.getElementById('table-in-list'));
 
     'use strict';
     $(document).ready(function () {
-        var dataYearInSalary = [
+        let dataYearInSalary = [
             [2014, inSalary2014],
             [2015, inSalary2015],
             [2016, inSalary2016],
@@ -628,17 +795,25 @@
             [2019, inSalary2019],
             [2020, inSalary2020]
         ];
-
-        var dataYearOutHouse = [
-            [2014, outHouse2014],
-            [2015, outHouse2015],
-            [2016, outHouse2016],
-            [2017, outHouse2017],
-            [2018, outHouse2018],
-            [2019, outHouse2019],
-            [2020, outHouse2020]
+        let dataYearOutRent = [
+            [2014, outRent2014],
+            [2015, outRent2015],
+            [2016, outRent2016],
+            [2017, outRent2017],
+            [2018, outRent2018],
+            [2019, outRent2019],
+            [2020, outRent2020]
         ];
-        var barData = [ // Create an Array push the data + Draw the bars
+        let dataYearOutLoan = [
+            [2014, outLoan2014],
+            [2015, outLoan2015],
+            [2016, outLoan2016],
+            [2017, outLoan2017],
+            [2018, outLoan2018],
+            [2019, outLoan2019],
+            [2020, outLoan2020]
+        ];
+        let barData = [ // Create an Array push the data + Draw the bars
             {
                 //label: 'IN.Salary',
                 data: dataYearInSalary,
@@ -646,8 +821,13 @@
             },
             {
                 //label: 'OUT.House',
-                data: dataYearOutHouse,
+                data: dataYearOutRent,
                 color: '#E91E63'
+            },
+            {
+                //label: 'OUT.House',
+                data: dataYearOutLoan,
+                color: '#FFEB3B'
             }
         ]
         // Let's create the chart
@@ -698,8 +878,7 @@
                         top: item.pageY + 5,
                         left: item.pageX + 5
                     }).show();
-                }
-                else {
+                } else {
                     $(".flot-tooltip").hide();
                 }
             });
@@ -741,10 +920,11 @@
             plotMonthInSalary.draw();
             // setTimeout(update, updateInterval); AZ: Do not update
 
+            plotMonthOutRent.setData([dataArrayOutRent]); // plot.setData([getRandomData()]);
+            plotMonthOutRent.draw();
 
-            plotMonthOutHouse.setData([dataArrayOutHouse]); // plot.setData([getRandomData()]);
-            // Since the axes don't change, we don't need to call plot.setupGrid()
-            plotMonthOutHouse.draw();
+            plotMonthOutLoan.setData([dataArrayOutLoan]); // plot.setData([getRandomData()]);
+            plotMonthOutLoan.draw();
         }
 
         /* Create Chart */
@@ -797,9 +977,9 @@
                 }
             });
 
-            var plotMonthOutHouse = $.plot("#out-house-month-trend", [dataArrayOutHouse], {
+            var plotMonthOutRent = $.plot("#out-rent-month-trend", [dataArrayOutRent], {
                 series: {
-                    label: " OUT.H",
+                    label: " OUT.R",
                     lines: {
                         show: true,
                         lineWidth: 0.2,
@@ -845,6 +1025,53 @@
                 }
             });
 
+            var plotMonthOutLoan = $.plot("#out-loan-month-trend", [dataArrayOutLoan], {
+                series: {
+                    label: " OUT.L",
+                    lines: {
+                        show: true,
+                        lineWidth: 0.2,
+                        fill: 0.8
+                    },
+                    color: '#FFEB3B', // '#009688', //'#2196F3',//'#edeff0',
+                    shadowSize: 0
+                },
+                yaxis: {
+                    min: 0,
+                    max: 6000, // AZ:axis-Y
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    position: 'left',
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 10,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0,
+                    min: 0,
+                    max: dataArrayInSalary.length - 1 // AZ:axis-X
+                },
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#31424b',
+                    labelMargin: 10,
+                    aboveData: false, // AZ:adjust z-index
+                    mouseActiveRadius: 6
+                },
+                legend: {
+                    show: true // AZ:Show Label?
+                }
+            });
 
             update();
         }
@@ -892,8 +1119,11 @@
             "in_salary": function (column, row) {
                 return row.in_salary;
             },
-            "out_house": function (column, row) {
-                return row.out_house;
+            "out_rent": function (column, row) {
+                return row.out_rent;
+            },
+            "out_loan": function (column, row) {
+                return row.out_loan;
             }
         }
     });
