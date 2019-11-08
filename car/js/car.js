@@ -564,7 +564,7 @@ $("#table-carsafe-list-todo").bootgrid({
     },
     formatters: {
         "make": function (column, row) {
-            return getLogoByMake(row.make, 1, 0) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            return getLogoByMake(row.make, 1, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
         },
         "model": function (column, row) {
             return "<span class='car-model'>" + row.model + "</span>";
