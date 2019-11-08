@@ -490,7 +490,7 @@ $("#table-carsafe-list").bootgrid({
     },
     formatters: {
         "make": function (column, row) {
-            return getLogoByMake(row.make, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            return getLogoByMake(row.make, 1, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
         },
         "model": function (column, row) {
             return "<span class='car-model'>" + row.model + "</span>";
@@ -564,7 +564,7 @@ $("#table-carsafe-list-todo").bootgrid({
     },
     formatters: {
         "make": function (column, row) {
-            return getLogoByMake(row.make, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            return getLogoByMake(row.make, 1, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
         },
         "model": function (column, row) {
             return "<span class='car-model'>" + row.model + "</span>";
@@ -593,9 +593,9 @@ $('#btnSaveImage').click(function (e) {
         if (day < 10)
             day = "0" + day;
         let fileName = "中保研_" + year + month + day + ".png";
-        let shift =10; // 偏移
+        let shift = 10; // 偏移
         let webType = getExplorer();
-        if(webType  == 'Edge' || webType  == 'ie')
+        if (webType == 'Edge' || webType == 'ie')
             shift = 0;
         console.log("getExplorer:" + getExplorer() + ";shift=" + shift); // Chrome Edge
         Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'png', fileName, shift); // jpeg

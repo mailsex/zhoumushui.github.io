@@ -245,7 +245,7 @@ function getClubLogo(club, depth) {
 }
 
 // 品牌
-function getLogoByMake(make, depth) {
+function getLogoByMake(make, depth, size) {
     let imgPath = "";
     switch (depth) {
         case 0:
@@ -259,6 +259,17 @@ function getLogoByMake(make, depth) {
             imgPath = "../../resource/img/car/";
             break;
     }
+
+    switch (size) {
+        case 1: // W:24px H:16px; Small
+            imgPath = imgPath + "24x16/";
+            break;
+        case 0: // W:30px H:20px; Normal
+        default:
+            imgPath = imgPath + "30x20/";
+            break;
+    }
+
     let carName = "";
     if (make.indexOf("丰田") != -1 || make.indexOf("Toyota") != -1) {
         carName = "Toyota";
@@ -368,7 +379,7 @@ function getLogoByMake(make, depth) {
         carName = "";
     }
 
-    return "<img class='car-logo' src='" + imgPath + "Car_" + carName + ".png'>";
+    return "<img class='car-logo' src='" + imgPath + carName + ".png'>";
 }
 
 
