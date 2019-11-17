@@ -319,7 +319,9 @@ function getLogoByMake(make, depth, size) {
         carName = "Chevrolet";
     } else if (make.indexOf("凯迪拉克") != -1 || make.indexOf("Cadillac") != -1) {
         carName = "Cadillac";
-    } else if (make.indexOf("道奇") != -1 || make.indexOf("Dodge") != -1) {
+    } else if (make.indexOf("克莱斯勒") != -1 || make.indexOf("Chrysler") != -1) {
+        carName = "Chrysler";
+    }  else if (make.indexOf("道奇") != -1 || make.indexOf("Dodge") != -1) {
         carName = "Dodge";
     } else if (make.indexOf("Alpine") != -1) {
         carName = "Alpine";
