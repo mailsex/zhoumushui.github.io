@@ -115,133 +115,316 @@ function getClubLogo(club, depth) {
             break;
     }
     let clubName = "";
+    let clubTitle = "";
 
     switch (club) {
         // 西甲
         case '巴萨':
         case '巴塞罗那':
             clubName = "Barcelona";
+            clubTitle = "巴塞罗那";
             break;
         case '皇马':
         case '皇家马德里':
             clubName = "RealMadrid";
+            clubTitle = "皇家马德里";
             break;
         case '马竞':
         case '马德里竞技':
             clubName = "Atletico";
+            clubTitle = "马德里竞技";
+            break;
+        case '瓦伦西亚':
+            clubName = "Valencia";
+            clubTitle = "瓦伦西亚";
+            break;
+        case '毕尔巴鄂竞技':
+            clubName = "Athletic";
+            clubTitle = "毕尔巴鄂竞技";
+            break;
+        case '塞维利亚':
+            clubName = "Sevilla";
+            clubTitle = "塞维利亚";
+            break;
+        case '皇家社会':
+            clubName = "RealSociedad";
+            clubTitle = "皇家社会";
+            break;
+        case '皇家贝蒂斯':
+            clubName = "RealBetis";
+            clubTitle = "皇家贝蒂斯";
+            break;
+        case '比利亚雷亚尔':
+            clubName = "Villarreal";
+            clubTitle = "比利亚雷亚尔";
+            break;
+        case '拉科鲁尼亚':
+            clubName = "LaCoruna";
+            clubTitle = "拉科鲁尼亚";
+            break;
+        case '格拉纳达':
+            clubName = "Granada";
+            clubTitle = "格拉纳达";
+            break;
+        case '希洪竞技':
+            clubName = "Gijon";
+            clubTitle = "希洪竞技";
+            break;
+        case '塞尔塔':
+            clubName = "Celta";
+            clubTitle = "塞尔塔";
+            break;
+        case '巴拉多利德':
+            clubName = "Valladolid";
+            clubTitle = "巴拉多利德";
+            break;
+        case '马略卡':
+            clubName = "Mallorca";
+            clubTitle = "马略卡";
+            break;
+        case '埃尔切':
+            clubName = "Elche";
+            clubTitle = "埃尔切";
+            break;
+        case '桑坦德竞技':
+            clubName = "Santander";
+            clubTitle = "桑坦德";
+            break;
+        case '奥维多':
+            clubName = "RealOviedo";
+            clubTitle = "奥维多";
+            break;
+        case '特内里费':
+            clubName = "Tenerife";
+            clubTitle = "特内里费";
+            break;
+        case '萨拉戈萨':
+            clubName = "Zaragoza";
+            clubTitle = "萨拉戈萨";
             break;
 
         // 英超
         case '利物浦':
             clubName = "Liverpool";
+            clubTitle = "利物浦";
             break;
         case '曼联':
             clubName = "ManchesterUnited";
+            clubTitle = "曼联";
             break;
         case '曼城':
             clubName = "ManchesterCity";
+            clubTitle = "曼城";
             break;
         case '阿森纳':
             clubName = "Arsenal";
+            clubTitle = "阿森纳";
             break;
         case '热刺':
             clubName = "Hotspur";
+            clubTitle = "热刺";
             break;
         case '切尔西':
             clubName = "Chelsea";
+            clubTitle = "切尔西";
+            break;
+        case '纽卡斯尔联':
+            clubName = "NewcastleUnited";
+            clubTitle = "纽卡斯尔联";
+            break;
+        case '桑德兰':
+            clubName = "Sunderland";
+            clubTitle = "桑德兰";
+            break;
+        case '利兹联':
+            clubName = "LeedsUnited";
+            clubTitle = "利兹联";
+            break;
+        case '布莱克本':
+            clubName = "Blackburn";
+            clubTitle = "布莱克本";
+            break;
+        case '考文垂':
+            clubName = "Coventry";
+            clubTitle = "考文垂";
             break;
 
         // 意甲
         case '尤文':
         case '尤文图斯':
             clubName = "Juventus";
+            clubTitle = "尤文图斯";
             break;
         case '国米':
         case '国际米兰':
             clubName = "Inter";
+            clubTitle = "国际米兰";
             break;
         case 'AC米兰':
             clubName = "ACMilan";
+            clubTitle = "AC米兰";
             break;
         case '罗马':
             clubName = "Rome";
+            clubTitle = "罗马";
             break;
         case '拉齐奥':
             clubName = "Lazio";
+            clubTitle = "拉齐奥";
             break;
         case '里昂':
             clubName = "Lyon";
+            clubTitle = "里昂";
             break;
         case '那不勒斯':
             clubName = "Napoli";
+            clubTitle = "那不勒斯";
             break;
         case '都灵':
             clubName = "Torino";
+            clubTitle = "都灵";
             break;
         case '桑普多利亚':
             clubName = "Sampdoria";
+            clubTitle = "桑普多利亚";
             break;
         case '乌迪内斯':
             clubName = "Udinese";
+            clubTitle = "乌迪内斯";
             break;
         case '佛罗伦萨':
             clubName = "Fiorentina";
+            clubTitle = "佛罗伦萨";
             break;
 
         // 德甲
         case '拜仁':
         case '拜仁慕尼黑':
             clubName = "Bayern";
+            clubTitle = "拜仁慕尼黑";
             break;
         case '多特':
         case '多特蒙德':
             clubName = "BVB";
+            clubTitle = "多特蒙德";
             break;
         case '沙尔克04':
             clubName = "Schalke04";
+            clubTitle = "沙尔克04";
             break;
         case '法兰克福':
             clubName = "Frankfurt";
+            clubTitle = "法兰克福";
             break;
         case '勒沃库森':
             clubName = "Leverkusen";
+            clubTitle = "勒沃库森";
             break;
         case '沃尔夫斯堡':
             clubName = "Wolfsburg";
+            clubTitle = "沃尔夫斯堡";
             break;
         case '不莱梅':
         case '云达不莱梅':
             clubName = "Bremen";
+            clubTitle = "云达不莱梅";
             break;
         case '波鸿':
             clubName = "Bochum";
+            clubTitle = "波鸿";
             break;
 
         // 法甲
         case '巴黎':
         case '巴黎圣日耳曼':
             clubName = "PSG";
+            clubTitle = "巴黎圣日耳曼";
             break;
         case '蒙彼利埃':
             clubName = "Montpellier";
+            clubTitle = "蒙彼利埃";
             break;
         case '里尔':
             clubName = "Lille";
+            clubTitle = "";
             break;
         case '马赛':
             clubName = "Marseille";
+            clubTitle = "马赛";
             break;
         case '图卢兹':
             clubName = "Toulouse";
+            clubTitle = "图卢兹";
+            break;
+
+        // 荷甲
+        case 'Ajax':
+        case '阿贾克斯':
+            clubName = "Ajax";
+            clubTitle = "阿贾克斯";
+            break;
+        case 'PSV':
+        case '埃因霍温':
+            clubName = "PSV";
+            clubTitle = "埃因霍温";
+            break;
+        case 'AZ':
+        case "AZ'67":
+        case '阿尔克马尔':
+            clubName = "AZ";
+            clubTitle = "阿尔克马尔";
+            break;
+        case 'Feyenoord':
+        case '费耶诺德':
+            clubName = "Feyenoord";
+            clubTitle = "费耶诺德";
+            break;
+        case 'Heerenveen':
+        case 'SC Heerenveen':
+        case '海伦芬':
+            clubName = "Heerenveen";
+            clubTitle = "海伦芬";
+            break;
+        case 'NAC':
+        case 'N.A.C':
+        case '布雷达':
+            clubName = "NAC";
+            clubTitle = "布雷达";
+            break;
+        case 'Vitesse':
+        case '维特斯':
+            clubName = "Vitesse";
+            clubTitle = "维特斯";
+            break;
+        case 'Twente':
+        case '特温特':
+            clubName = "Twente";
+            clubTitle = "特温特";
+            break;
+        case 'MVV':
+        case '马斯特里赫特':
+            clubName = "MVV";
+            clubTitle = "马斯特里赫特";
+            break;
+        case 'NEC':
+        case '奈梅亨':
+            clubName = "NEC";
+            clubTitle = "奈梅亨";
+            break;
+        case 'FC Volendam':
+        case '沃伦达姆':
+            clubName = "Volendam";
+            clubTitle = "沃伦达姆";
             break;
 
         default:
             clubName = "Default";
+            clubTitle = club;
             break;
     }
 
 
-    return "<img class='club-logo' src='" + imgPath + clubName + ".png'>";
+    return "<img class='club-logo' title='" + clubTitle + "' src='" + imgPath + clubName + ".png'>";
 }
 
 // 品牌
@@ -321,7 +504,7 @@ function getLogoByMake(make, depth, size) {
         carName = "Cadillac";
     } else if (make.indexOf("克莱斯勒") != -1 || make.indexOf("Chrysler") != -1) {
         carName = "Chrysler";
-    }  else if (make.indexOf("道奇") != -1 || make.indexOf("Dodge") != -1) {
+    } else if (make.indexOf("道奇") != -1 || make.indexOf("Dodge") != -1) {
         carName = "Dodge";
     } else if (make.indexOf("Alpine") != -1) {
         carName = "Alpine";
