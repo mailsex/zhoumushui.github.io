@@ -423,7 +423,6 @@ function getClubLogo(club, depth) {
             break;
     }
 
-
     return "<img class='club-logo' title='" + clubTitle + "' src='" + imgPath + clubName + ".png'>";
 }
 
