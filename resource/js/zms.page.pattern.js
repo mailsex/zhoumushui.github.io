@@ -35,12 +35,12 @@ function insertHeader() {
         "<li class=\"top-menu__apps dropdown hidden-xs hidden-sm\">" +
         "<a data-toggle=\"dropdown\" href=\"\"> <i class=\"zmdi zmdi-apps\"></i> </a>" +
         "<ul class=\"dropdown-menu pull-right\">" +
-        "<li><a href=\"" + path + "\"><i class=\"zmdi zmdi-file-text\"></i><small>随笔</small></a></li>" +
+        "<li><a href=\"" + path + "az\"><i class=\"zmdi zmdi-file-text\"></i><small>AZ</small></a></li>" +
         // "<li><a href=\"" + path + "app.html\"> <i class=\"zmdi zmdi-android\"></i><small>开发</small></a></li>" +
         "<li><a href=\"" + path + "movie\"><i class=\"zmdi zmdi-movie\"></i><small>电影</small></a></li>" +
         "<li><a href=\"" + path + "book\"> <i class=\"zmdi zmdi-book\"></i><small>书籍</small></a></li>" +
         "<li><a href=\"" + path + "world\"> <i class=\"zmdi zmdi-globe\"></i><small>足迹</small></a></li>" +
-        //"<li><a href=\"" + path + "timeline.html\"> <i class=\"zmdi zmdi-chart\"></i><small>年鉴</small></a></li>" +
+        "<li><a href=\"" + path + "timeline.html\"> <i class=\"zmdi zmdi-chart\"></i><small>年鉴</small></a></li>" +
         "<li><a href=\"" + path + "dream\"> <i class=\"zmdi zmdi-flag\"></i><small>愿望</small></a></li>" +
         "<li><a href=\"" + path + "profile\"> <i class=\"zmdi zmdi-account-circle\"></i><small>关于</small></a></li>" +
         "</ul>" +
@@ -52,7 +52,7 @@ function insertHeader() {
         "<li class=\"hidden-xs\"><a data-mae-action=\"fullscreen\" href=\"\"><i class=\"zmdi zmdi-fullscreen\"></i>全屏模式</a></li>" +
         "<li><a data-mae-action=\"clear-localstorage\" href=\"\"><i class=\"zmdi zmdi-delete\"></i>清除缓存</a></li>" +
         "</ul>" +
-        "</li></ul>"
+        "</li></ul>";
 }
 
 /**
@@ -96,13 +96,13 @@ function isEmpty(obj) {
  * AZ:添加左侧导航
  */
 function insertNavigation() {
-    var htmlName = getHtmlName();
-    var liNormal = "<li>";
-    var liActive = "<li class=\"navigation__active\">"; // 高亮
+    let htmlName = getHtmlName();
+    let liNormal = "<li>";
+    let liActive = "<li class=\"navigation__active\">"; // 高亮
 
     document.getElementById("page-pattern-navigation").innerHTML = "<ul>" +
-        ((htmlName == 'index' || htmlName == 'zhoumushui.github.io' || htmlName == 'www.zhoumushui.com') ? liActive : liNormal) +
-        "<a href=\"" + path + "\"><i class=\"zmdi zmdi-file-text\"></i><span class=\"nav-left\">随笔</span></a></li>" +
+        ((htmlName == 'az') ? liActive : liNormal) +
+        "<a href=\"" + path + "az\"><i class=\"zmdi zmdi-file-text\"></i><span class=\"nav-left\">AZ</span></a></li>" +
         // (htmlName == 'app' ? liActive : liNormal )+
         // "<a href=\"" + path + "app.html\"><i class=\"zmdi zmdi-android\"></i><span class=\"nav-left\">开发</span></a></li>" +
         (htmlName == 'movie' ? liActive : liNormal) +
@@ -111,19 +111,25 @@ function insertNavigation() {
         "<a href=\"" + path + "book\"><i class=\"zmdi zmdi-book\"></i><span class=\"nav-left\">书籍</span></a></li>" +
         (htmlName == 'world' ? liActive : liNormal) +
         "<a href=\"" + path + "world\"><i class=\"zmdi zmdi-globe\"></i><span class=\"nav-left\">足迹</span></a></li>" +
-        //(htmlName == 'timeline' ? liActive : liNormal ) +
-        //"<a href=\"" + path + "timeline.html\"><i class=\"zmdi zmdi-chart\"></i><span class=\"nav-left\">年鉴</span></a></li>" +
+        (htmlName == 'timeline' ? liActive : liNormal) +
+        "<a href=\"" + path + "az/timeline/\"><i class=\"zmdi zmdi-chart\"></i><span class=\"nav-left\">年鉴</span></a></li>" +
         (htmlName == 'dream' ? liActive : liNormal) +
         "<a href=\"" + path + "dream\"><i class=\"zmdi zmdi-flag\"></i><span class=\"nav-left\">梦想</span></a></li>" +
         (htmlName == 'profile' ? liActive : liNormal) +
         "<a href=\"" + path + "profile\"><i class=\"zmdi zmdi-account-circle\"></i><span class=\"nav-left\">关于</span></a></li>" +
-        "</ul>"
+        "</ul>";
+
 };
 
 /**
  * AZ:添加分享按钮
  */
 function insertShareButton() {
+    let essayTitle = document.title;
+    let essaySummary = document.title;
+    let essayUrl = window.location.href;//'http://www.zhoumushui.com/essay.html';
+    let essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+
     document.getElementById("menu").innerHTML = "<li class=\"mfb-component__wrap\">" +
         "<a class=\"mfb-component__button--main\">" +
         "<i class=\"mfb-component__main-icon--resting zmdi zmdi-share\"></i>" +
@@ -244,16 +250,15 @@ function insertIEWarning() {
         "<p>Sorry for the inconvenience!</p>"
 }
 
-
 function isIEBrowser() { //ie?
     return (!!window.ActiveXObject || "ActiveXObject" in window);
 }
 
 function getBrowserInfo() {
-    var appName = navigator.appName; // Chrome:Netscape
-    var appVersion = navigator.appVersion;
-    var userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串
-    var version = parseFloat(appVersion);
+    let appName = navigator.appName; // Chrome:Netscape
+    let appVersion = navigator.appVersion;
+    let userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串
+    let version = parseFloat(appVersion);
     console.log("appName:" + appName + ",appVersion:" + appVersion + ",userAgent:" + userAgent);
 }
 
@@ -275,16 +280,32 @@ function isPureMode() { // Do not show header, footer and side navigation bar.
         return false;
 }
 
-if (isPureMode() || GetQueryString("pm") == 1) {
-    document.getElementById("navigation").style.display = "none";
-    // document.getElementById("essay_arrow_back").style.display = "none";
-} else {
-    insertHeader();
-    insertNavigation();
-    insertFooter();
-    setCopyRightYear();
-    insertShareButton();
+function isPublic() {
+    let str = window.location.href;
+    if (str.indexOf("az") != -1 ||
+        str.indexOf("movie") != -1 ||
+        str.indexOf("book") != -1 ||
+        str.indexOf("world") != -1 ||
+        str.indexOf("dream") != -1 ||
+        str.indexOf("profile") != -1  )
+        return false;
+    else
+        return true;
 }
 
-insertIEWarning();
+let public = isPublic();
+console.log("isPublic=" + public);
+if (public)
+    document.getElementById("navigation").style.display = "none";
+else {
+    insertHeader();
+    insertNavigation();
+}
+insertFooter();
+setCopyRightYear();
+insertShareButton();
+//insertIEWarning();
+
+
+
 
