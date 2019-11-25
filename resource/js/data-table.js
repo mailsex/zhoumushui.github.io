@@ -481,6 +481,8 @@ function getLogoByMake(make, depth, size) {
         carName = "Porsche";
     } else if (make.indexOf("大众") != -1 || make.indexOf("Volkswagen") != -1) {
         carName = "Volkswagen";
+    } else if (make.indexOf("布加迪") != -1 || make.indexOf("Bugatti") != -1) {
+        carName = "Bugatti";
     } else if (make.indexOf("奥迪") != -1 || make.indexOf("Audi") != -1) {
         carName = "Audi";
     } else if (make.indexOf("宝马") != -1 || make.indexOf("BMW") != -1) {
@@ -507,6 +509,18 @@ function getLogoByMake(make, depth, size) {
         carName = "Dodge";
     } else if (make.indexOf("Alpine") != -1) {
         carName = "Alpine";
+    } else if (make.indexOf("Matra") != -1) {
+        carName = "Matra";
+    } else if (make.indexOf("Lorraine-Dietrich") != -1) {
+        carName = "Lorraine-Dietrich";
+    } else if (make.indexOf("Delahaye") != -1) {
+        carName = "Delahaye";
+    } else if (make.indexOf("阿斯顿马丁") != -1 || make.indexOf("Aston Martin") != -1) {
+        carName = "AstonMartin";
+    } else if (make.indexOf("Lagonda") != -1) {
+        carName = "Lagonda";
+    } else if (make.indexOf("阿尔法罗密欧") != -1 || make.indexOf("Alfa Romeo") != -1) {
+        carName = "AlfaRomeo";
     } else if (make.indexOf("雷诺") != -1 || make.indexOf("Renault") != -1) {
         carName = "RENAULT";
     } else if (make.indexOf("标致") != -1 || make.indexOf("Peugeot") != -1) {
@@ -560,7 +574,7 @@ function getLogoByMake(make, depth, size) {
     } else if (make.indexOf("荣威") != -1) {
         carName = "Roewe";
     } else {
-        carName = "";
+        carName = "Default";
     }
 
     return "<img class='car-logo' src='" + imgPath + carName + ".png'>";
