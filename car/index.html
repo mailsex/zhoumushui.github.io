@@ -16,6 +16,8 @@
     <!-- Malihu Scrollbar -->
     <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
           rel="stylesheet">
+    <!-- Light Gallery -->
+    <link href="../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
     <!-- Bootgrid -->
     <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
     <!-- Site CSS -->
@@ -72,13 +74,26 @@
         }
 
         .btn-detail-link {
-            font-size: x-large;
-            color: #9E9E9E;
+            font-size: large;
+            color: #FFFFFF;
         }
 
         .btn-detail-link:hover {
-            font-size: x-large;
-            color: #2196F3;
+            font-size: large;
+            color: #FFEB3B;
+        }
+
+        .btn-view-image {
+            background-color: #009688; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            font-size: 12px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
         }
 
         .btn-detail-nolink {
@@ -188,7 +203,7 @@
                             <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
                             <th data-column-id="fix" data-formatter="fix">耐撞维修</th>
                             <th data-column-id="test_time" data-formatter="test_time" data-visible="false">测试批次</th>
-                            <th data-column-id="link" data-formatter="link" data-sortable="false">详情</th>
+                            <th data-column-id="link" data-formatter="link" data-sortable="false">图片</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -305,6 +320,20 @@
                             <td>41</td><!-- ID -->
                         </tr>
                         <tr>
+                            <td>长城魏派</td><!-- MAKE -->
+                            <td>VV5</td><!-- MODEL -->
+                            <td>2017</td><!-- YEAR -->
+                            <td>02</td><!-- FRONT 25% -->
+                            <td>10</td><!-- SIDE -->
+                            <td>3.60</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- BATCH -->
+                            <td>18</td><!-- ID -->
+                        </tr>
+                        <tr>
                             <td>长安福特</td><!-- MAKE -->
                             <td>福克斯</td><!-- MODEL -->
                             <td>2019</td><!-- YEAR -->
@@ -333,20 +362,6 @@
                             <td>33</td><!-- ID -->
                         </tr>
                         <tr>
-                            <td>长城魏派</td><!-- MAKE -->
-                            <td>VV5</td><!-- MODEL -->
-                            <td>2017</td><!-- YEAR -->
-                            <td>02</td><!-- FRONT 25% -->
-                            <td>10</td><!-- SIDE -->
-                            <td>3.60</td><!-- TOP -->
-                            <td>A</td><!-- SEAT -->
-                            <td>A</td><!-- ASSIST -->
-                            <td>A</td><!-- ROAD_USER -->
-                            <td>D*</td><!-- FIX -->
-                            <td>18A</td><!-- BATCH -->
-                            <td>18</td><!-- ID -->
-                        </tr>
-                        <tr>
                             <td>广汽本田</td><!-- MAKE -->
                             <td>雅阁</td><!-- MODEL -->
                             <td>2018</td><!-- YEAR -->
@@ -359,20 +374,6 @@
                             <td>D*</td><!-- FIX -->
                             <td>18A</td><!-- BATCH -->
                             <td>8</td><!-- ID -->
-                        </tr>
-                        <tr>
-                            <td>北京奔驰</td><!-- MAKE -->
-                            <td>C200</td><!-- MODEL -->
-                            <td>2018</td><!-- YEAR -->
-                            <td>06</td><!-- FRONT 25% -->
-                            <td>10</td><!-- SIDE -->
-                            <td>6.06</td><!-- TOP -->
-                            <td>A</td><!-- SEAT -->
-                            <td>A</td><!-- ASSIST -->
-                            <td>B</td><!-- ROAD_USER -->
-                            <td>D*</td><!-- FIX -->
-                            <td>18A</td><!-- BATCH -->
-                            <td>20</td><!-- ID -->
                         </tr>
                         <tr>
                             <td>众泰</td><!-- MAKE -->
@@ -389,6 +390,20 @@
                             <td>27</td><!-- ID -->
                         </tr>
                         <tr>
+                            <td>北京奔驰</td><!-- MAKE -->
+                            <td>C200</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>06</td><!-- FRONT 25% -->
+                            <td>10</td><!-- SIDE -->
+                            <td>6.06</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- BATCH -->
+                            <td>20</td><!-- ID -->
+                        </tr>
+                        <tr>
                             <td>广汽传祺</td><!-- MAKE -->
                             <td>GS7</td><!-- MODEL -->
                             <td>2017</td><!-- YEAR -->
@@ -401,6 +416,20 @@
                             <td>D</td><!-- FIX -->
                             <td>18B</td><!-- BATCH -->
                             <td>23</td><!-- ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽三菱</td><!-- MAKE -->
+                            <td>欧蓝德</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>04</td><!-- FRONT 25% -->
+                            <td>12</td><!-- SIDE -->
+                            <td>2.89</td><!-- TOP -->
+                            <td>B</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- BATCH -->
+                            <td>34</td><!-- ID -->
                         </tr>
                         <tr>
                             <td>吉利</td><!-- MAKE -->
@@ -429,20 +458,6 @@
                             <td>C*</td><!-- FIX -->
                             <td>18A</td><!-- BATCH -->
                             <td>7</td><!-- ID -->
-                        </tr>
-                        <tr>
-                            <td>广汽三菱</td><!-- MAKE -->
-                            <td>欧蓝德</td><!-- MODEL -->
-                            <td>2019</td><!-- YEAR -->
-                            <td>04</td><!-- FRONT 25% -->
-                            <td>12</td><!-- SIDE -->
-                            <td>2.89</td><!-- TOP -->
-                            <td>B</td><!-- SEAT -->
-                            <td>A</td><!-- ASSIST -->
-                            <td>A</td><!-- ROAD_USER -->
-                            <td>D</td><!-- FIX -->
-                            <td>19A</td><!-- BATCH -->
-                            <td>34</td><!-- ID -->
                         </tr>
                         <tr>
                             <td>长城哈弗</td><!-- MAKE -->
@@ -756,7 +771,7 @@
                             <th data-column-id="test_time" data-formatter="test_time" data-visible="true">测试批次</th>
                             <th data-column-id="link" data-formatter="link" data-sortable="false"
                                 data-visible="false">
-                                详情
+                                图片
                             </th>
 
                         </tr>
@@ -945,6 +960,20 @@
         </div>
     </section>
 
+    <div id="image-frame">
+        <!--
+            <span class="lightbox">
+                <span id="img26" data-src="img/26/front.jpg">
+                    <a href="" title="图片" target="_blank"><i class="zmdi zmdi-image"></i></a>
+                    <img style="display: none" src="img/front.png"/>
+                </span>
+                <span data-src="img/26/side.jpg"><img style="display: none" src="img/side.png"/></span>
+                <span data-src="img/26/top.jpg"><img style="display: none" src="img/top.png"/></span>
+                <span data-src="img/26/fcw.jpg"><img style="display: none" src="img/fcw.png"/></span>
+            </span>
+            -->
+    </div>
+
 </section>
 <!-- Older IE Warning -->
 <!--[if lt IE 9]>
@@ -957,6 +986,14 @@
 <!-- Malihu ScrollBar -->
 <script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script><!-- Bootgrid -->
+
+
+<!-- Light Gallery -->
+<script src="../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
 
 <!-- Placeholder for IE9 -->
 <!--[if IE 9 ]>
@@ -1455,12 +1492,15 @@
             },
             "link": function (column, row) {
                 if (row.link) {
-                    let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
-                    return "<span style='font-size: 15px' >" +
-                        "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
-                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
-                        + "</a>" +
-                        "</span>";
+                    //let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
+                    //return "<span style='font-size: 15px' >" +
+                    //    "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
+                    //    + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
+                    //    + "</a>" +
+                    //    "</span>";
+                    return "<button title='"+row.model+"' id='btn" + row.link + "' class='btn-view-image'>" +
+                        "<i class='btn-detail-link zmdi zmdi-image'></i>" +
+                        "</button>";
                 } else {
                     return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
                 }
@@ -1559,6 +1599,39 @@
             return 'Safari';
         }
     }
+
+    let arrayId = [ // FIXME
+        4, 7, 8, 9,
+        12, 14, 15, 16, 17, 18, 19,
+        20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+        30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+        40, 41, 42, 43, 44, 45
+    ];
+    let contentImgFrame = "";
+    for (let i = 0; i < arrayId.length; i++) {
+        let id = arrayId[i];
+        contentImgFrame += "<span style='display: none' class='lightbox'>" +
+            "<span id='img" + id + "' data-src='img/" + id + "/front.jpg'>" +
+            "<a href='javascript:;' title='图片' target='_blank'><i class='zmdi zmdi-image'></i></a>" +
+            "<img style='display: none' src='img/front.png'/>" +
+            "</span>" +
+            "<span data-src='img/" + id + "/side.jpg'><img style='display: none' src='img/side.png'/></span>" +
+            "<span data-src='img/" + id + "/top.jpg'><img style='display: none' src='img/top.png'/></span>" +
+            //"<span data-src='img/" + i + "/fcw.jpg'><img style='display: none' src='img/fcw.png'/></span>" +
+            "</span>";
+    }
+    document.getElementById("image-frame").innerHTML = contentImgFrame;
+
+    window.onload = function bindClick() {
+        for (let i = 0; i < arrayId.length; i++) {
+            let id = arrayId[i];
+            document.getElementById("btn" + id).onclick = function () {
+                document.getElementById("img" + id).click();
+            }
+        }
+    }
+
+
 </script>
 
 </body>
