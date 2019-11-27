@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="中保研碰撞测试汇总">
+    <meta name="keywords" content="中保研,碰撞测试,中保研汇总">
     <title>中保研测试汇总</title>
 
     <!-- Animate CSS -->
@@ -20,14 +22,12 @@
     <link href="../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
     <!-- Bootgrid -->
     <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
-    <!-- Site CSS -->
     <link href="../resource/css/az.css" rel="stylesheet">
 
     <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
     <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
 
     <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
-
     <link href="css/site.car.css" rel="stylesheet">
     <style>
         .car-logo {
@@ -86,14 +86,6 @@
         .btn-view-image {
             background: none;
             border: none;
-            color: white;
-            text-align: center;
-            display: inline-block;
-            font-size: 12px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            -o-border-radius: 3px;
-            border-radius: 3px;
         }
 
         .btn-detail-nolink {
@@ -960,19 +952,7 @@
         </div>
     </section>
 
-    <div id="image-frame">
-        <!--
-            <span class="lightbox">
-                <span id="img26" data-src="img/26/front.jpg">
-                    <a href="" title="图片" target="_blank"><i class="zmdi zmdi-image"></i></a>
-                    <img style="display: none" src="img/front.png"/>
-                </span>
-                <span data-src="img/26/side.jpg"><img style="display: none" src="img/side.png"/></span>
-                <span data-src="img/26/top.jpg"><img style="display: none" src="img/top.png"/></span>
-                <span data-src="img/26/fcw.jpg"><img style="display: none" src="img/fcw.png"/></span>
-            </span>
-            -->
-    </div>
+    <div id="image-frame"></div>
 
 </section>
 <!-- Older IE Warning -->
@@ -1065,8 +1045,7 @@
                 type: 'bar',
                 itemStyle: {
                     normal: {
-                        show: true,//鼠标悬停时显示label数据
-                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        show: true, barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
                         color: function (params) {
                             if (params.value < 4) return "#4CAF50";
                             else if (params.value < 10) return "#FFEB3B";
@@ -1075,13 +1054,7 @@
                         }
                     }
                 },
-                label: {
-                    normal: {
-                        show: true, //显示数据
-                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
-                    }
-                },
-                data: arrayScore
+                label: {normal: {show: true, position: 'right'}}, data: arrayScore
             };
             seriesValue.push(seriesDataVal);
         }
@@ -1144,8 +1117,7 @@
                 type: 'bar',
                 itemStyle: {
                     normal: {
-                        show: true,//鼠标悬停时显示label数据
-                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        show: true, barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
                         color: function (params) {
                             if (params.value < 7) return "#4CAF50";
                             else if (params.value < 21) return "#FFEB3B";
@@ -1154,13 +1126,7 @@
                         }
                     }
                 },
-                label: {
-                    normal: {
-                        show: true, //显示数据
-                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
-                    }
-                },
-                data: arrayScore
+                label: {normal: {show: true, position: 'right'}}, data: arrayScore
             };
             seriesValue.push(seriesDataVal);
         }
@@ -1219,8 +1185,7 @@
         for (let i = 0; i < legendData.length; i++) {
             let seriesDataVal = null;
             seriesDataVal = {
-                barWidth: 10,//柱状条宽度
-                type: 'bar',
+                barWidth: 10, type: 'bar',
                 itemStyle: {
                     normal: {
                         show: true,//鼠标悬停时显示label数据
@@ -1233,13 +1198,7 @@
                         }
                     }
                 },
-                label: {
-                    normal: {
-                        show: true, //显示数据
-                        position: 'right'//显位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
-                    }
-                },
-                data: arrayScore
+                label: {normal: {show: true, position: 'right'}}, data: arrayScore
             };
             seriesValue.push(seriesDataVal);
         }
@@ -1314,8 +1273,7 @@
                 },
                 label: {
                     normal: {
-                        show: true, //显示数据
-                        position: 'right'//显示位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                        show: true, position: 'right'//显示位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
                     }
                 },
                 data: arrayScore
@@ -1330,12 +1288,7 @@
         let chart = document.getElementById(chartId);
         let echart = echarts.init(chart);
         let option = {
-            title: {
-                text: title,//正标题
-                x: "center", //标题水平方向位置
-                y: "0", //标题竖直方向位置
-                textStyle: {fontSize: 18, fontWeight: 'bold', color: '#DDDDDD'}
-            },
+            title: {text: title, x: "center", y: "0", textStyle: {fontSize: 18, fontWeight: 'bold', color: '#DDDDDD'}},
             tooltip: { // 弹窗组件
                 trigger: 'axis', axisPointer: {type: 'shadow'}//阴影，若需要为直线，则值为'line';'shadow'
             },
@@ -1352,22 +1305,17 @@
             legend: {x: 'left', y: 'top', padding: [15, 0, 0, 10]},//图例说明文字设置
             grid: {left: '3%', right: '4%', bottom: '5%', top: '5%', containLabel: true},
             yAxis: [{
-                min: 0,
-                type: 'category', //纵向柱状图，若需要为横向，则此处值为'value'， 下面 yAxis 的type值为'category'
-                data: arrayCar,
-                axisLabel: {color: '#DDDDDD'},// 刻度线标签
+                min: 0, type: 'category', //纵向柱状图，若需要为横向，则此处值为'value'， 下面 yAxis 的type值为'category'
+                data: arrayCar, axisLabel: {color: '#DDDDDD'},// 刻度线标签
                 axisLine: {lineStyle: {color: '#DDDDDD'}}// 坐标轴
             }],
             xAxis: [{
-                min: 0,
-                type: 'value',
-                splitArea: {show: false},
+                min: 0, type: 'value', splitArea: {show: false},
                 axisLabel: {color: '#DDDDDD'},// 刻度线标签
                 axisLine: {lineStyle: {color: '#DDDDDD'}}// 坐标轴
             }],
             label: {normal: {show: true, position: 'top'}},//显示bar数据
-            series: seriesValue,
-            backgroundColor: '#2b3942'
+            series: seriesValue, backgroundColor: '#2b3942'
         };
         echart.setOption(option);
     }
@@ -1382,7 +1330,7 @@
     function getCarSafeDescriptionByWord(word) {
         let SNO = false; // SHOW_NON_OFFICIAL
         switch (word) {
-            case 'A': // Good
+            case 'A':
                 return "<span class=\"grade green-bg\">G 优秀</span>";
             case 'A*':
                 return SNO ? "<span class=\"grade green-bg not-official\">G 优秀*</span>" : "<span class=\"grade grey-bg\"></span>";
@@ -1448,10 +1396,8 @@
         },
         templates: {
             actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
-            search: "", // "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
-            header: "", // "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            search: "", header: "",
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
-            //footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
             footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
                 "<span class='line-left'></span>" +
                 "<span class='text'>zhoumushui.com/car</span>" +
@@ -1498,12 +1444,10 @@
                     //    + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
                     //    + "</a>" +
                     //    "</span>";
-                    return "<button title='"+row.model+"' id='btn" + row.link + "' class='btn-view-image'>" +
+                    return "<button title='" + row.model + "' id='btn" + row.link + "' class='btn-view-image'>" +
                         "<i class='btn-detail-link zmdi zmdi-image-o'></i>" +
                         "</button>";
-                } else {
-                    return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
-                }
+                } else return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
             }
         }
     });
@@ -1528,10 +1472,9 @@
         },
         templates: {
             actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
-            search: "", // "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
-            header: "", // "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            search: "", header: "",
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
-            footer: "" // "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+            footer: ""
         },
         formatters: {
             "make": function (column, row) {
@@ -1553,23 +1496,17 @@
         document.getElementById("btnSaveImage").style.display = "none";
         document.getElementById("watermark").style.display = "";
         html2canvas(document.getElementById("content")).then(function (canvas) {
-            let contentW = canvas.width;
-            let contentH = canvas.height;
             let date = new Date();
-            let year = date.getFullYear();
             let month = (date.getMonth() + 1);
             let day = date.getDate();
-            if (month < 10)
-                month = "0" + month;
-            if (day < 10)
-                day = "0" + day;
-            let fileName = "中保研_" + year + month + day + ".png";
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+            let fileName = "中保研_" + date.getFullYear() + month + day + ".png";
             let shift = 10; // 偏移
             let webType = getExplorer();
-            if (webType == 'Edge' || webType == 'ie')
-                shift = 0;
+            if (webType == 'Edge' || webType == 'ie') shift = 0;
             console.log("getExplorer:" + getExplorer() + ";shift=" + shift); // Chrome Edge
-            Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'png', fileName, shift); // jpeg
+            Canvas2Image.saveAsImageToName(canvas, canvas.width, canvas.height, 'png', fileName, shift); // jpeg
         });
         document.getElementById("btnSaveImage").style.display = "";
         document.getElementById("watermark").style.display = "none";
@@ -1583,21 +1520,13 @@
             ie11 = (function () {
                 return ("ActiveXObject" in window)
             })();
-        if (compare("MSIE") || ie11) {
-            return 'ie';
-        } else if (compare("Firefox") && !ie11) {
-            return 'Firefox';
-        } else if (compare("Chrome") && !ie11) {
-            if (explorer.indexOf("Edge") > -1) {
-                return 'Edge';
-            } else {
-                return 'Chrome';
-            }
-        } else if (compare("Opera") && !ie11) {
-            return 'Opera';
-        } else if (compare("Safari") && !ie11) {
-            return 'Safari';
-        }
+        if (compare("MSIE") || ie11) return 'ie';
+        else if (compare("Firefox") && !ie11) return 'Firefox';
+        else if (compare("Chrome") && !ie11) {
+            if (explorer.indexOf("Edge") > -1) return 'Edge';
+            else return 'Chrome';
+        } else if (compare("Opera") && !ie11) return 'Opera';
+        else if (compare("Safari") && !ie11) return 'Safari';
     }
 
     let arrayId = [ // FIXME
@@ -1610,17 +1539,16 @@
     let contentImgFrame = "";
     for (let i = 0; i < arrayId.length; i++) {
         let id = arrayId[i];
-        contentImgFrame += "<span style='display: none' class='lightbox'>" +
+        contentImgFrame += "<span class='lightbox'>" +
             "<span id='img" + id + "' data-src='img/" + id + "/front.jpg'>" +
             "<a href='javascript:;' title='图片' target='_blank'><i class='zmdi zmdi-image'></i></a>" +
-            "<img style='display: none' src='img/front.png'/>" +
-            "</span>" +
+            "<img style='display: none' src='img/front.png'/></span>" +
             "<span data-src='img/" + id + "/side.jpg'><img style='display: none' src='img/side.png'/></span>" +
             "<span data-src='img/" + id + "/top.jpg'><img style='display: none' src='img/top.png'/></span>" +
             //"<span data-src='img/" + i + "/fcw.jpg'><img style='display: none' src='img/fcw.png'/></span>" +
             "</span>";
     }
-    document.getElementById("image-frame").innerHTML = contentImgFrame;
+    document.getElementById("image-frame").innerHTML = "<div style='display: none'>" + contentImgFrame + "</div>";
 
     window.onload = function bindClick() {
         for (let i = 0; i < arrayId.length; i++) {
@@ -1630,8 +1558,6 @@
             }
         }
     }
-
-
 </script>
 
 </body>
