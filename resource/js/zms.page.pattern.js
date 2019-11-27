@@ -269,17 +269,6 @@ function GetQueryString(name) {
     return null;
 }
 
-function isPureMode() { // Do not show header, footer and side navigation bar.
-    let str = window.location.href;
-    if (str.indexOf("car") != -1 ||
-        str.indexOf("c_iasi") != -1 ||
-        str.indexOf("i-vista") != -1 ||
-        str.indexOf("golden_boot") != -1)
-        return true;
-    else
-        return false;
-}
-
 function isPublic() {
     let str = window.location.href;
     if (str.indexOf("az") != -1 ||
