@@ -2,6 +2,7 @@ User-agent: *
 
 Disallow: /dream/
 Disallow: /link/
+Disallow: /az/
 Disallow: /diary.html
 Disallow: /pass.html
 Disallow: /profile.html
