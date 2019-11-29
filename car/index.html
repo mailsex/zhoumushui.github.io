@@ -1420,9 +1420,6 @@
 
         },
         formatters: {
-            "make": function (column, row) {
-                return getLogoByMake(row.make, 1, 0) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
-            },
             "model": function (column, row) {
                 return "<span class='car-model'>" + row.model + "</span>";
             },
@@ -1462,6 +1459,9 @@
                         "<i class='btn-detail-link zmdi zmdi-image-o'></i>" +
                         "</button>";
                 } else return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
+            },
+            "make": function (column, row) {
+                return getLogoByMake(row.make, 1, 0) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
             }
         }
     });
