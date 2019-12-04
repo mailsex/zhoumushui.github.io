@@ -2,14 +2,9 @@
  * covert canvas to image
  * and save the image file
  */
-
 var Canvas2Image = function () {
-
-    // check if support sth.
     var $support = function () {
-        var canvas = document.createElement('canvas'),
-            ctx = canvas.getContext('2d');
-
+        let canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
         return {
             canvas: !!ctx,
             imageData: !!ctx.getImageData,
@@ -18,20 +13,14 @@ var Canvas2Image = function () {
         };
     }();
 
-    var downloadMime = 'image/octet-stream';
+    let downloadMime = 'image/octet-stream';
 
     function scaleCanvas(canvas, width, height) {
-        var w = canvas.width,
-            h = canvas.height;
-        if (width == undefined) {
-            width = w;
-        }
-        if (height == undefined) {
-            height = h;
-        }
-
-        var retCanvas = document.createElement('canvas');
-        var retCtx = retCanvas.getContext('2d');
+        let w = canvas.width, h = canvas.height;
+        if (width == undefined) width = w;
+        if (height == undefined) height = h;
+        let retCanvas = document.createElement('canvas');
+        let retCtx = retCanvas.getContext('2d');
         retCanvas.width = width;
         retCanvas.height = height;
         retCtx.drawImage(canvas, 0, 0, w, h, 0, 0, width, height);
@@ -48,30 +37,21 @@ var Canvas2Image = function () {
      */
     function scaleCanvasWithShift(canvas, width, height, shift) {
         // Source Image 源图片
-        let sx = shift;
-        let sy = 0;
+        let sx = shift, sy = 0;
         let w = canvas.width - shift;
         let h = canvas.height;
-
-        if (width == undefined) {
-            width = w;
-        }
-        if (height == undefined) {
-            height = h;
-        }
+        if (width == undefined) width = w;
+        if (height == undefined) height = h;
         width = w;
 
         // Destination Image 目标图片
-        let dx = 0;
-        let dy = 0;
+        let dx = 0, dy = 0;
         let dw = width;
         let dh = height;
-
-        var retCanvas = document.createElement('canvas');
-        var retCtx = retCanvas.getContext('2d');
+        let retCanvas = document.createElement('canvas');
+        let retCtx = retCanvas.getContext('2d');
         retCanvas.width = width;
         retCanvas.height = height;
-
         console.log("scaleCanvasWithShift:[" + sx + "," + sy + "]" + w + "x" + h + " -> [" + dx + "," + dy + "]" + dw + "x" + dh);
         retCtx.drawImage(canvas, sx, sy, w, h, dx, dy, dw, dh);
         return retCanvas;
@@ -92,13 +72,13 @@ var Canvas2Image = function () {
         document.location.href = strData;
     }
 
-    var _fixType = function (type) {
+    let _fixType = function (type) {
         type = type.toLowerCase().replace(/jpg/i, 'jpeg');
         var r = type.match(/png|jpeg|bmp|gif/)[0];
         return 'image/' + r;
     };
 
-    var saveFileToName = function (data, fileName, shift) {
+    let saveFileToName = function (data, fileName, shift) {
         var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
         save_link.href = data;
         save_link.download = fileName;
@@ -111,12 +91,10 @@ var Canvas2Image = function () {
     function downloadFile(fileName, content) {
         let aLink = document.createElement('a');
         let blob = base64ToBlob(content); //new Blob([content]);
-
         let evt = document.createEvent("HTMLEvents");
         evt.initEvent("click", true, true);//initEvent 不加后两个参数在FF下会报错  事件类型，是否冒泡，是否阻止浏览器的默认行为
         aLink.download = fileName;
         aLink.href = URL.createObjectURL(blob);
-
         aLink.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));//兼容火狐
     }
 
@@ -126,9 +104,7 @@ var Canvas2Image = function () {
         let contentType = parts[0].split(':')[1];
         let raw = window.atob(parts[1]);
         let rawLength = raw.length;
-
         let uInt8Array = new Uint8Array(rawLength);
-
         for (let i = 0; i < rawLength; ++i) {
             uInt8Array[i] = raw.charCodeAt(i);
         }
@@ -136,22 +112,20 @@ var Canvas2Image = function () {
     }
 
     function genImage(strData) {
-        var img = document.createElement('img');
+        let img = document.createElement('img');
         img.src = strData;
         return img;
     }
 
     function fixType(type) {
         type = type.toLowerCase().replace(/jpg/i, 'jpeg');
-        var r = type.match(/png|jpeg|bmp|gif/)[0];
+        let r = type.match(/png|jpeg|bmp|gif/)[0];
         return 'image/' + r;
     }
 
     function encodeData(data) {
-        if (!window.btoa) {
-            throw 'btoa undefined'
-        }
-        var str = '';
+        if (!window.btoa) throw 'btoa undefined'
+        let str = '';
         if (typeof data == 'string') {
             str = data;
         } else {
@@ -159,13 +133,11 @@ var Canvas2Image = function () {
                 str += String.fromCharCode(data[i]);
             }
         }
-
         return btoa(str);
     }
 
     function getImageData(canvas) {
-        var w = canvas.width,
-            h = canvas.height;
+        let w = canvas.width, h = canvas.height;
         return canvas.getContext('2d').getImageData(0, 0, w, h);
     }
 
@@ -179,18 +151,13 @@ var Canvas2Image = function () {
      * 按照规则生成图片响应头和响应体
      */
     var genBitmapImage = function (oData) {
-
-        //
         // BITMAPFILEHEADER: http://msdn.microsoft.com/en-us/library/windows/desktop/dd183374(v=vs.85).aspx
         // BITMAPINFOHEADER: http://msdn.microsoft.com/en-us/library/dd183376.aspx
-        //
+        let biWidth = oData.width;
+        let biHeight = oData.height;
+        let biSizeImage = biWidth * biHeight * 3;
+        let bfSize = biSizeImage + 54; // total header size = 54 bytes
 
-        var biWidth = oData.width;
-        var biHeight = oData.height;
-        var biSizeImage = biWidth * biHeight * 3;
-        var bfSize = biSizeImage + 54; // total header size = 54 bytes
-
-        //
         //  typedef struct tagBITMAPFILEHEADER {
         //  	WORD bfType;
         //  	DWORD bfSize;
@@ -198,7 +165,6 @@ var Canvas2Image = function () {
         //  	WORD bfReserved2;
         //  	DWORD bfOffBits;
         //  } BITMAPFILEHEADER;
-        //
         var BITMAPFILEHEADER = [
             // WORD bfType -- The file type signature; must be "BM"
             0x42, 0x4D,
@@ -212,7 +178,6 @@ var Canvas2Image = function () {
             54, 0, 0, 0
         ];
 
-        //
         //  typedef struct tagBITMAPINFOHEADER {
         //  	DWORD biSize;
         //  	LONG  biWidth;
@@ -226,7 +191,6 @@ var Canvas2Image = function () {
         //  	DWORD biClrUsed;
         //  	DWORD biClrImportant;
         //  } BITMAPINFOHEADER, *PBITMAPINFOHEADER;
-        //
         var BITMAPINFOHEADER = [
             // DWORD biSize -- The number of bytes required by the structure
             40, 0, 0, 0,
@@ -253,34 +217,27 @@ var Canvas2Image = function () {
             0, 0, 0, 0
         ];
 
-        var iPadding = (4 - ((biWidth * 3) % 4)) % 4;
-
-        var aImgData = oData.data;
-
-        var strPixelData = '';
-        var biWidth4 = biWidth << 2;
-        var y = biHeight;
-        var fromCharCode = String.fromCharCode;
-
+        let iPadding = (4 - ((biWidth * 3) % 4)) % 4;
+        let aImgData = oData.data;
+        let strPixelData = '';
+        let biWidth4 = biWidth << 2;
+        let y = biHeight;
+        let fromCharCode = String.fromCharCode;
         do {
-            var iOffsetY = biWidth4 * (y - 1);
-            var strPixelRow = '';
-            for (var x = 0; x < biWidth; x++) {
-                var iOffsetX = x << 2;
+            let iOffsetY = biWidth4 * (y - 1);
+            let strPixelRow = '';
+            for (let x = 0; x < biWidth; x++) {
+                let iOffsetX = x << 2;
                 strPixelRow += fromCharCode(aImgData[iOffsetY + iOffsetX + 2]) +
                     fromCharCode(aImgData[iOffsetY + iOffsetX + 1]) +
                     fromCharCode(aImgData[iOffsetY + iOffsetX]);
             }
-
-            for (var c = 0; c < iPadding; c++) {
+            for (let c = 0; c < iPadding; c++) {
                 strPixelRow += String.fromCharCode(0);
             }
-
             strPixelData += strPixelRow;
         } while (--y);
-
         var strEncoded = encodeData(BITMAPFILEHEADER.concat(BITMAPINFOHEADER)) + encodeData(strPixelData);
-
         return strEncoded;
     };
 
@@ -316,9 +273,7 @@ var Canvas2Image = function () {
             if (typeof canvas == "string") {
                 canvas = document.getElementById(canvas);
             }
-            if (type == undefined) {
-                type = 'png';
-            }
+            if (type == undefined) type = 'png';
             type = fixType(type);
             if (/bmp/.test(type)) {
                 var data = getImageData(scaleCanvas(canvas, width, height));
@@ -327,7 +282,7 @@ var Canvas2Image = function () {
             } else {
                 var strData = getDataURLWithShift(canvas, type, width, height, shift);
                 //saveFileToName(strData.replace(type, downloadMime), fileName);
-                downloadFile(fileName,strData.replace(type, downloadMime)); // AZ:兼容Edge下载
+                downloadFile(fileName, strData.replace(type, downloadMime)); // AZ:兼容Edge下载
             }
         }
     };
@@ -343,16 +298,15 @@ var Canvas2Image = function () {
             type = fixType(type);
 
             if (/bmp/.test(type)) {
-                var data = getImageData(scaleCanvas(canvas, width, height));
-                var strData = genBitmapImage(data);
+                let data = getImageData(scaleCanvas(canvas, width, height));
+                let strData = genBitmapImage(data);
                 return genImage(makeURI(strData, 'image/bmp'));
             } else {
-                var strData = getDataURL(canvas, type, width, height);
+                let strData = getDataURL(canvas, type, width, height);
                 return genImage(strData);
             }
         }
     };
-
     return {
         saveAsImageToName: saveAsImageToName,
         saveAsImage: saveAsImage,
@@ -383,5 +337,4 @@ var Canvas2Image = function () {
             return convertToImage(canvas, width, height, 'bmp');
         }
     };
-
 }();
