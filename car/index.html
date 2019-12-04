@@ -972,16 +972,12 @@
 
 </section>
 
-<script>
-    console.log("script.Start");
-</script>
-
 <script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script><!-- jQuery -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script><!-- Go Up -->
 <script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script><!-- Bootstrap -->
 <!-- Malihu ScrollBar -->
 <script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script><!-- Bootgrid -->
-
 
 <!-- Placeholder for IE9 -->
 <!--[if IE 9 ]>
@@ -990,6 +986,7 @@
 
 <script src="../resource/js/data-table.js"></script>
 <script src="../resource/js/app.min.js"></script>
+<script async src="../resource/js/busuanzi.pure.mini.js" async></script><!-- busuanzi PV&UV -->
 
 <script>
     function getCarSafeDescriptionByWord(word) {
@@ -1543,7 +1540,6 @@
     document.getElementById("image-frame").innerHTML = "<div style='display: none'>" + contentImgFrame + "</div>";
 
     window.onload = function bindClick() {
-        console.log("window.onload");
         for (let i = 0; i < arrayId.length; i++) {
             let id = arrayId[i];
             document.getElementById("btn" + id).onclick = function () {
@@ -1578,10 +1574,7 @@
         document.getElementById("btnSaveImage").style.display = "";
         document.getElementById("watermark").style.display = "none";
     });
-    console.log("script.END");
 </script>
-<script type="text/javascript" src="../resource/js/zms.goup.js" async></script><!-- Go Up -->
-<script async src="../resource/js/busuanzi.pure.mini.js" async></script><!-- busuanzi PV&UV -->
 
 </body>
 </html>
