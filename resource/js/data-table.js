@@ -441,7 +441,6 @@ function getLogoByMake(make, depth, size) {
             imgPath = "../../resource/img/car/";
             break;
     }
-
     switch (size) {
         case 1: // W:24px H:16px; Small
             imgPath = imgPath + "24x16/";
@@ -451,7 +450,6 @@ function getLogoByMake(make, depth, size) {
             imgPath = imgPath + "30x20/";
             break;
     }
-
     let carName = "";
     if (make.indexOf("丰田") != -1 || make.indexOf("Toyota") != -1) {
         carName = "Toyota";
@@ -580,7 +578,6 @@ function getLogoByMake(make, depth, size) {
     return "<img class='car-logo' src='" + imgPath + carName + ".png'>";
 }
 
-
 // 国家
 function getCountryByMake(make, depth) {
     let imgPath = "";
@@ -641,6 +638,5 @@ function getCountryByMake(make, depth) {
     } else {
         return "";
     }
-
     return "<img class='country-flag' src='" + imgPath + "Country_" + carCountry + ".png'>";
 }

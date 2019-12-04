@@ -73,6 +73,11 @@
             background-color: #009688;
         }
 
+        .update-date {
+            float: right;
+            font-weight: bold
+        }
+
         .btn-detail-link {
             font-size: large;
             color: #AAAAAA;
@@ -173,9 +178,7 @@
             <div class="action-header">
                 <span class="essay-title" style="font-size: larger;font-weight: bold;">中保研碰撞测试汇总</span>
                 <span id="btnSaveImage" class="btn-save-image"><i class="zmdi zmdi-download"></i> 保存图片</span>
-                <span align="right" style="float: right;font-weight: bold">
-                    <i class="zmdi zmdi-time"></i> 2019.12.02
-                </span>
+                <span align="right" class="update-date"><i class="zmdi zmdi-time"></i> 2019.12.02</span>
             </div>
 
             <div id="card_body" class="card__body main-frame">
@@ -960,8 +963,7 @@
 
     <section>
         <div class="card card__body main-frame" style="text-align: center;">
-            <span style="font-size: large;font-weight: bold">
-                <br>
+            <span style="font-size: large;font-weight: bold"><br>
                 <a href="rule.html" target="_blank">中保研碰撞测试评分标准</a></span>
         </div>
     </section>
@@ -969,25 +971,17 @@
     <div id="image-frame"></div>
 
 </section>
-<!-- Older IE Warning -->
-<!--[if lt IE 9]>
-<div class="ie-warning"></div>
-<![endif]-->
+
+<script>
+    console.log("script.Start");
+</script>
 
 <script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script><!-- jQuery -->
-<script type="text/javascript" src="../resource/js/zms.goup.js"></script><!-- Go Up -->
 <script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script><!-- Bootstrap -->
 <!-- Malihu ScrollBar -->
 <script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script><!-- Bootgrid -->
 
-
-<!-- Light Gallery -->
-<script src="../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
-<script src="../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
 
 <!-- Placeholder for IE9 -->
 <!--[if IE 9 ]>
@@ -996,12 +990,201 @@
 
 <script src="../resource/js/data-table.js"></script>
 <script src="../resource/js/app.min.js"></script>
-<script async src="../resource/js/busuanzi.pure.mini.js"></script><!-- busuanzi PV&UV -->
 
-<script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
-<script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
+<script>
+    function getCarSafeDescriptionByWord(word) {
+        let SNO = false; // SHOW_NON_OFFICIAL
+        switch (word) {
+            case 'A':
+                return "<span class=\"grade green-bg\">G 优秀</span>";
+            case 'A*':
+                return SNO ? "<span class=\"grade green-bg not-official\">G 优秀*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case 'B': // Adequate
+                return "<span class=\"grade yellow-bg\">A 良好</span>";
+            case 'B*':
+                return SNO ? "<span class=\"grade yellow-bg not-official\">A 良好*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case 'C': // Marginal
+                return "<span class=\"grade orange-bg\">M 一般</span>";
+            case 'C*':
+                return SNO ? "<span class=\"grade orange-bg not-official\">M 一般*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case 'D': // Poor
+                return "<span class=\"grade red-bg\">P 较差</span>";
+            case 'D*':
+                return SNO ? "<span class=\"grade red-bg not-official\">P 较差*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case '-': // None
+                return "<span class=\"grade grey-bg\">未配置</span>";
+            case 'T': // T0D0
+                return "<span class=\"grade grey-bg\">...</span>";
+            default:
+                return "<span class=\"grade grey-bg\">" + word + "</span>";
+        }
+    }
+
+    function getTopDescription(top) {
+        if (top >= 4.0) return getCarSafeDescriptionByWord('A');
+        else if (top >= 3.25) return getCarSafeDescriptionByWord('B');
+        else if (top >= 2.50) return getCarSafeDescriptionByWord('C');
+        else return getCarSafeDescriptionByWord('D');
+    }
+
+    function getFrontDescription(front) {
+        if (front < 4) return getCarSafeDescriptionByWord('A');
+        else if (front < 10) return getCarSafeDescriptionByWord('B');
+        else if (front < 20) return getCarSafeDescriptionByWord('C');
+        else return getCarSafeDescriptionByWord('D');
+    }
+
+    function getSideDescription(side) {
+        if (side < 7) return getCarSafeDescriptionByWord('A');
+        else if (side < 21) return getCarSafeDescriptionByWord('B');
+        else if (side < 33) return getCarSafeDescriptionByWord('C');
+        else return getCarSafeDescriptionByWord('D');
+    }
+
+    function getExplorer() {
+        let explorer = window.navigator.userAgent,
+            compare = function (s) {
+                return (explorer.indexOf(s) >= 0);
+            },
+            ie11 = (function () {
+                return ("ActiveXObject" in window)
+            })();
+        if (compare("MSIE") || ie11) return 'ie';
+        else if (compare("Firefox") && !ie11) return 'Firefox';
+        else if (compare("Chrome") && !ie11) {
+            if (explorer.indexOf("Edge") > -1) return 'Edge';
+            else return 'Chrome';
+        } else if (compare("Opera") && !ie11) return 'Opera';
+        else if (compare("Safari") && !ie11) return 'Safari';
+    }
+
+    $("#table-carsafe-list").bootgrid({
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "", header: "",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
+                "<span class='line-left'></span>" +
+                "<span class='text'>zhoumushui.com/car</span>" +
+                "<span class='line-right'></span>" +
+                "</div>"
+
+        },
+        formatters: {
+            "model": function (column, row) {
+                return "<span class='car-model'>" + row.model + "</span>";
+            },
+            "year": function (column, row) {
+                return "<span class='car-year'>" + row.year + "</span>";
+            },
+            "front_offset": function (column, row) {
+                return "<a title='正面偏置'>" + getFrontDescription(row.front_offset) + "</a>";
+            },
+            "side": function (column, row) {
+                return "<a title='侧面碰撞'>" + getSideDescription(row.side) + "</a>";
+            },
+            "top": function (column, row) {
+                return "<a title='车顶强度'>" + getTopDescription(row.top) + "</a>";
+            },
+            "seat": function (column, row) {
+                return "<a title='座椅头枕'>" + getCarSafeDescriptionByWord(row.seat) + "</a>";
+            },
+            "assist": function (column, row) {
+                return "<a title='辅助安全'>" + getCarSafeDescriptionByWord(row.assist) + "</a>";
+            },
+            "road_user": function (column, row) {
+                return "<a title='行人保护'>" + getCarSafeDescriptionByWord(row.road_user) + "</a>";
+            },
+            "fix": function (column, row) {
+                return "<a title='耐撞维修'>" + getCarSafeDescriptionByWord(row.fix) + "</a>";
+            },
+            "link": function (column, row) {
+                if (row.link) {
+                    //let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
+                    //return "<span style='font-size: 15px' >" +
+                    //    "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
+                    //    + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
+                    //    + "</a>" +
+                    //    "</span>";
+                    return "<button title='" + row.model + "' id='btn" + row.link + "' class='btn-view-image'>" +
+                        "<i class='btn-detail-link zmdi zmdi-image-o'></i>" +
+                        "</button>";
+                } else return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
+            },
+            "make": function (column, row) {
+                return getLogoByMake(row.make, 1, 0) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            }
+        }
+    });
+
+    $("#table-carsafe-list-todo").bootgrid({
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "", header: "",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: ""
+        },
+        formatters: {
+            "make": function (column, row) {
+                return getLogoByMake(row.make, 1, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            },
+            "model": function (column, row) {
+                return "<span class='car-model'>" + row.model + "</span>";
+            },
+            "year": function (column, row) {
+                return "<span class='car-year'>" + row.year + "</span>";
+            },
+            "test_time": function (column, row) {
+                return "20" + row.test_time.replace('A', ' 第一批').replace('B', ' 第二批');
+            }
+        }
+    });
+
+</script>
+
+<!-- Light Gallery -->
+<script src="../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
 
 <script src="js/echarts.min.js"></script>
+
 <script>
     function initDataFront() {
         let legendData = ['正面25%偏置'];
@@ -1338,215 +1521,6 @@
         echart.setOption(option);
     }
 
-    $(function () {
-        initDataFront();
-        initDataSide();
-        initDataTop();
-        initDataRoadUser();
-    });
-
-    function getCarSafeDescriptionByWord(word) {
-        let SNO = false; // SHOW_NON_OFFICIAL
-        switch (word) {
-            case 'A':
-                return "<span class=\"grade green-bg\">G 优秀</span>";
-            case 'A*':
-                return SNO ? "<span class=\"grade green-bg not-official\">G 优秀*</span>" : "<span class=\"grade grey-bg\"></span>";
-            case 'B': // Adequate
-                return "<span class=\"grade yellow-bg\">A 良好</span>";
-            case 'B*':
-                return SNO ? "<span class=\"grade yellow-bg not-official\">A 良好*</span>" : "<span class=\"grade grey-bg\"></span>";
-            case 'C': // Marginal
-                return "<span class=\"grade orange-bg\">M 一般</span>";
-            case 'C*':
-                return SNO ? "<span class=\"grade orange-bg not-official\">M 一般*</span>" : "<span class=\"grade grey-bg\"></span>";
-            case 'D': // Poor
-                return "<span class=\"grade red-bg\">P 较差</span>";
-            case 'D*':
-                return SNO ? "<span class=\"grade red-bg not-official\">P 较差*</span>" : "<span class=\"grade grey-bg\"></span>";
-            case '-': // None
-                return "<span class=\"grade grey-bg\">未配置</span>";
-            case 'T': // T0D0
-                return "<span class=\"grade grey-bg\">...</span>";
-            default:
-                return "<span class=\"grade grey-bg\">" + word + "</span>";
-        }
-    }
-
-    function getTopDescription(top) {
-        if (top >= 4.0) return getCarSafeDescriptionByWord('A');
-        else if (top >= 3.25) return getCarSafeDescriptionByWord('B');
-        else if (top >= 2.50) return getCarSafeDescriptionByWord('C');
-        else return getCarSafeDescriptionByWord('D');
-    }
-
-    function getFrontDescription(front) {
-        if (front < 4) return getCarSafeDescriptionByWord('A');
-        else if (front < 10) return getCarSafeDescriptionByWord('B');
-        else if (front < 20) return getCarSafeDescriptionByWord('C');
-        else return getCarSafeDescriptionByWord('D');
-    }
-
-    function getSideDescription(side) {
-        if (side < 7) return getCarSafeDescriptionByWord('A');
-        else if (side < 21) return getCarSafeDescriptionByWord('B');
-        else if (side < 33) return getCarSafeDescriptionByWord('C');
-        else return getCarSafeDescriptionByWord('D');
-    }
-
-    $("#table-carsafe-list").bootgrid({
-        rowCount: -1, // AZ: -1 mains show all
-        css: {
-            icon: 'table-bootgrid__icon zmdi',
-            iconSearch: 'zmdi-search',
-            iconColumns: 'zmdi-view-column',
-            iconDown: 'zmdi-sort-amount-desc',
-            iconRefresh: 'zmdi-refresh',
-            iconUp: 'zmdi-sort-amount-asc',
-            dropDownMenu: 'dropdown form-group--select',
-            search: 'table-bootgrid__search',
-            actions: 'table-bootgrid__actions',
-            header: 'table-bootgrid__header',
-            footer: 'table-bootgrid__footer',
-            dropDownItem: 'table-bootgrid__label',
-            table: 'table table-bootgrid',
-            pagination: 'pagination table-bootgrid__pagination'
-        },
-        templates: {
-            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
-            search: "", header: "",
-            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
-            footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
-                "<span class='line-left'></span>" +
-                "<span class='text'>zhoumushui.com/car</span>" +
-                "<span class='line-right'></span>" +
-                "</div>"
-
-        },
-        formatters: {
-            "model": function (column, row) {
-                return "<span class='car-model'>" + row.model + "</span>";
-            },
-            "year": function (column, row) {
-                return "<span class='car-year'>" + row.year + "</span>";
-            },
-            "front_offset": function (column, row) {
-                return "<a title='正面偏置'>" + getFrontDescription(row.front_offset) + "</a>";
-            },
-            "side": function (column, row) {
-                return "<a title='侧面碰撞'>" + getSideDescription(row.side) + "</a>";
-            },
-            "top": function (column, row) {
-                return "<a title='车顶强度'>" + getTopDescription(row.top) + "</a>";
-            },
-            "seat": function (column, row) {
-                return "<a title='座椅头枕'>" + getCarSafeDescriptionByWord(row.seat) + "</a>";
-            },
-            "assist": function (column, row) {
-                return "<a title='辅助安全'>" + getCarSafeDescriptionByWord(row.assist) + "</a>";
-            },
-            "road_user": function (column, row) {
-                return "<a title='行人保护'>" + getCarSafeDescriptionByWord(row.road_user) + "</a>";
-            },
-            "fix": function (column, row) {
-                return "<a title='耐撞维修'>" + getCarSafeDescriptionByWord(row.fix) + "</a>";
-            },
-            "link": function (column, row) {
-                if (row.link) {
-                    //let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
-                    //return "<span style='font-size: 15px' >" +
-                    //    "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
-                    //    + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
-                    //    + "</a>" +
-                    //    "</span>";
-                    return "<button title='" + row.model + "' id='btn" + row.link + "' class='btn-view-image'>" +
-                        "<i class='btn-detail-link zmdi zmdi-image-o'></i>" +
-                        "</button>";
-                } else return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
-            },
-            "make": function (column, row) {
-                return getLogoByMake(row.make, 1, 0) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
-            }
-        }
-    });
-
-    $("#table-carsafe-list-todo").bootgrid({
-        rowCount: -1, // AZ: -1 mains show all
-        css: {
-            icon: 'table-bootgrid__icon zmdi',
-            iconSearch: 'zmdi-search',
-            iconColumns: 'zmdi-view-column',
-            iconDown: 'zmdi-sort-amount-desc',
-            iconRefresh: 'zmdi-refresh',
-            iconUp: 'zmdi-sort-amount-asc',
-            dropDownMenu: 'dropdown form-group--select',
-            search: 'table-bootgrid__search',
-            actions: 'table-bootgrid__actions',
-            header: 'table-bootgrid__header',
-            footer: 'table-bootgrid__footer',
-            dropDownItem: 'table-bootgrid__label',
-            table: 'table table-bootgrid',
-            pagination: 'pagination table-bootgrid__pagination'
-        },
-        templates: {
-            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
-            search: "", header: "",
-            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
-            footer: ""
-        },
-        formatters: {
-            "make": function (column, row) {
-                return getLogoByMake(row.make, 1, 1) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
-            },
-            "model": function (column, row) {
-                return "<span class='car-model'>" + row.model + "</span>";
-            },
-            "year": function (column, row) {
-                return "<span class='car-year'>" + row.year + "</span>";
-            },
-            "test_time": function (column, row) {
-                return "20" + row.test_time.replace('A', ' 第一批').replace('B', ' 第二批');
-            }
-        }
-    });
-
-    $('#btnSaveImage').click(function (e) {
-        document.getElementById("btnSaveImage").style.display = "none";
-        document.getElementById("watermark").style.display = "";
-        html2canvas(document.getElementById("content")).then(function (canvas) {
-            let date = new Date();
-            let month = (date.getMonth() + 1);
-            let day = date.getDate();
-            if (month < 10) month = "0" + month;
-            if (day < 10) day = "0" + day;
-            let fileName = "中保研_" + date.getFullYear() + month + day + ".png";
-            let shift = 10; // 偏移
-            let webType = getExplorer();
-            if (webType == 'Edge' || webType == 'ie') shift = 0;
-            console.log("getExplorer:" + getExplorer() + ";shift=" + shift); // Chrome Edge
-            Canvas2Image.saveAsImageToName(canvas, canvas.width, canvas.height, 'png', fileName, shift); // jpeg
-        });
-        document.getElementById("btnSaveImage").style.display = "";
-        document.getElementById("watermark").style.display = "none";
-    });
-
-    function getExplorer() {
-        let explorer = window.navigator.userAgent,
-            compare = function (s) {
-                return (explorer.indexOf(s) >= 0);
-            },
-            ie11 = (function () {
-                return ("ActiveXObject" in window)
-            })();
-        if (compare("MSIE") || ie11) return 'ie';
-        else if (compare("Firefox") && !ie11) return 'Firefox';
-        else if (compare("Chrome") && !ie11) {
-            if (explorer.indexOf("Edge") > -1) return 'Edge';
-            else return 'Chrome';
-        } else if (compare("Opera") && !ie11) return 'Opera';
-        else if (compare("Safari") && !ie11) return 'Safari';
-    }
-
     let arrayId = [ // FIXME
         4, 7, 8, 9,
         12, 14, 15, 16, 17, 18, 19,
@@ -1569,14 +1543,45 @@
     document.getElementById("image-frame").innerHTML = "<div style='display: none'>" + contentImgFrame + "</div>";
 
     window.onload = function bindClick() {
+        console.log("window.onload");
         for (let i = 0; i < arrayId.length; i++) {
             let id = arrayId[i];
             document.getElementById("btn" + id).onclick = function () {
                 document.getElementById("img" + id).click();
             }
         }
+        initDataFront();
+        initDataSide();
+        initDataTop();
+        initDataRoadUser();
     }
 </script>
+<script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
+<script>
+    $('#btnSaveImage').click(function (e) {
+        document.getElementById("btnSaveImage").style.display = "none";
+        document.getElementById("watermark").style.display = "";
+        html2canvas(document.getElementById("content")).then(function (canvas) {
+            let date = new Date();
+            let month = (date.getMonth() + 1);
+            let day = date.getDate();
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+            let fileName = "中保研_" + date.getFullYear() + month + day + ".png";
+            let shift = 10; // 偏移
+            let webType = getExplorer();
+            if (webType == 'Edge' || webType == 'ie') shift = 0;
+            console.log("getExplorer:" + getExplorer() + ";shift=" + shift); // Chrome Edge
+            Canvas2Image.saveAsImageToName(canvas, canvas.width, canvas.height, 'png', fileName, shift); // jpeg
+        });
+        document.getElementById("btnSaveImage").style.display = "";
+        document.getElementById("watermark").style.display = "none";
+    });
+    console.log("script.END");
+</script>
+<script type="text/javascript" src="../resource/js/zms.goup.js" async></script><!-- Go Up -->
+<script async src="../resource/js/busuanzi.pure.mini.js" async></script><!-- busuanzi PV&UV -->
 
 </body>
 </html>

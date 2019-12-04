@@ -8,40 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>行者无疆，走在路上</title>
 
-    <!-- Vendors -->
-
-    <!-- Animate CSS -->
-    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
-
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet"><!-- Animate CSS -->
     <!-- Material Design Icons -->
     <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
           rel="stylesheet">
-
     <!-- Malihu Scrollbar -->
     <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
           rel="stylesheet">
-
-    <!-- Bootgrid -->
     <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
-
-    <!-- Site CSS -->
-    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
-
+    <!-- Bootgrid -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet"><!-- Site CSS -->
     <link href="../../resource/css/az.css" rel="stylesheet">
-
-    <!-- Prettify -->
-    <script src="../../resource/js/google.prettify.js"></script>
+    <script src="../../resource/js/google.prettify.js"></script><!-- Prettify -->
 
     <!-- Page loader -->
     <!--
     <script src="js/page-loader.min.js"></script>
     -->
-
     <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
     <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
-
-    <!-- Material Floating Button -->
     <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+    <!-- Material Floating Button -->
 </head>
 
 <body>
@@ -60,7 +47,6 @@
 <header id="header"></header>
 
 <section id="main">
-
     <aside id="navigation">
         <div class="navigation__header">
             <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
@@ -71,9 +57,7 @@
         </div>
         <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
     </aside>
-
     <section id="content">
-
         <div class="card">
             <div class="action-header">
                 <span class="actions essay-back-arrow">
@@ -84,7 +68,6 @@
                     <i class="zmdi zmdi-walk"></i>&nbsp;<span class="essay-type">walk</span>&nbsp;&nbsp;
                     <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2015-03-30 22:05</span>
                 </span>
-
                 <!--
                 AZ Share: Material Floating Button;
                 Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
@@ -92,12 +75,6 @@
                 Action:hover,click
                 -->
                 <script>
-                    var essayTitle = document.title;
-                    var essaySummary = '行者无疆，走在路上';
-                    var essayUrl = window.location.href;
-                    // var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
-                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
-
                     <!-- AZ: Month Line 每月日均步数 data from SAMSUNG Health-->
                     let data2015 = [[1,], [2,], [3, 4197], [4, 8659], [5, 8484], [6, 8721],
                         [7, 7469], [8, 8292], [9, 9578], [10, 9898], [11, 11505], [12, 9467]];
@@ -117,27 +94,19 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="card__header">
-                        <h2>合计 <span id="stepTotal" style="color: #00a1d8"></span></h2>
-
-                        <br>
+                        <h2>合计 <span id="stepTotal" style="color: #00a1d8"></span></h2><br>
                         2015 <span id="step2015" style="color: #00a1d8"></span>
-                        &nbsp;
                         2016 <span id="step2016" style="color: #00a1d8"></span>
-                        &nbsp;
                         2017 <span id="step2017" style="color: #00a1d8"></span>
-                        &nbsp;
                         2018 <span id="step2018" style="color: #00a1d8"></span>
-                        &nbsp;
                         2019 <span id="step2019" style="color: #00a1d8"></span>
                     </div>
-
                     <div class="card__body">
                         各月日均步数
                         <div id="step-month-line" class="flot-chart"></div>
                         <div class="flot-chart-legend flot-chart-legend--line"></div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
                     <div class="card__body">
                         <div id="step-range-donut" class="flot-chart flot-chart--lg"></div>
@@ -145,14 +114,12 @@
                     </div>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card__header">
                     <h2>共 <span id="list-row-count" style="color: #00a1d8"></span> 天，&nbsp;
                         日均 <span id="stepAverage" style="color: #00a1d8"></span> 步
                     </h2>
                 </div>
-
                 <div class="card__body">
                     <div id="step-day-trend" class="flot-chart" style="height: 500px"></div>
                 </div>
@@ -205,6 +172,14 @@
                         <tr><td>000</td><td>2019-12-01</td></tr>
                         -->
                         <tbody>
+                        <tr>
+                            <td>2029</td>
+                            <td>2019-12-03</td>
+                        </tr>
+                        <tr>
+                            <td>3055</td>
+                            <td>2019-12-02</td>
+                        </tr>
                         <tr>
                             <td>3556</td>
                             <td>2019-12-01</td>

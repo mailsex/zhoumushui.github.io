@@ -7,15 +7,12 @@ if (directoryDepth != null) {
         case 1:
             path = "../";
             break;
-
         case 2:
             path = "../../";
             break;
-
         case 3:
             path = "../../../";
             break;
-
         case 0:
         default:
             path = "";
@@ -60,8 +57,7 @@ function insertHeader() {
  * @returns {string}
  */
 function getHtmlName() {
-    var str = window.location.href;
-
+    let str = window.location.href;
     if (str.indexOf("essay") != -1) { // 随笔
         str = 'index';
     } else {
@@ -73,8 +69,7 @@ function getHtmlName() {
             // str = str.substring(str.lastIndexOf("/"));
         } else {
             str = str.substring(0, str.lastIndexOf("."));
-            if (str > 0 && str < 1000)
-                str = 'index';
+            if (str > 0 && str < 1000) str = 'index';
         }
     }
     console.log("HTML.NAME=" + str);
@@ -85,11 +80,7 @@ function getHtmlName() {
  * 判断字符是否为空的方法
  */
 function isEmpty(obj) {
-    if (typeof obj == "undefined" || obj == null || obj == "") {
-        return true;
-    } else {
-        return false;
-    }
+    return (typeof obj == "undefined" || obj == null || obj == "");
 }
 
 /**
@@ -99,27 +90,17 @@ function insertNavigation() {
     let htmlName = getHtmlName();
     let liNormal = "<li>";
     let liActive = "<li class=\"navigation__active\">"; // 高亮
-
     document.getElementById("page-pattern-navigation").innerHTML = "<ul>" +
-        ((htmlName == 'az') ? liActive : liNormal) +
-        "<a href=\"" + path + "az\"><i class=\"zmdi zmdi-file-text\"></i><span class=\"nav-left\">AZ</span></a></li>" +
-        // (htmlName == 'app' ? liActive : liNormal )+
-        // "<a href=\"" + path + "app.html\"><i class=\"zmdi zmdi-android\"></i><span class=\"nav-left\">开发</span></a></li>" +
-        (htmlName == 'movie' ? liActive : liNormal) +
-        "<a href=\"" + path + "movie\"><i class=\"zmdi zmdi-movie\"></i><span class=\"nav-left\">电影</span></a></li>" +
-        (htmlName == 'book' ? liActive : liNormal) +
-        "<a href=\"" + path + "book\"><i class=\"zmdi zmdi-book\"></i><span class=\"nav-left\">书籍</span></a></li>" +
-        (htmlName == 'world' ? liActive : liNormal) +
-        "<a href=\"" + path + "world\"><i class=\"zmdi zmdi-globe\"></i><span class=\"nav-left\">足迹</span></a></li>" +
-        (htmlName == 'timeline' ? liActive : liNormal) +
-        "<a href=\"" + path + "az/timeline/\"><i class=\"zmdi zmdi-chart\"></i><span class=\"nav-left\">年鉴</span></a></li>" +
-        (htmlName == 'dream' ? liActive : liNormal) +
-        "<a href=\"" + path + "dream\"><i class=\"zmdi zmdi-flag\"></i><span class=\"nav-left\">梦想</span></a></li>" +
-        (htmlName == 'profile' ? liActive : liNormal) +
-        "<a href=\"" + path + "profile\"><i class=\"zmdi zmdi-account-circle\"></i><span class=\"nav-left\">关于</span></a></li>" +
+        ((htmlName == 'az') ? liActive : liNormal) + "<a href='" + path + "az'><i class='zmdi zmdi-file-text'></i><span class='nav-left'>AZ</span></a></li>" +
+        // (htmlName == 'app' ? liActive : liNormal ) + "<a href='" + path + "app.html'><i class=\"zmdi zmdi-android\"></i><span class=\"nav-left\">开发</span></a></li>" +
+        (htmlName == 'movie' ? liActive : liNormal) + "<a href='" + path + "movie'><i class='zmdi zmdi-movie'></i><span class='nav-left'>电影</span></a></li>" +
+        (htmlName == 'book' ? liActive : liNormal) + "<a href='" + path + "book'><i class='zmdi zmdi-book'></i><span class='nav-left'>书籍</span></a></li>" +
+        (htmlName == 'world' ? liActive : liNormal) + "<a href='" + path + "world'><i class='zmdi zmdi-globe'></i><span class='nav-left'>足迹</span></a></li>" +
+        (htmlName == 'timeline' ? liActive : liNormal) + "<a href='" + path + "az/timeline/'><i class='zmdi zmdi-chart'></i><span class='nav-left'>年鉴</span></a></li>" +
+        (htmlName == 'dream' ? liActive : liNormal) + "<a href='" + path + "dream'><i class='zmdi zmdi-flag'></i><span class='nav-left'>梦想</span></a></li>" +
+        (htmlName == 'profile' ? liActive : liNormal) + "<a href='" + path + "profile'><i class='zmdi zmdi-account-circle'></i><span class='nav-left'>关于</span></a></li>" +
         "</ul>";
-
-};
+}
 
 /**
  * AZ:添加分享按钮
@@ -129,80 +110,20 @@ function insertShareButton() {
     let essaySummary = document.title;
     let essayUrl = window.location.href;//'http://www.zhoumushui.com/essay.html';
     let essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
-
-    document.getElementById("menu").innerHTML = "<li class=\"mfb-component__wrap\">" +
-        "<a class=\"mfb-component__button--main\">" +
-        "<i class=\"mfb-component__main-icon--resting zmdi zmdi-share\"></i>" +
-        "<i class=\"mfb-component__main-icon--active zmdi zmdi-close\"></i>" +
-        "</a>" +
-        "<ul class=\"mfb-component__list\">" +
-        "<li>" +
-        "<a data-mfb-label=\"分享到QQ空间\" class=\"mfb-component__button--child\" " +
-        "href=\"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url= " +
-        essayUrl + // encodeURIComponent(location.href),
-        "&title=" + essayTitle + //encodeURIComponent(document.title),
-        "&pics=" + essayPic +
-        "&summary=" + essaySummary + "\"" +
-        " target=\"_blank\">" +
-        "<i class=\"mfb-component__child-icon zmdi zmdi-star-circle\"></i>" +
-        "</a></li>" +
-        "<li> " +
-        "<a data-mfb-label=\"分享到新浪微博\" class=\"mfb-component__button--child\" " +
-        "href=\"http://service.weibo.com/share/share.php?title= " + essayTitle +
-        "&url=" + essayUrl + "\"" +
-        //'&source=bookmark','&appkey=2992571369','&pics=', essayPic,'&ralateUid=',
-        " target=\"_blank\">" +
-        "<i class=\"mfb-component__child-icon zmdi zmdi-eye\"></i>" +
-        "</a></li>" +
-        "<li>" +
-        "<a data-mfb-label=\"分享到豆瓣\" class=\"mfb-component__button--child\" " +
-        "href=\"https://www.douban.com/share/service?image= " + essayPic +
-        "&href=" + essayUrl +
-        "&name=" + essayTitle +
-        "&text=" + essaySummary + "\"" +
-        " target=\"_blank\">" +
-        "<i class=\"mfb-component__child-icon zmdi zmdi-flower-alt\"></i>" +
-        "</a></li>" +
-        "<li>" +
-        "<a data-mfb-label=\"剪藏到印象笔记\" class=\"mfb-component__button--child\" " +
-        "href=\"https://app.yinxiang.com/clip.action?url=" + essayUrl +
-        "&title=" + essayTitle + "\"" +
-        " target=\"_blank\"><i class=\"mfb-component__child-icon zmdi zmdi-evernote\"></i>" +
-        "</a></li></ul></li>"
-};
+    document.getElementById("menu").innerHTML = "<li class='mfb-component__wrap'><a class='mfb-component__button--main'><i class='mfb-component__main-icon--resting zmdi zmdi-share'></i><i class='mfb-component__main-icon--active zmdi zmdi-close'></i></a><ul class='mfb-component__list'><li><a data-mfb-label='分享到QQ空间' class='mfb-component__button--child' href='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url= " + essayUrl + "&title=" + essayTitle + "&pics=" + essayPic + "&summary=" + essaySummary + "' target='_blank'><i class='mfb-component__child-icon zmdi zmdi-star-circle'></i></a></li><li> <a data-mfb-label='分享到新浪微博' class='mfb-component__button--child' href='http://service.weibo.com/share/share.php?title= " + essayTitle + "&url=" + essayUrl + "' target='_blank'><i class='mfb-component__child-icon zmdi zmdi-eye'></i></a></li><li><a data-mfb-label='分享到豆瓣' class='mfb-component__button--child' href='https://www.douban.com/share/service?image= " + essayPic + "&href=" + essayUrl + "&name=" + essayTitle + "&text=" + essaySummary + "' target='_blank'><i class='mfb-component__child-icon zmdi zmdi-flower-alt'></i></a></li><li><a data-mfb-label='剪藏到印象笔记' class='mfb-component__button--child' href='https://app.yinxiang.com/clip.action?url=" + essayUrl + "&title=" + essayTitle + "' target='_blank\"><i class='mfb-component__child-icon zmdi zmdi-evernote'></i></a></li></ul></li>"
+}
 
 /**
  * AZ:添加脚部
  */
 function insertFooter() {
-    document.getElementById("footer").innerHTML = "&copy; <span id=\"footer-copyright\"></span> zhoumushui" +
-        "<ul class=\"footer__menu\">" +
-        "<li>" +
-        "<div class=\"sucaihuo-container\">" +
-        "<section class=\"cd-section toolbox-link\">" +
+    document.getElementById("footer").innerHTML = "&copy; <span id='footer-copyright'></span> zhoumushui<ul class='footer__menu'><li><div class='sucaihuo-container'><section class='cd-section toolbox-link'>" +
         /*
         "<a class=\"cd-bouncy-nav-trigger\" href=\"#0\">工具箱</a>" +
         "</section>" +
-
          */
-        "<div class=\"cd-bouncy-nav-modal\">" +
-        "<nav><ul class=\"cd-bouncy-nav\">" +
-        "<li><a target=\"_blank\" href=\"" + path + "link\">导航</a></li>" +
-        "<li><a target=\"_blank\" href=\"" + path + "pass.html\">密码</a></li>" +
-        "<li><a target=\"_blank\" href=\"" + path + "game\">游戏</a></li>" +
-        "<li><a target=\"_blank\" href=\"" + path + "file\">文件</a></li>" +
-        "<li><a target=\"_blank\" href=\"" + path + "module/colorpicker\">颜色</a></li>" +
-        "<li><a target=\"_blank\" href=\"" + path + "module/icon\">图标</a></li>" +
-        "</ul></nav>" +
-        "<a href=\"#0\" class=\"cd-close\">Close</a>" +
-        "</div>" +
-        "</div>" +
-        "</li>" +
-        "<li><a href=\"" + path + "comment\">留言板</a></li>" +
-        "<span id=\"busuanzi_container_site_pv\">PV: <span id=\"busuanzi_value_site_pv\"></span></span>" +
-        "<span id=\"busuanzi_container_site_uv\"> | UV: <span id=\"busuanzi_value_site_uv\"></span></span>" +
-        "</ul>"
-};
+        "<div class='cd-bouncy-nav-modal'><nav><ul class=\"cd-bouncy-nav\"><li><a target='_blank' href='" + path + "link'>导航</a></li><li><a target='_blank' href='" + path + "pass.html'>密码</a></li><li><a target='_blank' href='" + path + "game'>游戏</a></li><li><a target='_blank' href='" + path + "file'>文件</a></li><li><a target='_blank' href='" + path + "module/colorpicker'>颜色</a></li><li><a target='_blank' href='" + path + "module/icon'>图标</a></li></ul></nav><a href='#0' class='cd-close'>Close</a></div></div></li><li><a href=\"" + path + "comment\">留言板</a></li><span id='busuanzi_container_site_pv'>PV: <span id='busuanzi_value_site_pv'></span></span><span id='busuanzi_container_site_uv'> | UV: <span id='busuanzi_value_site_uv'></span></span></ul>"
+}
 
 function setCopyRightYear() {
     document.getElementById("footer-copyright").innerHTML = "" + new Date().getFullYear();
@@ -210,44 +131,7 @@ function setCopyRightYear() {
 }
 
 function insertIEWarning() {
-    document.getElementById("ie-warning").innerHTML = "<h1>Warning!!</h1>" +
-        "<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers" +
-        "to access this website.</p>" +
-        "<div class=\"ie-warning__container\">" +
-        "<ul class=\"ie-warning__download\">" +
-        "<li>" +
-        "<a href=\"http://www.google.com/chrome/\">" +
-        "<img src=\"" + path + "img/browsers/chrome.png\" alt=\"\">" +
-        "<div>Chrome</div>" +
-        "</a>" +
-        "</li>" +
-        "<li>" +
-        "<a href=\"https://www.mozilla.org/en-US/firefox/new/\">" +
-        "<img src=\"" + path + "img/browsers/firefox.png\" alt=\"\">" +
-        "<div>Firefox</div>" +
-        "</a>" +
-        "</li>" +
-        "<li>" +
-        "<a href=\"http://www.opera.com\">" +
-        "<img src=\"" + path + "img/browsers/opera.png\" alt=\"\">" +
-        "<div>Opera</div>" +
-        "</a>" +
-        "</li>" +
-        "<li>" +
-        "<a href=\"https://www.apple.com/safari/\">" +
-        "<img src=\"" + path + "img/browsers/safari.png\" alt=\"\">" +
-        "<div>Safari</div>" +
-        "</a>" +
-        "</li>" +
-        "<li>" +
-        "<a href=\"http://windows.microsoft.com/en-us/internet-explorer/download-ie\">" +
-        "<img src=\"" + path + "img/browsers/ie.png\" alt=\"\">" +
-        "<div>IE (New)</div>" +
-        "</a>" +
-        "</li>" +
-        "</ul>" +
-        "</div>" +
-        "<p>Sorry for the inconvenience!</p>"
+    document.getElementById("ie-warning").innerHTML = "<h1>Warning!!</h1><p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p><div class='ie-warning__container'><ul class='ie-warning__download'><li><a href='http://www.google.com/chrome/'><img src='" + path + "img/browsers/chrome.png' alt=''><div>Chrome</div></a></li><li><a href=\"https://www.mozilla.org/en-US/firefox/new/'><img src='" + path + "img/browsers/firefox.png' alt=''><div>Firefox</div></a></li><li><a href='http://www.opera.com'><img src='" + path + "img/browsers/opera.png' alt=''><div>Opera</div></a></li><li><a href='https://www.apple.com/safari/'><img src='" + path + "img/browsers/safari.png' alt=''><div>Safari</div></a></li><li><a href='http://windows.microsoft.com/en-us/internet-explorer/download-ie'><img src='" + path + "img/browsers/ie.png' alt=''><div>IE (New)</div></a></li></ul></div><p>Sorry for the inconvenience!</p>"
 }
 
 function isIEBrowser() { //ie?
@@ -271,20 +155,17 @@ function GetQueryString(name) {
 
 function isPublic() {
     let str = window.location.href;
-    if (str.indexOf("az") != -1 ||
+    return !(str.indexOf("az") != -1 ||
         str.indexOf("movie") != -1 ||
         str.indexOf("book") != -1 ||
         str.indexOf("world") != -1 ||
         str.indexOf("dream") != -1 ||
-        str.indexOf("profile") != -1  )
-        return false;
-    else
-        return true;
+        str.indexOf("profile") != -1);
 }
 
-let public = isPublic();
-console.log("isPublic=" + public);
-if (public)
+let mPublic = isPublic();
+console.log("isPublic=" + mPublic);
+if (mPublic)
     document.getElementById("navigation").style.display = "none";
 else {
     insertHeader();
