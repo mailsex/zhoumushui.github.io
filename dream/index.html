@@ -64,7 +64,7 @@
 
     <script>
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
             var s = document.getElementsByTagName("script")[0];
@@ -325,7 +325,12 @@
                             <td>雷克萨斯。</td>
                             <td>2031.09.23</td>
                         </tr>
-
+                        <tr>
+                            <td>0</td>
+                            <td>Earn ￥1,000,000 One Year.</td>
+                            <td>年入百万.</td>
+                            <td></td>
+                        </tr>
                         <tr>
                             <td>0</td>
                             <td>Record a Music Demo.</td>
@@ -764,9 +769,21 @@
                         </tr>
                         <tr>
                             <td>1</td>
+                            <td>ML 500 Times.</td>
+                            <td>ML 500次。</td>
+                            <td>2016.11.08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
                             <td>Desktop PC, Assemble Myself.</td>
                             <td>组装台式电脑。</td>
                             <td>2016.10.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>30,000 Steps a Day.</td>
+                            <td>单日3万步。</td>
+                            <td>2016.07.16</td>
                         </tr>
                         <tr>
                             <td>-1</td>
@@ -777,7 +794,7 @@
                         <tr>
                             <td>1</td>
                             <td>Earn ￥20,000 One Month.</td>
-                            <td>20000.</td>
+                            <td>月入2万.</td>
                             <td>2015.12.31</td>
                         </tr>
                         <tr>
@@ -789,7 +806,7 @@
                         <tr>
                             <td>1</td>
                             <td>Earn ￥10,000 One Month.</td>
-                            <td>10000.</td>
+                            <td>月入10000.</td>
                             <td>2015.08.31</td>
                         </tr>
                         <tr>
@@ -1159,36 +1176,24 @@
             let tdState = trs[i].getElementsByTagName('td')[0];
             let tdDate = trs[i].getElementsByTagName('td')[3];
 
-            if (tdState.innerHTML.indexOf('1') == 0) { // Achieved Dreams
+            if (tdState.innerHTML.indexOf("1991") == 0 || tdState.innerHTML.indexOf("-1") == 0) {
+                numTotal--;
+            } else if (tdState.innerHTML.indexOf('1') == 0) { // Achieved Dreams
                 numDone++; // Done
 
-                if (tdDate.innerHTML.indexOf('2002') == 0) { // Year
-                    num2002++;
-                } else if (tdDate.innerHTML.indexOf('2009') == 0) {
-                    num2009++;
-                } else if (tdDate.innerHTML.indexOf('2010') == 0) {
-                    num2010++;
-                } else if (tdDate.innerHTML.indexOf('2011') == 0) {
-                    num2011++;
-                } else if (tdDate.innerHTML.indexOf('2012') == 0) {
-                    num2012++;
-                } else if (tdDate.innerHTML.indexOf('2013') == 0) {
-                    num2013++;
-                } else if (tdDate.innerHTML.indexOf('2014') == 0) {
-                    num2014++;
-                } else if (tdDate.innerHTML.indexOf('2015') == 0) {
-                    num2015++;
-                } else if (tdDate.innerHTML.indexOf('2016') == 0) {
-                    num2016++;
-                } else if (tdDate.innerHTML.indexOf('2017') == 0) {
-                    num2017++;
-                } else if (tdDate.innerHTML.indexOf('2018') == 0) {
-                    num2018++;
-                } else if (tdDate.innerHTML.indexOf('2019') == 0) {
-                    num2019++;
-                } else if (tdDate.innerHTML.indexOf('2020') == 0) {
-                    num2020++;
-                }
+                if (tdDate.innerHTML.indexOf('2002') == 0) num2002++;
+                else if (tdDate.innerHTML.indexOf('2009') == 0) num2009++;
+                else if (tdDate.innerHTML.indexOf('2010') == 0) num2010++;
+                else if (tdDate.innerHTML.indexOf('2011') == 0) num2011++;
+                else if (tdDate.innerHTML.indexOf('2012') == 0) num2012++;
+                else if (tdDate.innerHTML.indexOf('2013') == 0) num2013++;
+                else if (tdDate.innerHTML.indexOf('2014') == 0) num2014++;
+                else if (tdDate.innerHTML.indexOf('2015') == 0) num2015++;
+                else if (tdDate.innerHTML.indexOf('2016') == 0) num2016++;
+                else if (tdDate.innerHTML.indexOf('2017') == 0) num2017++;
+                else if (tdDate.innerHTML.indexOf('2018') == 0) num2018++;
+                else if (tdDate.innerHTML.indexOf('2019') == 0) num2019++;
+                else if (tdDate.innerHTML.indexOf('2020') == 0) num2020++;
             }
         }
         // document.getElementById("doneTotal").innerHTML = numDone + '/' + numTotal;
