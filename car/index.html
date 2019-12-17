@@ -176,7 +176,7 @@
             <div class="action-header">
                 <span class="essay-title" style="font-size: larger;font-weight: bold;">中保研碰撞测试汇总</span>
                 <span id="btnSaveImage" class="btn-save-image"><i class="zmdi zmdi-download"></i> 保存图片</span>
-                <span align="right" class="update-date"><i class="zmdi zmdi-time"></i> 2019.12.10</span>
+                <span align="right" class="update-date"><i class="zmdi zmdi-time"></i> 2019.12.16</span>
             </div>
             <div id="card_body" class="card__body main-frame">
                 <div class="table-responsive">
@@ -226,6 +226,20 @@
                             <td>C</td><!-- NZ -->
                             <td>19A</td><!-- PC -->
                             <td>43</td><!-- ID -->
+                        </tr>
+                        <tr>
+                            <td>华晨宝马</td><!-- PP -->
+                            <td>325Li</td><!-- XH -->
+                            <td>2020</td><!-- NF -->
+                            <td>00</td><!-- ZM -->
+                            <td>00</td><!-- CM -->
+                            <td>6.11</td><!-- CD -->
+                            <td>A</td><!-- ZY -->
+                            <td>A</td><!-- FZ -->
+                            <td>A</td><!-- XR -->
+                            <td>D</td><!-- NZ -->
+                            <td>19B</td><!-- PC -->
+                            <td>48</td><!-- ID -->
                         </tr>
                         <tr>
                             <td>豪情沃尔沃</td><!-- PP -->
@@ -904,20 +918,6 @@
                             <td></td><!-- ID -->
                         </tr>
                         <tr>
-                            <td>华晨宝马</td><!-- PP -->
-                            <td>325Li</td><!-- XH -->
-                            <td>2020</td><!-- NF -->
-                            <td>T</td><!-- ZM -->
-                            <td>T</td><!-- CM -->
-                            <td>T</td><!-- CD -->
-                            <td>T</td><!-- ZY -->
-                            <td>T</td><!-- FZ -->
-                            <td>T</td><!-- XR -->
-                            <td>T</td><!-- NZ -->
-                            <td>19B</td><!-- PC -->
-                            <td></td><!-- ID -->
-                        </tr>
-                        <tr>
                             <td>上汽荣威</td><!-- PP -->
                             <td>RX5 MAX</td><!-- XH -->
                             <td>2019</td><!-- NF -->
@@ -1065,10 +1065,10 @@
             search: "", header: "",
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
             footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
-                "<span class='line-left'></span>" +
-                "<span class='text'>zhoumushui.com/car</span>" +
-                "<span class='line-right'></span>" +
-                "</div>"
+            "<span class='line-left'></span>" +
+            "<span class='text'>zhoumushui.com/car</span>" +
+            "<span class='line-right'></span>" +
+            "</div>"
 
         },
         formatters: {
@@ -1207,6 +1207,7 @@
         addData('日产天籁', 0);
         addData('沃尔沃XC60', 0);
         addData('丰田亚洲龙', 0);
+        addData('宝马325Li', 0);
         addData('丰田雷凌', 0);
         addData('丰田奕泽', 0);
         for (let i = 0; i < legendData.length; i++) {
@@ -1276,6 +1277,7 @@
         addData('丰田凯美瑞', 0); // 15.5
         addData('领克01', 0); // 16.0
         addData('丰田亚洲龙', 0); // 16.5
+        addData('宝马325Li', 0); // 17.5
         addData('丰田雷凌', 0); // 17.5
         addData('凯迪拉克XT4', 0); // 18.5
         addData('沃尔沃XC60', 0); // 26.0
@@ -1351,6 +1353,7 @@
         addData('丰田凯美瑞', 5.98);
         addData('丰田亚洲龙', 6.03);
         addData('奔驰C200', 6.06);
+        addData('宝马325Li', 6.11);
         for (let i = 0; i < legendData.length; i++) {
             let seriesDataVal = null;
             seriesDataVal = {
@@ -1424,6 +1427,7 @@
         addData('别克昂科威', 24.023);
         addData('丰田奕泽', 24.200);
         addData('本田凌派', 26.488);
+        addData('宝马325Li', 27.294);
         for (let i = 0; i < legendData.length; i++) {
             let seriesDataVal = null;
             seriesDataVal = {
@@ -1473,7 +1477,7 @@
         4, 7, 8, 9, 12, 14, 15, 16, 17, 18, 19,
         20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
         30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-        40, 41, 42, 43, 44, 45, 46, 47
+        40, 41, 42, 43, 44, 45, 46, 47, 48
     ];
     let contentImgFrame = "";
     for (let i = 0; i < arrayId.length; i++) {
