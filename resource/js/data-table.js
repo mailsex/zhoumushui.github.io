@@ -472,6 +472,7 @@ function getLogoByMake(m, depth, size) {
     else if (m.indexOf("别克") != -1 || m.indexOf("Buick") != -1) n = "Buick";
     else if (m.indexOf("福特") != -1 || m.indexOf("Ford") != -1) n = "Ford";
     else if (m.indexOf("雪佛兰") != -1 || m.indexOf("Chevrolet") != -1) n = "Chevrolet";
+    else if (m.indexOf("GMC") != -1) n = "GMC";
     else if (m.indexOf("凯迪拉克") != -1 || m.indexOf("Cadillac") != -1) n = "Cadillac";
     else if (m.indexOf("克莱斯勒") != -1 || m.indexOf("Chrysler") != -1) n = "Chrysler";
     else if (m.indexOf("道奇") != -1 || m.indexOf("Dodge") != -1) n = "Dodge";
