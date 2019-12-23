@@ -176,7 +176,7 @@
             <div class="action-header">
                 <span class="essay-title" style="font-size: larger;font-weight: bold;">中保研碰撞测试汇总</span>
                 <span id="btnSaveImage" class="btn-save-image"><i class="zmdi zmdi-download"></i> 保存图片</span>
-                <span align="right" class="update-date"><i class="zmdi zmdi-time"></i> 2019.12.16</span>
+                <span align="right" class="update-date"><i class="zmdi zmdi-time"></i> 2019.12.23</span>
             </div>
             <div id="card_body" class="card__body main-frame">
                 <div class="table-responsive">
@@ -704,6 +704,20 @@
                             <td>35</td><!-- ID -->
                         </tr>
                         <tr>
+                            <td>上汽大众</td><!-- PP -->
+                            <td>帕萨特</td><!-- XH -->
+                            <td>2019</td><!-- NF -->
+                            <td>44</td><!-- ZM -->
+                            <td>22</td><!-- CM -->
+                            <td>5.41</td><!-- CD -->
+                            <td>A</td><!-- ZY -->
+                            <td>A</td><!-- FZ -->
+                            <td>A</td><!-- XR -->
+                            <td>B</td><!-- NZ -->
+                            <td>19B</td><!-- PC -->
+                            <td>49</td><!-- ID -->
+                        </tr>
+                        <tr>
                             <td>一汽奔腾</td><!-- PP -->
                             <td>T77</td><!-- XH -->
                             <td>2019</td><!-- NF -->
@@ -805,20 +819,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>上汽大众</td><!-- PP -->
-                            <td>帕萨特</td><!-- XH -->
-                            <td>2019</td><!-- NF -->
-                            <td>T</td><!-- ZM -->
-                            <td>T</td><!-- CM -->
-                            <td>T</td><!-- CD -->
-                            <td>T</td><!-- ZY -->
-                            <td>T</td><!-- FZ -->
-                            <td>T</td><!-- XR -->
-                            <td>T</td><!-- NZ -->
-                            <td>19B</td><!-- PC -->
-                            <td></td><!-- ID -->
-                        </tr>
                         <tr>
                             <td>长安马自达</td><!-- PP -->
                             <td>3</td><!-- XH -->
@@ -958,7 +958,7 @@
         </div>
         <div align='center' class='watermark'>
             <span class='line-left'></span>
-             <a href="../reward/" target="_blank" class="orange"> 支持作者 </a>
+            <a href="../reward/" target="_blank" class="orange"> 支持作者 </a>
             <span class='line-right'></span>
         </div>
     </section>
@@ -1067,10 +1067,10 @@
             search: "", header: "",
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
             footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
-            "<span class='line-left'></span>" +
-            "<span class='text'>zhoumushui.com/car</span>" +
-            "<span class='line-right'></span>" +
-            "</div>"
+                "<span class='line-left'></span>" +
+                "<span class='text'>zhoumushui.com/car</span>" +
+                "<span class='line-right'></span>" +
+                "</div>"
 
         },
         formatters: {
@@ -1172,6 +1172,7 @@
             arrayScore.push(score);
         }
 
+        addData('大众帕萨特', 44);
         addData('大众途观L', 24);
         addData('比亚迪宋MAX', 24);
         addData('别克GL8', 24);
@@ -1257,6 +1258,7 @@
         addData('现代菲斯塔', 28); // 10.5
         addData('别克GL8', 26); // 8.0
         addData('本田凌派', 24); // 12.5
+        addData('大众帕萨特', 22); // 13.0
         addData('雪佛兰科鲁泽', 14); // 11.5
         addData('本田雅阁', 14); // 14.5
         addData('三菱欧蓝德', 12); //  9.0
@@ -1348,6 +1350,7 @@
         addData('领克01', 5.21);
         addData('现代领动', 5.32);
         addData('本田思域', 5.34);
+        addData('大众帕萨特', 5.41);
         addData('福特福克斯', 5.61);
         addData('丰田雷凌', 5.66);
         addData('奔腾T77', 5.74);
@@ -1420,6 +1423,7 @@
         addData('福特福克斯', 21.557);
         addData('丰田亚洲龙', 21.779);
         addData('三菱欧蓝德', 22.093);
+        addData('大众帕萨特', 22.170);
         addData('凯迪拉克XT4', 22.266);
         addData('雪佛兰科鲁泽', 23.022);
         addData('沃尔沃XC60', 23.036);
@@ -1479,7 +1483,7 @@
         4, 7, 8, 9, 12, 14, 15, 16, 17, 18, 19,
         20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
         30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-        40, 41, 42, 43, 44, 45, 46, 47, 48
+        40, 41, 42, 43, 44, 45, 46, 47, 48, 49
     ];
     let contentImgFrame = "";
     for (let i = 0; i < arrayId.length; i++) {
