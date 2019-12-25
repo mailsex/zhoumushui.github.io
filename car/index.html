@@ -103,7 +103,7 @@
 
         .score-detail {
             width: 100%;
-            height: 750px;
+            height: 760px;
         }
 
         .car-make {
@@ -1231,7 +1231,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailFront', "正面25%偏置碰撞（越低越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailFront', "正面25%偏置碰撞","（分数越低越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataSide() {
@@ -1304,7 +1304,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailSide', "侧面碰撞（越低越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailSide', "侧面碰撞","（分数越低越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataTop() {
@@ -1379,7 +1379,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailTop', "车顶强度（越高越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailTop', "车顶强度","（分数越高越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataRoadUser() {
@@ -1453,18 +1453,21 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailRoadUser', "行人保护（越高越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailRoadUser', "行人保护","（分数越高越好）", legendData, arrayCar, seriesValue);
     }
 
-    function buildChart(chartId, title, legendData, arrayCar, seriesValue) {
+    function buildChart(chartId, title,subTitle, legendData, arrayCar, seriesValue) {
         let chart = document.getElementById(chartId);
         let echart = echarts.init(chart);
         let option = {
-            title: {text: title, x: "center", y: "0", textStyle: {fontSize: 18, fontWeight: 'bold', color: '#DDDDDD'}},
+            title: {
+                text: title, x: "center", y: "0", textStyle: {fontSize: 18, fontWeight: 'bold', color: '#DDDDDD'},
+                subtext:subTitle,subtextStyle: {fontSize: 12,color: '#FFEB3B'},
+            },
             tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}},
             toolbox: {show: true, feature: {saveAsImage: {show: true},}},
-            legend: {x: 'left', y: 'top', padding: [15, 0, 0, 10]},//图例说明文字设置
-            grid: {left: '3%', right: '4%', bottom: '5%', top: '5%', containLabel: true},
+            legend: {show: true, x: 'left', y: 'top', padding: [15, 0, 0, 10]},//图例说明文字设置
+            grid: {left: '3%', right: '4%', bottom: '5%', top: '6%', containLabel: true},
             yAxis: [{
                 min: 0, type: 'category', data: arrayCar, axisLabel: {color: '#DDDDDD'},// 刻度线标签
                 axisLine: {lineStyle: {color: '#DDDDDD'}}// 坐标轴
