@@ -1159,7 +1159,8 @@
 <script src="../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
 <script src="../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
 
-<script src="js/echarts.min.js"></script>
+<script src="js/echarts.min.graphic.js"></script>
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>-->
 <script>
     function initDataFront() {
         let legendData = ['正面25%偏置'];
@@ -1231,7 +1232,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailFront', "正面25%偏置碰撞","（分数越低越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailFront', "正面25%偏置碰撞", "（分数越低越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataSide() {
@@ -1304,7 +1305,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailSide', "侧面碰撞","（分数越低越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailSide', "侧面碰撞", "（分数越低越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataTop() {
@@ -1379,7 +1380,7 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailTop', "车顶强度","（分数越高越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailTop', "车顶强度", "（分数越高越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataRoadUser() {
@@ -1453,16 +1454,16 @@
             };
             seriesValue.push(seriesDataVal);
         }
-        buildChart('detailRoadUser', "行人保护","（分数越高越好）", legendData, arrayCar, seriesValue);
+        buildChart('detailRoadUser', "行人保护", "（分数越高越好）", legendData, arrayCar, seriesValue);
     }
 
-    function buildChart(chartId, title,subTitle, legendData, arrayCar, seriesValue) {
+    function buildChart(chartId, title, subTitle, legendData, arrayCar, seriesValue) {
         let chart = document.getElementById(chartId);
         let echart = echarts.init(chart);
         let option = {
             title: {
                 text: title, x: "center", y: "0", textStyle: {fontSize: 18, fontWeight: 'bold', color: '#DDDDDD'},
-                subtext:subTitle,subtextStyle: {fontSize: 12,color: '#FFEB3B'},
+                subtext: subTitle, subtextStyle: {fontSize: 12, color: '#FFEB3B'},
             },
             tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}},
             toolbox: {show: true, feature: {saveAsImage: {show: true},}},
@@ -1477,7 +1478,38 @@
                 axisLine: {lineStyle: {color: '#DDDDDD'}}// 坐标轴
             }],
             label: {normal: {show: true, position: 'top'}},//显示bar数据
-            series: seriesValue, backgroundColor: '#2b3942'
+            series: seriesValue, backgroundColor: '#2b3942',
+            graphic: [
+                {
+                    type: 'group',
+                    rotation: 0,
+                    bounding: 'raw',
+                    right: 450,
+                    bottom: 20,
+                    z: 100,
+                    children: [
+                        {
+                            type: 'rect',
+                            left: 'center',
+                            top: 'center',
+                            z: 100,
+                            shape: {width: 190, height: 20},
+                            style: {fill: 'rgba(34,49,58,1)'}
+                        },
+                        {
+                            type: 'text',
+                            left: 'center',
+                            top: 'center',
+                            z: 100,
+                            style: {
+                                fill: '#009688',
+                                text: '—— zhoumushui.com/car ——',
+                                font: 'normal 13px'
+                            }
+                        }
+                    ]
+                }
+            ]
         };
         echart.setOption(option);
     }
