@@ -11,15 +11,12 @@
     <!-- Material Design Icons -->
     <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
           rel="stylesheet">
-
-    <!-- Site CSS -->
-    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+    <link href="css/site.reward.css" rel="stylesheet"><!-- Site CSS -->
 
     <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
     <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
 
-    <!-- Material Floating Button -->
-    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet"><!-- Material Floating Button -->
     <style>
         .section {
             width: 100%;
@@ -37,6 +34,11 @@
             border-radius: 3px;
         }
 
+        .title {
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center
+        }
     </style>
 
     <script>
@@ -52,25 +54,12 @@
 <body>
 
 <section id="main" style="margin:auto;padding:0;width: 910px;">
-
-    <aside id="navigation">
-        <div class="navigation__header">
-            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
-        </div>
-        <div class="navigation__toggles">
-            <a href="" data-toggle="tab">随</a>
-            <a href="" data-toggle="tab">笔</a>
-        </div>
-        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
-    </aside>
-
-    <section>
+    <section style="margin-top: 10px">
         <div class="card">
-            <div class="card__body" style="padding-top: 10px">
-                <h4 style="font-weight: bold;text-align: center">鸣谢</h4><br>
+            <div class="card__body" style="padding-top: 1px">
+                <h3 class="title">鸣谢</h3><br>
                 <div class="table-responsive">
                     <li>数据来源：<a href="http://ciasi.org.cn/">中国保险汽车安全指数（中保研）</a></li>
-                    <!--<li>服务器提供：<a href="https://github.com/">GitHub</a></li>-->
                     <li style="margin-top: 5px">感谢网友：
                         <span class="support">YIFang0926</span>
                         <span class="support">FangYiMin</span>
@@ -87,8 +76,8 @@
 
     <section>
         <div class="card">
-            <div id="card_body3" class="card__body" style="padding-top: 10px;text-align: center">
-                <h4 style="font-weight: bold">支持作者</h4><br>
+            <div id="card_body3" class="card__body" style="padding-top: 1px;text-align: center">
+                <h3 class="title">支持作者</h3><br>
                 <div class="table-responsive">
                     <img src="../resource/img/pay/Alipay.png">
                 </div>
@@ -101,21 +90,8 @@
     <footer id="footer" class="font-yahei"></footer>
 </section>
 
-<!-- jQuery -->
-<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Bootstrap Notify -->
-<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
-
-<!-- Bootgrid -->
-<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
-
-
-<!-- busuanzi PV&UV -->
-<script async src="../resource/js/busuanzi.pure.mini.js"></script>
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script><!-- jQuery -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script><!-- busuanzi PV&UV -->
 
 <!-- Nest Follow Mouse Background -->
 <script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
