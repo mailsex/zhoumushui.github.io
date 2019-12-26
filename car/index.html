@@ -785,13 +785,19 @@
 
         <div style="position:absolute;top:10px;right:45px">
             <label>
-                <input type="checkbox" value="2" id="pst" checked="checked" name="pst" onclick="changePassat(this);"/>
-                <span style="color: #BBBBBB;font-size: small;">帕萨特</span>
+                <input type="checkbox" value="2" id="front" onclick="changeFront(this);"/>
+                <span style="color: #BBBBBB;font-size: small;">假人伤害</span>
             </label>
         </div>
     </section>
-    <section>
+    <section style="position:relative;">
         <div class="card detail-frame score-detail" id="detailSide"></div>
+        <div style="position:absolute;top:10px;right:45px">
+            <label>
+                <input type="checkbox" value="2" id="side" onclick="changeSide(this);"/>
+                <span style="color: #BBBBBB;font-size: small;">车辆结构</span>
+            </label>
+        </div>
     </section>
     <section>
         <div class="card detail-frame score-detail" id="detailTop"></div>
@@ -1076,10 +1082,10 @@
             search: "", header: "",
             actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
             footer: "<div id='watermark' align='center' class='watermark' style='display: none'>" +
-                "<span class='line-left'></span>" +
-                "<span class='text'>zhoumushui.com/car</span>" +
-                "<span class='line-right'></span>" +
-                "</div>"
+            "<span class='line-left'></span>" +
+            "<span class='text'>zhoumushui.com/car</span>" +
+            "<span class='line-right'></span>" +
+            "</div>"
 
         },
         formatters: {
@@ -1112,12 +1118,12 @@
             },
             "link": function (column, row) {
                 if (row.link) {
-                    //let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
-                    //return "<span style='font-size: 15px' >" +
-                    //    "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
-                    //    + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
-                    //    + "</a>" +
-                    //    "</span>";
+//                    let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
+//                    return "<span style='font-size: 15px' >" +
+//                        "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
+//                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
+//                        + "</a>" +
+//                        "</span>";
                     return "<button title='" + row.model + "' id='btn" + row.link + "' class='btn-view-image'>" +
                         "<i class='btn-detail-link zmdi zmdi-image-o'></i>" +
                         "</button>";
@@ -1171,7 +1177,7 @@
 <script src="js/echarts.min.graphic.js"></script>
 <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>-->
 <script>
-    function initDataFront(showPassat) {
+    function initDataFront() {
         let legendData = ['正面25%偏置'];
         let arrayCar = [];
         let seriesValue = [];
@@ -1182,8 +1188,7 @@
             arrayScore.push(score);
         }
 
-        if (showPassat)
-            addData('大众帕萨特', 44);
+        addData('大众帕萨特', 44);
         addData('大众途观L', 24);
         addData('比亚迪宋MAX', 24);
         addData('别克GL8', 24);
@@ -1243,6 +1248,80 @@
             seriesValue.push(seriesDataVal);
         }
         buildChart('detailFront', "正面25%偏置碰撞", "（分数越低越好）", legendData, arrayCar, seriesValue);
+    }
+
+
+    function initDataFrontPeopleHarm() {
+        let legendData = ['正面25%偏置 - 假人伤害'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('大众帕萨特', 24);
+        addData('大众途观L', 14);
+        addData('东风AX7', 7);
+        addData('宝骏510', 6);
+        addData('比亚迪宋MAX', 4);
+        addData('别克GL8', 4);
+        addData('起亚智跑', 4);
+        addData('奔腾T77', 4);
+        addData('江淮瑞风S3', 4);
+        addData('宝马318i', 4);
+        addData('众泰T600', 4);
+        addData('奔驰C200', 4);
+        addData('奇瑞艾瑞泽5', 2);
+        addData('现代菲斯塔', 2);
+        addData('绅宝D50', 1);
+        addData('斯柯达柯迪亚克', 1);
+        addData('本田思域', 1);
+        addData('传祺GS7', 1);
+        addData('福特福克斯', 1);
+        addData('日产西玛', 0);
+        addData('大众迈腾',0 );
+        addData('本田凌派', 0);
+        addData('别克昂科威', 0);
+        addData('吉利星越', 0);
+        addData('雷诺科雷傲', 0);
+        addData('本田雅阁', 0);
+        addData('凯迪拉克XT4', 0);
+        addData('哈弗F5', 0);
+        addData('三菱欧蓝德', 0);
+        addData('雪佛兰科鲁泽', 0);
+        addData('现代领动', 0);
+        addData('魏派VV5', 0);
+        addData('比亚迪唐', 0);
+        addData('领克01', 0);
+        addData('丰田凯美瑞', 0);
+        addData('日产天籁', 0);
+        addData('沃尔沃XC60', 0);
+        addData('丰田亚洲龙', 0);
+        addData('宝马325Li', 0);
+        addData('丰田雷凌', 0);
+        addData('丰田奕泽', 0);
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10, type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true, barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value < 1) return "#4CAF50";
+                            else if (params.value < 3) return "#FFEB3B";
+                            else if (params.value < 5) return "#FF9800";
+                            else return "#f44336";
+                        }
+                    }
+                }, label: {normal: {show: true, position: 'right'}}, data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailFront', "正面25%偏置碰撞 - 假人伤害", "（伤害越低越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataSide() {
@@ -1316,6 +1395,80 @@
             seriesValue.push(seriesDataVal);
         }
         buildChart('detailSide', "侧面碰撞", "（分数越低越好）", legendData, arrayCar, seriesValue);
+    }
+
+
+    function initDataSideLength() {
+        let legendData = ['侧面碰撞 - B柱与座椅中线距离'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('比亚迪宋MAX', 1.0);
+        addData('宝骏510', 2.5);
+        addData('江淮瑞风S3', 4.5);
+        addData('雷诺科雷傲', 4.5);
+        addData('日产西玛', 5.5);
+        addData('绅宝D50', 6.0);
+        addData('本田思域', 8.0);
+        addData('别克GL8', 8.0);
+        addData('三菱欧蓝德', 9.0);
+        addData('奇瑞艾瑞泽5', 10.5);
+        addData('现代菲斯塔', 10.5);
+        addData('日产天籁', 10.5);
+        addData('现代领动', 11.0);
+        addData('斯柯达柯迪亚克', 11.5);
+        addData('雪佛兰科鲁泽', 11.5);
+        addData('大众迈腾', 12.0);
+        addData('本田凌派', 12.5);
+        addData('大众帕萨特', 13.0);
+        addData('起亚智跑', 13.0);
+        addData('别克昂科威', 13.0);
+        addData('众泰T600', 14.0);
+        addData('本田雅阁', 14.5);
+        addData('传祺GS7', 14.5);
+        addData('东风AX7', 15.0);
+        addData('丰田凯美瑞', 15.5);
+        addData('领克01', 16.0);
+        addData('丰田亚洲龙', 16.5);
+        addData('吉利星越', 17.0);
+        addData('哈弗F5', 17.5);
+        addData('宝马325Li', 17.5);
+        addData('丰田雷凌', 17.5);
+        addData('魏派VV5', 18.0);
+        addData('大众途观L', 18.0);
+        addData('宝马318i', 18.5);
+        addData('凯迪拉克XT4', 18.5);
+        addData('奔驰C200', 20.0);
+        addData('福特福克斯', 21.0);
+        addData('比亚迪唐', 21.5);
+        addData('奔腾T77', 23.5);
+        addData('沃尔沃XC60', 26.0);
+        addData('丰田奕泽', 31.5);
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10, type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true, barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value > 19) return "#4CAF50";
+                            else if (params.value > 14) return "#FFEB3B";
+                            else if (params.value > 9) return "#FF9800";
+                            else return "#f44336";
+                        }
+                    }
+                }, label: {normal: {show: true, position: 'right'}}, data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailSide', "侧面碰撞 - B柱与座椅中线距离", "（距离越大越好）", legendData, arrayCar, seriesValue);
     }
 
     function initDataTop() {
@@ -1549,9 +1702,14 @@
         //initDataRoadUser();
     }
 
-    function changePassat(o) {
-        if (o.checked) initDataFront(true);
-        else initDataFront(false);
+    function changeFront(o) {
+        if (o.checked) initDataFrontPeopleHarm();
+        else initDataFront(true);
+    }
+
+    function changeSide(o) {
+        if (o.checked) initDataSideLength();
+        else initDataSide();
     }
 </script>
 <script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
