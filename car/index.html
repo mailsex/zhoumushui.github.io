@@ -780,8 +780,15 @@
         </div>
     </section>
 
-    <section>
+    <section style="position:relative;">
         <div class="card detail-frame score-detail" id="detailFront"></div>
+
+        <div style="position:absolute;top:10px;left:10px">
+            <label>
+                <input type="checkbox" value="2" id="pst" checked="checked" name="pst" onclick="changePassat(this);"/>
+                帕萨特
+            </label>
+        </div>
     </section>
     <section>
         <div class="card detail-frame score-detail" id="detailSide"></div>
@@ -1164,7 +1171,7 @@
 <script src="js/echarts.min.graphic.js"></script>
 <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>-->
 <script>
-    function initDataFront() {
+    function initDataFront(showPassat) {
         let legendData = ['正面25%偏置'];
         let arrayCar = [];
         let seriesValue = [];
@@ -1175,7 +1182,8 @@
             arrayScore.push(score);
         }
 
-        addData('大众帕萨特', 44);
+        if (showPassat)
+            addData('大众帕萨特', 44);
         addData('大众途观L', 24);
         addData('比亚迪宋MAX', 24);
         addData('别克GL8', 24);
@@ -1483,26 +1491,15 @@
             series: seriesValue, backgroundColor: '#2b3942',
             graphic: [
                 {
-                    type: 'group',
-                    rotation: 0,
-                    bounding: 'raw',
-                    right: 450,
-                    bottom: 20,
-                    z: 100,
+                    type: 'group', rotation: 0, bounding: 'raw', right: 450, bottom: 20, z: 100,
                     children: [
                         {
-                            type: 'rect',
-                            left: 'center',
-                            top: 'center',
-                            z: 100,
+                            type: 'rect', left: 'center', top: 'center', z: 100,
                             shape: {width: 190, height: 20},
                             style: {fill: 'rgba(34,49,58,1)'}
                         },
                         {
-                            type: 'text',
-                            left: 'center',
-                            top: 'center',
-                            z: 100,
+                            type: 'text', left: 'center', top: 'center', z: 100,
                             style: {
                                 fill: '#009688',
                                 text: '—— zhoumushui.com/car ——',
@@ -1543,10 +1540,15 @@
                 document.getElementById("img" + id).click();
             }
         }
-        initDataFront();
+        initDataFront(true);
         initDataSide();
         initDataTop();
         //initDataRoadUser();
+    }
+
+    function changePassat(o) {
+        if (o.checked) initDataFront(true);
+        else initDataFront(false);
     }
 </script>
 <script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
