@@ -783,10 +783,10 @@
     <section style="position:relative;">
         <div class="card detail-frame score-detail" id="detailFront"></div>
 
-        <div style="position:absolute;top:10px;left:10px">
+        <div style="position:absolute;top:10px;right:45px">
             <label>
                 <input type="checkbox" value="2" id="pst" checked="checked" name="pst" onclick="changePassat(this);"/>
-                帕萨特
+                <span style="color: #BBBBBB;font-size: small;">帕萨特</span>
             </label>
         </div>
     </section>
@@ -1476,7 +1476,10 @@
                 subtext: subTitle, subtextStyle: {fontSize: 12, color: '#FFEB3B'},
             },
             tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}},
-            toolbox: {show: true, feature: {saveAsImage: {show: true},}},
+            toolbox: {
+                show: true, feature: {saveAsImage: {show: true},},
+                iconStyle: {normal: {borderWidth: 1, borderColor: '#ccc'}}
+            },
             legend: {show: true, x: 'left', y: 'top', padding: [15, 0, 0, 10]},//图例说明文字设置
             grid: {left: '3%', right: '4%', bottom: '5%', top: '6%', containLabel: true},
             yAxis: [{
