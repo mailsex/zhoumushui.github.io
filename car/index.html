@@ -799,8 +799,14 @@
             </label>
         </div>
     </section>
-    <section>
+    <section style="position:relative;">
         <div class="card detail-frame score-detail" id="detailTop"></div>
+        <div style="position:absolute;top:10px;right:45px">
+            <label>
+                <input type="checkbox" value="2" id="top" onclick="changeTop(this);"/>
+                <span style="color: #BBBBBB;font-size: small;">峰值载荷</span>
+            </label>
+        </div>
     </section>
     <!--
     <section>
@@ -1118,7 +1124,7 @@
             },
             "link": function (column, row) {
                 if (row.link) {
-//                    let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
+                    let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
 //                    return "<span style='font-size: 15px' >" +
 //                        "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
 //                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
@@ -1282,7 +1288,7 @@
         addData('传祺GS7', 1);
         addData('福特福克斯', 1);
         addData('日产西玛', 0);
-        addData('大众迈腾',0 );
+        addData('大众迈腾', 0);
         addData('本田凌派', 0);
         addData('别克昂科威', 0);
         addData('吉利星越', 0);
@@ -1546,6 +1552,81 @@
         buildChart('detailTop', "车顶强度", "（分数越高越好）", legendData, arrayCar, seriesValue);
     }
 
+    function initDataTopWeight() {
+        let legendData = ['车顶强度 - 峰值载荷'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('宝骏510', 33686);
+        addData('雷诺科雷傲', 40011);
+        addData('绅宝D50', 40902);
+        addData('三菱欧蓝德', 43344);
+        addData('江淮瑞风S3', 49523);
+        addData('雪佛兰科鲁泽', 51797);
+        addData('起亚智跑', 52579);
+        addData('东风AX7', 53085);
+        addData('现代菲斯塔', 53681);
+        addData('日产西玛', 54581);
+        addData('本田凌派', 55294);
+        addData('奇瑞艾瑞泽5', 58834);
+        addData('众泰T600', 59105);
+        addData('本田雅阁', 59598);
+        addData('魏派VV5', 60085);
+        addData('比亚迪宋MAX', 63299);
+        addData('传祺GS7', 63944);
+        addData('本田思域', 64661);
+        addData('别克GL8', 65275);
+        addData('别克昂科威', 67823);
+        addData('大众途观L', 67876);
+        addData('现代领动', 68056);
+        addData('日产天籁', 68241);
+        addData('哈弗F5', 69343);
+        addData('斯柯达柯迪亚克', 69956);
+        addData('大众迈腾', 71112);
+        addData('福特福克斯', 72028);
+        addData('宝马318i', 73033);
+        addData('凯迪拉克XT4', 73686);
+        addData('丰田雷凌', 74473);
+        addData('比亚迪唐', 74827);
+        addData('大众帕萨特', 76511);
+        addData('吉利星越', 80815);
+        addData('领克01', 83734);
+        addData('丰田奕泽', 83990);
+        addData('奔腾T77', 84100);
+        addData('丰田凯美瑞', 90059);
+        addData('沃尔沃XC60', 91677);
+        addData('丰田亚洲龙', 93385);
+        addData('奔驰C200', 94379);
+        addData('宝马325Li', 95952);
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10, type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 60000) return "#4CAF50";
+                            else if (params.value >= 50000) return "#FFEB3B";
+                            else if (params.value >= 40000) return "#FF9800";
+                            else return "#f44336";
+                        }
+                    }
+                },
+                label: {normal: {show: true, position: 'right'}}, data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailTop', "车顶强度 - 峰值载荷", "（分数越高越好）", legendData, arrayCar, seriesValue);
+    }
+
     function initDataRoadUser() {
         let legendData = ['行人保护'];
         let arrayCar = [];
@@ -1710,6 +1791,11 @@
     function changeSide(o) {
         if (o.checked) initDataSideLength();
         else initDataSide();
+    }
+
+    function changeTop(o) {
+        if (o.checked) initDataTopWeight();
+        else initDataTop();
     }
 </script>
 <script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
