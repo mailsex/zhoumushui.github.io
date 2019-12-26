@@ -1627,80 +1627,6 @@
         buildChart('detailTop', "车顶强度 - 峰值载荷", "（分数越高越好）", legendData, arrayCar, seriesValue);
     }
 
-    function initDataRoadUser() {
-        let legendData = ['行人保护'];
-        let arrayCar = [];
-        let seriesValue = [];
-        let arrayScore = [];
-
-        function addData(car, score) {
-            arrayCar.push(car);
-            arrayScore.push(score);
-        }
-
-        addData('东风AX7', 10.820);
-        addData('传祺GS7', 14.955);
-        addData('起亚智跑', 15.500);
-        addData('众泰T600', 16.027);
-        addData('现代菲斯塔', 16.991);
-        addData('宝骏510', 17.632);
-        addData('奇瑞艾瑞泽5', 17.951);
-        addData('奔驰C200', 18.190);
-        addData('绅宝D50', 18.233);
-        addData('江淮瑞风S3', 18.446);
-        addData('现代领动', 18.645);
-        addData('大众途观L', 18.736);
-        addData('别克GL8', 19.445);
-        addData('比亚迪唐', 19.879);
-        addData('本田思域', 20.081);
-        addData('领克01', 20.311);
-        addData('大众迈腾', 20.347);
-        addData('魏派VV5', 20.415);
-        addData('奔腾T77', 20.835);
-        addData('日产西玛', 20.926);
-        addData('日产天籁', 20.930);
-        addData('雷诺科雷傲', 20.965);
-        addData('哈弗F5', 21.000);
-        addData('宝马318i', 21.000);
-        addData('比亚迪宋MAX', 21.393);
-        addData('斯柯达柯迪亚克', 21.411);
-        addData('吉利星越', 21.488);
-        addData('福特福克斯', 21.557);
-        addData('丰田亚洲龙', 21.779);
-        addData('三菱欧蓝德', 22.093);
-        addData('大众帕萨特', 22.170);
-        addData('凯迪拉克XT4', 22.266);
-        addData('雪佛兰科鲁泽', 23.022);
-        addData('沃尔沃XC60', 23.036);
-        addData('本田雅阁', 23.150);
-        addData('丰田雷凌', 23.182);
-        addData('丰田凯美瑞', 23.802);
-        addData('别克昂科威', 24.023);
-        addData('丰田奕泽', 24.200);
-        addData('本田凌派', 26.488);
-        addData('宝马325Li', 27.294);
-        for (let i = 0; i < legendData.length; i++) {
-            let seriesDataVal = null;
-            seriesDataVal = {
-                barWidth: 10, type: 'bar',
-                itemStyle: {
-                    normal: {
-                        show: true, barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
-                        color: function (params) {
-                            if (params.value >= 19.5) return "#4CAF50"; // 30x65%
-                            else if (params.value >= 15) return "#FFEB3B"; // 30x50%
-                            else if (params.value >= 12) return "#FF9800"; // 30x40%
-                            else return "#f44336";
-                        }
-                    }
-                },
-                label: {normal: {show: true, position: 'right'}}, data: arrayScore
-            };
-            seriesValue.push(seriesDataVal);
-        }
-        buildChart('detailRoadUser', "行人保护", "（分数越高越好）", legendData, arrayCar, seriesValue);
-    }
-
     function buildChart(chartId, title, subTitle, legendData, arrayCar, seriesValue) {
         let chart = document.getElementById(chartId);
         let echart = echarts.init(chart);
@@ -1732,16 +1658,11 @@
                     children: [
                         {
                             type: 'rect', left: 'center', top: 'center', z: 100,
-                            shape: {width: 190, height: 20},
-                            style: {fill: 'rgba(34,49,58,1)'}
+                            shape: {width: 190, height: 20}, style: {fill: 'rgba(34,49,58,1)'}
                         },
                         {
                             type: 'text', left: 'center', top: 'center', z: 100,
-                            style: {
-                                fill: '#009688',
-                                text: '—— zhoumushui.com/car ——',
-                                font: 'normal 13px'
-                            }
+                            style: {fill: '#009688', font: 'normal 13px', text: '—— zhoumushui.com/car ——'}
                         }
                     ]
                 }
@@ -1777,7 +1698,7 @@
                 document.getElementById("img" + id).click();
             }
         }
-        initDataFront(true);
+        initDataFront();
         initDataSide();
         initDataTop();
         //initDataRoadUser();
@@ -1785,7 +1706,7 @@
 
     function changeFront(o) {
         if (o.checked) initDataFrontPeopleHarm();
-        else initDataFront(true);
+        else initDataFront();
     }
 
     function changeSide(o) {
